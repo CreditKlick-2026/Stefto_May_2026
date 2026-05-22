@@ -561,8 +561,8 @@ export function Footer({ curveColor = "fill-white" }) {
         </div>
 
 
-        {/* Bottom Section: Contact + Social */}
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-6 pt-8 sm:pt-10 mt-6 sm:mt-8 border-t border-white/10">
+        {/* Contact + Social — ABOVE the line */}
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-6 pt-4 sm:pt-6 mt-4 sm:mt-6">
 
           {/* Contact Details */}
           <div>
@@ -592,6 +592,9 @@ export function Footer({ curveColor = "fill-white" }) {
           </div>
 
         </div>
+
+        {/* Divider line */}
+        <div className="border-t border-white/10 mt-6 sm:mt-8" />
 
       </div>
 
