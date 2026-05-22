@@ -29,7 +29,7 @@ import {
   Search,
   ShieldCheck,
 } from "lucide-react";
-import { FaTwitter, FaLinkedinIn, FaGithub, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import { useState, useEffect, useRef } from "react";
 import ChatWidget from "../ChatWidget";
 import { BrandLogo } from "../icons/BrandLogo";
@@ -240,7 +240,7 @@ export function Navbar() {
 
   const navItems = [
 
-    { name: "Why Stefto?", key: "whyStefto", hasDropdown: false, href: "/about-us#why-stefto" },
+    { name: "Why Stefto?", key: "whyStefto", hasDropdown: false, href: "/why-trust-stefto" },
     { name: "Services", key: "services", hasDropdown: true },
     { name: "About Us", key: "aboutUs", hasDropdown: true },
     { name: "Careers", key: "careers", hasDropdown: false, href: "/careers" },
@@ -508,175 +508,130 @@ export function Navbar() {
   );
 }
 
-export function Footer() {
-  const footerRef = useRef(null);
-
-  // ── Mobile-compatible parallax ──────────────────────────────────────────
-  const { scrollY } = useScroll();
-  const [inputRange, setInputRange] = useState([99999, 999999]);
-
-  useEffect(() => {
-    const calculate = () => {
-      if (!footerRef.current) return;
-      const rect = footerRef.current.getBoundingClientRect();
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      const footerTop = rect.top + scrollTop;
-      const vh = window.innerHeight;
-      setInputRange([footerTop - vh, footerTop + rect.height * 0.4]);
-    };
-
-    const t = setTimeout(calculate, 100);
-    window.addEventListener('resize', calculate);
-    return () => {
-      clearTimeout(t);
-      window.removeEventListener('resize', calculate);
-    };
-  }, []);
-
-  const avatarY = useTransform(scrollY, inputRange, [-120, 60]);
-
-  const footerLinks = {
-    product: [
-      { name: "Inbound Support", href: "/inbound" },
-      { name: "Outbound Calling", href: "/outbound" },
-      { name: "Back Office", href: "/back-office-support" },
-      { name: "Digital Solutions", href: "/digital-debt-management" },
-      { name: "Sales Support", href: "/sales-support" },
-      { name: "Retention & Persistency", href: "/retention-and-persistency" },
-    ],
-    solutions: [
-      { name: "Banking & NBFC", href: "/banking-and-financial-services" },
-      { name: "Insurance BPO", href: "/insurance" },
-      { name: "Healthcare BPO", href: "/health-care" },
-      { name: "Retail & E-Commerce", href: "/retail-and-e-commerce" },
-      { name: "Telecom Support", href: "/telecom" },
-      { name: "Automotive", href: "/automotive" },
-    ],
-    general: [
-      { name: "About Stefto", href: "/about" },
-      { name: "Blog", href: "/blog" },
-      { name: "Careers", href: "/careers" },
-      { name: "Contact Us", href: "/contact-us" },
-      { name: "Privacy Policy", href: "/privacy-policy" },
-      { name: "Terms of Use", href: "/terms-of-use" },
-    ]
-  };
+export function Footer({ curveColor = "fill-white" }) {
+  const STEFTO_LOGO_URL = 'https://res.cloudinary.com/dtz8hacj4/image/upload/v1779277115/Stefto_Logo_ng3frh.png';
 
   return (
-    <footer ref={footerRef} className="relative pt-20 sm:pt-36 pb-8 sm:pb-12 font-sans selection:bg-blue-900 selection:text-white z-0 overflow-hidden text-white" style={{ background: "linear-gradient(135deg, #0a1628 0%, #0f1f4b 35%, #132359 60%, #1a3a8f 85%, #1d4ed8 100%)" }}>
+    <footer className="bg-[#0f1f4b] text-white pt-20 sm:pt-36 pb-20 sm:pb-24 px-4 sm:px-6 lg:px-8 text-sm relative z-0 overflow-hidden">
 
-      {/* 1. The Seamless Wave Mask (z-20) */}
+      {/* Seamless Wave Mask for Curve */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none z-20 pointer-events-none drop-shadow-[0_8px_12px_rgba(0,0,0,0.04)]">
         <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="relative block w-full h-[80px] md:h-[140px]" preserveAspectRatio="none">
-          <path d="M0,120 C360,120 540,30 720,30 C900,30 1080,120 1440,120 L1440,0 L0,0 Z" fill="#ffffff" />
+          <path d="M0,120 C360,120 540,30 720,30 C900,30 1080,120 1440,120 L1440,0 L0,0 Z" className={curveColor} />
         </svg>
       </div>
 
-      {/* 2. Floating Stefto Chibi Character (z-10) */}
-      {/* 
-      <div className="absolute top-0 left-[20%] md:left-[28%] z-10 w-40 h-52 pointer-events-none opacity-90">
-        <motion.div
-          style={{ y: avatarY }}
-          className="relative w-full h-full"
-        >
-          <img
-            src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779277117/Stefto_Chibi_Character_rkwucv.png"
-            alt="Stefto Mascot"
-            className="w-full h-full object-contain filter drop-shadow-[0_8px_24px_rgba(0,0,0,0.35)] rotate-180"
-          />
-        </motion.div>
+      <div className="max-w-[1280px] mx-auto relative z-30">
+
+        {/* Link Matrix */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8">
+
+          {/* Brand Hub */}
+          <div>
+            <div className="mb-4 sm:mb-5">
+              <img src={STEFTO_LOGO_URL} alt="Stefto" className="h-10 sm:h-11 object-contain" />
+            </div>
+            <p className="footer-heading-spark leading-relaxed text-xs sm:text-sm text-blue-100/80">
+              Stefto is the trade name of Incredible Management Services (India) Private Limited (CIN: U74140DL2007ULT166363).
+            </p>
+          </div>
+
+          {/* Links Column 1 */}
+          <div className="flex flex-col gap-2">
+            <h4 className="footer-heading-spark text-sm sm:text-base font-bold mb-1 sm:mb-2 text-white font-sans">Company</h4>
+            <Link to="/about-us" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">About Us</Link>
+            <Link to="/why-trust-stefto" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Why Trust Stefto?</Link>
+            <Link to="/careers" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Careers</Link>
+            <Link to="/security" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Security</Link>
+            <Link to="/digital-lead-partner" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Partnership</Link>
+            <Link to="/contact-us" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Contact us</Link>
+          </div>
+
+          {/* Links Column 2 */}
+          <div className="flex flex-col gap-2">
+            <h4 className="footer-heading-spark text-sm sm:text-base font-bold mb-1 sm:mb-2 text-white font-sans">Solutions</h4>
+            <Link to="/inbound" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Inbound</Link>
+            <Link to="/digital-debt-management" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Digital Debt Collections</Link>
+            <Link to="/customer-support" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Digital Communications</Link>
+            <Link to="/retention-and-persistency" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Retention and Persistency</Link>
+            <Link to="/sales-support" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Sales Support</Link>
+          </div>
+
+          {/* Links Column 3 */}
+          <div className="flex flex-col gap-2">
+            <h4 className="footer-heading-spark text-sm sm:text-base font-bold mb-1 sm:mb-2 text-white font-sans">Insights</h4>
+            <Link to="/news" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Blog</Link>
+            <Link to="/press-release" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Press Release</Link>
+            <Link to="/case-studies" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Case Studies</Link>
+            <Link to="/customer-stories" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Customer Stories</Link>
+            <Link to="/leadership" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Awards</Link>
+          </div>
+
+          {/* Links Column 4 */}
+          <div className="flex flex-col gap-2">
+            <h4 className="footer-heading-spark text-sm sm:text-base font-bold mb-1 sm:mb-2 text-white font-sans">Legal</h4>
+            <Link to="/refunds-cancellations" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Refunds & cancellations</Link>
+            <Link to="/legal-statement" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Legal Notice</Link>
+            <Link to="/terms-of-use" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Terms of Use</Link>
+            <Link to="/privacy-policy" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Acceptable Use Policy</Link>
+            <Link to="/cookie-policy" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Cookie Policy</Link>
+            <Link to="/privacy-policy" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Privacy Policy</Link>
+          </div>
+
+        </div>
+
+        {/* Bottom Section: Locations + Demo */}
+        <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12 pt-8 sm:pt-10 mt-6 sm:mt-8 border-t border-white/10">
+
+          {/* Locations List */}
+          <div className="flex-1 flex flex-col gap-1.5 sm:gap-2 opacity-80 text-[0.7rem] sm:text-xs lg:text-sm text-blue-100/80 font-sans">
+            <div><strong>Head Office:</strong> Plot No. 112, Udyog Vihar, Phase-1, Gurugram, Haryana-122016</div>
+            <div><strong>New Delhi Office:</strong> IInd Floor, DLF, Moti Nagar, New Delhi-110015</div>
+            <div><strong>West Delhi Office:</strong> WZ-1, Upper Ground Floor, Main Nazafgarh Road, Uttam Nagar West, Delhi-110059</div>
+            <div><strong>Noida Office:</strong> 1st, 2nd and 3rd Floor B-24, Sector 1 Noida, Uttar Pradesh - 201301</div>
+            <div><strong>Pune Office:</strong> 501, 5th Floor, Pride Icon, Kharadi, Pune, Maharashtra-411014</div>
+          </div>
+
+          {/* Social */}
+          <div className="text-left lg:text-right">
+            <p className="text-xs sm:text-sm mb-4 sm:mb-5 opacity-85 text-white font-sans">
+              Mobile: +91 8800-101-102. Email: info@stefto.com
+            </p>
+            <div className="flex gap-2 sm:gap-3 justify-start lg:justify-end">
+              {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube].map((Icon, idx) => (
+                <a
+                  key={idx}
+                  href="#"
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white text-[#0f1f4b] flex items-center justify-center no-underline transition-all hover:-translate-y-1 hover:shadow-lg"
+                >
+                  <Icon size={14} />
+                </a>
+              ))}
+            </div>
+          </div>
+
+        </div>
+
       </div>
-      */}
 
-      {/* 3. Footer Content (z-30) */}
-      <div className="max-w-[1080px] mx-auto px-6 relative z-30">
-        <div className="flex flex-col lg:flex-row justify-between gap-8 sm:gap-16 lg:gap-8 pt-2 sm:pt-4">
-
-          {/* Left Side */}
-          <div className="lg:w-[45%] flex flex-col gap-4 sm:gap-6">
-            <div className="mb-2">
-              <img
-                src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779277115/Stefto_Logo_ng3frh.png"
-                alt="Stefto"
-                className="h-10 sm:h-12 w-auto object-contain mb-4"
-              />
-              <p className="text-blue-100/80 font-semibold text-[13px] sm:text-[15px]">Next-Gen BPO & Customer Experience Solutions.</p>
-            </div>
-
-            <div className="mt-2 sm:mt-6">
-              <p className="text-blue-100/70 text-[12px] sm:text-[13px] font-medium mb-2 leading-relaxed">
-                Want to receive insights on BPO and customer support?<br />
-                Enter your email to join our expert newsletter:
-              </p>
-              <form className="flex items-center w-full max-w-[320px] sm:max-w-[340px] bg-white/5 border border-white/10 rounded-xl p-1 sm:p-1.5 shadow-[0_4px_14px_0_rgba(0,0,0,0.12)]" onSubmit={(e) => e.preventDefault()}>
-                <input
-                  type="email"
-                  placeholder="hello@company.com"
-                  className="flex-1 bg-transparent px-3 sm:px-4 py-2 sm:py-2.5 text-[13px] sm:text-[14px] text-white outline-none placeholder:text-blue-200/40 font-medium"
-                  required
-                />
-                <button type="submit" className="bg-white hover:bg-slate-100 text-[#1c469d] p-2.5 sm:p-3 rounded-lg transition-colors flex items-center justify-center shrink-0 font-bold">
-                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#1c469d]" />
-                </button>
-              </form>
-            </div>
-          </div>
-
-          {/* Right Side */}
-          <div className="lg:w-[55%] grid grid-cols-2 md:grid-cols-3 gap-5 sm:gap-8 md:gap-4">
-            {Object.entries(footerLinks).map(([category, links]) => (
-              <div key={category}>
-                <h3 className="text-[10px] sm:text-[12px] font-bold text-blue-200/40 uppercase tracking-widest mb-3 sm:mb-6" style={{ fontFamily: "'Fraunces', serif" }}>
-                  {category === 'product' ? 'Solutions' : category === 'solutions' ? 'Services' : 'General'}
-                </h3>
-                <ul className="space-y-2 sm:space-y-3.5">
-                  {links.map((link, i) => (
-                    <li key={i}>
-                      <a href={link.href} className="text-[12px] sm:text-[14px] text-blue-100/70 font-medium hover:underline hover:text-white decoration-2 underline-offset-[5px] transition-all">
-                        {link.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Bottom Section */}
-        <div className="mt-8 sm:mt-20 pt-4 sm:pt-6 flex flex-col-reverse md:flex-row justify-between items-start md:items-center gap-4 sm:gap-6 relative">
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-50" />
-
-          <div className="text-[10px] sm:text-[11px] text-blue-200/50 font-medium flex flex-col gap-1.5 sm:gap-2">
-            <span>© {new Date().getFullYear()}-present Stefto Inc. All Rights Reserved.</span>
-            <div className="flex gap-3 sm:gap-4 flex-wrap">
-              <a href="/terms" className="hover:text-white hover:underline underline-offset-[3px] decoration-white/30">Terms of Use</a>
-              <a href="/privacy" className="hover:text-white hover:underline underline-offset-[3px] decoration-white/30">Privacy Policy</a>
-              <a href="/conduct" className="hover:text-white hover:underline underline-offset-[3px] decoration-white/30">Code of Conduct</a>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-4 sm:gap-5 text-blue-200/60">
-            <a href="#" className="hover:-translate-y-1 hover:text-white transition-all duration-200"><FaTwitter className="w-[16px] h-[16px] sm:w-[18px] sm:h-[18px]" /></a>
-            <a href="#" className="hover:-translate-y-1 hover:text-white transition-all duration-200"><FaLinkedinIn className="w-[16px] h-[16px] sm:w-[18px] sm:h-[18px]" /></a>
-            <a href="#" className="hover:-translate-y-1 hover:text-white transition-all duration-200"><FaGithub className="w-[16px] h-[16px] sm:w-[18px] sm:h-[18px]" /></a>
-            <a href="#" className="hover:-translate-y-1 hover:text-white transition-all duration-200"><FaInstagram className="w-[16px] h-[16px] sm:w-[18px] sm:h-[18px]" /></a>
-          </div>
-        </div>
-
+      {/* Copyright Strip */}
+      <div className="absolute bottom-0 left-0 w-full bg-white border-t border-[#0f1f4b]/10 py-3 sm:py-4 px-4 sm:px-8 flex justify-center">
+        <p className="text-slate-400 text-[0.65rem] sm:text-xs lg:text-sm m-0 text-center font-sans" style={{ color: '#64748b' }}>
+          <strong className="text-slate-500" style={{ color: '#64748b' }}>Copyright &copy; 2007 &ndash; 2026</strong> Stefto (Incredible Management Services Pvt Ltd)
+        </p>
       </div>
     </footer>
   );
 }
 
-export default function LandingLayout({ children }) {
+export default function LandingLayout({ children, footerCurveColor = "fill-white" }) {
   return (
     <div className="min-h-screen bg-white text-slate-800 font-sans selection:bg-blue-50 selection:text-[#1c469d]">
       <Navbar />
       <main className="relative z-10 bg-transparent">
         {children}
       </main>
-      <Footer />
+      <Footer curveColor={footerCurveColor} />
       {/* <ChatWidget /> */}
     </div>
   );

@@ -49,8 +49,8 @@ const STYLES = `
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(16,185,129,0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(16,185,129,0.07) 1px, transparent 1px);
+    linear-gradient(rgba(59,130,246,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,130,246,0.07) 1px, transparent 1px);
   background-size: 56px 56px;
   animation: bf-grid-drift 22s linear infinite;
 }
@@ -69,9 +69,9 @@ const STYLES = `
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(16,185,129,0.15);
-  border: 1px solid rgba(16,185,129,0.38);
-  color: #6ee7b7;
+  background: rgba(59,130,246,0.15);
+  border: 1px solid rgba(59,130,246,0.38);
+  color: #93c5fd;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -91,7 +91,7 @@ const STYLES = `
   margin: 0 0 24px;
 }
 .bf-hero__title span {
-  background: linear-gradient(90deg, #34d399, #60a5fa);
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -107,7 +107,7 @@ const STYLES = `
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: linear-gradient(135deg, #059669, #0891b2);
+  background: linear-gradient(135deg, #1c469d, #3b82f6);
   color: #fff;
   font-weight: 700;
   font-size: 14px;
@@ -117,12 +117,12 @@ const STYLES = `
   border-radius: 50px;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 32px rgba(5,150,105,0.4);
+  box-shadow: 0 8px 32px rgba(28,70,157,0.4);
   border: none;
 }
 .bf-hero__cta:hover {
   transform: translateY(-3px);
-  box-shadow: 0 18px 50px rgba(5,150,105,0.5);
+  box-shadow: 0 18px 50px rgba(28,70,157,0.5);
   color: #fff;
 }
 
@@ -171,10 +171,10 @@ const STYLES = `
   border-radius: 50%;
   animation: bf-pulse-ring 3.2s ease-in-out infinite;
 }
-.bf-ring:nth-child(1) { width: 90px;  height: 90px;  border: 1px solid rgba(52,211,153,0.65); animation-delay: 0s; }
-.bf-ring:nth-child(2) { width: 170px; height: 170px; border: 1px solid rgba(52,211,153,0.40); animation-delay: 0.45s; }
-.bf-ring:nth-child(3) { width: 255px; height: 255px; border: 1px solid rgba(52,211,153,0.22); animation-delay: 0.9s; }
-.bf-ring:nth-child(4) { width: 340px; height: 340px; border: 1px solid rgba(52,211,153,0.10); animation-delay: 1.35s; }
+.bf-ring:nth-child(1) { width: 90px;  height: 90px;  border: 1px solid rgba(96,165,250,0.65); animation-delay: 0s; }
+.bf-ring:nth-child(2) { width: 170px; height: 170px; border: 1px solid rgba(96,165,250,0.40); animation-delay: 0.45s; }
+.bf-ring:nth-child(3) { width: 255px; height: 255px; border: 1px solid rgba(96,165,250,0.22); animation-delay: 0.9s; }
+.bf-ring:nth-child(4) { width: 340px; height: 340px; border: 1px solid rgba(96,165,250,0.10); animation-delay: 1.35s; }
 @keyframes bf-pulse-ring {
   0%, 100% { transform: scale(1); opacity: 1; }
   50%       { transform: scale(1.06); opacity: 0.55; }
@@ -183,11 +183,11 @@ const STYLES = `
   width: 76px;
   height: 76px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #059669, #0891b2);
+  background: linear-gradient(135deg, #1c469d, #3b82f6);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 60px rgba(5,150,105,0.55);
+  box-shadow: 0 0 60px rgba(59,130,246,0.55);
   position: relative;
   z-index: 1;
 }
@@ -202,7 +202,7 @@ const STYLES = `
   color: #fff;
 }
 .bf-section--teal {
-  background: linear-gradient(135deg, #022c22 0%, #064e3b 100%);
+  background: linear-gradient(135deg, #0a1628 0%, #1e3a8a 100%);
   color: #fff;
 }
 
@@ -219,10 +219,10 @@ const STYLES = `
   font-weight: 800;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #059669;
+  color: #1c469d;
   margin-bottom: 16px;
 }
-.bf-label--light { color: #6ee7b7; }
+.bf-label--light { color: #93c5fd; }
 
 /* ── Headings ── */
 .bf-h2 {
@@ -236,7 +236,7 @@ const STYLES = `
 .bf-h2 em {
   font-style: italic;
   font-family: Georgia, 'Times New Roman', serif;
-  color: #059669;
+  color: #1c469d;
 }
 .bf-p {
   font-size: 1.05rem;
@@ -286,7 +286,7 @@ const STYLES = `
 
 .bf-service-card {
   background: #fff;
-  border: 1px solid #e2f0eb;
+  border: 1px solid #e2e8f5;
   border-radius: 20px;
   padding: 34px;
   transition: all 0.35s ease;
@@ -297,14 +297,14 @@ const STYLES = `
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(5,150,105,0.04), rgba(8,145,178,0.04));
+  background: linear-gradient(135deg, rgba(28,70,157,0.04), rgba(59,130,246,0.04));
   opacity: 0;
   transition: opacity 0.35s ease;
 }
 .bf-service-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 60px rgba(5,150,105,0.12);
-  border-color: rgba(5,150,105,0.28);
+  box-shadow: 0 20px 60px rgba(28,70,157,0.12);
+  border-color: rgba(28,70,157,0.28);
 }
 .bf-service-card:hover::before { opacity: 1; }
 .bf-service-card__icon {
@@ -315,7 +315,7 @@ const STYLES = `
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, #ecfdf5, #e0f7fa);
+  background: linear-gradient(135deg, #eff6ff, #eef2ff);
 }
 .bf-service-card__title {
   font-size: 1.08rem;
@@ -365,7 +365,7 @@ const STYLES = `
   font-weight: 800;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #059669;
+  color: #1c469d;
   margin-bottom: 10px;
   display: block;
 }
@@ -404,7 +404,7 @@ const STYLES = `
 .bf-stats-row__num {
   font-size: 2.8rem;
   font-weight: 900;
-  background: linear-gradient(90deg, #34d399, #60a5fa);
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -437,7 +437,7 @@ const STYLES = `
   color: #475569;
   line-height: 1.6;
 }
-.bf-check-list li svg { flex-shrink: 0; margin-top: 2px; color: #059669; }
+.bf-check-list li svg { flex-shrink: 0; margin-top: 2px; color: #1c469d; }
 
 /* ── Why Grid ── */
 .bf-why-grid {
@@ -457,15 +457,15 @@ const STYLES = `
   transition: all 0.3s ease;
 }
 .bf-why-card:hover {
-  border-color: rgba(52,211,153,0.35);
-  box-shadow: 0 8px 32px rgba(5,150,105,0.12);
+  border-color: rgba(96,165,250,0.35);
+  box-shadow: 0 8px 32px rgba(59,130,246,0.12);
   transform: translateY(-4px);
   background: rgba(255,255,255,0.07);
 }
 .bf-why-card__num {
   font-size: 2.4rem;
   font-weight: 900;
-  color: rgba(52,211,153,0.2);
+  color: rgba(96,165,250,0.2);
   line-height: 1;
   margin-bottom: 12px;
 }
@@ -487,7 +487,7 @@ const STYLES = `
   padding: 100px 32px;
   overflow: hidden;
   text-align: center;
-  background: linear-gradient(135deg, #064e3b, #1e3a8a);
+  background: linear-gradient(135deg, #0f1e4a, #1e3a8a);
 }
 .bf-cta__orb {
   position: absolute;
@@ -495,8 +495,8 @@ const STYLES = `
   filter: blur(80px);
   pointer-events: none;
 }
-.bf-cta__orb--1 { width: 420px; height: 420px; background: rgba(5,150,105,0.22); top: -120px; left: -100px; }
-.bf-cta__orb--2 { width: 320px; height: 320px; background: rgba(96,165,250,0.18); bottom: -60px; right: -80px; }
+.bf-cta__orb--1 { width: 420px; height: 420px; background: rgba(28,70,157,0.35); top: -120px; left: -100px; }
+.bf-cta__orb--2 { width: 320px; height: 320px; background: rgba(96,165,250,0.2); bottom: -60px; right: -80px; }
 .bf-cta__content { position: relative; z-index: 2; }
 .bf-cta__title {
   font-size: clamp(2rem, 5vw, 3.5rem);
@@ -523,7 +523,7 @@ const STYLES = `
   align-items: center;
   gap: 10px;
   background: #fff;
-  color: #064e3b;
+  color: #1c469d;
   font-weight: 800;
   font-size: 14px;
   padding: 16px 34px;
@@ -535,7 +535,7 @@ const STYLES = `
 .bf-btn-primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 14px 42px rgba(0,0,0,0.25);
-  color: #064e3b;
+  color: #1c469d;
 }
 .bf-btn-outline {
   display: inline-flex;
@@ -596,22 +596,22 @@ const STYLES = `
   top: 36px;
   width: 1px;
   height: 40px;
-  background: rgba(5,150,105,0.3);
+  background: rgba(28,70,157,0.3);
 }
 .bf-process-step:last-child::after { display: none; }
 .bf-process-step__num {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #ecfdf5, #e0f7fa);
+  background: linear-gradient(135deg, #eff6ff, #eef2ff);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.6rem;
   font-weight: 900;
-  color: #059669;
+  color: #1c469d;
   margin-bottom: 20px;
-  border: 2px solid #d1fae5;
+  border: 2px solid #dbeafe;
 }
 .bf-process-step__title {
   font-size: 1rem;
@@ -627,8 +627,8 @@ const STYLES = `
 
 /* ── Compliance Strip ── */
 .bf-compliance-strip {
-  background: linear-gradient(90deg, #ecfdf5, #eff6ff, #ecfdf5);
-  border: 1px solid #d1fae5;
+  background: linear-gradient(90deg, #eff6ff, #eef2ff, #eff6ff);
+  border: 1px solid #dbeafe;
   border-radius: 16px;
   padding: 28px 40px;
   display: flex;
@@ -641,7 +641,7 @@ const STYLES = `
   width: 52px;
   height: 52px;
   border-radius: 12px;
-  background: #059669;
+  background: #1c469d;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -653,12 +653,12 @@ const STYLES = `
 .bf-compliance-tags { display: flex; gap: 10px; flex-wrap: wrap; margin-left: auto; }
 .bf-compliance-tag {
   background: #fff;
-  border: 1px solid #d1fae5;
+  border: 1px solid #dbeafe;
   border-radius: 50px;
   padding: 6px 16px;
   font-size: 12px;
   font-weight: 700;
-  color: #059669;
+  color: #1c469d;
   letter-spacing: 0.05em;
 }
 `;
@@ -666,32 +666,32 @@ const STYLES = `
 /* ── Data ──────────────────────────────────────────────────── */
 const services = [
   {
-    icon: <HeadphonesIcon size={24} color="#059669" />,
+    icon: <HeadphonesIcon size={24} color="#1c469d" />,
     title: 'Customer Service & Care',
     desc: 'Omni-channel banking support across voice, chat and email — resolving account queries, disputes and KYC requirements with speed and empathy.',
   },
   {
-    icon: <CreditCard size={24} color="#059669" />,
+    icon: <CreditCard size={24} color="#1c469d" />,
     title: 'Debt Collections & Recovery',
     desc: 'Compliant, AI-powered collections strategy that maximises recovery rates while protecting customer relationships and regulatory standing.',
   },
   {
-    icon: <TrendingUp size={24} color="#059669" />,
+    icon: <TrendingUp size={24} color="#1c469d" />,
     title: 'Sales & Cross-Sell',
     desc: 'Data-driven outbound campaigns for loans, credit cards, insurance and wealth products — turning leads into loyal customers.',
   },
   {
-    icon: <BarChart3 size={24} color="#059669" />,
+    icon: <BarChart3 size={24} color="#1c469d" />,
     title: 'Analytics & Reporting',
     desc: 'Real-time dashboards and custom KPI reports that give banks and NBFCs clear visibility into portfolio health and team performance.',
   },
   {
-    icon: <FileText size={24} color="#059669" />,
+    icon: <FileText size={24} color="#1c469d" />,
     title: 'Back-Office & KYC',
     desc: 'Document verification, data entry, account onboarding and KYC / AML processing handled with precision and rapid turnaround.',
   },
   {
-    icon: <Shield size={24} color="#059669" />,
+    icon: <Shield size={24} color="#1c469d" />,
     title: 'Fraud & Risk Management',
     desc: 'Proactive fraud detection, account monitoring and compliance advisory to keep your portfolio secure and regulatorily compliant.',
   },

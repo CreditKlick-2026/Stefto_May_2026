@@ -96,7 +96,7 @@ export default function WhyTrustSection() {
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 60%, rgba(15,31,75,0.15) 100%)' }} />
             </div>
 
-          
+
 
             {/* In Business badge — top left */}
             <motion.div
@@ -121,11 +121,7 @@ export default function WhyTrustSection() {
             animate={visible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
           >
-            {/* Eyebrow */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
-              <div style={{ width: 32, height: 32, borderRadius: '50%', background: '#2563eb', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 800 }}>4</div>
-              <span style={{ fontSize: 11, fontWeight: 700, color: '#2563eb', textTransform: 'uppercase', letterSpacing: '0.14em', background: '#eff6ff', padding: '4px 12px', borderRadius: 999, border: '1px solid #bfdbfe' }}>Why Choose Us</span>
-            </div>
+
 
             {/* Heading */}
             <h2 style={{ fontSize: 'clamp(32px, 4vw, 48px)', fontWeight: 900, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.02em', marginBottom: 16 }}>
@@ -137,7 +133,7 @@ export default function WhyTrustSection() {
             <div style={{ width: 48, height: 3, background: 'linear-gradient(90deg, #2563eb, #60a5fa)', borderRadius: 99, marginBottom: 20 }} />
 
             <p style={{ color: '#64748b', fontSize: 15, lineHeight: 1.75, marginBottom: 36 }}>
-              We are not just a vendor — we are a strategic partner in your recovery ecosystem.
+              We are a strategic partner in your recovery ecosystem not just a vendor.
             </p>
 
             {/* Reason cards */}
@@ -171,14 +167,7 @@ export default function WhyTrustSection() {
               ))}
             </div>
 
-            {/* CTA */}
-            <Link
-              to={isAboutPage ? "/contact-us" : "/about-us"}
-              style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 32, background: '#2563eb', color: '#fff', fontSize: 14, fontWeight: 700, padding: '13px 28px', borderRadius: 999, textDecoration: 'none', boxShadow: '0 8px 24px rgba(37,99,235,0.30)' }}
-            >
-              {isAboutPage ? "Get in Touch" : "Learn More About Us"}
-              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </Link>
+
           </motion.div>
         </div>
       </div>

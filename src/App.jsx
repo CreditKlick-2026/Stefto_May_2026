@@ -46,6 +46,7 @@ import BlogList from './pages/BlogList';
 import BlogDetail from './pages/BlogDetail';
 import Maintenance from './pages/Maintenance';
 import NewLanding from './pages/NewLanding';
+import WhyTrustStefto from './pages/WhyTrustStefto';
 
 import { Phone, Mail, MapPin, ChevronDown, Search, Menu, X, LogIn, User, LayoutDashboard, LogOut } from 'lucide-react';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
@@ -70,6 +71,7 @@ const navMenus = {
     heading: 'At Stefto, We Believe That Good is Just the Beginning',
     links: [
       { label: 'About Stefto', to: '/about-us' },
+      { label: 'Why Trust Stefto?', to: '/why-trust-stefto' },
       { label: 'Security', to: '/security' },
       { label: 'Innovative partners', to: '/digital-lead-partner' },
       { label: 'Leadership', to: '/leadership' },
@@ -370,6 +372,7 @@ const Footer = () => (
         <div className="flex flex-col gap-2">
           <h4 className="footer-heading-spark text-sm sm:text-base font-bold mb-1 sm:mb-2">Company</h4>
           <Link to="/about-us" className="footer-link-spark text-xs sm:text-sm">About Us</Link>
+          <Link to="/why-trust-stefto" className="footer-link-spark text-xs sm:text-sm">Why Trust Stefto?</Link>
           <Link to="/careers" className="footer-link-spark text-xs sm:text-sm">Careers</Link>
           <Link to="/security" className="footer-link-spark text-xs sm:text-sm">Security</Link>
           <Link to="/digital-lead-partner" className="footer-link-spark text-xs sm:text-sm">Partnership</Link>
@@ -450,7 +453,7 @@ const Footer = () => (
 
 const AppContent = () => {
   const location = useLocation();
-  const hideShell = location.pathname.startsWith('/admin-dashboard') || location.pathname === '/' || location.pathname === '/landing' || location.pathname.startsWith('/about-us') || location.pathname.startsWith('/careers') || location.pathname.startsWith('/contact-us') || location.pathname.startsWith('/leadership') || location.pathname.startsWith('/inbound') || location.pathname.startsWith('/outbound') || location.pathname.startsWith('/telecom') || location.pathname.startsWith('/banking-and-financial-services');
+  const hideShell = location.pathname.startsWith('/admin-dashboard') || location.pathname === '/' || location.pathname === '/landing' || location.pathname.startsWith('/about-us') || location.pathname.startsWith('/careers') || location.pathname.startsWith('/contact-us') || location.pathname.startsWith('/leadership') || location.pathname.startsWith('/inbound') || location.pathname.startsWith('/outbound') || location.pathname.startsWith('/telecom') || location.pathname.startsWith('/banking-and-financial-services') || location.pathname.startsWith('/privacy-policy') || location.pathname.startsWith('/why-trust-stefto');
 
   useEffect(() => {
     if (hideShell) {
@@ -476,6 +479,7 @@ const AppContent = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/why-trust-stefto" element={<WhyTrustStefto />} />
           <Route path="/according-to-the-rbi-report-the-indian-household-debt-is-rising-but-it-is-relatively-low-in-comparison-with-other-emerging-markets" element={<AccordingToTheRbiReportTheIndianHouseholdDebtIsRisingButItIsRelativelyLowInComparisonWithOtherEmergingMarkets />} />
           <Route path="/automotive" element={<Automotive />} />
           <Route path="/back-office-support" element={<BackOfficeSupport />} />
