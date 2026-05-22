@@ -45,8 +45,6 @@ const menuData = {
         title: "Industry Solutions",
         items: [
           { name: "BFSI", description: "Banking & financial services", icon: Landmark, href: "/banking-and-financial-services", color: "bg-green-50 text-green-600" },
-          { name: "Insurance", description: "Policy support & renewals", icon: Award, href: "/insurance", color: "bg-blue-50 text-blue-600" },
-          { name: "Retail & E-Commerce", description: "Order support & returns", icon: ShoppingCart, href: "/retail-and-e-commerce", color: "bg-orange-50 text-orange-600" },
           { name: "Telecom", description: "Subscriber support & activations", icon: Phone, href: "/telecom", color: "bg-purple-50 text-purple-600" },
         ]
       },
