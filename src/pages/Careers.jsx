@@ -190,8 +190,9 @@ const Careers = () => {
               {/* Job 1 */}
               <div className="bg-[#f8f9fa] p-8 flex flex-col justify-between min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#2d3a4b] mb-3 font-serif tracking-tight">Voice (Sales)</h3>
-                  <p className="text-[#475569] text-sm font-medium">Gurgaon, Noida</p>
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#2d3a4b] mb-3 font-serif tracking-tight">Debt Counselor</h3>
+                  <p className="text-[#475569] text-sm font-medium">Customer Support | Collection & Recovery</p>
+
                 </div>
                 <button onClick={() => { setSelectedJob("Voice (Sales)"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[11px] tracking-[0.15em] font-semibold py-3 px-6 mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
                   APPLY NOW <span className="ml-3 group-hover:translate-x-1 transition-transform">→</span>
@@ -201,67 +202,63 @@ const Careers = () => {
               {/* Job 2 */}
               <div className="bg-[#f8f9fa] p-8 flex flex-col justify-between min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#2d3a4b] mb-3 font-serif tracking-tight">Voice (Customer Support)</h3>
-                  <p className="text-[#475569] text-sm font-medium">Gurgaon, Noida, Delhi</p>
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#2d3a4b] mb-3 font-serif tracking-tight">Voice Telecaller</h3>
+                  <p className="text-[#475569] text-sm font-medium">Customer Support</p>
+
                 </div>
                 <button onClick={() => { setSelectedJob("Voice (Customer Support)"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[11px] tracking-[0.15em] font-semibold py-3 px-6 mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
                   APPLY NOW <span className="ml-3 group-hover:translate-x-1 transition-transform">→</span>
                 </button>
               </div>
 
-              {/* Job 3 */}
-              <div className="bg-[#f8f9fa] p-8 flex flex-col justify-between min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#2d3a4b] mb-3 font-serif tracking-tight">A.M. (Sales)</h3>
-                  <p className="text-[#475569] text-sm font-medium">Gurgaon, Noida, Delhi</p>
-                </div>
-                <button onClick={() => { setSelectedJob("A.M. (Sales)"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[11px] tracking-[0.15em] font-semibold py-3 px-6 mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
-                  APPLY NOW <span className="ml-3 group-hover:translate-x-1 transition-transform">→</span>
-                </button>
-              </div>
+
 
               {/* Job 4 */}
               <div className="bg-[#f8f9fa] p-8 flex flex-col justify-between min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#2d3a4b] mb-3 font-serif tracking-tight">A.M. (Customer Support)</h3>
-                  <p className="text-[#475569] text-sm font-medium">Gurgaon</p>
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#2d3a4b] mb-3 font-serif tracking-tight">A.M.</h3>
+                  <p className="text-[#475569] text-sm font-medium">Customer Support | Collection & Recovery</p>
+
                 </div>
                 <button onClick={() => { setSelectedJob("A.M. (Customer Support)"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[11px] tracking-[0.15em] font-semibold py-3 px-6 mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
                   APPLY NOW <span className="ml-3 group-hover:translate-x-1 transition-transform">→</span>
                 </button>
               </div>
 
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-
               {/* Job 5 */}
               <div className="bg-[#f8f9fa] p-8 flex flex-col justify-between min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
                 <div>
                   <h3 className="text-xl sm:text-2xl font-bold text-[#2d3a4b] mb-3 font-serif tracking-tight">Human Resource</h3>
-                  <p className="text-[#475569] text-sm font-medium">Gurgaon, Noida, Delhi</p>
+                  <p className="text-[#475569] text-sm font-medium">Support Team</p>
                 </div>
                 <button onClick={() => { setSelectedJob("Human Resource"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[11px] tracking-[0.15em] font-semibold py-3 px-6 mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
                   APPLY NOW <span className="ml-3 group-hover:translate-x-1 transition-transform">→</span>
                 </button>
               </div>
 
+
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+
+
               {/* Job 6 */}
               <div className="bg-[#f8f9fa] p-8 flex flex-col justify-between min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#2d3a4b] mb-3 font-serif tracking-tight">Quality & Trainer </h3>
-                  <p className="text-[#475569] text-sm font-medium">Gurgaon, Noida, Delhi</p>
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#2d3a4b] mb-3 font-serif tracking-tight text-center">Quality </h3>
+                  <p className="text-[#475569] text-sm font-medium text-center">Customer Support | Collection & Recovery</p>
                 </div>
                 <button onClick={() => { setSelectedJob("Trainer"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[11px] tracking-[0.15em] font-semibold py-3 px-6 mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
                   APPLY NOW <span className="ml-3 group-hover:translate-x-1 transition-transform">→</span>
                 </button>
               </div>
 
+
               {/* Job 7 */}
               <div className="bg-[#f8f9fa] p-8 flex flex-col justify-between min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
                 <div>
                   <h3 className="text-xl sm:text-2xl font-bold text-[#2d3a4b] mb-3 font-serif tracking-tight">M.I.S.</h3>
-                  <p className="text-[#475569] text-sm font-medium">Gurgaon, Noida, Delhi</p>
+                  <p className="text-[#475569] text-sm font-medium">Customer Support | Collection & Recovery</p>
                 </div>
                 <button onClick={() => { setSelectedJob("M.I.S"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[11px] tracking-[0.15em] font-semibold py-3 px-6 mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
                   APPLY NOW <span className="ml-3 group-hover:translate-x-1 transition-transform">→</span>
@@ -271,17 +268,33 @@ const Careers = () => {
               {/* Job 8 */}
               <div className="bg-[#f8f9fa] p-8 flex flex-col justify-between min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#2d3a4b] mb-3 font-serif tracking-tight">Manager (Customer Operations)</h3>
-                  <p className="text-[#475569] text-sm font-medium">Gurgaon, Noida, Delhi</p>
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#2d3a4b] mb-3 font-serif tracking-tight">Manager</h3>
+                  <p className="text-[#475569] text-sm font-medium">Customer Support | Collection & Recovery</p>
                 </div>
                 <button onClick={() => { setSelectedJob("Manager (Customer Operations)"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[11px] tracking-[0.15em] font-semibold py-3 px-6 mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
                   APPLY NOW <span className="ml-3 group-hover:translate-x-1 transition-transform">→</span>
                 </button>
               </div>
 
+
+              <div className="bg-[#f8f9fa] p-8 flex flex-col justify-between min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#2d3a4b] mb-3 font-serif tracking-tight">Trainer</h3>
+                  <p className="text-[#475569] text-sm font-medium">Customer Support | Collection & Recovery</p>
+                </div>
+                <button onClick={() => { setSelectedJob("Trainer"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[11px] tracking-[0.15em] font-semibold py-3 px-6 mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
+                  APPLY NOW <span className="ml-3 group-hover:translate-x-1 transition-transform">→</span>
+                </button>
+              </div>
+
             </div>
+
+
+
           </div>
         </section>
+
+
 
         {/* 4. Job Alerts Section */}
         <section className="w-full py-16 sm:py-24 bg-white border-t border-slate-100">
@@ -306,7 +319,7 @@ const Careers = () => {
                   notifications about new job openings. Don't miss out on your dream job - sign up today to
                   stay informed and take the next step in your professional journey
                 </p>
-                
+
                 <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 w-full max-w-md">
                   <input
                     type="email"
