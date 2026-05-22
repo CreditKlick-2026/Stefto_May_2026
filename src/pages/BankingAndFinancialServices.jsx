@@ -675,42 +675,174 @@ const BankingAndFinancialServices = () => {
       <div className="bf-page">
 
         {/* ══════════════════ 1. HERO ══════════════════ */}
-        <section className="bf-hero" style={{ paddingTop: '160px' }}>
-          <div className="bf-hero__bg" style={{ backgroundImage: `url(${heroBg})` }} />
-          <div className="bf-hero__overlay" />
-          <div className="bf-hero__grid" />
+        {/* Custom Flat CSS Hero Section */}
+        <div className="relative pt-32 pb-20 min-h-[65vh] flex flex-col justify-center overflow-hidden bg-[#f4f7fc]">
+          
+          {/* Background Vector Canvas */}
+          <div className="absolute inset-0 z-0">
+            <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 400" preserveAspectRatio="none">
+              {/* 1. Navy organic waves on the top-left */}
+              <path d="M0,0 C160,0 200,80 150,150 C120,200 40,180 0,120 Z" fill="#1c469d" opacity="0.08" />
+              <path d="M0,0 C100,0 120,50 100,100 C80,130 30,120 0,80 Z" fill="#1c469d" opacity="0.12" />
 
-          {/* Floating coin rings */}
-          <div className="bf-coin-rings">
-            <div className="bf-ring" />
-            <div className="bf-ring" />
-            <div className="bf-ring" />
-            <div className="bf-ring" />
-            <div className="bf-ring-core">
-              <Banknote size={34} />
-            </div>
+              {/* 2. Soft blue organic waves on the bottom-left */}
+              <path d="M0,400 C100,400 150,320 120,280 C90,240 20,280 0,320 Z" fill="#b3c7e8" opacity="0.4" />
+              <path d="M0,400 C80,400 120,340 90,310 C60,280 10,310 0,350 Z" fill="#7094c8" opacity="0.3" />
+
+              {/* 3. Sweeping center arc (dividing curve) */}
+              <path d="M380,420 C380,240 450,20 620,20" fill="none" stroke="#1c469d" strokeWidth="2.5" opacity="0.15" />
+              <path d="M375,420 C375,235 446,15 618,15" fill="none" stroke="#1c469d" strokeWidth="1.2" opacity="0.08" />
+
+              {/* 4. Layered navy waves on the bottom-right */}
+              <path d="M500,400 C650,380 750,280 1000,310 L1000,400 Z" fill="#b3c7e8" opacity="0.25" />
+              <path d="M600,400 C730,370 780,270 1000,300 L1000,400 Z" fill="#7094c8" opacity="0.3" />
+              <path d="M680,400 C780,380 840,290 1000,320 L1000,400 Z" fill="#4169a8" opacity="0.4" />
+              <path d="M760,400 C850,380 900,285 1000,340 L1000,400 Z" fill="#1c469d" opacity="0.55" />
+              <path d="M840,400 C910,390 940,335 1000,360 L1000,400 Z" fill="#0f2a5e" opacity="0.65" />
+
+              {/* 5. Financial growth chart (bars + line) bottom-right */}
+              <g transform="translate(750, 260) scale(1.1)" stroke="#1c469d" strokeWidth="2" fill="none" opacity="0.25">
+                <polyline points="0,50 30,30 60,40 90,10" />
+                <path d="M90,10 L80,10 M90,10 L90,20" strokeLinecap="round" />
+                <rect x="-10" y="55" width="10" height="15" fill="#1c469d" opacity="0.4" stroke="none" />
+                <rect x="15" y="45" width="10" height="25" fill="#1c469d" opacity="0.4" stroke="none" />
+                <rect x="45" y="50" width="10" height="20" fill="#1c469d" opacity="0.4" stroke="none" />
+                <rect x="75" y="25" width="10" height="45" fill="#1c469d" opacity="0.4" stroke="none" />
+              </g>
+
+              {/* 6. Currency symbols floating accents */}
+              <text x="780" y="160" fill="#1c469d" opacity="0.06" fontSize="110" fontWeight="900" fontFamily="serif">₹</text>
+              <text x="900" y="100" fill="#1c469d" opacity="0.04" fontSize="70" fontWeight="900" fontFamily="serif">$</text>
+
+              {/* 7. Grid dot matrices */}
+              <g transform="translate(850, 30)" fill="#1c469d" opacity="0.15">
+                <circle cx="0" cy="0" r="3" /><circle cx="20" cy="0" r="3" /><circle cx="40" cy="0" r="3" /><circle cx="60" cy="0" r="3" />
+                <circle cx="0" cy="20" r="3" /><circle cx="20" cy="20" r="3" /><circle cx="40" cy="20" r="3" /><circle cx="60" cy="20" r="3" />
+                <circle cx="0" cy="40" r="3" /><circle cx="20" cy="40" r="3" /><circle cx="40" cy="40" r="3" /><circle cx="60" cy="40" r="3" />
+              </g>
+            </svg>
           </div>
 
-          <div className="bf-hero__content bf-container">
-            {/* Breadcrumb */}
-            <nav className="bf-breadcrumb">
-              <Link to="/">Home</Link>
-              <ChevronRight size={14} style={{ opacity: 0.45 }} />
-              <span style={{ color: 'rgba(255,255,255,0.38)' }}>Industries</span>
-              <ChevronRight size={14} style={{ opacity: 0.45 }} />
-              <span style={{ color: '#6ee7b7' }}>Banking &amp; Financial Services</span>
-            </nav>
+          {/* Hero Content Container */}
+          <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div className="flex flex-col-reverse lg:flex-row items-center gap-16">
+              
+              {/* LEFT SIDE: Typography & CTA */}
+              <div className="w-full lg:w-1/2 flex flex-col justify-center">
+                
+                {/* Breadcrumb matching old style but adjusted colors */}
+                <nav className="flex items-center gap-2 text-sm font-semibold text-[#4169a8] mb-4">
+                  <Link to="/" className="hover:text-[#1c469d] transition-colors">Home</Link>
+                  <ChevronRight size={14} className="opacity-60" />
+                  <span>Industries</span>
+                  <ChevronRight size={14} className="opacity-60" />
+                  <span className="text-[#1c469d]">Banking & Finance</span>
+                </nav>
 
-            <div className="bf-badge">
-              <Banknote size={12} /> Banking &amp; Financial Services
+                <div className="text-[#1c469d] font-bold text-sm uppercase tracking-[0.2em] bg-[#dce5f2] border border-[#a8bedb] px-4 py-2 rounded-full inline-flex items-center gap-2 self-start mb-6 select-none">
+                  <Banknote size={16} /> Finance & Growth
+                </div>
+
+                <h1 
+                  className="text-5xl sm:text-6xl md:text-7xl font-black text-[#0f2a5e] leading-[1.05] tracking-tight mb-6"
+                  style={{ fontFamily: "'Outfit', sans-serif" }}
+                >
+                  Banking & <br />
+                  <span className="text-[#1c469d]">Financial Services</span>
+                </h1>
+
+                <p className="text-[#4169a8] text-lg sm:text-xl font-medium max-w-lg leading-relaxed mb-8">
+                  Powering BFSI excellence with intelligent operations, regulatory compliance, and AI-driven financial analytics.
+                </p>
+
+                <div className="flex items-center gap-6">
+                  <button className="bg-[#1c469d] text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-[#1c469d]/20 hover:bg-[#0f2a5e] transition-all flex items-center gap-2">
+                    Partner With Us <ArrowRight size={18} />
+                  </button>
+                </div>
+              </div>
+
+              {/* RIGHT SIDE: Custom Vector Art Badge */}
+              <div className="w-full lg:w-1/2 flex items-center justify-center relative">
+                <div className="w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] rounded-full border-[3px] border-dashed border-[#1c469d]/30 relative flex items-center justify-center select-none">
+                  
+                  {/* Central Bank Building Badge */}
+                  <div className="w-[200px] h-[200px] sm:w-[260px] sm:h-[260px] rounded-full bg-[#dce5f2] border-8 border-white flex items-center justify-center shadow-[0_8px_30px_rgba(28,70,157,0.1)] z-10 relative">
+                    <svg viewBox="0 0 100 100" className="w-[150px] h-[150px] sm:w-[180px] sm:h-[180px] text-[#1c469d] fill-current relative z-10">
+                      {/* Bank Roof / Pediment Triangle */}
+                      <polygon points="50,15 20,38 80,38" />
+                      
+                      {/* Roof base line */}
+                      <rect x="16" y="36" width="68" height="5" rx="1" />
+                      
+                      {/* 4 Pillars */}
+                      <rect x="24" y="42" width="7" height="28" rx="1" />
+                      <rect x="38" y="42" width="7" height="28" rx="1" />
+                      <rect x="55" y="42" width="7" height="28" rx="1" />
+                      <rect x="69" y="42" width="7" height="28" rx="1" />
+                      
+                      {/* Foundation base */}
+                      <rect x="16" y="70" width="68" height="5" rx="1" />
+                      
+                      {/* Steps */}
+                      <rect x="12" y="75" width="76" height="4" rx="1" />
+                      <rect x="8" y="79" width="84" height="4" rx="1" />
+                    </svg>
+                    
+                    {/* Subtle highlight ring inside the badge */}
+                    <div className="absolute inset-0 rounded-full border border-white/40 pointer-events-none"></div>
+                  </div>
+
+                  {/* 6 Surrounding Dashed-Ring Sub-Icons */}
+                  
+                  {/* 1. Top (Credit Card) */}
+                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white border border-[#1c469d]/20 flex items-center justify-center shadow-lg shadow-[#1c469d]/5 z-20">
+                    <svg viewBox="0 0 24 24" className="w-6 h-6 sm:w-8 sm:h-8 text-[#1c469d] fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="1" y="4" width="22" height="16" rx="2" ry="2" /><line x1="1" y1="10" x2="23" y2="10" />
+                    </svg>
+                  </div>
+
+                  {/* 2. Top-Right (Lock) */}
+                  <div className="absolute top-[15%] -right-6 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white border border-[#1c469d]/20 flex items-center justify-center shadow-lg shadow-[#1c469d]/5 z-20">
+                    <svg viewBox="0 0 24 24" className="w-6 h-6 sm:w-8 sm:h-8 text-[#1c469d] fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                    </svg>
+                  </div>
+
+                  {/* 3. Bottom-Right (Trending Up) */}
+                  <div className="absolute bottom-[15%] -right-6 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white border border-[#1c469d]/20 flex items-center justify-center shadow-lg shadow-[#1c469d]/5 z-20">
+                    <svg viewBox="0 0 24 24" className="w-6 h-6 sm:w-8 sm:h-8 text-[#1c469d] fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" />
+                    </svg>
+                  </div>
+
+                  {/* 4. Bottom (Currency) */}
+                  <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white border border-[#1c469d]/20 flex items-center justify-center shadow-lg shadow-[#1c469d]/5 z-20">
+                    <svg viewBox="0 0 24 24" className="w-6 h-6 sm:w-8 sm:h-8 text-[#1c469d] fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                    </svg>
+                  </div>
+
+                  {/* 5. Bottom-Left (Wallet) */}
+                  <div className="absolute bottom-[15%] -left-6 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white border border-[#1c469d]/20 flex items-center justify-center shadow-lg shadow-[#1c469d]/5 z-20">
+                    <svg viewBox="0 0 24 24" className="w-6 h-6 sm:w-8 sm:h-8 text-[#1c469d] fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4" /><path d="M3 5v14a2 2 0 0 0 2 2h16v-5" /><path d="M18 12a2 2 0 0 0 0 4h4v-4Z" />
+                    </svg>
+                  </div>
+
+                  {/* 6. Top-Left (Coins) */}
+                  <div className="absolute top-[15%] -left-6 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white border border-[#1c469d]/20 flex items-center justify-center shadow-lg shadow-[#1c469d]/5 z-20">
+                    <svg viewBox="0 0 24 24" className="w-6 h-6 sm:w-8 sm:h-8 text-[#1c469d] fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="8" cy="8" r="6" /><path d="M18.09 10.37A6 6 0 1 1 10.34 18" /><line x1="7" y1="6" x2="8.5" y2="8.5" /><line x1="14" y1="13" x2="15.5" y2="15.5" />
+                    </svg>
+                  </div>
+
+                </div>
+              </div>
+
             </div>
-
-            <h1 className="bf-hero__title">
-              Powering BFSI Excellence<br />
-              with <span>Intelligent BPO Solutions</span>
-            </h1>
           </div>
-        </section>
+        </div>
 
         {/* ══════════════════ 2. INTRO ══════════════════ */}
         <section className="bf-section bf-section--white">

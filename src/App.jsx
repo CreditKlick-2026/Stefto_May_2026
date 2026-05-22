@@ -5,7 +5,6 @@ import AboutUs from './pages/AboutUs';
 import AccordingToTheRbiReportTheIndianHouseholdDebtIsRisingButItIsRelativelyLowInComparisonWithOtherEmergingMarkets from './pages/AccordingToTheRbiReportTheIndianHouseholdDebtIsRisingButItIsRelativelyLowInComparisonWithOtherEmergingMarkets';
 import Automotive from './pages/Automotive';
 import BackOfficeSupport from './pages/BackOfficeSupport';
-import BankingAndFinancialServices from './pages/BankingAndFinancialServices';
 import Careers from './pages/Careers';
 import CaseStudies from './pages/CaseStudies';
 import ContactUs from './pages/ContactUs';
@@ -19,7 +18,6 @@ import DigitalLeadPartner from './pages/DigitalLeadPartner';
 import HealthCare from './pages/HealthCare';
 import HowAiIsMakingDebtCollectionMoreHumanA2025CaseStudy from './pages/HowAiIsMakingDebtCollectionMoreHumanA2025CaseStudy';
 import Inbound from './pages/Inbound';
-import Insurance from './pages/Insurance';
 import Leadership from './pages/Leadership';
 import LegalStatement from './pages/LegalStatement';
 import NewUpdate from './pages/NewUpdate';
@@ -28,13 +26,11 @@ import Outbound from './pages/Outbound';
 import PressRelease from './pages/PressRelease';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import RefundsCancellations from './pages/RefundsCancellations';
-import RetailAndECommerce from './pages/RetailAndECommerce';
 import RetentionAndPersistency from './pages/RetentionAndPersistency';
 import SalesSupport from './pages/SalesSupport';
 import Security from './pages/Security';
 import Services from './pages/Services';
 import Technology from './pages/Technology';
-import Telecom from './pages/Telecom';
 import TermsOfUse from './pages/TermsOfUse';
 import TheSignificanceOfRecoveryManagementSolutionsInCurrentTimes from './pages/TheSignificanceOfRecoveryManagementSolutionsInCurrentTimes';
 import TravelHospitalityAndCargo from './pages/TravelHospitalityAndCargo';
@@ -194,53 +190,68 @@ const NavBar = () => {
 
           {/* Desktop Nav - Hidden on mobile/tablet */}
           <nav className="hidden lg:flex absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 gap-3 xl:gap-4 items-center">
-            {Object.keys(navMenus).map((label) => (
-              <div
-                key={label}
-                className="relative"
-                onMouseEnter={() => setActiveMenu(label)}
-                onMouseLeave={() => setActiveMenu(null)}
-              >
-                <span className={`flex items-center gap-1.5 px-3 py-2 rounded-md cursor-pointer transition-all text-[17px] font-bold ${activeMenu === label ? 'text-stefto-indigo bg-slate-100 shadow-sm' : 'text-slate-900 hover:text-stefto-indigo'}`}>
-                  {label} <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === label ? 'rotate-180' : ''}`} />
-                </span>
+            {Object.keys(navMenus).map((label) => {
+              const menuContent = (
+                <div
+                  key={label}
+                  className="relative"
+                  onMouseEnter={() => setActiveMenu(label)}
+                  onMouseLeave={() => setActiveMenu(null)}
+                >
+                  <span className={`flex items-center gap-1.5 px-3 py-2 rounded-md cursor-pointer transition-all text-[17px] font-bold ${activeMenu === label ? 'text-stefto-indigo bg-slate-100 shadow-sm' : 'text-slate-900 hover:text-stefto-indigo'}`}>
+                    {label} <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === label ? 'rotate-180' : ''}`} />
+                  </span>
 
-                {activeMenu === label && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 z-[999]">
-                    <div className="bg-white shadow-2xl rounded-2xl flex overflow-hidden border border-slate-200" style={{ minWidth: navMenus[label].layout === 'columns' ? 'auto' : '650px' }}>
-                      {navMenus[label].layout === 'columns' ? (
-                        <div className="flex w-[650px] h-[320px]">
-                          {navMenus[label].columns.map((col, idx) => (
-                            <Link key={idx} to={col.to} className="flex-1 relative bg-cover bg-center flex items-end no-underline p-6 group/item" style={{ backgroundImage: `url(${col.image})` }}>
-                              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/90 group-hover/item:to-stefto-navy/95 transition-all"></div>
-                              <span className="relative z-[1] text-white text-xl font-black tracking-tight">{col.label}</span>
-                            </Link>
-                          ))}
-                        </div>
-                      ) : (
-                        <>
-                          <div className="flex-1 p-8">
-                            <p className="text-stefto-indigo font-black text-xs uppercase tracking-[0.2em] mb-6">{navMenus[label].heading}</p>
-                            <div className="flex flex-col gap-1">
-                              {navMenus[label].links.map((link, i) => (
-                                <Link key={i} to={link.to} onClick={() => setActiveMenu(null)} className="block text-slate-700 no-underline py-2.5 text-[15px] font-bold hover:text-stefto-indigo hover:translate-x-1 transition-all border-b border-slate-50 last:border-0">{link.label}</Link>
-                              ))}
-                            </div>
+                  {activeMenu === label && (
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 z-[999]">
+                      <div className="bg-white shadow-2xl rounded-2xl flex overflow-hidden border border-slate-200" style={{ minWidth: navMenus[label].layout === 'columns' ? 'auto' : '650px' }}>
+                        {navMenus[label].layout === 'columns' ? (
+                          <div className="flex w-[650px] h-[320px]">
+                            {navMenus[label].columns.map((col, idx) => (
+                              <Link key={idx} to={col.to} className="flex-1 relative bg-cover bg-center flex items-end no-underline p-6 group/item" style={{ backgroundImage: `url(${col.image})` }}>
+                                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/90 group-hover/item:to-stefto-navy/95 transition-all"></div>
+                                <span className="relative z-[1] text-white text-xl font-black tracking-tight">{col.label}</span>
+                              </Link>
+                            ))}
                           </div>
-                          <div className="flex-1 relative bg-cover p-8 text-white flex flex-col justify-center text-center" style={{ background: navMenus[label].panel.type === 'dark' ? '#041434' : 'transparent', backgroundImage: navMenus[label].panel.image ? `url(${navMenus[label].panel.image})` : 'none', backgroundSize: 'cover' }}>
-                            <div className="absolute inset-0 bg-[rgba(4,20,52,0.6)] backdrop-blur-[2px]"></div>
-                            <div className="relative z-[1]">
-                              <h4 className="text-xl font-black mb-3">{navMenus[label].panel.title}</h4>
-                              <p className="text-sm font-medium opacity-80 leading-relaxed text-slate-200">{navMenus[label].panel.desc}</p>
+                        ) : (
+                          <>
+                            <div className="flex-1 p-8">
+                              <p className="text-stefto-indigo font-black text-xs uppercase tracking-[0.2em] mb-6">{navMenus[label].heading}</p>
+                              <div className="flex flex-col gap-1">
+                                {navMenus[label].links.map((link, i) => (
+                                  <Link key={i} to={link.to} onClick={() => setActiveMenu(null)} className="block text-slate-700 no-underline py-2.5 text-[15px] font-bold hover:text-stefto-indigo hover:translate-x-1 transition-all border-b border-slate-50 last:border-0">{link.label}</Link>
+                                ))}
+                              </div>
                             </div>
-                          </div>
-                        </>
-                      )}
+                            <div className="flex-1 relative bg-cover p-8 text-white flex flex-col justify-center text-center" style={{ background: navMenus[label].panel.type === 'dark' ? '#041434' : 'transparent', backgroundImage: navMenus[label].panel.image ? `url(${navMenus[label].panel.image})` : 'none', backgroundSize: 'cover' }}>
+                              <div className="absolute inset-0 bg-[rgba(4,20,52,0.6)] backdrop-blur-[2px]"></div>
+                              <div className="relative z-[1]">
+                                <h4 className="text-xl font-black mb-3">{navMenus[label].panel.title}</h4>
+                                <p className="text-sm font-medium opacity-80 leading-relaxed text-slate-200">{navMenus[label].panel.desc}</p>
+                              </div>
+                            </div>
+                          </>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                )}
-              </div>
-            ))}
+                  )}
+                </div>
+              );
+
+              if (label === 'Services') {
+                return (
+                  <React.Fragment key="industry-and-services">
+                    <Link to="/industry" className="flex items-center gap-1.5 px-3 py-2 rounded-md cursor-pointer transition-all text-[17px] font-bold text-slate-900 hover:text-stefto-indigo no-underline">
+                      Industry
+                    </Link>
+                    {menuContent}
+                  </React.Fragment>
+                );
+              }
+
+              return menuContent;
+            })}
             <Link to="/blogs" className="flex items-center gap-1.5 px-3 py-2 rounded-md cursor-pointer transition-all text-[17px] font-bold text-slate-900 hover:text-stefto-indigo no-underline">
               Blog
             </Link>
@@ -324,6 +335,10 @@ const NavBar = () => {
                 </div>
               </div>
             ))}
+
+            <div className="mb-4 sm:mb-5">
+              <Link to="/industry" onClick={() => setIsMobileMenuOpen(false)} className="text-stefto-indigo text-sm sm:text-base font-extrabold no-underline block border-b-2 border-slate-100 pb-1.5 hover:text-[#2b3366]">Industry</Link>
+            </div>
 
             <div className="mb-4 sm:mb-5">
               <Link to="/blogs" onClick={() => setIsMobileMenuOpen(false)} className="text-stefto-indigo text-sm sm:text-base font-extrabold no-underline block border-b-2 border-slate-100 pb-1.5 hover:text-[#2b3366]">Blog</Link>
@@ -451,7 +466,7 @@ const Footer = () => (
 
 const AppContent = () => {
   const location = useLocation();
-  const hideShell = location.pathname.startsWith('/admin-dashboard') || location.pathname === '/' || location.pathname === '/landing' || location.pathname.startsWith('/about-us') || location.pathname.startsWith('/careers') || location.pathname.startsWith('/contact-us') || location.pathname.startsWith('/leadership') || location.pathname.startsWith('/inbound') || location.pathname.startsWith('/outbound') || location.pathname.startsWith('/telecom') || location.pathname.startsWith('/banking-and-financial-services') || location.pathname.startsWith('/privacy-policy') || location.pathname.startsWith('/why-trust-stefto') || location.pathname.startsWith('/insurance') || location.pathname.startsWith('/retail-and-e-commerce');
+  const hideShell = location.pathname.startsWith('/admin-dashboard') || location.pathname === '/' || location.pathname === '/landing' || location.pathname.startsWith('/about-us') || location.pathname.startsWith('/careers') || location.pathname.startsWith('/contact-us') || location.pathname.startsWith('/leadership') || location.pathname.startsWith('/inbound') || location.pathname.startsWith('/outbound') || location.pathname.startsWith('/privacy-policy') || location.pathname.startsWith('/why-trust-stefto') || location.pathname.startsWith('/services') || location.pathname.startsWith('/industry');
 
   useEffect(() => {
     if (hideShell) {
@@ -481,7 +496,6 @@ const AppContent = () => {
           <Route path="/according-to-the-rbi-report-the-indian-household-debt-is-rising-but-it-is-relatively-low-in-comparison-with-other-emerging-markets" element={<AccordingToTheRbiReportTheIndianHouseholdDebtIsRisingButItIsRelativelyLowInComparisonWithOtherEmergingMarkets />} />
           <Route path="/automotive" element={<Automotive />} />
           <Route path="/back-office-support" element={<BackOfficeSupport />} />
-          <Route path="/banking-and-financial-services" element={<BankingAndFinancialServices />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/contact-us" element={<ContactUs />} />
@@ -495,7 +509,6 @@ const AppContent = () => {
           <Route path="/health-care" element={<HealthCare />} />
           <Route path="/how-ai-is-making-debt-collection-more-human-a-2025-case-study" element={<HowAiIsMakingDebtCollectionMoreHumanA2025CaseStudy />} />
           <Route path="/inbound" element={<Inbound />} />
-          <Route path="/insurance" element={<Insurance />} />
           <Route path="/leadership" element={<Leadership />} />
           <Route path="/legal-statement" element={<LegalStatement />} />
           <Route path="/new-update" element={<NewUpdate />} />
@@ -504,13 +517,12 @@ const AppContent = () => {
           <Route path="/press-release" element={<PressRelease />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/refunds-cancellations" element={<RefundsCancellations />} />
-          <Route path="/retail-and-e-commerce" element={<RetailAndECommerce />} />
           <Route path="/retention-and-persistency" element={<RetentionAndPersistency />} />
           <Route path="/sales-support" element={<SalesSupport />} />
           <Route path="/security" element={<Security />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/industry" element={<Services />} />
           <Route path="/technology" element={<Technology />} />
-          <Route path="/telecom" element={<Telecom />} />
           <Route path="/terms-of-use" element={<TermsOfUse />} />
           <Route path="/the-significance-of-recovery-management-solutions-in-current-times" element={<TheSignificanceOfRecoveryManagementSolutionsInCurrentTimes />} />
           <Route path="/travel-hospitality-and-cargo" element={<TravelHospitalityAndCargo />} />

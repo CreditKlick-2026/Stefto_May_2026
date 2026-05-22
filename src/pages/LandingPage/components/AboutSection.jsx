@@ -3,7 +3,6 @@ import { ShieldCheck, ArrowRight } from 'lucide-react';
 
 const orgStats = [
   { label: 'Employees', value: 1600, suffix: '+' },
-  { label: 'Languages', value: 'Multi', suffix: '' },
   { label: 'Premium Clients', value: 25, suffix: '+' },
   { label: 'Offices', value: 4, suffix: '+' }
 ];
@@ -61,15 +60,14 @@ export default function AboutSection() {
   return (
     <section id="about" ref={ref} className="py-24 bg-white relative overflow-hidden text-slate-900">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none opacity-30"
-           style={{ background: 'radial-gradient(circle, rgba(28,70,157,0.08) 0%, transparent 70%)', filter: 'blur(60px)' }} />
-      
+        style={{ background: 'radial-gradient(circle, rgba(28,70,157,0.08) 0%, transparent 70%)', filter: 'blur(60px)' }} />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-12 gap-16 items-center">
           {/* Left: Text */}
           <div className="lg:col-span-5 space-y-8 text-left">
             <div className="space-y-3">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-[#1c469d] text-white flex items-center justify-center text-xs font-bold">1</div>
                 <span className="pill-tag">About Stefto</span>
               </div>
               <div className="text-xs font-bold uppercase tracking-widest text-slate-500">Since 2007</div>
@@ -119,7 +117,7 @@ export default function AboutSection() {
             </div>
 
             {/* Org Stats Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4 pt-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 pt-4">
               {orgStats.map((item, i) => (
                 <OrgStatItem key={i} item={item} active={active} />
               ))}

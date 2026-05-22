@@ -38,35 +38,16 @@ import "./nav.css";
 // Dropdown menu data — BPO / Customer Experience
 const menuData = {
   services: {
-    title: "Services",
-    badge: "What We Do",
-    items: [
-      { name: "BFSI", description: "Banking & financial services", icon: Landmark, href: "/banking-and-financial-services", color: "bg-green-50 text-green-600" },
-      { name: "Telecom", description: "Subscriber support & activations", icon: Phone, href: "/telecom", color: "bg-purple-50 text-purple-600" },
-      { name: "Insurance", description: "Policy support & renewals", icon: Award, href: "/insurance", color: "bg-blue-50 text-blue-600" },
-      { name: "Retail & E-Commerce", description: "Order support & returns management", icon: ShoppingCart, href: "/retail-and-e-commerce", color: "bg-orange-50 text-orange-600" },
-    ]
+    title: "Industries"
   },
   industries: {
     title: "Industries",
     badge: "Sectors We Serve",
-    sections: [
-      {
-        title: "Financial Services",
-        items: [
-          { name: "Banking & NBFC", description: "Collections, service & onboarding", icon: Landmark, href: "/banking-and-financial-services", color: "bg-blue-50 text-blue-600" },
-          { name: "Insurance", description: "Policy support & renewals", icon: Award, href: "/insurance", color: "bg-green-50 text-green-600" },
-        ]
-      },
-      {
-        title: "Other Sectors",
-        items: [
-          { name: "Retail & E-Commerce", description: "Order support & returns management", icon: ShoppingCart, href: "/retail-and-e-commerce", color: "bg-orange-50 text-orange-600" },
-          { name: "Healthcare", description: "Patient helpdesk & appointment mgmt", icon: Heart, href: "/health-care", color: "bg-red-50 text-red-600" },
-          { name: "Telecom", description: "Subscriber support & activations", icon: Globe, href: "/telecom", color: "bg-purple-50 text-purple-600" },
-          { name: "Automotive", description: "Dealer & aftersales support", icon: Building2, href: "/automotive", color: "bg-cyan-50 text-cyan-600" },
-        ]
-      }
+    items: [
+      { name: "Healthcare", description: "Patient helpdesk & appointment mgmt", icon: Heart, href: "/health-care", color: "bg-red-50 text-red-600" },
+      { name: "Automotive", description: "Dealer & aftersales support", icon: Building2, href: "/automotive", color: "bg-cyan-50 text-cyan-600" },
+      { name: "Technology", description: "Technical support & helpdesk", icon: Settings, href: "/technology", color: "bg-blue-50 text-blue-600" },
+      { name: "Travel & Hospitality", description: "Booking support & customer care", icon: Globe, href: "/travel-hospitality-and-cargo", color: "bg-purple-50 text-purple-600" },
     ]
   },
   company: {
@@ -98,8 +79,9 @@ const menuData = {
 };
 
 const DropdownMenu = ({ menu, isOpen, onClose }) => {
-  if (!isOpen) return null;
-  const isSectioned = menu.sections;
+  if (!isOpen || !menu) return null;
+  const isSectioned = menu.sections && Array.isArray(menu.sections);
+  const items = menu.items || [];
 
   return (
     <motion.div
@@ -107,7 +89,7 @@ const DropdownMenu = ({ menu, isOpen, onClose }) => {
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: 2, scale: 0.99 }}
       transition={{ duration: 0.15, ease: [0.16, 1, 0.3, 1] }}
-      className="absolute top-full left-0 pt-[1px] z-[1000]"
+      className="absolute top-full left-0 z-[1000]"
       onMouseLeave={onClose}
     >
       <div
@@ -130,7 +112,7 @@ const DropdownMenu = ({ menu, isOpen, onClose }) => {
               <div key={i} className="py-2">
                 <p className="text-[9.5px] font-bold text-slate-400 uppercase tracking-[0.18em] pt-3 pb-2 px-5">{section.title}</p>
                 <div className="divide-y divide-slate-50">
-                  {section.items.map((item, j) => (
+                  {section.items && section.items.map((item, j) => (
                     <Link
                       key={j}
                       to={item.href}
@@ -152,7 +134,7 @@ const DropdownMenu = ({ menu, isOpen, onClose }) => {
           </div>
         ) : (
           <div className="flex flex-col">
-            {menu.items.map((item, i) => (
+            {items.map((item, i) => (
               <Link
                 key={i}
                 to={item.href}
@@ -237,7 +219,7 @@ export function Navbar() {
   const navItems = [
 
     { name: "Why Stefto?", key: "whyStefto", hasDropdown: false, href: "/why-trust-stefto" },
-    { name: "Industry", key: "services", hasDropdown: true },
+    { name: "Industry", key: "services", hasDropdown: false, href: "/industry" },
     { name: "About Us", key: "aboutUs", hasDropdown: true },
     { name: "Careers", key: "careers", hasDropdown: false, href: "/careers" },
   ];
@@ -520,11 +502,11 @@ export function Footer({ curveColor = "fill-white" }) {
       <div className="max-w-[1280px] mx-auto relative z-30">
 
         {/* Link Matrix */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8 justify-items-center mx-auto">
+        <div className="flex flex-col items-center text-center gap-8 mx-auto border-b border-white/10 pb-8">
 
           {/* Brand Hub */}
-          <div>
-            <div className="mb-4 sm:mb-5">
+          <div className="max-w-2xl">
+            <div className="mb-4 sm:mb-5 flex justify-center">
               <img src={STEFTO_LOGO_URL} alt="Stefto" className="h-10 sm:h-11 object-contain" />
             </div>
             <p className="footer-heading-spark leading-relaxed text-xs sm:text-sm text-blue-100/80">
@@ -532,29 +514,14 @@ export function Footer({ curveColor = "fill-white" }) {
             </p>
           </div>
 
-          {/* Why Stefto? */}
-          <div className="flex flex-col gap-2">
-            <h4 className="footer-heading-spark text-sm sm:text-base font-bold mb-1 sm:mb-2 text-white font-sans">Why Stefto?</h4>
+          {/* Horizontal Links */}
+          <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 w-full">
             <Link to="/about-us" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">About Us</Link>
             <Link to="/why-trust-stefto" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Why Trust Stefto?</Link>
             <Link to="/careers" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Careers</Link>
             <Link to="/security" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Security</Link>
             <Link to="/digital-lead-partner" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Partnership</Link>
             <Link to="/contact-us" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Contact us</Link>
-          </div>
-
-          {/* Industry */}
-          <div className="flex flex-col gap-2">
-            <h4 className="footer-heading-spark text-sm sm:text-base font-bold mb-1 sm:mb-2 text-white font-sans">Industry</h4>
-            <Link to="/banking-and-financial-services" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">BFSI</Link>
-            <Link to="/telecom" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Telecom</Link>
-            <Link to="/insurance" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Insurance</Link>
-            <Link to="/retail-and-e-commerce" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Retail &amp; E-Commerce</Link>
-          </div>
-
-          {/* Legal */}
-          <div className="flex flex-col gap-2">
-            <h4 className="footer-heading-spark text-sm sm:text-base font-bold mb-1 sm:mb-2 text-white font-sans">Legal</h4>
             <Link to="/privacy-policy" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Privacy Policy</Link>
           </div>
 

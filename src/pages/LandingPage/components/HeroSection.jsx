@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ShieldCheck, TrendingUp, Users, ArrowRight, ChevronRight, BadgeCheck } from "lucide-react";
 
-const heroImg = "https://img.rocket.new/generatedImages/rocket_gen_img_13dff01b6-1772202284697.png";
+import heroImg from "../../../assets/HomePageImages.png";
 
 // ── Floating stat card ─────────────────────────────────────────────────────
 function FloatCard({ iconBg, icon: Icon, title, sub, delay = 0, style = {} }) {
@@ -182,57 +182,44 @@ export default function HeroSection() {
                             zIndex: 1,
                         }} />
 
-                        {/* Main image frame */}
+                        {/* Main image frame without background/card */}
                         <div style={{
                             position: "relative", zIndex: 10,
-                            borderRadius: 28, overflow: "hidden",
                             width: "100%", maxWidth: 400, height: 500,
-                            boxShadow: "0 0 0 1px rgba(255,255,255,0.12), 0 40px 80px rgba(0,0,0,0.6)",
-                            background: "#0f1f4b",
                         }}>
-                            {/* Gradient border effect */}
-                            <div style={{
-                                position: "absolute", inset: -1, borderRadius: 28, zIndex: 0,
-                                background: "linear-gradient(135deg, rgba(96,165,250,0.4) 0%, rgba(37,99,235,0.1) 50%, rgba(139,92,246,0.3) 100%)",
-                                padding: 1,
-                            }} />
                             <img
                                 src={heroImg}
                                 alt="Stefto Debt Recovery Professional"
-                                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", position: "relative", zIndex: 1 }}
+                                style={{ width: "100%", height: "100%", objectFit: "contain", objectPosition: "center", position: "relative", zIndex: 1, transform: "scale(1.75)" }}
                             />
-                            {/* Bottom gradient overlay */}
-                            <div style={{ position: "absolute", inset: 0, zIndex: 2, background: "linear-gradient(to top, rgba(10,22,40,0.6) 0%, rgba(10,22,40,0.1) 40%, transparent 60%)" }} />
+
+                            {/* Established badge — top right */}
+                            <div
+                                style={{
+                                    position: "absolute", top: 20, right: 10, zIndex: 20,
+                                    display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+                                    padding: "10px 18px",
+                                    borderRadius: "10px",
+                                    background: "linear-gradient(135deg, #0b1530 0%, #152960 100%)",
+                                    border: "2px solid rgba(255,255,255,0.25)",
+                                    boxShadow: "0 10px 40px rgba(11,21,48,0.65), inset 0 1px 0 rgba(255,255,255,0.2)",
+                                    textAlign: "center",
+                                }}
+                            >
+                                <span style={{ color: "rgba(255,255,255,0.75)", fontSize: 8, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase" }}>Established</span>
+                                <span style={{ color: "#ffffff", fontSize: 22, fontWeight: 900, lineHeight: 1.1, marginTop: 2 }}>2007</span>
+                            </div>
+
+                            {/* RBI Compliant card — bottom left corner */}
+                            <FloatCard
+                                icon={ShieldCheck}
+                                iconBg="linear-gradient(135deg, #2563eb, #3b82f6)"
+                                title="RBI Compliant"
+                                sub="98% Compliance Score"
+                                delay={0.5}
+                                style={{ position: "absolute", bottom: 40, left: -60, zIndex: 20 }}
+                            />
                         </div>
-
-                        {/* Established badge — top right */}
-                        <motion.div
-                            animate={{ y: [0, -10, 0] }}
-                            transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
-                            style={{
-                                position: "absolute", top: -20, right: -15, zIndex: 20,
-                                display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-                                padding: "10px 18px",
-                                borderRadius: "10px",
-                                background: "linear-gradient(135deg, #0b1530 0%, #152960 100%)",
-                                border: "2px solid rgba(255,255,255,0.25)",
-                                boxShadow: "0 10px 40px rgba(11,21,48,0.65), inset 0 1px 0 rgba(255,255,255,0.2)",
-                                textAlign: "center",
-                            }}
-                        >
-                            <span style={{ color: "rgba(255,255,255,0.75)", fontSize: 8, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase" }}>Established</span>
-                            <span style={{ color: "#ffffff", fontSize: 22, fontWeight: 900, lineHeight: 1.1, marginTop: 2 }}>2007</span>
-                        </motion.div>
-
-                        {/* RBI Compliant card — bottom left corner */}
-                        <FloatCard
-                            icon={ShieldCheck}
-                            iconBg="linear-gradient(135deg, #2563eb, #3b82f6)"
-                            title="RBI Compliant"
-                            sub="98% Compliance Score"
-                            delay={0.5}
-                            style={{ position: "absolute", bottom: -10, left: -40, zIndex: 20 }}
-                        />
 
                     </motion.div>
                 </div>
@@ -247,6 +234,13 @@ export default function HeroSection() {
 
             {/* Responsive CSS */}
             <style>{`
+                @keyframes scanline {
+                    0% { transform: translateY(-20px); }
+                    100% { transform: translateY(520px); }
+                }
+                .hero-scanline {
+                    animation: scanline 4s linear infinite;
+                }
                 @media (max-width: 900px) {
                     .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; padding: 60px 24px !important; }
                     .hero-image-col { display: none !important; }

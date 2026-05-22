@@ -61,7 +61,7 @@ const Careers = () => {
           <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-[900px]">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-6 lg:mb-10" style={{ fontFamily: "'Fraunces', serif" }}>
-                Join the <span className="text-[#1e3a8a] italic">Stefto</span> Family
+                Join the <span className="text-[#1e3a8a]">Stefto</span> Family
               </h2>
 
               <div className="text-base sm:text-lg leading-relaxed space-y-6 text-justify bg-slate-50/70 p-6 sm:p-8 rounded-none border border-slate-100 border-l-4 border-l-[#1e3a8a] shadow-sm">
@@ -180,7 +180,7 @@ const Careers = () => {
 
             <div className="flex flex-col items-center mb-12 lg:mb-16">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black text-center tracking-tight mb-2" style={{ fontFamily: "'Fraunces', serif" }}>
-                Choose a career with <span className="text-[#1e3a8a] italic">Stefto</span>
+                Choose a career with <span className="text-[#1e3a8a]">Stefto</span>
               </h2>
 
             </div>
@@ -191,7 +191,7 @@ const Careers = () => {
               <div className="bg-[#f8f9fa] p-8 flex flex-col justify-between min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
                 <div>
                   <h3 className="text-xl sm:text-2xl font-bold text-[#2d3a4b] mb-3 font-serif tracking-tight">Debt Counselor</h3>
-                  <p className="text-[#475569] text-sm font-medium">Customer Support | Collection & Recovery</p>
+                  <p className="text-[#475569] text-sm font-medium">Collection & Recovery</p>
 
                 </div>
                 <button onClick={() => { setSelectedJob("Voice (Sales)"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[11px] tracking-[0.15em] font-semibold py-3 px-6 mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
@@ -245,8 +245,8 @@ const Careers = () => {
               {/* Job 6 */}
               <div className="bg-[#f8f9fa] p-8 flex flex-col justify-between min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#2d3a4b] mb-3 font-serif tracking-tight text-center">Quality </h3>
-                  <p className="text-[#475569] text-sm font-medium text-center">Customer Support | Collection & Recovery</p>
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#2d3a4b] mb-3 font-serif tracking-tight">Quality </h3>
+                  <p className="text-[#475569] text-sm font-medium">Customer Support | Collection & Recovery</p>
                 </div>
                 <button onClick={() => { setSelectedJob("Trainer"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[11px] tracking-[0.15em] font-semibold py-3 px-6 mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
                   APPLY NOW <span className="ml-3 group-hover:translate-x-1 transition-transform">→</span>
