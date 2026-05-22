@@ -115,7 +115,7 @@ const AboutUs = () => {
                 </div>
                 <h2 className="text-xl font-bold text-[#041434] mb-3" style={{ fontFamily: "'Fraunces', serif" }}>Goals</h2>
                 <p className="text-slate-600 leading-relaxed text-xs sm:text-sm">
-                  We tackle our clients' most difficult problems by offering exceptional services in strategy, consulting, digital, technology, and operations. Our goal is to drive innovation that enhances both the way the world operates and the quality of life.
+                  We tackle our clients' most difficult challenges by offering exceptional services in strategy, consulting, digital, technology, and operations. Our goal is to drive innovation that enhances both, the way the world operates and the quality of life.
                 </p>
               </div>
 
@@ -137,7 +137,7 @@ const AboutUs = () => {
                 </div>
                 <h2 className="text-xl font-bold text-[#041434] mb-3" style={{ fontFamily: "'Fraunces', serif" }}>Vision</h2>
                 <p className="text-slate-600 leading-relaxed text-xs sm:text-sm">
-                  Our aim is to lead in the markets we target and be recognized as the most trusted partner by our global clients. We will achieve this by streamlining complex business processes with advanced technology and top-notch industry practices.
+                  Our aim is to lead in the markets we target and be recognized as the most trusted partner by our global clients. We achieve this by streamlining complex business processes with advanced technology and top-notch industry practices.
                 </p>
               </div>
             </div>
