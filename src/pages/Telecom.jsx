@@ -29,9 +29,10 @@ const STYLES = `
 /* ── Hero ── */
 .tc-hero {
   position: relative;
-  min-height: 600px;
+  min-height: 480px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  padding-bottom: 60px;
   overflow: hidden;
 }
 .tc-hero__bg {
@@ -158,8 +159,7 @@ const STYLES = `
 .tc-signal-rings {
   position: absolute;
   right: 8%;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 130px;
   width: 360px;
   height: 360px;
   display: flex;
@@ -667,7 +667,7 @@ const Telecom = () => {
       <div className="telecom-page">
 
         {/* ═══════════════════════ 1. HERO ═══════════════════════ */}
-        <section className="tc-hero" style={{ paddingTop: '100px' }}>
+        <section className="tc-hero" style={{ paddingTop: '160px' }}>
           <div className="tc-hero__bg" style={{ backgroundImage: `url(${heroBg})` }} />
           <div className="tc-hero__overlay" />
           <div className="tc-hero__grid-lines" />
@@ -701,49 +701,6 @@ const Telecom = () => {
               Next-Generation BPO<br />
               for the <span>Telecom Industry</span>
             </h1>
-
-            <p className="tc-hero__sub">
-              Stefto powers telecom companies with AI-driven customer experience solutions —
-              from 5G subscriber support to churn management, billing resolution and beyond.
-            </p>
-
-            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-              <Link to="/contact-us" className="tc-hero__cta">
-                Get Started <ArrowRight size={16} />
-              </Link>
-              <Link
-                to="/inbound"
-                style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 8,
-                  background: 'rgba(255,255,255,0.1)',
-                  border: '1px solid rgba(255,255,255,0.25)',
-                  backdropFilter: 'blur(8px)',
-                  color: '#fff', fontWeight: 700, fontSize: 14,
-                  padding: '16px 28px', borderRadius: 50,
-                  textDecoration: 'none', transition: 'all 0.3s ease',
-                }}
-              >
-                Explore Services
-              </Link>
-            </div>
-
-            {/* Stats row */}
-            <div className="tc-hero__stats">
-              {[
-                { num: '15+', label: 'Years in Telecom' },
-                { num: '99.5%', label: 'SLA Adherence' },
-                { num: '40%', label: 'Churn Reduction' },
-                { num: '24/7', label: 'Availability' },
-              ].map((s, i) => (
-                <React.Fragment key={i}>
-                  {i > 0 && <div className="tc-stat-divider" />}
-                  <div className="tc-stat-pill">
-                    <span className="tc-stat-pill__num">{s.num}</span>
-                    <span className="tc-stat-pill__label">{s.label}</span>
-                  </div>
-                </React.Fragment>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -785,30 +742,7 @@ const Telecom = () => {
           </div>
         </section>
 
-        {/* ═══════════════════════ 3. SERVICES GRID ═══════════════════════ */}
-        <section className="tc-section tc-section--slate">
-          <div className="tc-container">
-            <div style={{ textAlign: 'center', maxWidth: 720, margin: '0 auto' }}>
-              <span className="tc-label">Our Solutions</span>
-              <h2 className="tc-h2" style={{ textAlign: 'center' }}>
-                Comprehensive Telecom BPO <em>Services</em>
-              </h2>
-              <p className="tc-p" style={{ textAlign: 'center' }}>
-                From first-call resolution to complex technical escalations, our specialised
-                telecom teams handle it all — so you can focus on network innovation.
-              </p>
-            </div>
-            <div className="tc-services-grid">
-              {services.map((s, i) => (
-                <div key={i} className="tc-service-card">
-                  <div className="tc-service-card__icon">{s.icon}</div>
-                  <h3 className="tc-service-card__title">{s.title}</h3>
-                  <p className="tc-service-card__desc">{s.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+
 
         {/* ═══════════════════════ 4. SPLIT — SUPPORT TEAM ═══════════════════════ */}
         <section className="tc-section tc-section--white">
@@ -850,109 +784,14 @@ const Telecom = () => {
           </div>
         </section>
 
-        {/* ═══════════════════════ 5. DARK STATS ═══════════════════════ */}
-        <section className="tc-section tc-section--dark" ref={statsRef}>
-          <div className="tc-container">
-            <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto' }}>
-              <span className="tc-label" style={{ color: '#93c5fd' }}>Results That Speak</span>
-              <h2 className="tc-h2 tc-h2--white" style={{ textAlign: 'center' }}>
-                Proven Impact Across <em style={{ color: '#93c5fd' }}>Every Metric</em>
-              </h2>
-              <p className="tc-p tc-p--white" style={{ textAlign: 'center' }}>
-                Our telecom clients consistently see significant improvements across
-                key performance indicators after partnering with Stefto.
-              </p>
-            </div>
-            <div className="tc-stats-row" style={{ opacity: statsVisible ? 1 : 0, transition: 'opacity 0.8s ease' }}>
-              {[
-                { num: '40%',   label: 'Churn Reduction' },
-                { num: '98%',   label: 'First-Call Resolution' },
-                { num: '3×',    label: 'Faster Resolution' },
-                { num: '4.8★',  label: 'Avg. CSAT Score' },
-              ].map((s, i) => (
-                <div key={i} className="tc-stats-row__item">
-                  <span className="tc-stats-row__num">{s.num}</span>
-                  <span className="tc-stats-row__label">{s.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
-        {/* ═══════════════════════ 6. FEATURE CARDS ═══════════════════════ */}
-        <section className="tc-section tc-section--slate">
-          <div className="tc-container">
-            <span className="tc-label">Deep Dive</span>
-            <h2 className="tc-h2" style={{ maxWidth: 560 }}>
-              Specialised Capabilities for <em>Modern Telecom</em>
-            </h2>
-            <div className="tc-features-grid">
-              {[
-                {
-                  img: fiveGNetwork,
-                  tag: '5G & Next-Gen',
-                  title: '5G Subscriber Experience Management',
-                  desc: 'Support your 5G rollout with trained agents who can guide subscribers through device migration, plan selection and network optimisation — driving faster adoption and reducing early churn.',
-                },
-                {
-                  img: customerRetention,
-                  tag: 'Retention',
-                  title: 'AI-Powered Churn Prevention',
-                  desc: 'Our ML models analyse usage patterns, complaint history and payment behaviour to identify at-risk subscribers before they leave — enabling personalised win-back conversations.',
-                },
-                {
-                  img: billingImg,
-                  tag: 'Revenue Assurance',
-                  title: 'Billing & Collections Management',
-                  desc: 'From first billing queries to complex dispute resolution and overdue payment recovery, we protect your revenue while maintaining subscriber trust and satisfaction.',
-                },
-                {
-                  img: telecallerAgent,
-                  tag: 'Outbound',
-                  title: 'Targeted Sales & Upgrade Campaigns',
-                  desc: 'Data-led outbound programs that target the right subscribers at the right time with personalised upgrade and cross-sell offers — maximising ARPU and subscriber lifetime value.',
-                },
-              ].map((f, i) => (
-                <div key={i} className="tc-feature-card">
-                  <img src={f.img} alt={f.title} className="tc-feature-card__img" />
-                  <div className="tc-feature-card__body">
-                    <span className="tc-feature-card__tag">{f.tag}</span>
-                    <h3 className="tc-feature-card__title">{f.title}</h3>
-                    <p className="tc-feature-card__desc">{f.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
-        {/* ═══════════════════════ 7. WHY STEFTO GRID ═══════════════════════ */}
-        <section className="tc-section tc-section--white">
-          <div className="tc-container">
-            <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto' }}>
-              <span className="tc-label">Why Choose Us</span>
-              <h2 className="tc-h2" style={{ textAlign: 'center' }}>
-                Why Leading Telecom Brands <em>Trust Stefto</em>
-              </h2>
-              <p className="tc-p" style={{ textAlign: 'center' }}>
-                We bring more than headcount — we bring deep domain knowledge, cutting-edge
-                technology and a relentless focus on outcomes.
-              </p>
-            </div>
-            <div className="tc-why-grid">
-              {whyCards.map((c, i) => (
-                <div key={i} className="tc-why-card">
-                  <div className="tc-why-card__num">{c.num}</div>
-                  <div className="tc-why-card__title">{c.title}</div>
-                  <div className="tc-why-card__desc">{c.desc}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+
+
+
 
         {/* ═══════════════════════ 8. SPLIT — ANALYTICS ═══════════════════════ */}
-        <section className="tc-section tc-section--slate">
+        <section className="tc-section tc-section--white">
           <div className="tc-container">
             <div className="tc-two-col">
               <div>
@@ -990,39 +829,7 @@ const Telecom = () => {
           </div>
         </section>
 
-        {/* ═══════════════════════ 9. CTA BANNER ═══════════════════════ */}
-        <section className="tc-cta">
-          <div className="tc-cta__orb tc-cta__orb--1" />
-          <div className="tc-cta__orb tc-cta__orb--2" />
-          <div className="tc-cta__content tc-container">
-            <div style={{
-              display: 'inline-flex', alignItems: 'center', gap: 8,
-              background: 'rgba(255,255,255,0.12)',
-              border: '1px solid rgba(255,255,255,0.2)',
-              color: '#bfdbfe', fontSize: 11, fontWeight: 800,
-              letterSpacing: '0.2em', textTransform: 'uppercase',
-              padding: '6px 16px', borderRadius: 100, marginBottom: 24,
-            }}>
-              <Zap size={12} /> Ready to Elevate Your CX?
-            </div>
-            <h2 className="tc-cta__title">
-              Let's Build the Future of<br />Telecom CX Together
-            </h2>
-            <p className="tc-cta__sub">
-              Whether you're a start-up MVNO or an established national operator,
-              Stefto has the expertise, technology and talent to transform your
-              subscriber experience.
-            </p>
-            <div className="tc-cta__btns">
-              <Link to="/contact-us" className="tc-btn-primary">
-                <Phone size={16} /> Talk to an Expert
-              </Link>
-              <Link to="/inbound" className="tc-btn-outline">
-                View All Services <ArrowRight size={16} />
-              </Link>
-            </div>
-          </div>
-        </section>
+
 
       </div>
     </LandingLayout>

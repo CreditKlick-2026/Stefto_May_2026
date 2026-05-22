@@ -1,18 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  ChevronRight, Shield, TrendingUp, Users, CreditCard,
-  HeadphonesIcon, BarChart3, CheckCircle2, ArrowRight,
-  Banknote, Lock, RefreshCw, FileText, AlertTriangle, Zap
+  ChevronRight, CheckCircle2, ArrowRight,
+  Banknote, Lock
 } from 'lucide-react';
 import LandingLayout from '../components/layout/LandingLayout';
 
 /* ── Asset Imports ─────────────────────────────────────────── */
 import heroBg          from '../assets/banking_hero_bg.png';
 import analyticsImg    from '../assets/banking_analytics.png';
-import collectionsImg  from '../assets/banking_collections.png';
-import complianceImg   from '../assets/banking_compliance.png';
-import supportImg      from '../assets/banking_customer_support.png';
 
 /* ──────────────────────────────────────────────────────────────
    Inline scoped styles — .bf-page namespace
@@ -25,9 +21,10 @@ const STYLES = `
 /* ── Hero ── */
 .bf-hero {
   position: relative;
-  min-height: 640px;
+  min-height: 480px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  padding-bottom: 60px;
   overflow: hidden;
 }
 .bf-hero__bg {
@@ -157,8 +154,7 @@ const STYLES = `
 .bf-coin-rings {
   position: absolute;
   right: 7%;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 130px;
   width: 360px;
   height: 360px;
   display: flex;
@@ -664,48 +660,6 @@ const STYLES = `
 `;
 
 /* ── Data ──────────────────────────────────────────────────── */
-const services = [
-  {
-    icon: <HeadphonesIcon size={24} color="#1c469d" />,
-    title: 'Customer Service & Care',
-    desc: 'Omni-channel banking support across voice, chat and email — resolving account queries, disputes and KYC requirements with speed and empathy.',
-  },
-  {
-    icon: <CreditCard size={24} color="#1c469d" />,
-    title: 'Debt Collections & Recovery',
-    desc: 'Compliant, AI-powered collections strategy that maximises recovery rates while protecting customer relationships and regulatory standing.',
-  },
-  {
-    icon: <TrendingUp size={24} color="#1c469d" />,
-    title: 'Sales & Cross-Sell',
-    desc: 'Data-driven outbound campaigns for loans, credit cards, insurance and wealth products — turning leads into loyal customers.',
-  },
-  {
-    icon: <BarChart3 size={24} color="#1c469d" />,
-    title: 'Analytics & Reporting',
-    desc: 'Real-time dashboards and custom KPI reports that give banks and NBFCs clear visibility into portfolio health and team performance.',
-  },
-  {
-    icon: <FileText size={24} color="#1c469d" />,
-    title: 'Back-Office & KYC',
-    desc: 'Document verification, data entry, account onboarding and KYC / AML processing handled with precision and rapid turnaround.',
-  },
-  {
-    icon: <Shield size={24} color="#1c469d" />,
-    title: 'Fraud & Risk Management',
-    desc: 'Proactive fraud detection, account monitoring and compliance advisory to keep your portfolio secure and regulatorily compliant.',
-  },
-];
-
-const whyCards = [
-  { num: '01', title: 'BFSI Domain Expertise', desc: 'Over 15 years of deep experience with leading banks, NBFCs, MFIs and fintech companies across India.' },
-  { num: '02', title: 'RBI & SEBI Compliant', desc: 'Operations built around regulatory frameworks — RBI guidelines, SEBI norms and IRDAI mandates are central to every process.' },
-  { num: '03', title: 'AI-Powered Workflows', desc: 'Machine learning models for collections, churn prediction, fraud detection and personalised engagement at scale.' },
-  { num: '04', title: 'Omni-Channel Delivery', desc: 'Voice, email, WhatsApp, IVR and digital self-service — all unified under a single CX management platform.' },
-  { num: '05', title: 'ISO-Certified Quality', desc: 'Robust QA frameworks and ISO certifications ensure world-class service consistency across every touchpoint.' },
-  { num: '06', title: '24 × 7 Operations', desc: 'Round-the-clock availability for time-sensitive banking operations — no downtime, no exceptions.' },
-];
-
 const processSteps = [
   { num: '1', title: 'Discovery & Audit', desc: 'Deep-dive into your portfolio, processes and pain-points to map the right BPO strategy.' },
   { num: '2', title: 'Solution Design', desc: 'Customised operating model with defined KPIs, SLAs, tech stack and compliance protocols.' },
@@ -715,25 +669,13 @@ const processSteps = [
 
 /* ── Component ─────────────────────────────────────────────── */
 const BankingAndFinancialServices = () => {
-  const statsRef = useRef(null);
-  const [statsVisible, setStatsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setStatsVisible(true); },
-      { threshold: 0.2 }
-    );
-    if (statsRef.current) observer.observe(statsRef.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <LandingLayout>
       <style>{STYLES}</style>
       <div className="bf-page">
 
         {/* ══════════════════ 1. HERO ══════════════════ */}
-        <section className="bf-hero" style={{ paddingTop: '100px' }}>
+        <section className="bf-hero" style={{ paddingTop: '160px' }}>
           <div className="bf-hero__bg" style={{ backgroundImage: `url(${heroBg})` }} />
           <div className="bf-hero__overlay" />
           <div className="bf-hero__grid" />
@@ -767,50 +709,6 @@ const BankingAndFinancialServices = () => {
               Powering BFSI Excellence<br />
               with <span>Intelligent BPO Solutions</span>
             </h1>
-
-            <p className="bf-hero__sub">
-              Stefto partners with banks, NBFCs, fintechs and insurance companies to deliver
-              compliant, AI-driven customer experience — from collections and KYC to sales
-              support and risk management.
-            </p>
-
-            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-              <Link to="/contact-us" className="bf-hero__cta">
-                Get Started <ArrowRight size={16} />
-              </Link>
-              <Link
-                to="/debt-collection"
-                style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 8,
-                  background: 'rgba(255,255,255,0.09)',
-                  border: '1px solid rgba(255,255,255,0.22)',
-                  backdropFilter: 'blur(8px)',
-                  color: '#fff', fontWeight: 700, fontSize: 14,
-                  padding: '16px 28px', borderRadius: 50,
-                  textDecoration: 'none', transition: 'all 0.3s ease',
-                }}
-              >
-                Our Solutions
-              </Link>
-            </div>
-
-            {/* Stats */}
-            <div className="bf-hero__stats">
-              {[
-                { num: '15+', label: 'Years in BFSI' },
-                { num: '₹500Cr+', label: 'Collections Managed' },
-                { num: '98.2%', label: 'SLA Adherence' },
-                { num: '24/7', label: 'Operations' },
-              ].map((s, i) => (
-                <React.Fragment key={i}>
-                  {i > 0 && <div className="bf-stat-divider" />}
-                  <div className="bf-stat-pill">
-                    <span className="bf-stat-pill__num">{s.num}</span>
-                    <span className="bf-stat-pill__label">{s.label}</span>
-                  </div>
-                </React.Fragment>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -852,141 +750,12 @@ const BankingAndFinancialServices = () => {
               </div>
             </div>
 
-            {/* Compliance Strip */}
-            <div className="bf-compliance-strip">
-              <div className="bf-compliance-strip__icon">
-                <Lock size={24} color="#fff" />
-              </div>
-              <div className="bf-compliance-strip__text">
-                <strong>Regulatory Compliance at the Core</strong><br />
-                <span>All operations adhere to RBI Fair Practice Guidelines, IRDAI norms and DPDP Act requirements.</span>
-              </div>
-              <div className="bf-compliance-tags">
-                {['RBI Compliant', 'ISO 27001', 'GDPR Ready', 'DPDP Act', 'SEBI Norms'].map((tag) => (
-                  <span key={tag} className="bf-compliance-tag">{tag}</span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* ══════════════════ 3. SERVICES GRID ══════════════════ */}
-        <section className="bf-section bf-section--slate">
-          <div className="bf-container">
-            <div style={{ textAlign: 'center', maxWidth: 720, margin: '0 auto' }}>
-              <span className="bf-label">Our Solutions</span>
-              <h2 className="bf-h2" style={{ textAlign: 'center' }}>
-                End-to-End BFSI <em>BPO Services</em>
-              </h2>
-              <p className="bf-p" style={{ textAlign: 'center' }}>
-                From first contact to final resolution, our specialist BFSI teams handle
-                complex financial interactions with precision, empathy and compliance.
-              </p>
-            </div>
-            <div className="bf-services-grid">
-              {services.map((s, i) => (
-                <div key={i} className="bf-service-card">
-                  <div className="bf-service-card__icon">{s.icon}</div>
-                  <h3 className="bf-service-card__title">{s.title}</h3>
-                  <p className="bf-service-card__desc">{s.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ══════════════════ 4. FEATURE CARDS ══════════════════ */}
-        <section className="bf-section bf-section--white">
-          <div className="bf-container">
-            <div style={{ textAlign: 'center', maxWidth: 680, margin: '0 auto' }}>
-              <span className="bf-label">Capabilities in Action</span>
-              <h2 className="bf-h2" style={{ textAlign: 'center' }}>
-                Driving Results Across the <em>BFSI Value Chain</em>
-              </h2>
-            </div>
-            <div className="bf-features-grid">
-              <div className="bf-feature-card">
-                <img src={collectionsImg} alt="Collections & Recovery" className="bf-feature-card__img" />
-                <div className="bf-feature-card__body">
-                  <span className="bf-feature-card__tag">Collections</span>
-                  <h3 className="bf-feature-card__title">AI-Powered Debt Collections &amp; Recovery</h3>
-                  <p className="bf-feature-card__desc">
-                    Our collections teams leverage predictive dialling, behavioural analytics and
-                    personalised scripting to improve right-party contact rates and recovery yields —
-                    all within RBI Fair Practice Guidelines.
-                  </p>
-                </div>
-              </div>
-              <div className="bf-feature-card">
-                <img src={complianceImg} alt="Compliance & Risk" className="bf-feature-card__img" />
-                <div className="bf-feature-card__body">
-                  <span className="bf-feature-card__tag">Compliance</span>
-                  <h3 className="bf-feature-card__title">Robust Compliance &amp; Risk Frameworks</h3>
-                  <p className="bf-feature-card__desc">
-                    From AML screening and fraud monitoring to audit-ready reporting, our risk
-                    management practice ensures your institution stays ahead of regulatory requirements
-                    and operational threats.
-                  </p>
-                </div>
-              </div>
-              <div className="bf-feature-card">
-                <img src={supportImg} alt="Customer Support" className="bf-feature-card__img" />
-                <div className="bf-feature-card__body">
-                  <span className="bf-feature-card__tag">Customer Experience</span>
-                  <h3 className="bf-feature-card__title">Premium Financial Customer Support</h3>
-                  <p className="bf-feature-card__desc">
-                    Trained BFSI agents handle account queries, loan servicing, card disputes and
-                    grievance escalations with the sensitivity and expertise that financial customers
-                    demand.
-                  </p>
-                </div>
-              </div>
-              <div className="bf-feature-card">
-                <img src={analyticsImg} alt="Data Analytics" className="bf-feature-card__img" />
-                <div className="bf-feature-card__body">
-                  <span className="bf-feature-card__tag">Analytics</span>
-                  <h3 className="bf-feature-card__title">Real-Time Portfolio Intelligence</h3>
-                  <p className="bf-feature-card__desc">
-                    Custom dashboards and advanced analytics give lenders granular visibility into
-                    delinquency trends, agent performance and collection efficiency — enabling faster,
-                    smarter decisions.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ══════════════════ 5. STATS BAND ══════════════════ */}
-        <section className="bf-section bf-section--dark" ref={statsRef}>
-          <div className="bf-container">
-            <div style={{ textAlign: 'center', maxWidth: 680, margin: '0 auto' }}>
-              <span className="bf-label bf-label--light">Our Impact</span>
-              <h2 className="bf-h2 bf-h2--white" style={{ textAlign: 'center' }}>
-                Numbers That Define Our <em style={{ color: '#34d399' }}>BFSI Leadership</em>
-              </h2>
-              <p className="bf-p bf-p--white" style={{ textAlign: 'center' }}>
-                Measurable outcomes across collections, customer satisfaction and operational efficiency.
-              </p>
-            </div>
-            <div className={`bf-stats-row ${statsVisible ? 'bf-animate-in' : ''}`}>
-              {[
-                { num: '₹500Cr+', label: 'Collections Handled Annually' },
-                { num: '40%',     label: 'Avg. Recovery Rate Improvement' },
-                { num: '98.2%',   label: 'SLA Compliance' },
-                { num: '4.6/5',   label: 'Customer Satisfaction Score' },
-              ].map((s, i) => (
-                <div key={i} className="bf-stats-row__item">
-                  <span className="bf-stats-row__num">{s.num}</span>
-                  <span className="bf-stats-row__label">{s.label}</span>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
         {/* ══════════════════ 6. HOW WE WORK ══════════════════ */}
-        <section className="bf-section bf-section--slate">
+        <section className="bf-section bf-section--white">
           <div className="bf-container">
             <div style={{ textAlign: 'center', maxWidth: 680, margin: '0 auto' }}>
               <span className="bf-label">Our Approach</span>
@@ -1006,54 +775,6 @@ const BankingAndFinancialServices = () => {
                   <p className="bf-process-step__desc">{step.desc}</p>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ══════════════════ 7. WHY STEFTO ══════════════════ */}
-        <section className="bf-section bf-section--dark">
-          <div className="bf-container">
-            <div style={{ maxWidth: 640, margin: '0 auto', textAlign: 'center' }}>
-              <span className="bf-label bf-label--light">Why Stefto</span>
-              <h2 className="bf-h2 bf-h2--white" style={{ textAlign: 'center' }}>
-                The BFSI BPO Partner Built for <em style={{ color: '#34d399' }}>What's Next</em>
-              </h2>
-            </div>
-            <div className="bf-why-grid">
-              {whyCards.map((card, i) => (
-                <div key={i} className="bf-why-card">
-                  <div className="bf-why-card__num">{card.num}</div>
-                  <h4 className="bf-why-card__title">{card.title}</h4>
-                  <p className="bf-why-card__desc">{card.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ══════════════════ 8. CTA ══════════════════ */}
-        <section className="bf-cta">
-          <div className="bf-cta__orb bf-cta__orb--1" />
-          <div className="bf-cta__orb bf-cta__orb--2" />
-          <div className="bf-cta__content">
-            <span className="bf-label bf-label--light" style={{ marginBottom: 20, display: 'block' }}>
-              Ready to Transform?
-            </span>
-            <h2 className="bf-cta__title">
-              Let's Build a Smarter,<br />More Compliant Financial Operation
-            </h2>
-            <p className="bf-cta__sub">
-              Whether you're a large bank looking to scale collections or a fintech needing
-              compliant customer support — Stefto has the expertise, technology and people
-              to deliver results from day one.
-            </p>
-            <div className="bf-cta__btns">
-              <Link to="/contact-us" className="bf-btn-primary">
-                Schedule a Consultation <ArrowRight size={16} />
-              </Link>
-              <Link to="/debt-collection" className="bf-btn-outline">
-                View Collections Services
-              </Link>
             </div>
           </div>
         </section>

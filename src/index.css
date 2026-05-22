@@ -873,3 +873,29 @@ p {
   }
 }
 
+/* Global Apple-like Thin Scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
+}
+
+/* For Chrome, Safari, Edge, Opera */
+*::-webkit-scrollbar {
+  width: 8px; /* Slim width */
+  height: 8px; /* Slim height */
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent; /* Invisible track */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.4); /* Translucent white thumb */
+  border-radius: 9999px; /* Capsule shape */
+  border: 2px solid transparent; /* Gap from scrollable area edge */
+  background-clip: padding-box; /* Clip background to border box to allow transparent margin */
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.7); /* Brighter white on hover */
+}

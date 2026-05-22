@@ -88,16 +88,7 @@ export default function ServicesSection() {
           })}
         </div>
 
-        {/* CTA */}
-        <div className={`text-center mt-10 transition-all duration-700 delay-500 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <a
-            href="/services"
-            className="inline-flex items-center gap-2 bg-[#1c469d] text-white px-8 py-4 rounded-full font-semibold text-sm hover:bg-blue-800 transition-colors shadow-md"
-          >
-            View All Solutions
-            <ArrowRight size={16} />
-          </a>
-        </div>
+
       </div>
     </section>
   );

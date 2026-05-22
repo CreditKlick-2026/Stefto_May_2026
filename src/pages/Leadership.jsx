@@ -101,9 +101,8 @@ const LeaderCard = ({ leader, index }) => {
           </p>
           {paragraphs.length > 1 && (
             <div
-              className={`overflow-hidden transition-all duration-500 ease-out ${
-                expanded ? 'max-h-[400px] opacity-100 mt-3' : 'max-h-0 opacity-0'
-              }`}
+              className={`overflow-hidden transition-all duration-500 ease-out ${expanded ? 'max-h-[400px] opacity-100 mt-3' : 'max-h-0 opacity-0'
+                }`}
             >
               {paragraphs.slice(1).map((p, i) => (
                 <p key={i} className="text-slate-400 text-xs sm:text-sm leading-relaxed mt-3">
@@ -134,99 +133,86 @@ const LeaderCard = ({ leader, index }) => {
 
 const Leadership = () => {
   return (
-    <LandingLayout>
-    <main className="w-full bg-slate-50 min-h-screen overflow-x-hidden">
+    <LandingLayout footerCurveColor="fill-slate-50">
+      <main className="w-full bg-slate-50 min-h-screen overflow-x-hidden">
 
-      {/* 1. Hero Banner */}
-      <section
-        className="relative min-h-[360px] sm:min-h-[440px] lg:min-h-[520px] flex items-center px-[5%] sm:px-[7%] lg:px-[10%] pt-20 pb-16"
-        style={{
-          background: 'linear-gradient(135deg, #041434 0%, #1a237e 60%, #041434 100%)',
-        }}
-      >
-        {/* Decorative circles */}
-        <div className="absolute top-[-80px] right-[-80px] w-[350px] h-[350px] rounded-full bg-white/[0.03] pointer-events-none"></div>
-        <div className="absolute bottom-[-60px] left-[-60px] w-[250px] h-[250px] rounded-full bg-white/[0.03] pointer-events-none"></div>
+        {/* 1. Hero Banner */}
+        <section
+          className="relative flex items-center px-[5%] sm:px-[7%] lg:px-[10%] pt-24 pb-8"
+          style={{
+            background: 'linear-gradient(135deg, #041434 0%, #1a237e 60%, #041434 100%)',
+          }}
+        >
+          {/* Decorative circles */}
+          <div className="absolute top-[-80px] right-[-80px] w-[350px] h-[350px] rounded-full bg-white/[0.03] pointer-events-none"></div>
+          <div className="absolute bottom-[-60px] left-[-60px] w-[250px] h-[250px] rounded-full bg-white/[0.03] pointer-events-none"></div>
 
-        <div className="relative z-10 max-w-[760px]">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-3 mb-5">
-            <div className="w-2 h-2 rounded-full bg-stefto-sky"></div>
-            <span className="text-black text-[0.7rem] sm:text-xs font-bold uppercase tracking-[0.2em]">
-              Stefto People. Process. Performance.
-            </span>
-          </div>
-
-          <h1
-            className="text-[1.8rem] sm:text-[2.5rem] lg:text-[3.25rem] font-extrabold text-white leading-[1.1] mb-5"
-            style={{ color: 'white', background: 'none' }}
-          >
-            A strong<br />
-            <span className="text-black">leadership model</span>
-          </h1>
-
-          <p className="text-sm sm:text-base lg:text-lg text-white/80 max-w-[580px] leading-relaxed mb-8">
-            The Group's strategic orientations are set by an independent, expert, and diverse Board of Directors.
-          </p>
-
-          <div className="flex gap-1.5 items-center">
-            <div className="w-1.5 h-1.5 rounded-full bg-stefto-sky"></div>
-            <div className="w-1.5 h-1.5 rounded-full bg-stefto-sky"></div>
-            <div className="w-20 h-1 rounded-full bg-stefto-sky"></div>
-          </div>
-        </div>
-      </section>
-
-      {/* 2. Intro Quote Strip */}
-      <section className="bg-white py-8 sm:py-12 border-b border-slate-100">
-        <div className="max-w-[900px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="relative inline-block">
-            <div className="absolute -top-3 -left-3 text-[#1a237e] opacity-10">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-              </svg>
+          <div className="relative z-10 max-w-[600px]">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-3 mb-5">
+              <div className="w-2 h-2 rounded-full bg-stefto-sky"></div>
+              <span className="text-white/80 text-[0.7rem] sm:text-xs font-bold uppercase tracking-[0.2em]">
+                Stefto People. Process. Performance.
+              </span>
             </div>
-            <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-[#041434] leading-relaxed px-8">
-              Bold leadership — Our dedication makes the difference, and we have the passion and persistence to thrive amid complexity and overcome obstacles when others give up.
-            </h2>
-          </div>
-          <div className="w-16 h-1 bg-slate-200 rounded-full mx-auto mt-6"></div>
-        </div>
-      </section>
 
-      {/* 3. Leadership Cards Grid */}
-      <section className="py-12 sm:py-16 lg:py-24">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-
-          {/* Section heading */}
-          <div className="text-center mb-10 sm:mb-14">
-            <p className="text-[0.7rem] sm:text-xs font-bold uppercase tracking-[0.15em] text-stefto-blue mb-2">
-              THE MINDS BEHIND STEFTO
-            </p>
-            <h2
-              className="text-2xl sm:text-3xl lg:text-[2.5rem] font-light text-[#041434]"
-              style={{ background: 'none', color: '#041434' }}
+            <h1
+              className="text-[1.6rem] sm:text-[2.2rem] lg:text-[2.8rem] font-extrabold text-white leading-[1.1] mb-5"
+              style={{ color: 'white', background: 'none' }}
             >
-              Leading the <span className="font-extrabold text-stefto-blue">future</span>
-            </h2>
-            <div className="flex gap-1.5 mt-4 justify-center items-center">
-              <div className="w-1 h-1 bg-stefto-blue rounded-full"></div>
-              <div className="w-1 h-1 bg-stefto-blue rounded-full"></div>
-              <div className="w-12 h-1 bg-stefto-blue rounded-sm"></div>
+              A strong <span className="text-white">leadership model</span>
+            </h1>
+
+          </div>
+        </section>
+
+        {/* 2. Leadership Cards Grid */}
+        <section className="pt-8 sm:pt-10 lg:pt-12 pb-12 sm:pb-16 lg:pb-24">
+          <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+
+            {/* Section heading */}
+            <div className="text-center mb-6 sm:mb-8">
+              <p className="text-[0.7rem] sm:text-xs font-bold uppercase tracking-[0.15em] text-stefto-blue mb-2">
+                THE MINDS BEHIND STEFTO
+              </p>
+              <h2
+                className="text-2xl sm:text-3xl lg:text-[2.5rem] font-light text-[#041434]"
+                style={{ background: 'none', color: '#041434' }}
+              >
+                Leading the <span className="font-extrabold text-stefto-blue">future</span>
+              </h2>
+              <div className="flex gap-1.5 mt-4 justify-center items-center">
+                <div className="w-1 h-1 bg-stefto-blue rounded-full"></div>
+                <div className="w-1 h-1 bg-stefto-blue rounded-full"></div>
+                <div className="w-12 h-1 bg-stefto-blue rounded-sm"></div>
+              </div>
+            </div>
+
+            {/* Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+              {leaders.map((leader, i) => (
+                <LeaderCard key={i} leader={leader} index={i} />
+              ))}
+            </div>
+
+            {/* Bold Leadership Quote moved below cards */}
+            <div className="max-w-[800px] mx-auto px-4 mt-16 sm:mt-20">
+              <div className="relative inline-block text-center w-full">
+                <div className="absolute -top-3 -left-4 text-[#1a237e] opacity-10">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg sm:text-xl font-medium text-slate-700 leading-relaxed px-6 z-10 relative">
+                  <span className="font-bold text-[#041434]">Bold leadership</span> — Our dedication makes the difference, and we have the passion and persistence to thrive amid complexity and overcome obstacles when others give up.
+                </h3>
+              </div>
             </div>
           </div>
+        </section>
 
-          {/* Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {leaders.map((leader, i) => (
-              <LeaderCard key={i} leader={leader} index={i} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 4. CTA Strip */}
-      {/* 
+        {/* 4. CTA Strip */}
+        {/* 
       <section className="py-12 sm:py-16 bg-[#041434] relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white rounded-full translate-x-1/2 -translate-y-1/2"></div>
@@ -257,7 +243,7 @@ const Leadership = () => {
       </section>
       */}
 
-    </main>
+      </main>
     </LandingLayout>
   );
 };

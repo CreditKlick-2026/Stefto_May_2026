@@ -29,7 +29,7 @@ import {
   Search,
   ShieldCheck,
 } from "lucide-react";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { useState, useEffect, useRef } from "react";
 import ChatWidget from "../ChatWidget";
 import { BrandLogo } from "../icons/BrandLogo";
@@ -40,21 +40,11 @@ const menuData = {
   services: {
     title: "Services",
     badge: "What We Do",
-    sections: [
-      {
-        title: "Industry Solutions",
-        items: [
-          { name: "BFSI", description: "Banking & financial services", icon: Landmark, href: "/banking-and-financial-services", color: "bg-green-50 text-green-600" },
-          { name: "Telecom", description: "Subscriber support & activations", icon: Phone, href: "/telecom", color: "bg-purple-50 text-purple-600" },
-        ]
-      },
-      {
-        title: "Core Services",
-        items: [
-          { name: "Inbound Support", description: "24/7 customer helpdesk", icon: Phone, href: "/inbound", color: "bg-blue-50 text-blue-600" },
-          { name: "Outbound Calling", description: "Lead generation & sales", icon: PhoneOutgoing, href: "/outbound", color: "bg-red-50 text-red-600" },
-        ]
-      }
+    items: [
+      { name: "BFSI", description: "Banking & financial services", icon: Landmark, href: "/banking-and-financial-services", color: "bg-green-50 text-green-600" },
+      { name: "Telecom", description: "Subscriber support & activations", icon: Phone, href: "/telecom", color: "bg-purple-50 text-purple-600" },
+      { name: "Insurance", description: "Policy support & renewals", icon: Award, href: "/insurance", color: "bg-blue-50 text-blue-600" },
+      { name: "Retail & E-Commerce", description: "Order support & returns management", icon: ShoppingCart, href: "/retail-and-e-commerce", color: "bg-orange-50 text-orange-600" },
     ]
   },
   industries: {
@@ -121,7 +111,7 @@ const DropdownMenu = ({ menu, isOpen, onClose }) => {
       onMouseLeave={onClose}
     >
       <div
-        className={`pb-dropdown ${isSectioned ? 'min-w-[560px]' : 'min-w-[220px]'
+        className={`pb-dropdown ${isSectioned ? 'min-w-[560px]' : 'min-w-[300px]'
           }`}
       >
         {/* Badge header */}
@@ -168,11 +158,17 @@ const DropdownMenu = ({ menu, isOpen, onClose }) => {
                 to={item.href}
                 onClick={onClose}
                 className="pb-dropdown-item group"
+                style={{ padding: '12px 20px', gap: '16px' }}
               >
                 <div className={`w-[36px] h-[36px] rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-110 ${item.color}`}>
                   <item.icon className="w-[16px] h-[16px]" strokeWidth={1.8} />
                 </div>
-                <span>{item.name}</span>
+                <div className="flex flex-col">
+                  <span className="text-[13px] font-semibold text-slate-800 group-hover:text-[#1c469d] transition-colors duration-150">{item.name}</span>
+                  {item.description && (
+                    <span className="text-[10.5px] text-slate-500 mt-0.5 leading-normal">{item.description}</span>
+                  )}
+                </div>
               </Link>
             ))}
           </div>
@@ -241,7 +237,7 @@ export function Navbar() {
   const navItems = [
 
     { name: "Why Stefto?", key: "whyStefto", hasDropdown: false, href: "/why-trust-stefto" },
-    { name: "Services", key: "services", hasDropdown: true },
+    { name: "Industry", key: "services", hasDropdown: true },
     { name: "About Us", key: "aboutUs", hasDropdown: true },
     { name: "Careers", key: "careers", hasDropdown: false, href: "/careers" },
   ];
@@ -524,7 +520,7 @@ export function Footer({ curveColor = "fill-white" }) {
       <div className="max-w-[1280px] mx-auto relative z-30">
 
         {/* Link Matrix */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8 justify-items-center mx-auto">
 
           {/* Brand Hub */}
           <div>
@@ -536,9 +532,9 @@ export function Footer({ curveColor = "fill-white" }) {
             </p>
           </div>
 
-          {/* Links Column 1 */}
+          {/* Why Stefto? */}
           <div className="flex flex-col gap-2">
-            <h4 className="footer-heading-spark text-sm sm:text-base font-bold mb-1 sm:mb-2 text-white font-sans">Company</h4>
+            <h4 className="footer-heading-spark text-sm sm:text-base font-bold mb-1 sm:mb-2 text-white font-sans">Why Stefto?</h4>
             <Link to="/about-us" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">About Us</Link>
             <Link to="/why-trust-stefto" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Why Trust Stefto?</Link>
             <Link to="/careers" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Careers</Link>
@@ -547,67 +543,52 @@ export function Footer({ curveColor = "fill-white" }) {
             <Link to="/contact-us" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Contact us</Link>
           </div>
 
-          {/* Links Column 2 */}
+          {/* Industry */}
           <div className="flex flex-col gap-2">
-            <h4 className="footer-heading-spark text-sm sm:text-base font-bold mb-1 sm:mb-2 text-white font-sans">Solutions</h4>
-            <Link to="/inbound" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Inbound</Link>
-            <Link to="/digital-debt-management" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Digital Debt Collections</Link>
-            <Link to="/customer-support" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Digital Communications</Link>
-            <Link to="/retention-and-persistency" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Retention and Persistency</Link>
-            <Link to="/sales-support" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Sales Support</Link>
+            <h4 className="footer-heading-spark text-sm sm:text-base font-bold mb-1 sm:mb-2 text-white font-sans">Industry</h4>
+            <Link to="/banking-and-financial-services" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">BFSI</Link>
+            <Link to="/telecom" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Telecom</Link>
+            <Link to="/insurance" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Insurance</Link>
+            <Link to="/retail-and-e-commerce" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Retail &amp; E-Commerce</Link>
           </div>
 
-          {/* Links Column 3 */}
-          <div className="flex flex-col gap-2">
-            <h4 className="footer-heading-spark text-sm sm:text-base font-bold mb-1 sm:mb-2 text-white font-sans">Insights</h4>
-            <Link to="/news" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Blog</Link>
-            <Link to="/press-release" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Press Release</Link>
-            <Link to="/case-studies" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Case Studies</Link>
-            <Link to="/customer-stories" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Customer Stories</Link>
-            <Link to="/leadership" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Awards</Link>
-          </div>
-
-          {/* Links Column 4 */}
+          {/* Legal */}
           <div className="flex flex-col gap-2">
             <h4 className="footer-heading-spark text-sm sm:text-base font-bold mb-1 sm:mb-2 text-white font-sans">Legal</h4>
-            <Link to="/refunds-cancellations" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Refunds & cancellations</Link>
-            <Link to="/legal-statement" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Legal Notice</Link>
-            <Link to="/terms-of-use" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Terms of Use</Link>
-            <Link to="/privacy-policy" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Acceptable Use Policy</Link>
-            <Link to="/cookie-policy" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Cookie Policy</Link>
             <Link to="/privacy-policy" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Privacy Policy</Link>
           </div>
 
         </div>
 
-        {/* Bottom Section: Locations + Demo */}
-        <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12 pt-8 sm:pt-10 mt-6 sm:mt-8 border-t border-white/10">
 
-          {/* Locations List */}
-          <div className="flex-1 flex flex-col gap-1.5 sm:gap-2 opacity-80 text-[0.7rem] sm:text-xs lg:text-sm text-blue-100/80 font-sans">
-            <div><strong>Head Office:</strong> Plot No. 112, Udyog Vihar, Phase-1, Gurugram, Haryana-122016</div>
-            <div><strong>New Delhi Office:</strong> IInd Floor, DLF, Moti Nagar, New Delhi-110015</div>
-            <div><strong>West Delhi Office:</strong> WZ-1, Upper Ground Floor, Main Nazafgarh Road, Uttam Nagar West, Delhi-110059</div>
-            <div><strong>Noida Office:</strong> 1st, 2nd and 3rd Floor B-24, Sector 1 Noida, Uttar Pradesh - 201301</div>
-            <div><strong>Pune Office:</strong> 501, 5th Floor, Pride Icon, Kharadi, Pune, Maharashtra-411014</div>
-          </div>
+        {/* Bottom Section: Contact + Social */}
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-6 pt-8 sm:pt-10 mt-6 sm:mt-8 border-t border-white/10">
 
-          {/* Social */}
-          <div className="text-left lg:text-right">
-            <p className="text-xs sm:text-sm mb-4 sm:mb-5 opacity-85 text-white font-sans">
+          {/* Contact Details */}
+          <div>
+            <p className="text-xs sm:text-sm opacity-85 text-white font-sans m-0">
               Mobile: +91 8800-101-102. Email: info@stefto.com
             </p>
-            <div className="flex gap-2 sm:gap-3 justify-start lg:justify-end">
-              {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube].map((Icon, idx) => (
-                <a
-                  key={idx}
-                  href="#"
-                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white text-[#0f1f4b] flex items-center justify-center no-underline transition-all hover:-translate-y-1 hover:shadow-lg"
-                >
-                  <Icon size={14} />
-                </a>
-              ))}
-            </div>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex gap-2 sm:gap-3">
+            {[
+              { Icon: FaFacebookF, href: "https://www.facebook.com/steftocom/" },
+              { Icon: FaTwitter, href: "https://x.com/steftocom" },
+              { Icon: FaInstagram, href: "https://www.instagram.com/stefto__/" },
+              { Icon: FaLinkedinIn, href: "https://www.linkedin.com/company/stefto/?viewAsMember=true" }
+            ].map(({ Icon, href }, idx) => (
+              <a
+                key={idx}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white text-[#0f1f4b] flex items-center justify-center no-underline transition-all hover:-translate-y-1 hover:shadow-lg"
+              >
+                <Icon size={14} />
+              </a>
+            ))}
           </div>
 
         </div>

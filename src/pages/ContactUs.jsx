@@ -204,8 +204,7 @@ const ContactUs = () => {
           </div>
         </section>
 
-        {/* Why Trust Stefto */}
-        <WhyTrustSection />
+
 
         {/* Location Map */}
         <section className="w-full bg-white relative pb-16">

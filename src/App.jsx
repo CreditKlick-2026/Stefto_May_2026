@@ -49,7 +49,7 @@ import NewLanding from './pages/NewLanding';
 import WhyTrustStefto from './pages/WhyTrustStefto';
 
 import { Phone, Mail, MapPin, ChevronDown, Search, Menu, X, LogIn, User, LayoutDashboard, LogOut } from 'lucide-react';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
 const STEFTO_LOGO_URL = 'https://res.cloudinary.com/dtz8hacj4/image/upload/v1779277115/Stefto_Logo_ng3frh.png';
 import whyWorkBg from './assets/why_work_at_stefto_dropdown_bg.png';
@@ -412,30 +412,28 @@ const Footer = () => (
 
       </div>
 
-      {/* Bottom Section: Locations + Demo */}
-      <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12 pt-8 sm:pt-10 mt-6 sm:mt-8 border-t border-white/10">
+      {/* Bottom Section: Contact + Social */}
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-6 pt-8 sm:pt-10 mt-6 sm:mt-8 border-t border-white/10">
 
-        {/* Locations List */}
-        <div className="flex-1 flex flex-col gap-1.5 sm:gap-2 opacity-80 text-[0.7rem] sm:text-xs lg:text-sm">
-          <div><strong>Head Office:</strong> Plot No. 112, Udyog Vihar, Phase-1, Gurugram, Haryana-122016</div>
-          <div><strong>New Delhi Office:</strong> IInd Floor, DLF, Moti Nagar, New Delhi-110015</div>
-          <div><strong>West Delhi Office:</strong> WZ-1, Upper Ground Floor, Main Nazafgarh Road, Uttam Nagar West, Delhi-110059</div>
-          <div><strong>Noida Office:</strong>1st, 2nd and 3rd Floor B-24, Sector 1 Noida, Uttar Pradesh - 201301</div>
-          <div><strong>Pune Office:</strong> 501, 5th Floor, Pride Icon, Kharadi, Pune, Maharashtra-411014</div>
-        </div>
-
-        {/* Social */}
-        <div className="text-left lg:text-right">
-          <p className="text-xs sm:text-sm mb-4 sm:mb-5 opacity-85" style={{ color: 'white' }}>
+        {/* Contact Details */}
+        <div>
+          <p className="text-xs sm:text-sm opacity-85 text-white font-sans m-0">
             Mobile: +91 8800-101-102. Email: info@stefto.com
           </p>
-          <div className="flex gap-2 sm:gap-3 justify-start lg:justify-end">
-            {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube].map((Icon, idx) => (
-              <a key={idx} href="#" className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white text-stefto-navy flex items-center justify-center no-underline transition-all hover:-translate-y-1 hover:shadow-lg">
-                <Icon size={14} />
-              </a>
-            ))}
-          </div>
+        </div>
+
+        {/* Social Links */}
+        <div className="flex gap-2 sm:gap-3">
+          {[
+            { Icon: FaFacebookF, href: "https://www.facebook.com/steftocom/" },
+            { Icon: FaTwitter, href: "https://x.com/steftocom" },
+            { Icon: FaInstagram, href: "https://www.instagram.com/stefto__/" },
+            { Icon: FaLinkedinIn, href: "https://www.linkedin.com/company/stefto/?viewAsMember=true" }
+          ].map(({ Icon, href }, idx) => (
+            <a key={idx} href={href} target="_blank" rel="noopener noreferrer" className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white text-stefto-navy flex items-center justify-center no-underline transition-all hover:-translate-y-1 hover:shadow-lg">
+              <Icon size={14} />
+            </a>
+          ))}
         </div>
 
       </div>
@@ -533,9 +531,20 @@ const AppContent = () => {
   );
 };
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <AppContent />
     </Router>
   );
