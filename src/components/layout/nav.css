@@ -1,0 +1,73 @@
+/* Custom Nav Link Smoothing - PolicyBazaar Style */
+.nav-text-smooth {
+  color: #253858;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: color 0.2s ease-in-out;
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.nav-text-smooth:hover, .nav-text-smooth.active {
+  color: #0050ff; /* PolicyBazaar Blue */
+}
+
+.nav-text-smooth::after {
+  content: '';
+  position: absolute;
+  bottom: 0px; 
+  left: 12px;
+  width: 0;
+  height: 2px;
+  background-color: #0050ff;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-text-smooth:hover::after, .nav-text-smooth.active::after {
+  width: calc(100% - 24px);
+}
+
+.nav-caret {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.nav-text-smooth.active .nav-caret {
+  transform: rotate(180deg);
+  color: #0050ff;
+}
+
+/* PolicyBazaar Dropdown Style */
+.pb-dropdown {
+  background: white;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border-radius: 0;
+}
+
+.pb-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border-bottom: 1px solid #f1f5f9;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #253858;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: white;
+  transition: background-color 0.2s ease;
+}
+
+.pb-dropdown-item:hover {
+  background-color: #f8fafc;
+}
+
+.pb-dropdown-item:last-child {
+  border-bottom: none;
+}
