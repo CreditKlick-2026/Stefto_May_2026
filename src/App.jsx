@@ -14,7 +14,7 @@ import CustomerStories from './pages/CustomerStories';
 import CustomerSupport from './pages/CustomerSupport';
 import DebtCollection from './pages/DebtCollection';
 import DigitalDebtManagement from './pages/DigitalDebtManagement';
-import DigitalLeadPartner from './pages/DigitalLeadPartner';
+
 import HealthCare from './pages/HealthCare';
 import HowAiIsMakingDebtCollectionMoreHumanA2025CaseStudy from './pages/HowAiIsMakingDebtCollectionMoreHumanA2025CaseStudy';
 import Inbound from './pages/Inbound';
@@ -28,7 +28,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import RefundsCancellations from './pages/RefundsCancellations';
 import RetentionAndPersistency from './pages/RetentionAndPersistency';
 import SalesSupport from './pages/SalesSupport';
-import Security from './pages/Security';
+
 import Services from './pages/Services';
 import Technology from './pages/Technology';
 import TermsOfUse from './pages/TermsOfUse';
@@ -68,8 +68,8 @@ const navMenus = {
     links: [
       { label: 'About Stefto', to: '/about-us' },
       { label: 'Why Trust Stefto?', to: '/why-trust-stefto' },
-      { label: 'Security', to: '/security' },
-      { label: 'Innovative partners', to: '/digital-lead-partner' },
+
+
       { label: 'Leadership', to: '/leadership' },
       { label: 'Inspiration World', to: '/about-us' },
     ],
@@ -389,8 +389,8 @@ const Footer = () => (
           <Link to="/about-us" className="footer-link-spark text-xs sm:text-sm">About Us</Link>
           <Link to="/why-trust-stefto" className="footer-link-spark text-xs sm:text-sm">Why Trust Stefto?</Link>
           <Link to="/careers" className="footer-link-spark text-xs sm:text-sm">Careers</Link>
-          <Link to="/security" className="footer-link-spark text-xs sm:text-sm">Security</Link>
-          <Link to="/digital-lead-partner" className="footer-link-spark text-xs sm:text-sm">Partnership</Link>
+
+
           <Link to="/contact-us" className="footer-link-spark text-xs sm:text-sm">Contact us</Link>
         </div>
 
@@ -505,7 +505,7 @@ const AppContent = () => {
           <Route path="/customer-support" element={<CustomerSupport />} />
           <Route path="/debt-collection" element={<DebtCollection />} />
           <Route path="/digital-debt-management" element={<DigitalDebtManagement />} />
-          <Route path="/digital-lead-partner" element={<DigitalLeadPartner />} />
+
           <Route path="/health-care" element={<HealthCare />} />
           <Route path="/how-ai-is-making-debt-collection-more-human-a-2025-case-study" element={<HowAiIsMakingDebtCollectionMoreHumanA2025CaseStudy />} />
           <Route path="/inbound" element={<Inbound />} />
@@ -519,7 +519,7 @@ const AppContent = () => {
           <Route path="/refunds-cancellations" element={<RefundsCancellations />} />
           <Route path="/retention-and-persistency" element={<RetentionAndPersistency />} />
           <Route path="/sales-support" element={<SalesSupport />} />
-          <Route path="/security" element={<Security />} />
+
           <Route path="/services" element={<Services />} />
           <Route path="/industry" element={<Services />} />
           <Route path="/technology" element={<Technology />} />

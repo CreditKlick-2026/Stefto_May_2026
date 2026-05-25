@@ -8,25 +8,19 @@ const industriesData = [
     id: 'banking',
     name: 'Banking & Financial Services',
     icon: Landmark,
-    link: '/banking-and-financial-services',
+    link: '/services',
   },
   {
     id: 'insurance',
     name: 'Insurance Sectors',
     icon: ShieldCheck,
-    link: '/insurance',
+    link: '/services',
   },
   {
     id: 'retail',
-    name: 'Retail Industry',
+    name: 'Telecommunication',
     icon: ShoppingBag,
-    link: '/retail-and-e-commerce',
-  },
-  {
-    id: 'ecommerce',
-    name: 'E-Commerce & Digital Commerce',
-    icon: ShoppingCart,
-    link: '/retail-and-e-commerce',
+    link: '/services',
   }
 ];
 
@@ -226,17 +220,17 @@ const Services = () => {
             position: relative;
             width: 100%;
             border-radius: 32px;
-            border: 1px solid rgba(45, 81, 40, 0.12);
-            box-shadow: 0 4px 30px rgba(45, 81, 40, 0.02);
+            border: 1px solid rgba(28, 70, 157, 0.12);
+            box-shadow: 0 4px 30px rgba(28, 70, 157, 0.02);
             overflow: hidden;
             z-index: 2;
           }
           .theme-insurance-custom:hover {
-            border-color: rgba(45, 81, 40, 0.25);
-            box-shadow: 0 15px 40px -10px rgba(45, 81, 40, 0.06);
+            border-color: rgba(28, 70, 157, 0.25);
+            box-shadow: 0 15px 40px -10px rgba(28, 70, 157, 0.06);
           }
           .theme-insurance-custom .card-theme-edge {
-            background: linear-gradient(to bottom, #2d5128, #1b3320);
+            background: linear-gradient(to bottom, #1c469d, #0f2a5e);
           }
 
           /* 4. RETAIL BESPOKE FLAT AMBER THEME */
@@ -244,17 +238,17 @@ const Services = () => {
             position: relative;
             width: 100%;
             border-radius: 32px;
-            border: 1px solid rgba(180, 100, 20, 0.12);
-            box-shadow: 0 4px 30px rgba(180, 100, 20, 0.02);
+            border: 1px solid rgba(28, 70, 157, 0.12);
+            box-shadow: 0 4px 30px rgba(28, 70, 157, 0.02);
             overflow: hidden;
             z-index: 2;
           }
           .theme-retail-custom:hover {
-            border-color: rgba(180, 100, 20, 0.25);
-            box-shadow: 0 15px 40px -10px rgba(180, 100, 20, 0.06);
+            border-color: rgba(28, 70, 157, 0.25);
+            box-shadow: 0 15px 40px -10px rgba(28, 70, 157, 0.06);
           }
           .theme-retail-custom .card-theme-edge {
-            background: linear-gradient(to bottom, #b45309, #92400e);
+            background: linear-gradient(to bottom, #1c469d, #0f2a5e);
           }
 
           /* 5. E-COMMERCE BESPOKE FLAT VIOLET THEME */
@@ -505,9 +499,7 @@ const Services = () => {
                               Banking &<br />Financial Services
                             </h2>
 
-                            <p className="text-[#4169a8] text-sm sm:text-base font-semibold max-w-sm mt-1 leading-relaxed">
-                              Powering BFSI excellence with intelligent operations, regulatory compliance, and AI-driven financial analytics.
-                            </p>
+
 
 
 
@@ -529,39 +521,39 @@ const Services = () => {
                       className="block theme-insurance-custom min-h-[380px] md:min-h-[460px] relative group select-none no-underline"
                     >
                       {/* Base Background & Wave Overlays (Custom CSS / SVG, no images, flat design) */}
-                      <div className="absolute inset-0 z-0 bg-[#fbf9f2]">
+                      <div className="absolute inset-0 z-0 bg-[#f4f7fc]">
                         <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 400" preserveAspectRatio="none">
                           {/* 1. Sage organic waves on the top-left */}
-                          <path d="M0,0 C160,0 200,80 150,150 C120,200 40,180 0,120 Z" fill="#2d5128" opacity="0.08" />
-                          <path d="M0,0 C100,0 120,50 100,100 C80,130 30,120 0,80 Z" fill="#2d5128" opacity="0.12" />
+                          <path d="M0,0 C160,0 200,80 150,150 C120,200 40,180 0,120 Z" fill="#1c469d" opacity="0.08" />
+                          <path d="M0,0 C100,0 120,50 100,100 C80,130 30,120 0,80 Z" fill="#1c469d" opacity="0.12" />
 
                           {/* 2. Soft sage organic waves on the bottom-left */}
-                          <path d="M0,400 C100,400 150,320 120,280 C90,240 20,280 0,320 Z" fill="#cbdad5" opacity="0.4" />
-                          <path d="M0,400 C80,400 120,340 90,310 C60,280 10,310 0,350 Z" fill="#88a296" opacity="0.3" />
+                          <path d="M0,400 C100,400 150,320 120,280 C90,240 20,280 0,320 Z" fill="#b3c7e8" opacity="0.4" />
+                          <path d="M0,400 C80,400 120,340 90,310 C60,280 10,310 0,350 Z" fill="#7094c8" opacity="0.3" />
 
                           {/* 3. Concentric sweeping center arc (beautiful dividing line from image) */}
-                          <path d="M380,420 C380,240 450,20 620,20" fill="none" stroke="#2d5128" strokeWidth="2.5" opacity="0.15" />
-                          <path d="M375,420 C375,235 446,15 618,15" fill="none" stroke="#2d5128" strokeWidth="1.2" opacity="0.08" />
+                          <path d="M380,420 C380,240 450,20 620,20" fill="none" stroke="#1c469d" strokeWidth="2.5" opacity="0.15" />
+                          <path d="M375,420 C375,235 446,15 618,15" fill="none" stroke="#1c469d" strokeWidth="1.2" opacity="0.08" />
 
                           {/* 4. Layered green waves on the bottom-right */}
-                          <path d="M500,400 C650,380 750,280 1000,310 L1000,400 Z" fill="#cbdad5" opacity="0.25" />
-                          <path d="M600,400 C730,370 780,270 1000,300 L1000,400 Z" fill="#88a296" opacity="0.3" />
-                          <path d="M680,400 C780,380 840,290 1000,320 L1000,400 Z" fill="#5b8266" opacity="0.4" />
-                          <path d="M760,400 C850,380 900,285 1000,340 L1000,400 Z" fill="#2d5128" opacity="0.55" />
-                          <path d="M840,400 C910,390 940,335 1000,360 L1000,400 Z" fill="#1b3320" opacity="0.65" />
+                          <path d="M500,400 C650,380 750,280 1000,310 L1000,400 Z" fill="#b3c7e8" opacity="0.25" />
+                          <path d="M600,400 C730,370 780,270 1000,300 L1000,400 Z" fill="#7094c8" opacity="0.3" />
+                          <path d="M680,400 C780,380 840,290 1000,320 L1000,400 Z" fill="#4169a8" opacity="0.4" />
+                          <path d="M760,400 C850,380 900,285 1000,340 L1000,400 Z" fill="#1c469d" opacity="0.55" />
+                          <path d="M840,400 C910,390 940,335 1000,360 L1000,400 Z" fill="#0f2a5e" opacity="0.65" />
 
                           {/* 5. Trend upward line and bars on the bottom-right */}
-                          <g transform="translate(710, 240) scale(0.85)" stroke="#2d5128" strokeWidth="2" fill="none" opacity="0.3">
+                          <g transform="translate(710, 240) scale(0.85)" stroke="#1c469d" strokeWidth="2" fill="none" opacity="0.3">
                             <polyline points="0,50 30,30 60,40 90,10" />
                             <path d="M90,10 L80,10 M90,10 L90,20" strokeLinecap="round" />
-                            <rect x="-10" y="55" width="10" height="15" fill="#2d5128" opacity="0.4" stroke="none" />
-                            <rect x="15" y="45" width="10" height="25" fill="#2d5128" opacity="0.4" stroke="none" />
-                            <rect x="45" y="50" width="10" height="20" fill="#2d5128" opacity="0.4" stroke="none" />
-                            <rect x="75" y="25" width="10" height="45" fill="#2d5128" opacity="0.4" stroke="none" />
+                            <rect x="-10" y="55" width="10" height="15" fill="#1c469d" opacity="0.4" stroke="none" />
+                            <rect x="15" y="45" width="10" height="25" fill="#1c469d" opacity="0.4" stroke="none" />
+                            <rect x="45" y="50" width="10" height="20" fill="#1c469d" opacity="0.4" stroke="none" />
+                            <rect x="75" y="25" width="10" height="45" fill="#1c469d" opacity="0.4" stroke="none" />
                           </g>
 
                           {/* 6. Interlocking gear outlines on the bottom-right */}
-                          <g transform="translate(860, 290) scale(0.7)" stroke="#2d5128" strokeWidth="1.8" fill="none" opacity="0.25">
+                          <g transform="translate(860, 290) scale(0.7)" stroke="#1c469d" strokeWidth="1.8" fill="none" opacity="0.25">
                             <circle cx="50" cy="50" r="18" />
                             <circle cx="50" cy="50" r="8" />
                             <path d="M50,12 L50,20 M50,80 L50,88 M12,50 L20,50 M80,50 L88,50 M23,23 L29,29 M71,71 L77,77 M23,77 L29,71 M71,23 L77,29" />
@@ -569,24 +561,24 @@ const Services = () => {
 
                           {/* 7. Grid dot matrices */}
                           {/* Top-Right (6x3 grid) */}
-                          <g transform="translate(770, 20)" fill="#2d5128" opacity="0.2">
+                          <g transform="translate(770, 20)" fill="#1c469d" opacity="0.2">
                             <circle cx="0" cy="0" r="2" /><circle cx="15" cy="0" r="2" /><circle cx="30" cy="0" r="2" /><circle cx="45" cy="0" r="2" /><circle cx="60" cy="0" r="2" /><circle cx="75" cy="0" r="2" />
                             <circle cx="0" cy="12" r="2" /><circle cx="15" cy="12" r="2" /><circle cx="30" cy="12" r="2" /><circle cx="45" cy="12" r="2" /><circle cx="60" cy="12" r="2" /><circle cx="75" cy="12" r="2" />
                             <circle cx="0" cy="24" r="2" /><circle cx="15" cy="24" r="2" /><circle cx="30" cy="24" r="2" /><circle cx="45" cy="24" r="2" /><circle cx="60" cy="24" r="2" /><circle cx="75" cy="24" r="2" />
                           </g>
                           {/* Top-Left (3x3 grid) */}
-                          <g transform="translate(30, 60)" fill="#2d5128" opacity="0.2">
+                          <g transform="translate(30, 60)" fill="#1c469d" opacity="0.2">
                             <circle cx="0" cy="0" r="2" /><circle cx="15" cy="0" r="2" /><circle cx="30" cy="0" r="2" />
                             <circle cx="0" cy="12" r="2" /><circle cx="15" cy="12" r="2" /><circle cx="30" cy="12" r="2" />
                             <circle cx="0" cy="24" r="2" /><circle cx="15" cy="24" r="2" /><circle cx="30" cy="24" r="2" />
                           </g>
 
                           {/* 8. Falling foliage leaf branches at the top-right */}
-                          <g transform="translate(930, 20) scale(0.65)" fill="#2d5128" opacity="0.3">
+                          <g transform="translate(930, 20) scale(0.65)" fill="#1c469d" opacity="0.3">
                             <path d="M0,80 Q30,60 40,20 Q10,40 0,80 Z" />
                             <path d="M10,95 Q45,85 60,55 Q25,75 10,95 Z" />
                             <path d="M-10,75 Q-45,65 -60,35 Q-25,55 -10,75 Z" />
-                            <line x1="0" y1="120" x2="0" y2="0" stroke="#2d5128" strokeWidth="3" />
+                            <line x1="0" y1="120" x2="0" y2="0" stroke="#1c469d" strokeWidth="3" />
                           </g>
                         </svg>
                       </div>
@@ -598,16 +590,16 @@ const Services = () => {
 
                         {/* LEFT SIDE: Custom CSS Vector Illustration (Family Circle & Dash-Ring Sub-Icons) */}
                         <div className="w-full md:w-1/2 flex items-center justify-center p-6 md:p-10 relative">
-                          <div className="w-[240px] h-[240px] sm:w-[290px] sm:h-[290px] rounded-full border-2 border-dashed border-[#2d5128]/35 relative flex items-center justify-center select-none shrink-0">
+                          <div className="w-[240px] h-[240px] sm:w-[290px] sm:h-[290px] rounded-full border-2 border-dashed border-[#1c469d]/35 relative flex items-center justify-center select-none shrink-0">
 
                             {/* Central Family Badge */}
-                            <div className="w-[150px] h-[150px] sm:w-[190px] sm:h-[190px] rounded-full bg-[#d2ded0] border-4 border-white flex items-center justify-center shadow-[0_4px_15px_rgba(0,0,0,0.02)] z-10">
-                              <svg viewBox="0 0 100 100" className="w-[110px] h-[110px] sm:w-[130px] sm:h-[130px] text-[#2d5128] fill-current">
+                            <div className="w-[150px] h-[150px] sm:w-[190px] sm:h-[190px] rounded-full bg-[#dce5f2] border-4 border-white flex items-center justify-center shadow-[0_4px_15px_rgba(0,0,0,0.02)] z-10">
+                              <svg viewBox="0 0 100 100" className="w-[110px] h-[110px] sm:w-[130px] sm:h-[130px] text-[#1c469d] fill-current">
                                 {/* Umbrella Canopy */}
                                 <path d="M50,18 C28,18 16,37 16,48 C24,48 29.5,43 35,45 C40.5,47 44.5,47 50,45 C55.5,47 59.5,47 65,45 C70.5,43 76,48 84,48 C84,37 72,18 50,18 Z" />
 
                                 {/* Umbrella Handle */}
-                                <path d="M50,45 L50,78 A3.5,3.5 0 0,1 46.5,81.5" fill="none" stroke="#2d5128" strokeWidth="2.8" strokeLinecap="round" />
+                                <path d="M50,45 L50,78 A3.5,3.5 0 0,1 46.5,81.5" fill="none" stroke="#1c469d" strokeWidth="2.8" strokeLinecap="round" />
 
                                 {/* Father (Left) */}
                                 <circle cx="39" cy="58" r="4" />
@@ -626,32 +618,32 @@ const Services = () => {
                             {/* 6 Surrounding Dashed-Ring Sub-Icons */}
 
                             {/* 1. Top (Shield Check) */}
-                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#2d5128]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
-                              <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#2d5128] fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#1c469d]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                              <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#1c469d] fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                                 <path d="m9 12 2 2 4-4" />
                               </svg>
                             </div>
 
                             {/* 2. Top-Right (Home) */}
-                            <div className="absolute top-[18%] -right-4 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#2d5128]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
-                              <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#2d5128] fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                            <div className="absolute top-[18%] -right-4 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#1c469d]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                              <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#1c469d] fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                                 <polyline points="9 22 9 12 15 12 15 22" />
                               </svg>
                             </div>
 
                             {/* 3. Bottom-Right (Briefcase) */}
-                            <div className="absolute bottom-[18%] -right-4 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#2d5128]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
-                              <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#2d5128] fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                            <div className="absolute bottom-[18%] -right-4 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#1c469d]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                              <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#1c469d] fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                                 <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
                                 <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                               </svg>
                             </div>
 
                             {/* 4. Bottom (Document Policy) */}
-                            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#2d5128]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
-                              <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#2d5128] fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#1c469d]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                              <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#1c469d] fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                                 <polyline points="14 2 14 8 20 8" />
                                 <line x1="16" y1="13" x2="8" y2="13" />
@@ -661,8 +653,8 @@ const Services = () => {
                             </div>
 
                             {/* 5. Bottom-Left (Car) */}
-                            <div className="absolute bottom-[18%] -left-4 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#2d5128]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
-                              <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#2d5128] fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                            <div className="absolute bottom-[18%] -left-4 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#1c469d]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                              <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#1c469d] fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9C2 11 2 11.1 2 11.2V16c0 .6.4 1 1 1h2" />
                                 <circle cx="7" cy="17" r="2" />
                                 <path d="M9 17h6" />
@@ -671,8 +663,8 @@ const Services = () => {
                             </div>
 
                             {/* 6. Top-Left (Heartbeat Pulse) */}
-                            <div className="absolute top-[18%] -left-4 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#2d5128]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
-                              <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#2d5128] fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                            <div className="absolute top-[18%] -left-4 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#1c469d]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                              <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#1c469d] fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
                               </svg>
                             </div>
@@ -684,20 +676,18 @@ const Services = () => {
                         <div className="w-full md:w-1/2 flex flex-col justify-center p-6 md:p-10 relative z-20">
                           <div className="flex flex-col items-start gap-4">
 
-                            <div className="text-[#2d5128] font-bold text-xs uppercase tracking-[0.2em] bg-[#e1eae0] border border-[#b2cbb0] px-3.5 py-1.5 rounded-full select-none">
+                            <div className="text-[#1c469d] font-bold text-xs uppercase tracking-[0.2em] bg-[#dce5f2] border border-[#a8bedb] px-3.5 py-1.5 rounded-full select-none">
                               Security & Protection
                             </div>
 
                             <h2
-                              className="text-4xl sm:text-5xl md:text-6xl font-black text-[#1b3320] leading-none select-none tracking-tight"
+                              className="text-4xl sm:text-5xl md:text-6xl font-black text-[#0f2a5e] leading-none select-none tracking-tight"
                               style={{ fontFamily: "'Outfit', sans-serif" }}
                             >
                               Insurance
                             </h2>
 
-                            <p className="text-[#3c5e42] text-sm sm:text-base font-semibold max-w-sm mt-1 leading-relaxed">
-                              Safeguard your family, health, and assets with our comprehensive risk coverage and modern flat insurance frameworks.
-                            </p>
+
 
 
 
@@ -719,56 +709,56 @@ const Services = () => {
                       className="block theme-retail-custom min-h-[380px] md:min-h-[460px] relative group select-none no-underline"
                     >
                       {/* Base Background & Wave Overlays */}
-                      <div className="absolute inset-0 z-0 bg-[#fdf8f0]">
+                      <div className="absolute inset-0 z-0 bg-[#f4f7fc]">
                         <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 400" preserveAspectRatio="none">
                           {/* 1. Warm organic waves on the top-left */}
-                          <path d="M0,0 C160,0 200,80 150,150 C120,200 40,180 0,120 Z" fill="#b45309" opacity="0.08" />
-                          <path d="M0,0 C100,0 120,50 100,100 C80,130 30,120 0,80 Z" fill="#b45309" opacity="0.12" />
+                          <path d="M0,0 C160,0 200,80 150,150 C120,200 40,180 0,120 Z" fill="#1c469d" opacity="0.08" />
+                          <path d="M0,0 C100,0 120,50 100,100 C80,130 30,120 0,80 Z" fill="#1c469d" opacity="0.12" />
 
                           {/* 2. Soft amber organic waves on the bottom-left */}
-                          <path d="M0,400 C100,400 150,320 120,280 C90,240 20,280 0,320 Z" fill="#e8d5b8" opacity="0.4" />
-                          <path d="M0,400 C80,400 120,340 90,310 C60,280 10,310 0,350 Z" fill="#c8a875" opacity="0.3" />
+                          <path d="M0,400 C100,400 150,320 120,280 C90,240 20,280 0,320 Z" fill="#b3c7e8" opacity="0.4" />
+                          <path d="M0,400 C80,400 120,340 90,310 C60,280 10,310 0,350 Z" fill="#7094c8" opacity="0.3" />
 
                           {/* 3. Sweeping center arc (dividing curve) */}
-                          <path d="M380,420 C380,240 450,20 620,20" fill="none" stroke="#b45309" strokeWidth="2.5" opacity="0.15" />
-                          <path d="M375,420 C375,235 446,15 618,15" fill="none" stroke="#b45309" strokeWidth="1.2" opacity="0.08" />
+                          <path d="M380,420 C380,240 450,20 620,20" fill="none" stroke="#1c469d" strokeWidth="2.5" opacity="0.15" />
+                          <path d="M375,420 C375,235 446,15 618,15" fill="none" stroke="#1c469d" strokeWidth="1.2" opacity="0.08" />
 
                           {/* 4. Layered amber waves on the bottom-right */}
-                          <path d="M500,400 C650,380 750,280 1000,310 L1000,400 Z" fill="#e8d5b8" opacity="0.25" />
-                          <path d="M600,400 C730,370 780,270 1000,300 L1000,400 Z" fill="#c8a875" opacity="0.3" />
-                          <path d="M680,400 C780,380 840,290 1000,320 L1000,400 Z" fill="#d97706" opacity="0.35" />
-                          <path d="M760,400 C850,380 900,285 1000,340 L1000,400 Z" fill="#b45309" opacity="0.5" />
-                          <path d="M840,400 C910,390 940,335 1000,360 L1000,400 Z" fill="#92400e" opacity="0.6" />
+                          <path d="M500,400 C650,380 750,280 1000,310 L1000,400 Z" fill="#b3c7e8" opacity="0.25" />
+                          <path d="M600,400 C730,370 780,270 1000,300 L1000,400 Z" fill="#7094c8" opacity="0.3" />
+                          <path d="M680,400 C780,380 840,290 1000,320 L1000,400 Z" fill="#4169a8" opacity="0.35" />
+                          <path d="M760,400 C850,380 900,285 1000,340 L1000,400 Z" fill="#1c469d" opacity="0.5" />
+                          <path d="M840,400 C910,390 940,335 1000,360 L1000,400 Z" fill="#0f2a5e" opacity="0.6" />
 
                           {/* 5. Shopping/retail trend bars */}
-                          <g transform="translate(710, 240) scale(0.85)" stroke="#b45309" strokeWidth="2" fill="none" opacity="0.3">
+                          <g transform="translate(710, 240) scale(0.85)" stroke="#1c469d" strokeWidth="2" fill="none" opacity="0.3">
                             <polyline points="0,50 30,35 60,25 90,10" />
                             <path d="M90,10 L80,10 M90,10 L90,20" strokeLinecap="round" />
-                            <rect x="-10" y="55" width="10" height="15" fill="#b45309" opacity="0.4" stroke="none" />
-                            <rect x="15" y="42" width="10" height="28" fill="#b45309" opacity="0.4" stroke="none" />
-                            <rect x="45" y="35" width="10" height="35" fill="#b45309" opacity="0.4" stroke="none" />
-                            <rect x="75" y="25" width="10" height="45" fill="#b45309" opacity="0.4" stroke="none" />
+                            <rect x="-10" y="55" width="10" height="15" fill="#1c469d" opacity="0.4" stroke="none" />
+                            <rect x="15" y="42" width="10" height="28" fill="#1c469d" opacity="0.4" stroke="none" />
+                            <rect x="45" y="35" width="10" height="35" fill="#1c469d" opacity="0.4" stroke="none" />
+                            <rect x="75" y="25" width="10" height="45" fill="#1c469d" opacity="0.4" stroke="none" />
                           </g>
 
                           {/* 6. Storefront awning shapes */}
-                          <g transform="translate(820, 270) scale(0.7)" fill="#b45309" opacity="0.12">
+                          <g transform="translate(820, 270) scale(0.7)" fill="#1c469d" opacity="0.12">
                             <path d="M0,30 L15,0 L30,30 L45,0 L60,30 L75,0 L90,30 Z" />
                           </g>
 
                           {/* 7. Grid dot matrices */}
-                          <g transform="translate(770, 20)" fill="#b45309" opacity="0.2">
+                          <g transform="translate(770, 20)" fill="#1c469d" opacity="0.2">
                             <circle cx="0" cy="0" r="2" /><circle cx="15" cy="0" r="2" /><circle cx="30" cy="0" r="2" /><circle cx="45" cy="0" r="2" /><circle cx="60" cy="0" r="2" /><circle cx="75" cy="0" r="2" />
                             <circle cx="0" cy="12" r="2" /><circle cx="15" cy="12" r="2" /><circle cx="30" cy="12" r="2" /><circle cx="45" cy="12" r="2" /><circle cx="60" cy="12" r="2" /><circle cx="75" cy="12" r="2" />
                             <circle cx="0" cy="24" r="2" /><circle cx="15" cy="24" r="2" /><circle cx="30" cy="24" r="2" /><circle cx="45" cy="24" r="2" /><circle cx="60" cy="24" r="2" /><circle cx="75" cy="24" r="2" />
                           </g>
-                          <g transform="translate(30, 60)" fill="#b45309" opacity="0.2">
+                          <g transform="translate(30, 60)" fill="#1c469d" opacity="0.2">
                             <circle cx="0" cy="0" r="2" /><circle cx="15" cy="0" r="2" /><circle cx="30" cy="0" r="2" />
                             <circle cx="0" cy="12" r="2" /><circle cx="15" cy="12" r="2" /><circle cx="30" cy="12" r="2" />
                             <circle cx="0" cy="24" r="2" /><circle cx="15" cy="24" r="2" /><circle cx="30" cy="24" r="2" />
                           </g>
 
                           {/* 8. Decorative diamond shapes (top-right) */}
-                          <g transform="translate(920, 25) scale(0.55)" stroke="#b45309" strokeWidth="2" fill="none" opacity="0.2">
+                          <g transform="translate(920, 25) scale(0.55)" stroke="#1c469d" strokeWidth="2" fill="none" opacity="0.2">
                             <rect x="0" y="15" width="30" height="30" rx="2" transform="rotate(45 15 30)" />
                             <rect x="10" y="22" width="14" height="14" rx="1" transform="rotate(45 17 29)" />
                           </g>
@@ -782,11 +772,11 @@ const Services = () => {
 
                         {/* LEFT SIDE: Custom CSS Vector Illustration (Storefront Circle & Dash-Ring Sub-Icons) */}
                         <div className="w-full md:w-1/2 flex items-center justify-center p-6 md:p-10 relative">
-                          <div className="w-[240px] h-[240px] sm:w-[290px] sm:h-[290px] rounded-full border-2 border-dashed border-[#b45309]/35 relative flex items-center justify-center select-none shrink-0">
+                          <div className="w-[240px] h-[240px] sm:w-[290px] sm:h-[290px] rounded-full border-2 border-dashed border-[#1c469d]/35 relative flex items-center justify-center select-none shrink-0">
 
                             {/* Central Storefront Badge */}
-                            <div className="w-[150px] h-[150px] sm:w-[190px] sm:h-[190px] rounded-full bg-[#f0e4d0] border-4 border-white flex items-center justify-center shadow-[0_4px_15px_rgba(0,0,0,0.02)] z-10">
-                              <svg viewBox="0 0 100 100" className="w-[110px] h-[110px] sm:w-[130px] sm:h-[130px] text-[#92400e] fill-current">
+                            <div className="w-[150px] h-[150px] sm:w-[190px] sm:h-[190px] rounded-full bg-[#dce5f2] border-4 border-white flex items-center justify-center shadow-[0_4px_15px_rgba(0,0,0,0.02)] z-10">
+                              <svg viewBox="0 0 100 100" className="w-[110px] h-[110px] sm:w-[130px] sm:h-[130px] text-[#1c469d] fill-current">
                                 {/* Store Awning */}
                                 <path d="M15,32 L25,18 L75,18 L85,32 Z" />
                                 <path d="M15,32 L25,42 L35,32 L45,42 L55,32 L65,42 L75,32 L85,42 L85,32 L15,32 Z" opacity="0.8" />
@@ -796,14 +786,14 @@ const Services = () => {
 
                                 {/* Store Door */}
                                 <rect x="40" y="52" width="20" height="28" rx="2" />
-                                <circle cx="56" cy="66" r="1.5" fill="#f0e4d0" />
+                                <circle cx="56" cy="66" r="1.5" fill="#dce5f2" />
 
                                 {/* Store Windows */}
                                 <rect x="25" y="48" width="12" height="12" rx="1" opacity="0.7" />
                                 <rect x="63" y="48" width="12" height="12" rx="1" opacity="0.7" />
 
                                 {/* Sign board */}
-                                <rect x="35" y="22" width="30" height="8" rx="2" fill="#f0e4d0" opacity="0.5" />
+                                <rect x="35" y="22" width="30" height="8" rx="2" fill="#dce5f2" opacity="0.5" />
 
                                 {/* Foundation */}
                                 <rect x="15" y="80" width="70" height="4" rx="1" />
@@ -813,8 +803,8 @@ const Services = () => {
                             {/* 6 Surrounding Dashed-Ring Sub-Icons */}
 
                             {/* 1. Top (Shopping Bag) */}
-                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#b45309]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
-                              <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#92400e] fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#1c469d]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                              <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#1c469d] fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
                                 <path d="M3 6h18" />
                                 <path d="M16 10a4 4 0 0 1-8 0" />
@@ -822,8 +812,8 @@ const Services = () => {
                             </div>
 
                             {/* 2. Top-Right (Barcode / Scanner) */}
-                            <div className="absolute top-[18%] -right-4 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#b45309]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
-                              <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#92400e] fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                            <div className="absolute top-[18%] -right-4 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#1c469d]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                              <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#1c469d] fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M3 5v-2h4" /><path d="M17 3h4v2" />
                                 <path d="M21 19v2h-4" /><path d="M7 21H3v-2" />
                                 <rect x="7" y="7" width="10" height="10" rx="1" />
@@ -831,16 +821,16 @@ const Services = () => {
                             </div>
 
                             {/* 3. Bottom-Right (Tag / Label) */}
-                            <div className="absolute bottom-[18%] -right-4 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#b45309]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
-                              <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#92400e] fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                            <div className="absolute bottom-[18%] -right-4 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#1c469d]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                              <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#1c469d] fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z" />
                                 <path d="M7 7h.01" />
                               </svg>
                             </div>
 
                             {/* 4. Bottom (Gift) */}
-                            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#b45309]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
-                              <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#92400e] fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#1c469d]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                              <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#1c469d] fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                                 <rect x="3" y="8" width="18" height="4" rx="1" />
                                 <path d="M12 8v13" />
                                 <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" />
@@ -849,8 +839,8 @@ const Services = () => {
                             </div>
 
                             {/* 5. Bottom-Left (Percent / Discount) */}
-                            <div className="absolute bottom-[18%] -left-4 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#b45309]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
-                              <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#92400e] fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                            <div className="absolute bottom-[18%] -left-4 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#1c469d]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                              <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#1c469d] fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                                 <line x1="19" y1="5" x2="5" y2="19" />
                                 <circle cx="6.5" cy="6.5" r="2.5" />
                                 <circle cx="17.5" cy="17.5" r="2.5" />
@@ -858,8 +848,8 @@ const Services = () => {
                             </div>
 
                             {/* 6. Top-Left (Star / Rating) */}
-                            <div className="absolute top-[18%] -left-4 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#b45309]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
-                              <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#92400e] fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                            <div className="absolute top-[18%] -left-4 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white border border-[#1c469d]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                              <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#1c469d] fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                               </svg>
                             </div>
@@ -871,20 +861,16 @@ const Services = () => {
                         <div className="w-full md:w-1/2 flex flex-col justify-center p-6 md:p-10 relative z-20">
                           <div className="flex flex-col items-start gap-4">
 
-                            <div className="text-[#92400e] font-bold text-xs uppercase tracking-[0.2em] bg-[#f0e4d0] border border-[#d4b896] px-3.5 py-1.5 rounded-full select-none">
-                              Commerce & Experience
+                            <div className="text-[#1c469d] font-bold text-xs uppercase tracking-[0.2em] bg-[#dce5f2] border border-[#a8bedb] px-3.5 py-1.5 rounded-full select-none">
+                              Network & Connectivity
                             </div>
 
                             <h2
-                              className="text-4xl sm:text-5xl md:text-6xl font-black text-[#78350f] leading-none select-none tracking-tight"
+                              className="text-4xl sm:text-5xl md:text-6xl font-black text-[#0f2a5e] leading-none select-none tracking-tight"
                               style={{ fontFamily: "'Outfit', sans-serif" }}
                             >
-                              Retail
+                              Telecommunication
                             </h2>
-
-                            <p className="text-[#a16207] text-sm sm:text-base font-semibold max-w-sm mt-1 leading-relaxed">
-                              Elevating retail operations with omnichannel customer engagement, inventory intelligence, and premium shopping experiences.
-                            </p>
 
 
 

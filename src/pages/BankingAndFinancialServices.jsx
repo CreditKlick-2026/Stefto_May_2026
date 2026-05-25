@@ -7,8 +7,8 @@ import {
 import LandingLayout from '../components/layout/LandingLayout';
 
 /* ── Asset Imports ─────────────────────────────────────────── */
-import heroBg          from '../assets/banking_hero_bg.png';
-import analyticsImg    from '../assets/banking_analytics.png';
+import heroBg from '../assets/banking_hero_bg.png';
+import analyticsImg from '../assets/banking_analytics.png';
 
 /* ──────────────────────────────────────────────────────────────
    Inline scoped styles — .bf-page namespace
@@ -677,7 +677,7 @@ const BankingAndFinancialServices = () => {
         {/* ══════════════════ 1. HERO ══════════════════ */}
         {/* Custom Flat CSS Hero Section */}
         <div className="relative pt-32 pb-20 min-h-[65vh] flex flex-col justify-center overflow-hidden bg-[#f4f7fc]">
-          
+
           {/* Background Vector Canvas */}
           <div className="absolute inset-0 z-0">
             <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1000 400" preserveAspectRatio="none">
@@ -726,10 +726,10 @@ const BankingAndFinancialServices = () => {
           {/* Hero Content Container */}
           <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div className="flex flex-col-reverse lg:flex-row items-center gap-16">
-              
+
               {/* LEFT SIDE: Typography & CTA */}
               <div className="w-full lg:w-1/2 flex flex-col justify-center">
-                
+
                 {/* Breadcrumb matching old style but adjusted colors */}
                 <nav className="flex items-center gap-2 text-sm font-semibold text-[#4169a8] mb-4">
                   <Link to="/" className="hover:text-[#1c469d] transition-colors">Home</Link>
@@ -743,7 +743,7 @@ const BankingAndFinancialServices = () => {
                   <Banknote size={16} /> Finance & Growth
                 </div>
 
-                <h1 
+                <h1
                   className="text-5xl sm:text-6xl md:text-7xl font-black text-[#0f2a5e] leading-[1.05] tracking-tight mb-6"
                   style={{ fontFamily: "'Outfit', sans-serif" }}
                 >
@@ -751,9 +751,7 @@ const BankingAndFinancialServices = () => {
                   <span className="text-[#1c469d]">Financial Services</span>
                 </h1>
 
-                <p className="text-[#4169a8] text-lg sm:text-xl font-medium max-w-lg leading-relaxed mb-8">
-                  Powering BFSI excellence with intelligent operations, regulatory compliance, and AI-driven financial analytics.
-                </p>
+
 
                 <div className="flex items-center gap-6">
                   <button className="bg-[#1c469d] text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-[#1c469d]/20 hover:bg-[#0f2a5e] transition-all flex items-center gap-2">
@@ -765,36 +763,36 @@ const BankingAndFinancialServices = () => {
               {/* RIGHT SIDE: Custom Vector Art Badge */}
               <div className="w-full lg:w-1/2 flex items-center justify-center relative">
                 <div className="w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] rounded-full border-[3px] border-dashed border-[#1c469d]/30 relative flex items-center justify-center select-none">
-                  
+
                   {/* Central Bank Building Badge */}
                   <div className="w-[200px] h-[200px] sm:w-[260px] sm:h-[260px] rounded-full bg-[#dce5f2] border-8 border-white flex items-center justify-center shadow-[0_8px_30px_rgba(28,70,157,0.1)] z-10 relative">
                     <svg viewBox="0 0 100 100" className="w-[150px] h-[150px] sm:w-[180px] sm:h-[180px] text-[#1c469d] fill-current relative z-10">
                       {/* Bank Roof / Pediment Triangle */}
                       <polygon points="50,15 20,38 80,38" />
-                      
+
                       {/* Roof base line */}
                       <rect x="16" y="36" width="68" height="5" rx="1" />
-                      
+
                       {/* 4 Pillars */}
                       <rect x="24" y="42" width="7" height="28" rx="1" />
                       <rect x="38" y="42" width="7" height="28" rx="1" />
                       <rect x="55" y="42" width="7" height="28" rx="1" />
                       <rect x="69" y="42" width="7" height="28" rx="1" />
-                      
+
                       {/* Foundation base */}
                       <rect x="16" y="70" width="68" height="5" rx="1" />
-                      
+
                       {/* Steps */}
                       <rect x="12" y="75" width="76" height="4" rx="1" />
                       <rect x="8" y="79" width="84" height="4" rx="1" />
                     </svg>
-                    
+
                     {/* Subtle highlight ring inside the badge */}
                     <div className="absolute inset-0 rounded-full border border-white/40 pointer-events-none"></div>
                   </div>
 
                   {/* 6 Surrounding Dashed-Ring Sub-Icons */}
-                  
+
                   {/* 1. Top (Credit Card) */}
                   <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white border border-[#1c469d]/20 flex items-center justify-center shadow-lg shadow-[#1c469d]/5 z-20">
                     <svg viewBox="0 0 24 24" className="w-6 h-6 sm:w-8 sm:h-8 text-[#1c469d] fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

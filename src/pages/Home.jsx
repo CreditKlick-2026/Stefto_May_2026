@@ -39,8 +39,8 @@ export default function Home() {
 
 
 
-            {/* About Section */}
-            <AboutSection />
+            {/* About Section (Removed as requested) */}
+            {/* <AboutSection /> */}
 
             {/* 2. Logo Ticker - Social Proof */}
             <LogoTicker />
@@ -88,7 +88,7 @@ export default function Home() {
             <ServicesSection />
 
             {/* 12. FAQ - Common Questions */}
-            <FAQSection />
+            {/* <FAQSection /> */}
 
             {/* 13. Contact Section */}
             <ContactSection />

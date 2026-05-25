@@ -39,8 +39,8 @@ export default function NewLanding() {
             {/* 2. Stats Bar */}
             <StatsBar />
 
-            {/* 3. About Section */}
-            <AboutSection />
+            {/* 3. About Section (Removed as requested) */}
+            {/* <AboutSection /> */}
 
             {/* 4. Logo Ticker - Social Proof */}
             <LogoTicker />

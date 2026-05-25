@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Square, X, Upload, MapPin, Loader2 } from 'lucide-react';
-import perksImage from '../assets/stefto_career_working.png';
+import careerTeamCollab from '../assets/career_team_collab.png';
+import careerCallCenter from '../assets/career_call_center.png';
+import careerMeeting from '../assets/career_meeting.png';
+import careerOfficeCulture from '../assets/career_office_culture.png';
 import jobAlertsImage from '../assets/stefto_job_alerts.png';
 import LandingLayout from '../components/layout/LandingLayout';
+
+const heroImg = 'https://res.cloudinary.com/dtz8hacj4/image/upload/v1779436368/WhyStefto_eczrwf.jpg';
 
 const Careers = () => {
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
@@ -57,22 +62,32 @@ const Careers = () => {
       <main className="w-full bg-white min-h-screen pt-16">
 
         {/* 1. Join The Family Section */}
-        <section className="w-full pt-4 pb-16 sm:pt-6 sm:pb-24 bg-white">
-          <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="w-full pt-16 pb-28 sm:pt-24 sm:pb-40 relative overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779710436/WhatsApp_Image_2026-05-25_at_17.21.23_etcyvd.jpg"
+              alt="Stefto Office"
+              className="w-full h-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-black/50"></div>
+          </div>
+
+          <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-[900px]">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-6 lg:mb-10" style={{ fontFamily: "'Fraunces', serif" }}>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6 lg:mb-10 uppercase tracking-[0.2em]" style={{ fontFamily: "'Fraunces', serif" }}>
                 Join the <span className="text-[#1e3a8a]">Stefto</span> Family
               </h2>
 
-              <div className="text-base sm:text-lg leading-relaxed space-y-6 text-justify bg-slate-50/70 p-6 sm:p-8 rounded-none border border-slate-100 border-l-4 border-l-[#1e3a8a] shadow-sm">
-                <p className="text-black">
+              <div className="text-base sm:text-lg leading-relaxed space-y-6 text-justify border-l-4 border-l-white p-6 sm:p-8">
+                <p className="text-white">
                   At Stefto, we are digital innovators. We leverage the power of technology to solve the challenges
                   faced by our clients. We owe our success to our team of innovators and passionate problem
                   solvers. If you love working in a fast-paced environment with ample opportunities to advance your
                   career while helping customers amplify their success, then Stefto is the perfect choice for you. Join
                   our winning team to make a change in customer experience.
                 </p>
-                <p className="text-black">
+                <p className="text-white">
                   Browse available jobs. Cannot find something that fits you? Send us your resume and we will help
                   you find the right role for you on our team.
                 </p>
@@ -80,6 +95,8 @@ const Careers = () => {
             </div>
           </div>
         </section>
+
+
 
         {/* 2. Perks Section */}
         <section className="w-full pt-10 pb-20 sm:pt-16 sm:pb-32 bg-[#fdfdfd] relative overflow-hidden">
@@ -95,14 +112,42 @@ const Careers = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-              {/* Left Image Area */}
+              {/* Left Image Grid Area */}
               <div className="w-full lg:col-span-5 h-[350px] sm:h-[450px] lg:h-[550px] rounded-none overflow-hidden shadow-2xl relative">
-                <img
-                  src={perksImage}
-                  alt="Man working on laptop"
-                  className="w-full h-full object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 to-transparent"></div>
+                <div className="grid grid-cols-2 grid-rows-2 h-full gap-1">
+                  <div className="overflow-hidden relative group">
+                    <img
+                      src={careerTeamCollab}
+                      alt="Team Collaboration"
+                      className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                  <div className="overflow-hidden relative group">
+                    <img
+                      src={careerCallCenter}
+                      alt="Call Center Team"
+                      className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                  <div className="overflow-hidden relative group">
+                    <img
+                      src={careerMeeting}
+                      alt="Business Meeting"
+                      className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                  <div className="overflow-hidden relative group">
+                    <img
+                      src={careerOfficeCulture}
+                      alt="Office Culture"
+                      className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                </div>
               </div>
 
               {/* Right Content Card Area */}
@@ -174,12 +219,33 @@ const Careers = () => {
           </div>
         </section>
 
+        {/* Gallery Section */}
+        <section className="w-full py-16 sm:py-24 bg-white flex justify-center border-t border-slate-100">
+          <div className="max-w-[800px] w-full px-4 sm:px-6">
+            <div className="mb-10 lg:mb-14 px-4 sm:px-0 flex flex-col items-center text-center">
+              <h2 className="text-[1.125rem] sm:text-xl lg:text-2xl tracking-[0.2em] text-black uppercase font-bold" style={{ fontFamily: "'Fraunces', serif" }}>
+                Gallery
+              </h2>
+            </div>
+            <div className="custom-gallery-wall" style={{ width: '100%', marginLeft: 0 }}>
+              <div className="gallery-frame gw-1"><img src={heroImg} alt="Gallery 1" /></div>
+              <div className="gallery-frame gw-2"><img src={heroImg} alt="Gallery 2" /></div>
+              <div className="gallery-frame gw-3"><img src={heroImg} alt="Gallery 3" /></div>
+              <div className="gallery-frame gw-4"><img src={heroImg} alt="Gallery 4" /></div>
+              <div className="gallery-frame gw-5"><img src={heroImg} alt="Gallery 5" /></div>
+              <div className="gallery-frame gw-6"><img src={heroImg} alt="Gallery 6" /></div>
+              <div className="gallery-frame gw-7"><img src={heroImg} alt="Gallery 7" /></div>
+              <div className="gallery-frame gw-8"><img src={heroImg} alt="Gallery 8" /></div>
+            </div>
+          </div>
+        </section>
+
         {/* 3. Job Listings Section */}
         <section className="w-full py-16 sm:py-24 bg-white relative">
           <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
 
             <div className="flex flex-col items-center mb-12 lg:mb-16">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black text-center tracking-tight mb-2" style={{ fontFamily: "'Fraunces', serif" }}>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black text-center uppercase tracking-[0.2em] mb-2" style={{ fontFamily: "'Fraunces', serif" }}>
                 Choose a career with <span className="text-[#1e3a8a]">Stefto</span>
               </h2>
 
@@ -402,7 +468,7 @@ const Careers = () => {
                   >
                     <option value="" disabled>Select Office Location</option>
                     <option value="Head Office: Plot No. 112, Udyog Vihar, Phase-1, Gurugram, Haryana-122016" title="Head Office: Plot No. 112, Udyog Vihar, Phase-1, Gurugram, Haryana-122016">Head Office - Gurugram</option>
-                    <option value="New Delhi Office: IInd Floor, DLF, Moti Nagar, New Delhi-110015" title="New Delhi Office: IInd Floor, DLF, Moti Nagar, New Delhi-110015">New Delhi Office - Moti Nagar</option>
+
                     <option value="West Delhi Office: WZ-1, Upper Ground Floor, Main Nazafgarh Road, Uttam Nagar West, Delhi-110059" title="West Delhi Office: WZ-1, Upper Ground Floor, Main Nazafgarh Road, Uttam Nagar West, Delhi-110059">West Delhi Office - Uttam Nagar</option>
                     <option value="Noida Office: 1st, 2nd and 3rd Floor B-24, Sector 1 Noida, Uttar Pradesh - 201301" title="Noida Office: 1st, 2nd and 3rd Floor B-24, Sector 1 Noida, Uttar Pradesh - 201301">Noida Office - Sector 1</option>
                     <option value="Pune Office: 501, 5th Floor, Pride Icon, Kharadi, Pune, Maharashtra-411014" title="Pune Office: 501, 5th Floor, Pride Icon, Kharadi, Pune, Maharashtra-411014">Pune Office - Kharadi</option>
@@ -426,7 +492,56 @@ const Careers = () => {
         </div>,
         document.body
       )}
+      <style>{`
+        .custom-gallery-wall {
+          display: grid;
+          grid-template-columns: repeat(28, 1fr);
+          grid-template-rows: repeat(20, 1fr);
+          gap: 1.5%;
+          width: 125%;
+          margin-left: -25%;
+          aspect-ratio: 1.4;
+        }
 
+        .gallery-frame {
+          background: white;
+          padding: 6%;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.04);
+          display: flex;
+          transition: transform 0.3s ease;
+        }
+
+        .gallery-frame:hover {
+          transform: scale(1.02);
+          z-index: 10;
+        }
+
+        .gallery-frame img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .gw-1 { grid-column: 1 / 7; grid-row: 4 / 15; }
+        .gw-2 { grid-column: 7 / 12; grid-row: 3 / 8; }
+        .gw-3 { grid-column: 7 / 12; grid-row: 9 / 17; }
+        .gw-4 { grid-column: 12 / 17; grid-row: 2 / 10; }
+        .gw-5 { grid-column: 12 / 17; grid-row: 11 / 16; }
+        .gw-6 { grid-column: 17 / 23; grid-row: 1 / 11; }
+        .gw-7 { grid-column: 17 / 23; grid-row: 12 / 17; }
+        .gw-8 { grid-column: 23 / 29; grid-row: 5 / 15; }
+
+        @media (max-width: 900px) {
+          .custom-gallery-wall { 
+            width: 100%;
+            margin-left: 0;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .custom-gallery-wall { aspect-ratio: 1; }
+        }
+      `}</style>
     </LandingLayout>
   );
 };

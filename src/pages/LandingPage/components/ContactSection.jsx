@@ -4,23 +4,15 @@ import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
 export default function ContactSection() {
   return (
     <section id="contact" className="py-24 bg-white relative overflow-hidden">
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse at 60% 50%, rgba(28,70,157,0.05) 0%, transparent 70%)',
-        }}
-      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: CTA Copy */}
           <div className="space-y-8">
             <div className="space-y-3">
-              <span className="pill-tag">Get In Touch</span>
-              <h2 className="text-section-xl text-slate-900" style={{ fontFamily: "'Fraunces', serif" }}>
-                Ready to Optimize<br /><span className="text-[#1c469d]">Your Recovery?</span>
-              </h2>
-              <p className="text-slate-500 text-base leading-relaxed max-w-md">
-                Partner with Stefto for turnkey debt collection solutions. Our team will craft a customized strategy for your portfolio within 48 hours.
+              <h1 className="text-[#1e3a8a] font-bold text-3xl leading-relaxed max-w-md">Get In Touch</h1>
+              <p className="text-black text-xl sm:text-2xl leading-relaxed max-w-md">
+                Partner with us for turnkey debt collection & customer service solutions. Our team will craft a customized strategy for your portfolio.
               </p>
             </div>
 

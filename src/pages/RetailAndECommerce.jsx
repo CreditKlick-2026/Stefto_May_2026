@@ -61,17 +61,16 @@ const RetailAndECommerce = () => {
                 className="text-5xl sm:text-6xl md:text-7xl font-black text-[#78350f] leading-[1.05] tracking-tight mb-6"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
-                Retail & <br />
-                <span className="text-[#b45309]">E-Commerce</span>
+                Telecommunication
               </h1>
 
               <p className="text-[#a16207] text-lg sm:text-xl font-medium max-w-lg leading-relaxed mb-8">
-                Empowering retail and e-commerce brands with intelligent customer support, seamless order management, and omnichannel shopping experiences.
+                Empowering telecommunication brands with intelligent customer support, seamless order management, and omnichannel experiences.
               </p>
 
               <div className="flex items-center gap-6">
                 <button className="bg-[#92400e] text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-[#92400e]/20 hover:bg-[#78350f] transition-all">
-                  Discuss Retail Solutions
+                  Discuss Telecommunication Solutions
                 </button>
               </div>
             </div>

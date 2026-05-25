@@ -23,7 +23,7 @@ const reasons = [
   {
     number: '03',
     title: 'Ethical Collection',
-    description: 'We maintain your brand\'s reputation while recovering dues — compliant, empathetic, and professional at every touchpoint.',
+    description: 'We maintain your brand\'s reputation while recovering dues compliant, empathetic, and professional at every touchpoint.',
     icon: ThumbsUp,
     color: '#059669',
     bg: '#ecfdf5',
@@ -31,7 +31,7 @@ const reasons = [
   {
     number: '04',
     title: 'Customer Excellence',
-    description: 'Delivering seamless, customer-centric experiences through empathy, innovation, and responsive support that builds long-term trust across every interaction.',
+    description: 'Delivering seamless, customer centric experiences through empathy, innovation, and responsive support that builds long-term trust across every interaction.',
     icon: HeartHandshake,
     color: '#dc2626',
     bg: '#fef2f2',
@@ -70,61 +70,28 @@ export default function WhyTrustSection() {
       {/* Ambient glow */}
       <div style={{ position: 'absolute', left: -80, top: '50%', transform: 'translateY(-50%)', width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
 
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 64px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1.35fr 1fr', gap: 64, alignItems: 'center' }} className="why-trust-grid">
+      <div style={{ maxWidth: 1440, margin: '0 auto', padding: '0 32px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} className="why-trust-grid">
 
-          {/* ── LEFT: Image ──────────────────────────────────── */}
+          {/* ── Content ───────────────────────────────── */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={visible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-            style={{ position: 'relative' }}
-          >
-            {/* Main image */}
-            <div style={{
-              aspectRatio: '1/1',
-              overflow: 'hidden',
-              boxShadow: '0 32px 80px rgba(0,0,0,0.15)',
-              position: 'relative',
-              lineHeight: 0,
-            }}>
-              <img
-                src={heroImg}
-                alt="Stefto professionals in strategy meeting"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-              />
-              {/* subtle overlay */}
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 60%, rgba(15,31,75,0.15) 100%)' }} />
-            </div>
-
-
-
-
-          </motion.div>
-
-          {/* ── RIGHT: Content ───────────────────────────────── */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={visible ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, y: 30 }}
+            animate={visible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
+            className="w-full"
           >
 
 
             {/* Heading */}
-            <h2 style={{ fontSize: 'clamp(32px, 4vw, 48px)', fontWeight: 900, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.02em', marginBottom: 16 }}>
-              Why Trust<br />
-              <span style={{ color: '#2563eb' }}>Stefto?</span>
-            </h2>
-
-            {/* Divider */}
-            <div style={{ width: 48, height: 3, background: 'linear-gradient(90deg, #2563eb, #60a5fa)', borderRadius: 99, marginBottom: 20 }} />
-
-            <p style={{ color: '#64748b', fontSize: 15, lineHeight: 1.75, marginBottom: 36 }}>
-              We are a strategic partner in your recovery ecosystem not just a vendor.
-            </p>
+            <div className="text-center mb-12 flex flex-col items-center">
+              <h2 style={{ fontSize: 'clamp(32px, 4vw, 48px)', fontWeight: 700, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.02em', marginBottom: 16 }}>
+                Why Trust <span style={{ color: '#1e3a8a', fontFamily: 'system-ui, -apple-system, Arial, sans-serif', fontVariantLigatures: 'none' }}>Stefto?</span>
+              </h2>
+              <div style={{ width: 48, height: 3, background: 'linear-gradient(90deg, #1e3a8a, #3b82f6)', borderRadius: 99, marginBottom: 20 }} />
+            </div>
 
             {/* Reason cards */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
               {reasons.map((r, i) => (
                 <motion.div
                   key={r.number}
@@ -132,24 +99,23 @@ export default function WhyTrustSection() {
                   animate={visible ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.25 + i * 0.1 }}
                   style={{
-                    display: 'flex', gap: 16, alignItems: 'flex-start',
-                    background: '#f8fafc', border: '1px solid #f1f5f9',
-                    borderRadius: 16, padding: '16px 20px',
+                    display: 'flex', flexDirection: 'column', alignItems: 'flex-start',
+                    background: '#1e3a8a', border: '1px solid #1e40af',
+                    borderRadius: 16, padding: '24px',
                     transition: 'all 0.2s',
                     cursor: 'default',
+                    height: '100%',
                   }}
-                  whileHover={{ scale: 1.01, boxShadow: '0 8px 24px rgba(0,0,0,0.07)', borderColor: '#e2e8f0', background: '#fff' }}
+                  whileHover={{ scale: 1.01, boxShadow: '0 8px 24px rgba(30,58,138,0.3)', borderColor: '#2563eb', background: '#1e3a8a', transform: 'translateY(-4px)' }}
                 >
-                  <div style={{ width: 40, height: 40, borderRadius: 12, background: r.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <r.icon style={{ width: 18, height: 18, color: r.color }} />
-                  </div>
-                  <div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 6 }}>
-                      <span style={{ fontSize: 13, fontWeight: 800, color: r.color, fontFamily: 'monospace' }}>{r.number}</span>
-                      <h3 style={{ fontSize: 16, fontWeight: 700, color: '#0f172a', margin: 0 }}>{r.title}</h3>
+                  <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 20 }}>
+                    <div style={{ width: 48, height: 48, borderRadius: 14, background: r.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      <r.icon style={{ width: 22, height: 22, color: r.color }} />
                     </div>
-                    <p style={{ fontSize: 13, color: '#64748b', lineHeight: 1.6, margin: 0 }}>{r.description}</p>
+                    <span style={{ fontSize: 40, fontWeight: 900, color: 'rgba(255, 255, 255, 0.1)', lineHeight: 1, fontFamily: 'sans-serif' }}>{r.number}</span>
                   </div>
+                  <h3 style={{ fontSize: 18, fontWeight: 700, color: '#ffffff', marginBottom: 12 }}>{r.title}</h3>
+                  <p style={{ fontSize: 14, color: '#cbd5e1', lineHeight: 1.6, margin: 0, flexGrow: 1, textAlign: 'justify', hyphens: 'auto', WebkitHyphens: 'auto' }}>{r.description}</p>
                 </motion.div>
               ))}
             </div>

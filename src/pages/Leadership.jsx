@@ -12,9 +12,7 @@ const leaders = [
     color: 'from-[#041434] to-[#1a237e]',
     img: '/assets/team/Rajnish.png',
     shortBio: '30+ Years of experience in Banking Operations & HR',
-    bio: `Rajnish Datta is a dynamic and results-oriented leader with a proven track record of driving growth and achieving strategic objectives across diverse sectors, particularly within the financial services industry. With over two decades of experience, he brings a wealth of knowledge and expertise to Stefto Management Services as its Director.
-
-His leadership philosophy centers on building high-performing teams, fostering innovation, and creating sustainable business models that deliver long-term value. Under his stewardship, Stefto has consistently expanded its footprint across India's most competitive banking and financial services segments.`
+    bio: `Rajnish Datta is a dynamic and results-oriented leader with a proven track record of driving growth and achieving strategic objectives across diverse sectors, particularly within the financial services industry.\n\nWith over two decades of experience, he brings a wealth of knowledge and expertise to Stefto Management Services as its Director.`
   },
   {
     name: 'Parvesh Paul Sood',
@@ -23,9 +21,7 @@ His leadership philosophy centers on building high-performing teams, fostering i
     color: 'from-[#1a237e] to-[#0d47a1]',
     img: '/assets/team/Parvesh.png',
     shortBio: '30+ Years of experience in Banking & Finance Operations',
-    bio: `Parvesh Paul Sood is a distinguished financial services professional and strategic leader with over 30 years of experience across diverse banking domains, including consumer, SME, and commercial banking. His expertise extends to strategic investment, risk management, and business incubation, making him a valuable asset to organizations seeking growth and innovation.
-
-Throughout his illustrious career, he has held senior positions at leading financial institutions, where he developed a deep understanding of credit operations, regulatory frameworks, and digital transformation. His ability to navigate complex financial landscapes and identify emerging opportunities has been instrumental in shaping Stefto's strategic direction.`
+    bio: `Parvesh Paul Sood is a distinguished financial services professional and strategic leader with over 30 years of experience across diverse banking domains, including consumer, SME, and commercial banking.\n\nHis expertise extends to strategic investment, risk management, and business incubation, making him a valuable asset to organizations seeking growth and innovation.`
   },
   {
     name: 'Dharmendra Kalra',
@@ -35,9 +31,7 @@ Throughout his illustrious career, he has held senior positions at leading finan
     img: 'https://res.cloudinary.com/dtz8hacj4/image/upload/v1779359778/WhatsApp_Image_2025-12-15_at_3.24.11_PM_ziut21.jpg',
     objectPosition: '50% 20%',
     shortBio: '25+ Years of experience in Banking Operations',
-    bio: `Dharmendra Kalra is a dynamic leader and entrepreneur with over 25+ years of rich experience in the financial services industry, particularly in SME banking, credit analysis, and collections. As the CEO of Stefto Management Services, he is dedicated to simplifying and enhancing financial services through digitization.
-
-His vision has driven Stefto's transformation from a traditional BPO into a technology-first ecosystem, pioneering AI-driven BPO and customer support solutions that are both effective and ethical. Under his leadership, Stefto has built proprietary platforms like CreditKlick and forged partnerships with over 50 of India's most prominent banks and financial institutions. Why are we the best? Because we listen to our customers wholeheartedly.`
+    bio: `Dharmendra Kalra is a dynamic leader and entrepreneur with over 25+ years of rich experience in the financial services industry, particularly in SME banking, credit analysis, and collections.\n\nAs the CEO of Stefto Management Services, he is dedicated to simplifying and enhancing financial services through digitization.`
   }
 ];
 
@@ -96,7 +90,7 @@ const LeaderCard = ({ leader, index }) => {
 
         {/* Bio Text */}
         <div className="flex-1">
-          <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
+          <p className="text-slate-500 text-xs sm:text-sm leading-relaxed text-justify">
             {paragraphs[0]}
           </p>
           {paragraphs.length > 1 && (
@@ -105,7 +99,7 @@ const LeaderCard = ({ leader, index }) => {
                 }`}
             >
               {paragraphs.slice(1).map((p, i) => (
-                <p key={i} className="text-slate-400 text-xs sm:text-sm leading-relaxed mt-3">
+                <p key={i} className="text-slate-400 text-xs sm:text-sm leading-relaxed mt-3 text-justify">
                   {p}
                 </p>
               ))}
@@ -148,19 +142,14 @@ const Leadership = () => {
           <div className="absolute bottom-[-60px] left-[-60px] w-[250px] h-[250px] rounded-full bg-white/[0.03] pointer-events-none"></div>
 
           <div className="relative z-10 max-w-[600px]">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-3 mb-5">
-              <div className="w-2 h-2 rounded-full bg-stefto-sky"></div>
-              <span className="text-white/80 text-[0.7rem] sm:text-xs font-bold uppercase tracking-[0.2em]">
-                Stefto People. Process. Performance.
-              </span>
-            </div>
+
+
 
             <h1
               className="text-[1.6rem] sm:text-[2.2rem] lg:text-[2.8rem] font-extrabold text-white leading-[1.1] mb-5"
               style={{ color: 'white', background: 'none' }}
             >
-              A strong <span className="text-white">leadership model</span>
+              The Minds <span className="text-white">Behind Stefto</span>
             </h1>
 
           </div>
@@ -172,9 +161,7 @@ const Leadership = () => {
 
             {/* Section heading */}
             <div className="text-center mb-6 sm:mb-8">
-              <p className="text-[0.7rem] sm:text-xs font-bold uppercase tracking-[0.15em] text-stefto-blue mb-2">
-                THE MINDS BEHIND STEFTO
-              </p>
+
               <h2
                 className="text-2xl sm:text-3xl lg:text-[2.5rem] font-light text-[#041434]"
                 style={{ background: 'none', color: '#041434' }}

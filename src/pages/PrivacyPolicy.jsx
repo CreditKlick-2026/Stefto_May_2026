@@ -27,7 +27,7 @@ const PrivacyPolicy = () => {
         <section 
           className="w-full relative overflow-hidden text-white border-b border-white/10"
           style={{
-            background: "linear-gradient(135deg, #0a1628 0%, #0f1f4b 35%, #132359 60%, #1a3a8f 85%, #1d4ed8 100%)",
+            background: "#1e3a8a",
             padding: "130px 0 70px 0"
           }}
         >
@@ -40,23 +40,13 @@ const PrivacyPolicy = () => {
 
           <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-[900px]">
-              <p style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.40)", letterSpacing: "0.22em", textTransform: "uppercase", marginBottom: 16 }}>
-                Legal Documentation
-              </p>
+
               
-              <h1 className="font-sans" style={{ fontSize: "clamp(36px,5vw,56px)", fontWeight: 900, color: "#ffffff", lineHeight: 1.1, letterSpacing: "-0.02em", margin: "0 0 24px" }}>
-                Privacy <span style={{
-                    background: "linear-gradient(90deg, #60a5fa 0%, #93c5fd 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text"
-                }}>Policy</span>
+              <h1 style={{ fontSize: "clamp(36px,5vw,56px)", fontWeight: 700, color: "#ffffff", lineHeight: 1.1, letterSpacing: "-0.02em", margin: "0 0 24px" }}>
+                Privacy Policy
               </h1>
 
-              <div className="flex items-center gap-3 text-white/80 text-xs sm:text-sm font-semibold bg-white/5 backdrop-blur-md w-fit px-4 py-2.5 rounded-full border border-white/15 shadow-lg">
-                <span className="w-2.5 h-2.5 bg-[#34d399] rounded-full animate-pulse"></span>
-                Last Revised: 02 Nov, 2023
-              </div>
+
             </div>
           </div>
         </section>
@@ -86,13 +76,13 @@ const PrivacyPolicy = () => {
 
             {/* Main Content Area */}
             <div className="w-full lg:w-3/4">
-              <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-sm border border-slate-100 text-slate-700 leading-relaxed space-y-12">
+              <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-sm border border-slate-100 text-black leading-relaxed space-y-12">
 
                 <div className="border-b border-slate-50 pb-8">
-                  <p className="text-lg font-medium text-slate-800 italic mb-6">
+                  <p className="text-lg font-medium text-black italic mb-6">
                     STEFTO treats your privacy seriously."
                   </p>
-                  <p>
+                  <p className="text-black">
                     This Privacy Policy governs the manner in which Stefto collects, uses, maintains and discloses information collected from users (each, a “User”) of the https://www.stefto.com website (“Site”). This privacy policy applies to the Site and all products and services offered by STEFTO.
                   </p>
                 </div>
@@ -104,10 +94,10 @@ const PrivacyPolicy = () => {
                     Personal identification information
                   </h2>
                   <div className="space-y-4">
-                    <p>
+                    <p className="text-black">
                       We may collect personal identification information from Users in a variety of ways, including, but not limited to, when Users visit our site, register on the site, place an order, and in connection with other activities, services, features or resources we make available on our Site.
                     </p>
-                    <p className="bg-slate-50 p-4 rounded-xl border-l-4 border-stefto-indigo text-slate-600 font-medium italic">
+                    <p className="bg-slate-50 p-4 rounded-xl border-l-4 border-stefto-indigo text-black font-medium italic">
                       "Users may be asked for, as appropriate, name, email address, mailing address, phone number. We will collect personal identification information from Users only if they voluntarily submit such information to us."
                     </p>
                   </div>
@@ -119,7 +109,7 @@ const PrivacyPolicy = () => {
                     <span className="w-1.5 h-6 bg-stefto-sky rounded-full"></span>
                     Non-personal identification information
                   </h2>
-                  <p>
+                  <p className="text-black">
                     We may collect non-personal identification information about Users whenever they interact with our Site. Non-personal identification information may include the browser name, the type of computer and technical information about Users means of connection to our Site, such as the operating system and the Internet service provider’s utilized and other similar information.
                   </p>
                 </div>
@@ -130,7 +120,7 @@ const PrivacyPolicy = () => {
                     <span className="w-1.5 h-6 bg-stefto-sky rounded-full"></span>
                     Web browser cookies
                   </h2>
-                  <p>
+                  <p className="text-black">
                     Our Site use “cookies” to enhance User experience. User’s web browser places cookies on their hard drive for record-keeping purposes and sometimes to track information about them. User may choose to set their web browser to refuse cookies, or to alert you when cookies are being sent. If they do so, note that some parts of the Site may not function properly.
                   </p>
                 </div>
@@ -141,7 +131,7 @@ const PrivacyPolicy = () => {
                     <span className="w-1.5 h-6 bg-stefto-sky rounded-full"></span>
                     How we use collected information
                   </h2>
-                  <p className="mb-6">Stefto may collect and use Users personal information for the following purposes:</p>
+                  <p className="mb-6 text-black">Stefto may collect and use Users personal information for the following purposes:</p>
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
                       "To improve customer service",
@@ -158,10 +148,10 @@ const PrivacyPolicy = () => {
                 </div>
 
                 {/* GDPR */}
-                <div id="gdpr" className="scroll-mt-32 bg-slate-900 rounded-3xl p-8 sm:p-10 text-white relative overflow-hidden">
+                <div id="gdpr" className="scroll-mt-32 bg-[#1e3a8a] rounded-3xl p-8 sm:p-10 text-white relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-stefto-indigo/20 blur-[80px] rounded-full -mr-20 -mt-20"></div>
                   <h2 className="text-3xl font-bold text-white mb-8 relative z-10">STEFTO GDPR policy</h2>
-                  <div className="space-y-6 text-slate-300 relative z-10">
+                  <div className="space-y-6 text-white [&_p]:text-white relative z-10">
                     <p>
                       For the purpose of the General Data Protection Regulation (“GDPR”), the data controller is Stefto. The information and data You provide will be processed in accordance with the provisions of the GDPR.
                     </p>
@@ -192,11 +182,11 @@ const PrivacyPolicy = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-inner">
                       <h4 className="font-bold text-stefto-indigo mb-3 uppercase text-sm tracking-wide">Information You Give Us</h4>
-                      <p className="text-sm">Contact info (Name, address, email, phone) and payment info for contract performance. (We do NOT store Credit card Details).</p>
+                      <p className="text-sm text-black">Contact info (Name, address, email, phone) and payment info for contract performance. (We do NOT store Credit card Details).</p>
                     </div>
                     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-inner">
                       <h4 className="font-bold text-stefto-indigo mb-3 uppercase text-sm tracking-wide">Automatic Collection</h4>
-                      <p className="text-sm">Technical IP info, browser settings, operating systems, and full URL clickstream data for security and improvement.</p>
+                      <p className="text-sm text-black">Technical IP info, browser settings, operating systems, and full URL clickstream data for security and improvement.</p>
                     </div>
                   </div>
                 </div>
@@ -207,10 +197,10 @@ const PrivacyPolicy = () => {
                     <span className="w-1.5 h-6 bg-stefto-sky rounded-full"></span>
                     Personal Data Managed by Our Clients
                   </h2>
-                  <p className="mb-4">
+                  <p className="mb-4 text-black">
                     “Client Customer Data” is the Personal Data belonging the parties with whom our Client has a relationship. We have no direct relationship with the parties whose Client Customer Data is processed by our Clients.
                   </p>
-                  <div className="bg-slate-50 border border-slate-200 p-6 rounded-2xl italic text-slate-600 text-sm leading-relaxed">
+                  <div className="bg-slate-50 border border-slate-200 p-6 rounded-2xl italic text-black text-sm leading-relaxed">
                     "Our customers take responsibility for all Client Customer Data that they process and for complying with relevant data protection legislation. If you wish to make changes, please refer to the Privacy Policy of the relevant Stefto Client."
                   </div>
                 </div>
@@ -218,7 +208,7 @@ const PrivacyPolicy = () => {
                 {/* Final Sections */}
                 <div id="rights" className="scroll-mt-32 border-t border-slate-100 pt-12">
                   <h2 className="text-2xl font-bold text-stefto-navy mb-6">Your Rights</h2>
-                  <p className="mb-8">Under the GDPR you have the following rights regarding your personal data:</p>
+                  <p className="mb-8 text-black">Under the GDPR you have the following rights regarding your personal data:</p>
                   <div className="flex flex-wrap gap-3">
                     {[
                       "Access", "Rectification", "Erasure", "Restrict", "Object", "Portability", "Withdraw Consent"
@@ -233,7 +223,7 @@ const PrivacyPolicy = () => {
                 {/* Security */}
                 <div id="security" className="scroll-mt-32 border-t border-slate-100 pt-12">
                   <h2 className="text-2xl font-bold text-stefto-navy mb-6">Security Procedures</h2>
-                  <p className="mb-6">
+                  <p className="mb-6 text-black">
                     We maintain physical, electronic and procedural safeguards. Sensitive data exchange between the Site and its Users happens over a SSL secured communication channel and is encrypted with digital signatures.
                   </p>
                   <div className="flex items-center gap-2 text-slate-800 font-bold bg-slate-100 w-fit px-6 py-3 rounded-2xl">

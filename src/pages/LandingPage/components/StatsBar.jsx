@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const stats = [
-  { value: '98', suffix: '%', label: 'Compliance Score', description: 'Adhering to strict RBI and industry guidelines.' },
-  { value: '24', suffix: '/7', label: 'Live Support', description: 'Operational availability across India.' },
-  { value: '4', suffix: '+', label: 'Offices', description: 'PAN-India presence across key cities.' },
+  { value: '1600', suffix: '+', label: 'Employees', description: '' },
+  { value: '25', suffix: '+', label: 'Premium Clients', description: '' },
+  { value: '4', suffix: '+', label: 'Offices', description: '' },
+  { value: '98', suffix: '%', label: 'Compliance Score', description: '' },
 ];
 
 function useCountUp(target, duration, active) {
@@ -55,10 +56,9 @@ export default function StatsBar() {
   }, []);
 
   return (
-    <section ref={ref} className="bg-white border-y border-slate-200 relative overflow-hidden">
-      <div className="absolute inset-0 grid-bg-pattern opacity-30 pointer-events-none" />
+    <section ref={ref} className="bg-white relative overflow-hidden pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-slate-200">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-200">
           {stats.map((stat, i) => (
             <StatItem key={i} stat={stat} active={active} />
           ))}

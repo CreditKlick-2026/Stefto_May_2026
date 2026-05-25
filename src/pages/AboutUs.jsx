@@ -79,24 +79,20 @@ const AboutUs = () => {
                 Our Story
               </h1>
               <p className="text-slate-500 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
-                We provide industry-leading services designed to achieve your objectives.
+                We provide industry-leading services designed to achieve your Goals .
               </p>
             </div>
 
             <div className="bg-white border border-slate-100 rounded-3xl p-6 sm:p-10 md:p-12 shadow-sm">
               <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 leading-snug mb-6">
-                <span className="text-blue-600 font-bold">Incorporated in August 2007</span>, Stefto has been a leading provider of knowledge process outsourcing services to banks and financial institutions for over {yearsOfExperience} years.
+                <span className="text-[#1e3a8a] font-semibold">
+                  Incorporated in August 2007
+                </span>, as a debt management organization, we have diversified into customer service, sales  & retention.
               </h2>
 
-              <div className="border-l-4 border-blue-500 pl-4 py-0.5 my-6">
-                <p className="text-[14px] sm:text-[15px] font-bold text-slate-800">
-                  Currently Operating in Gurugram, Delhi, Noida & Pune
-                </p>
-              </div>
 
-              <p className="text-slate-500 text-sm sm:text-base leading-relaxed">
-                We are committed to helping our clients grow their business by providing world-class, cost-efficient services with excellent quality of work. Our tech-driven approach, combined with AI-enabled services, ensures consistent performance that goes beyond client expectations.
-              </p>
+
+
             </div>
           </div>
         </section>
@@ -130,7 +126,7 @@ const AboutUs = () => {
                 </p>
               </div>
 
-              {/* Vision Card */}
+              {/* Vision Card  a*/}
               <div className="min-w-[280px] md:min-w-0 snap-center p-6 sm:p-10 border border-slate-100 rounded-xl shadow-sm bg-white">
                 <div className="w-14 h-14 bg-purple-50 text-purple-600 rounded-full flex items-center justify-center mb-6">
                   <Eye size={28} />
@@ -155,46 +151,16 @@ const AboutUs = () => {
                 <div className="inline-block px-3 py-1 rounded-full bg-[#1a237e]/10 text-[#1a237e] font-semibold text-sm mb-4 tracking-wide">
                   OUR HISTORY & ESTABLISHMENT
                 </div>
-                <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-[#041434] mb-6 leading-tight" style={{ fontFamily: "'Fraunces', serif" }}>
-                  Over a decade of driving <br className="hidden lg:block" />
-                  <span className="text-[#3b82f6]">transformational change.</span>
-                </h2>
+
                 <p className="text-slate-600 text-base sm:text-lg leading-loose mb-6">
-                  Founded in August 2007, Stefto has been delivering knowledge process outsourcing services to banks and financial institutions for over {yearsOfExperience} years. Our team of over <strong className="text-[#041434]">1600 skilled professionals</strong> comes from various backgrounds, allowing us to provide top-notch inbound and outbound services.
-                </p>
-                <p className="text-slate-600 text-base sm:text-lg leading-loose mb-10">
-                  We have robust field support with our presence in more than 4 locations across 8 centres in India, with our Headquarters in Gurugram, Haryana.
+                  Founded in August 2007, Stefto has been delivering knowledge process outsourcing services to banks and financial institutions for over {yearsOfExperience} years. Our team of over <strong className="text-[#041434]">1600 skilled professionals</strong> comes from various backgrounds, allowing us to provide top-notch inbound and outbound & telecalling services.
                 </p>
 
-                <div className="space-y-6">
-                  {/* Block 1 */}
-                  <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm relative overflow-hidden group hover:border-[#3b82f6] transition-all">
-                    <div className="absolute top-0 right-0 bg-[#3b82f6] text-white text-[10px] sm:text-xs font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wider">
-                      Experience Excellence
-                    </div>
-                    <h3 className="text-xl font-bold text-[#041434] mb-3 pr-20">Digitally Empowered Customer Interaction</h3>
-                    <p className="text-slate-600 text-sm leading-relaxed">
-                      Our people have the social, emotional, and problem-solving skills to handle the complex issues that customers can't solve through digital self-service.
-                    </p>
-                  </div>
 
-                  {/* Block 2 */}
-                  <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm relative overflow-hidden group hover:border-[#3b82f6] transition-all">
-                    <div className="absolute top-0 right-0 bg-[#3b82f6] text-white text-[10px] sm:text-xs font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wider">
-                      Experience Excellence
-                    </div>
-                    <h3 className="text-xl font-bold text-[#041434] mb-3 pr-20">Intelligent Back-Office</h3>
-                    <p className="text-slate-600 text-sm leading-relaxed">
-                      We outperform internal teams through continuous performance measurement, rigorous quality control and industry-specific knowledge.
-                    </p>
-                  </div>
-
-
-                </div>
               </div>
 
               {/* Right Timeline Box */}
-              <div className="flex-1 w-full relative lg:mt-20">
+              <div className="flex-1 w-full relative">
                 <div className="sticky top-36">
                   <div className="absolute inset-0 bg-gradient-to-tr from-[#041434] to-[#1a237e] rounded-3xl transform rotate-2 hidden lg:block opacity-75"></div>
                   <div className="bg-[#042044] rounded-3xl p-8 sm:p-12 shadow-2xl relative z-10 w-full h-auto">
@@ -205,7 +171,7 @@ const AboutUs = () => {
                     <TimelineItem
                       year="August 2007"
                       title="Company Established"
-                      desc="Founded as IMS, delivering knowledge process outsourcing services for banks and financial institutions."
+                      desc="Founded as IMS, delivering add debt and customer support outsourcing services for banks and financial institutions."
                     />
 
                     <TimelineItem
