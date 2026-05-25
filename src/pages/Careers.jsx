@@ -125,23 +125,23 @@ const Careers = () => {
                   </div>
                   <div className="overflow-hidden relative group">
                     <img
-                      src={careerCallCenter}
-                      alt="Call Center Team"
+                      src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779713171/office_team_2k_qwptl1.png"
+                      alt="Office Team"
                       className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                   <div className="overflow-hidden relative group">
                     <img
-                      src={careerMeeting}
-                      alt="Business Meeting"
+                      src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779714240/ChatGPT_Image_May_25_2026_06_33_27_PM_hbfqj0.png"
+                      alt="Team Meeting"
                       className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                   <div className="overflow-hidden relative group">
                     <img
-                      src={careerOfficeCulture}
+                      src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779714239/ChatGPT_Image_May_25_2026_06_33_37_PM_lnfmai.png"
                       alt="Office Culture"
                       className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                     />
