@@ -76,18 +76,18 @@ const Careers = () => {
           <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-[900px]">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6 lg:mb-10 uppercase tracking-[0.2em]" style={{ fontFamily: "'Fraunces', serif" }}>
-                Join the <span className="text-[#1e3a8a]">Stefto</span> Family
+                Join the <span className="text-[#1e3a8a]"><span className='bg-white rounded-lg'>Stefto</span></span> Family
               </h2>
 
-              <div className="text-base sm:text-lg leading-relaxed space-y-6 text-justify border-l-4 border-l-white p-6 sm:p-8">
-                <p className="text-white">
+              <div className="text-base  sm:text-lg leading-relaxed space-y-6 text-justify border-l-4 border-l-white p-6 sm:p-8">
+                <p className="text-white font-semibold">
                   At Stefto, we are digital innovators. We leverage the power of technology to solve the challenges
                   faced by our clients. We owe our success to our team of innovators and passionate problem
                   solvers. If you love working in a fast-paced environment with ample opportunities to advance your
                   career while helping customers amplify their success, then Stefto is the perfect choice for you. Join
                   our winning team to make a change in customer experience.
                 </p>
-                <p className="text-white">
+                <p className="text-white font-semibold">
                   Browse available jobs. Cannot find something that fits you? Send us your resume and we will help
                   you find the right role for you on our team.
                 </p>
@@ -100,7 +100,7 @@ const Careers = () => {
 
         {/* 2. Perks Section */}
         <section className="w-full pt-10 pb-20 sm:pt-16 sm:pb-32 bg-[#fdfdfd] relative overflow-hidden">
-          <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-[90%] mx-auto">
 
             {/* Title Text positioned above the layout */}
             <div className="mb-10 lg:mb-14 px-4 sm:px-0 flex flex-col items-center text-center">
@@ -110,14 +110,14 @@ const Careers = () => {
 
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
 
               {/* Left Image Grid Area */}
-              <div className="w-full lg:col-span-5 h-[350px] sm:h-[450px] lg:h-[550px] rounded-none overflow-hidden shadow-2xl relative">
+              <div className="w-full lg:col-span-6 h-[350px] sm:h-[450px] lg:h-[580px] rounded-none overflow-hidden shadow-2xl relative">
                 <div className="grid grid-cols-2 grid-rows-2 h-full gap-1">
                   <div className="overflow-hidden relative group">
                     <img
-                      src={careerTeamCollab}
+                      src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779712863/ChatGPT_Image_May_25_2026_06_10_36_PM_o4cccd.png"
                       alt="Team Collaboration"
                       className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                     />
@@ -151,7 +151,7 @@ const Careers = () => {
               </div>
 
               {/* Right Content Card Area */}
-              <div className="w-full lg:col-span-7 bg-white p-6 sm:p-10 shadow-[0_5px_40px_rgba(0,0,0,0.06)] rounded-none border border-slate-100/50 relative z-20">
+              <div className="w-full lg:col-span-6 bg-white p-6 sm:p-10 shadow-[0_5px_40px_rgba(0,0,0,0.06)] rounded-none border border-slate-100/50 relative z-20">
 
                 <ul className="flex flex-col">
 
