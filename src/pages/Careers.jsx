@@ -115,33 +115,33 @@ const Careers = () => {
               {/* Left Image Grid Area */}
               <div className="w-full lg:col-span-6 h-[350px] sm:h-[450px] lg:h-[580px] rounded-none overflow-hidden shadow-2xl relative">
                 <div className="grid grid-cols-2 grid-rows-2 h-full gap-1">
-                  <div className="overflow-hidden relative group">
+                  <div className="overflow-hidden relative group border-4 border-white bg-white">
                     <img
-                      src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779712863/ChatGPT_Image_May_25_2026_06_10_36_PM_o4cccd.png"
+                      src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779714240/ChatGPT_Image_May_25_2026_06_33_27_PM_hbfqj0.png"
                       alt="Team Collaboration"
                       className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
-                  <div className="overflow-hidden relative group">
+                  <div className="overflow-hidden relative group border-4 border-white bg-white">
                     <img
-                      src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779713171/office_team_2k_qwptl1.png"
+                      src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779715117/WhatsApp_Image_2026-05-25_at_18.47.56_yk79ue.jpg"
                       alt="Office Team"
                       className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
-                  <div className="overflow-hidden relative group">
+                  <div className="overflow-hidden relative group border-4 border-white bg-white">
                     <img
-                      src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779714240/ChatGPT_Image_May_25_2026_06_33_27_PM_hbfqj0.png"
+                      src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779715117/WhatsApp_Image_2026-05-25_at_18.47.58_xmlwem.jpg"
                       alt="Team Meeting"
                       className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
-                  <div className="overflow-hidden relative group">
+                  <div className="overflow-hidden relative group border-4 border-white bg-white">
                     <img
-                      src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779714239/ChatGPT_Image_May_25_2026_06_33_37_PM_lnfmai.png"
+                      src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779715797/WhatsApp_Image_2026-05-25_at_18.47.58_1_j2lvg5.jpg"
                       alt="Office Culture"
                       className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                     />
