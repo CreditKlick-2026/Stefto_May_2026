@@ -70,14 +70,15 @@ const slides = [
         description: "",
         features: [],
         showCTAs: false,
-        image: "https://res.cloudinary.com/dtz8hacj4/image/upload/v1779684265/SecondImage_ejofsj.png",
+        image: "https://res.cloudinary.com/dtz8hacj4/image/upload/v1779787911/Why_are_we_the_best_Because_we_listen_to_our_customers_wholeheartedly._1_j39bty.png",
         badgeTop: "Guaranteed",
         badgeBottom: "ROI",
         badgeBg: "linear-gradient(135deg, #300b0b 0%, #601515 100%)",
         badgeShadow: "0 10px 40px rgba(48,11,11,0.65), inset 0 1px 0 rgba(255,255,255,0.2)",
         imageGlow: "rgba(220,38,38,0.35)",
         background: "linear-gradient(135deg, #1a0808 0%, #3d0c0c 35%, #5c1111 60%, #8f1a1a 85%, #dc2626 100%)",
-        floatCard: { icon: TrendingUp, bg: "linear-gradient(135deg, #dc2626, #991b1b)", title: "Top Performance", sub: "100% SLA Fulfillment" }
+        floatCard: { icon: TrendingUp, bg: "linear-gradient(135deg, #dc2626, #991b1b)", title: "Top Performance", sub: "100% SLA Fulfillment" },
+        imageScale: 1.1
     }
 ];
 
@@ -290,7 +291,7 @@ export default function HeroSection() {
                                 <img
                                     src={slide.image}
                                     alt="Stefto Professional"
-                                    style={{ width: "100%", height: "100%", objectFit: "contain", objectPosition: "center", position: "relative", zIndex: 1, transform: "scale(1.75)" }}
+                                    style={{ width: "100%", height: "100%", objectFit: "contain", objectPosition: "center", position: "relative", zIndex: 1, transform: `scale(${slide.imageScale || 1.75})` }}
                                 />
                                 {/* Floating card — bottom left corner */}
                                 <FloatCard

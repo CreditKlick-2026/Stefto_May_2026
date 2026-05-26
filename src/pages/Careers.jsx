@@ -234,7 +234,7 @@ const Careers = () => {
 
         {/* Gallery Section */}
         <section className="w-full py-16 sm:py-24 bg-white flex justify-center border-t border-slate-100">
-          <div className="w-[90%] mx-auto">
+          <div className="w-[98%] max-w-[1800px] mx-auto">
             <div className="mb-10 lg:mb-14 px-4 sm:px-0 flex flex-col items-center text-center">
               <h2 className="text-[1.125rem] sm:text-xl lg:text-2xl tracking-[0.2em] text-black uppercase font-bold" style={{ fontFamily: "'Fraunces', serif" }}>
                 Gallery
@@ -257,7 +257,7 @@ const Careers = () => {
 
 
 
-              <div className="gallery-frame gw-8" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769928/481898077_612144051684028_5243816669249203052_n_qboqhd.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769928/481898077_612144051684028_5243816669249203052_n_qboqhd.jpg" alt="Gallery 8" /></div>
+              <div className="gallery-frame gw-8" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779788251/WhatsApp_Image_2026-05-26_at_15.06.50_uy5c0g.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779788251/WhatsApp_Image_2026-05-26_at_15.06.50_uy5c0g.jpg" alt="Gallery 8" /></div>
             </div>
           </div>
         </section>
@@ -517,10 +517,10 @@ const Careers = () => {
       <style>{`
         .custom-gallery-wall {
           display: grid;
-          grid-template-columns: repeat(28, 1fr);
+          grid-template-columns: repeat(32, 1fr);
           grid-template-rows: repeat(20, 1fr);
           gap: 1.5%;
-          aspect-ratio: 2.2;
+          aspect-ratio: 2.5;
         }
 
         .gallery-frame {
@@ -543,14 +543,14 @@ const Careers = () => {
           object-fit: cover;
         }
 
-        .gw-1 { grid-column: 1 / 7; grid-row: 4 / 15; }
-        .gw-2 { grid-column: 7 / 12; grid-row: 2 / 9; }
-        .gw-3 { grid-column: 7 / 12; grid-row: 9 / 17; }
-        .gw-4 { grid-column: 12 / 17; grid-row: 2 / 10; }
-        .gw-5 { grid-column: 12 / 17; grid-row: 11 / 16; }
-        .gw-6 { grid-column: 17 / 23; grid-row: 1 / 11; }
-        .gw-7 { grid-column: 17 / 23; grid-row: 12 / 20; }
-        .gw-8 { grid-column: 23 / 29; grid-row: 5 / 15; }
+        .gw-1 { grid-column: 1 / 9; grid-row: 4 / 15; }
+        .gw-2 { grid-column: 9 / 14; grid-row: 2 / 9; }
+        .gw-3 { grid-column: 9 / 14; grid-row: 9 / 17; }
+        .gw-4 { grid-column: 14 / 19; grid-row: 2 / 10; }
+        .gw-5 { grid-column: 14 / 19; grid-row: 11 / 16; }
+        .gw-6 { grid-column: 19 / 25; grid-row: 1 / 11; }
+        .gw-7 { grid-column: 19 / 25; grid-row: 12 / 20; }
+        .gw-8 { grid-column: 25 / 33; grid-row: 5 / 15; }
 
         @media (max-width: 900px) {
           .custom-gallery-wall { 
