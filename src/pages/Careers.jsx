@@ -17,6 +17,7 @@ const Careers = () => {
   const [subscribeEmail, setSubscribeEmail] = useState("");
   const [isSubscribing, setIsSubscribing] = useState(false);
   const [subscribeStatus, setSubscribeStatus] = useState({ success: false, message: "" });
+  const [zoomedImage, setZoomedImage] = useState(null);
 
   const handleSubscribe = async (e) => {
     e.preventDefault();
@@ -115,37 +116,49 @@ const Careers = () => {
               {/* Left Image Grid Area */}
               <div className="w-full lg:col-span-6 h-[350px] sm:h-[450px] lg:h-[580px] rounded-none overflow-hidden shadow-2xl relative">
                 <div className="grid grid-cols-2 grid-rows-2 h-full gap-1">
-                  <div className="overflow-hidden relative group border-4 border-white bg-white">
+                  <div
+                    className="overflow-hidden relative border-4 border-white bg-white cursor-pointer"
+                    onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779714240/ChatGPT_Image_May_25_2026_06_33_27_PM_hbfqj0.png")}
+                  >
                     <img
                       src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779714240/ChatGPT_Image_May_25_2026_06_33_27_PM_hbfqj0.png"
                       alt="Team Collaboration"
-                      className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-full object-cover object-center"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-black/10 hover:bg-black/20 transition-colors duration-300"></div>
                   </div>
-                  <div className="overflow-hidden relative group border-4 border-white bg-white">
+                  <div
+                    className="overflow-hidden relative border-4 border-white bg-white cursor-pointer"
+                    onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779715117/WhatsApp_Image_2026-05-25_at_18.47.56_yk79ue.jpg")}
+                  >
                     <img
                       src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779715117/WhatsApp_Image_2026-05-25_at_18.47.56_yk79ue.jpg"
                       alt="Office Team"
-                      className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-full object-cover object-center"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-black/10 hover:bg-black/20 transition-colors duration-300"></div>
                   </div>
-                  <div className="overflow-hidden relative group border-4 border-white bg-white">
+                  <div
+                    className="overflow-hidden relative border-4 border-white bg-white cursor-pointer"
+                    onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779715117/WhatsApp_Image_2026-05-25_at_18.47.58_xmlwem.jpg")}
+                  >
                     <img
                       src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779715117/WhatsApp_Image_2026-05-25_at_18.47.58_xmlwem.jpg"
                       alt="Team Meeting"
-                      className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-full object-cover object-center"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-black/10 hover:bg-black/20 transition-colors duration-300"></div>
                   </div>
-                  <div className="overflow-hidden relative group border-4 border-white bg-white">
+                  <div
+                    className="overflow-hidden relative border-4 border-white bg-white cursor-pointer"
+                    onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779715797/WhatsApp_Image_2026-05-25_at_18.47.58_1_j2lvg5.jpg")}
+                  >
                     <img
                       src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779715797/WhatsApp_Image_2026-05-25_at_18.47.58_1_j2lvg5.jpg"
                       alt="Office Culture"
-                      className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-full object-cover object-center"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-black/10 hover:bg-black/20 transition-colors duration-300"></div>
                   </div>
                 </div>
               </div>
@@ -221,21 +234,21 @@ const Careers = () => {
 
         {/* Gallery Section */}
         <section className="w-full py-16 sm:py-24 bg-white flex justify-center border-t border-slate-100">
-          <div className="max-w-[800px] w-full px-4 sm:px-6">
+          <div className="w-[90%] mx-auto">
             <div className="mb-10 lg:mb-14 px-4 sm:px-0 flex flex-col items-center text-center">
               <h2 className="text-[1.125rem] sm:text-xl lg:text-2xl tracking-[0.2em] text-black uppercase font-bold" style={{ fontFamily: "'Fraunces', serif" }}>
                 Gallery
               </h2>
             </div>
             <div className="custom-gallery-wall" style={{ width: '100%', marginLeft: 0 }}>
-              <div className="gallery-frame gw-1"><img src={heroImg} alt="Gallery 1" /></div>
-              <div className="gallery-frame gw-2"><img src={heroImg} alt="Gallery 2" /></div>
-              <div className="gallery-frame gw-3"><img src={heroImg} alt="Gallery 3" /></div>
-              <div className="gallery-frame gw-4"><img src={heroImg} alt="Gallery 4" /></div>
-              <div className="gallery-frame gw-5"><img src={heroImg} alt="Gallery 5" /></div>
-              <div className="gallery-frame gw-6"><img src={heroImg} alt="Gallery 6" /></div>
-              <div className="gallery-frame gw-7"><img src={heroImg} alt="Gallery 7" /></div>
-              <div className="gallery-frame gw-8"><img src={heroImg} alt="Gallery 8" /></div>
+              <div className="gallery-frame gw-1" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769928/495303571_658076653757434_6162783216351372010_n_u90d0l.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769928/495303571_658076653757434_6162783216351372010_n_u90d0l.jpg" alt="Gallery 1" /></div>
+              <div className="gallery-frame gw-2" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769928/481898077_612144051684028_5243816669249203052_n_qboqhd.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769928/481898077_612144051684028_5243816669249203052_n_qboqhd.jpg" alt="Gallery 2" /></div>
+              <div className="gallery-frame gw-3" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769927/626297202_17995857554860634_5505900734467737926_n_cfjgay.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769927/626297202_17995857554860634_5505900734467737926_n_cfjgay.jpg" alt="Gallery 3" /></div>
+              <div className="gallery-frame gw-4" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769926/494944941_655911350640631_3121525825655970170_n_o4ao5v.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769926/494944941_655911350640631_3121525825655970170_n_o4ao5v.jpg" alt="Gallery 4" /></div>
+              <div className="gallery-frame gw-5" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769925/492828743_650063644558735_8607935764256383847_n_ctrjod.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769925/492828743_650063644558735_8607935764256383847_n_ctrjod.jpg" alt="Gallery 5" /></div>
+              <div className="gallery-frame gw-6" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769931/office_team_2k_qhtlzv.png")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769931/office_team_2k_qhtlzv.png" alt="Gallery 6" /></div>
+              <div className="gallery-frame gw-7" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769928/495303571_658076653757434_6162783216351372010_n_u90d0l.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769928/495303571_658076653757434_6162783216351372010_n_u90d0l.jpg" alt="Gallery 7" /></div>
+              <div className="gallery-frame gw-8" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769928/481898077_612144051684028_5243816669249203052_n_qboqhd.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769928/481898077_612144051684028_5243816669249203052_n_qboqhd.jpg" alt="Gallery 8" /></div>
             </div>
           </div>
         </section>
@@ -498,17 +511,16 @@ const Careers = () => {
           grid-template-columns: repeat(28, 1fr);
           grid-template-rows: repeat(20, 1fr);
           gap: 1.5%;
-          width: 125%;
-          margin-left: -25%;
-          aspect-ratio: 1.4;
+          aspect-ratio: 2.2;
         }
 
         .gallery-frame {
           background: white;
-          padding: 6%;
+          padding: 10px;
           box-shadow: 0 4px 15px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.04);
           display: flex;
           transition: transform 0.3s ease;
+          cursor: pointer;
         }
 
         .gallery-frame:hover {
@@ -523,12 +535,12 @@ const Careers = () => {
         }
 
         .gw-1 { grid-column: 1 / 7; grid-row: 4 / 15; }
-        .gw-2 { grid-column: 7 / 12; grid-row: 3 / 8; }
+        .gw-2 { grid-column: 7 / 12; grid-row: 2 / 9; }
         .gw-3 { grid-column: 7 / 12; grid-row: 9 / 17; }
         .gw-4 { grid-column: 12 / 17; grid-row: 2 / 10; }
         .gw-5 { grid-column: 12 / 17; grid-row: 11 / 16; }
         .gw-6 { grid-column: 17 / 23; grid-row: 1 / 11; }
-        .gw-7 { grid-column: 17 / 23; grid-row: 12 / 17; }
+        .gw-7 { grid-column: 17 / 23; grid-row: 12 / 20; }
         .gw-8 { grid-column: 23 / 29; grid-row: 5 / 15; }
 
         @media (max-width: 900px) {
@@ -542,6 +554,29 @@ const Careers = () => {
           .custom-gallery-wall { aspect-ratio: 1; }
         }
       `}</style>
+      {/* Zoom Image Modal */}
+      {zoomedImage && createPortal(
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 sm:p-8 cursor-zoom-out"
+          onClick={() => setZoomedImage(null)}
+        >
+          <div className="relative max-w-5xl w-full max-h-screen flex items-center justify-center mt-12 sm:mt-16">
+            <button
+              className="absolute -top-12 right-0 sm:-right-12 sm:-top-12 text-white hover:text-slate-300 p-2 bg-black/50 hover:bg-black/80 rounded-full transition-colors cursor-pointer"
+              onClick={(e) => { e.stopPropagation(); setZoomedImage(null); }}
+            >
+              <X size={32} />
+            </button>
+            <img
+              src={zoomedImage}
+              alt="Zoomed"
+              className="max-w-full max-h-[75vh] sm:max-h-[80vh] object-contain rounded-lg shadow-2xl border-4 border-white cursor-default"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>,
+        document.body
+      )}
     </LandingLayout>
   );
 };
