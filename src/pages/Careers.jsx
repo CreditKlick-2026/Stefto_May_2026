@@ -241,13 +241,22 @@ const Careers = () => {
               </h2>
             </div>
             <div className="custom-gallery-wall" style={{ width: '100%', marginLeft: 0 }}>
-              <div className="gallery-frame gw-1" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769928/495303571_658076653757434_6162783216351372010_n_u90d0l.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769928/495303571_658076653757434_6162783216351372010_n_u90d0l.jpg" alt="Gallery 1" /></div>
+              <div className="gallery-frame gw-1" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779780787/1757589901410_vmktdj.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779780787/1757589901410_vmktdj.jpg" alt="Gallery 1" /></div>
               <div className="gallery-frame gw-2" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769928/481898077_612144051684028_5243816669249203052_n_qboqhd.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769928/481898077_612144051684028_5243816669249203052_n_qboqhd.jpg" alt="Gallery 2" /></div>
               <div className="gallery-frame gw-3" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769927/626297202_17995857554860634_5505900734467737926_n_cfjgay.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769927/626297202_17995857554860634_5505900734467737926_n_cfjgay.jpg" alt="Gallery 3" /></div>
               <div className="gallery-frame gw-4" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769926/494944941_655911350640631_3121525825655970170_n_o4ao5v.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769926/494944941_655911350640631_3121525825655970170_n_o4ao5v.jpg" alt="Gallery 4" /></div>
-              <div className="gallery-frame gw-5" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769925/492828743_650063644558735_8607935764256383847_n_ctrjod.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769925/492828743_650063644558735_8607935764256383847_n_ctrjod.jpg" alt="Gallery 5" /></div>
+
+
+              <div className="gallery-frame gw-5" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779780787/1765278026018_qmkanh.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779780787/1765278026018_qmkanh.jpg" alt="Gallery 5" /></div>
+
+
               <div className="gallery-frame gw-6" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769931/office_team_2k_qhtlzv.png")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769931/office_team_2k_qhtlzv.png" alt="Gallery 6" /></div>
-              <div className="gallery-frame gw-7" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769928/495303571_658076653757434_6162783216351372010_n_u90d0l.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769928/495303571_658076653757434_6162783216351372010_n_u90d0l.jpg" alt="Gallery 7" /></div>
+
+
+              <div className="gallery-frame gw-7" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779780273/IMG-20251213-WA0014.jpg_cqdmkx.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779780273/IMG-20251213-WA0014.jpg_cqdmkx.jpg" alt="Gallery 7" /></div>
+
+
+
               <div className="gallery-frame gw-8" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769928/481898077_612144051684028_5243816669249203052_n_qboqhd.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769928/481898077_612144051684028_5243816669249203052_n_qboqhd.jpg" alt="Gallery 8" /></div>
             </div>
           </div>
