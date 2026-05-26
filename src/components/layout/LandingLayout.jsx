@@ -66,7 +66,7 @@ const menuData = {
       { name: "Our Story", description: "Trusted partner since 2007", icon: Award, href: "/about-us", color: "bg-blue-50 text-blue-600" },
 
 
-      { name: "Client Stories", description: "Results that speak for themselves", icon: Users, href: "/customer-stories", color: "bg-amber-50 text-amber-600" },
+      { name: "Why Trust Stefto", description: "Results that speak for themselves", icon: Users, href: "/why-trust-stefto", color: "bg-amber-50 text-amber-600" },
     ]
   },
   aboutUs: {
