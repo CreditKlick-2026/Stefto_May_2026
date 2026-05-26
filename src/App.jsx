@@ -2,11 +2,47 @@ import React, { useState, useRef, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
+// import AccordingToTheRbiReportTheIndianHouseholdDebtIsRisingButItIsRelativelyLowInComparisonWithOtherEmergingMarkets from './pages/AccordingToTheRbiReportTheIndianHouseholdDebtIsRisingButItIsRelativelyLowInComparisonWithOtherEmergingMarkets';
+// import Automotive from './pages/Automotive';
+// import BackOfficeSupport from './pages/BackOfficeSupport';
 import Careers from './pages/Careers';
+// import CaseStudies from './pages/CaseStudies';
 import ContactUs from './pages/ContactUs';
+// import CookiePolicy from './pages/CookiePolicy';
+// import CreditRefine from './pages/CreditRefine';
+// import CustomerStories from './pages/CustomerStories';
+// import CustomerSupport from './pages/CustomerSupport';
+// import DebtCollection from './pages/DebtCollection';
+// import DigitalDebtManagement from './pages/DigitalDebtManagement';
+
+// import HealthCare from './pages/HealthCare';
+// import HowAiIsMakingDebtCollectionMoreHumanA2025CaseStudy from './pages/HowAiIsMakingDebtCollectionMoreHumanA2025CaseStudy';
+// import Inbound from './pages/Inbound';
 import Leadership from './pages/Leadership';
+// import LegalStatement from './pages/LegalStatement';
+// import NewUpdate from './pages/NewUpdate';
+// import News from './pages/News';
+// import Outbound from './pages/Outbound';
+// import PressRelease from './pages/PressRelease';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import PoshPolicy from './pages/PoshPolicy';
+// import RefundsCancellations from './pages/RefundsCancellations';
+// import RetentionAndPersistency from './pages/RetentionAndPersistency';
+// import SalesSupport from './pages/SalesSupport';
+
 import Services from './pages/Services';
+// import Technology from './pages/Technology';
+// import TermsOfUse from './pages/TermsOfUse';
+// import TheSignificanceOfRecoveryManagementSolutionsInCurrentTimes from './pages/TheSignificanceOfRecoveryManagementSolutionsInCurrentTimes';
+// import TravelHospitalityAndCargo from './pages/TravelHospitalityAndCargo';
+// import Blog from './pages/Blog';
+// import Admin from './pages/Admin';
+// import AdminDashboard from './pages/AdminDashboard';
+// import BlogPost from './pages/BlogPost';
+// import BlogList from './pages/BlogList';
+// import BlogDetail from './pages/BlogDetail';
+// import Maintenance from './pages/Maintenance';
+// import NewLanding from './pages/NewLanding';
 import WhyTrustStefto from './pages/WhyTrustStefto';
 
 import { Phone, Mail, MapPin, ChevronDown, Search, Menu, X, LogIn, User, LayoutDashboard, LogOut } from 'lucide-react';
@@ -32,7 +68,7 @@ const navMenus = {
     heading: 'At Stefto, We Believe That Good is Just the Beginning',
     links: [
       { label: 'About Stefto', to: '/about-us' },
-      { label: 'Why Trust Stefto?', to: '/why-trust-stefto' },
+      { label: 'Why Stefto?', to: '/why-trust-stefto' },
 
 
       { label: 'Leadership', to: '/leadership' },
@@ -48,13 +84,35 @@ const navMenus = {
   'Services': {
     heading: 'Innovative, Business-specific Solutions',
     links: [
-      { label: 'Our Services', to: '/services' },
+      { label: 'Inbound', to: '/inbound' },
+      { label: 'Outbound', to: '/outbound' },
+      { label: 'Back Office Support', to: '/back-office-support' },
+      { label: 'Digital Support & Solutions', to: '/digital-debt-management' },
+      { label: 'Credit Refine', to: '/credit-refine' },
+      { label: 'Retention and Persistency', to: '/retention-and-persistency' },
+      { label: 'Sales Support', to: '/sales-support' },
     ],
     panel: {
       type: 'dark',
       image: servicesBg,
       title: 'STREAMLINING OPERATIONS THROUGH TAILORED BPO SOLUTIONS',
       desc: ''
+    }
+  },
+  'Insights': {
+    heading: 'The Power of Advanced Insights',
+    links: [
+      { label: 'Client stories', to: '/customer-stories' },
+      { label: 'Blog', to: '/insights' },
+      { label: 'Press releases', to: '/press-release' },
+      { label: 'News', to: '/news' },
+      { label: 'Case Studies', to: '/case-studies' },
+    ],
+    panel: {
+      type: 'image',
+      image: insightsBg,
+      title: 'Stay Informed',
+      desc: 'Explore our latest articles and success stories from the field.'
     }
   },
   'Career': {
@@ -185,6 +243,9 @@ const NavBar = () => {
               if (label === 'Services') {
                 return (
                   <React.Fragment key="industry-and-services">
+                    <Link to="/industry" className="flex items-center gap-1.5 px-3 py-2 rounded-md cursor-pointer transition-all text-[17px] font-bold text-slate-900 hover:text-stefto-indigo no-underline">
+                      Industry
+                    </Link>
                     {menuContent}
                   </React.Fragment>
                 );
@@ -192,6 +253,9 @@ const NavBar = () => {
 
               return menuContent;
             })}
+            <Link to="/blogs" className="flex items-center gap-1.5 px-3 py-2 rounded-md cursor-pointer transition-all text-[17px] font-bold text-slate-900 hover:text-stefto-indigo no-underline">
+              Blog
+            </Link>
           </nav>
 
           {/* Right Actions */}
@@ -274,7 +338,11 @@ const NavBar = () => {
             ))}
 
             <div className="mb-4 sm:mb-5">
-              <Link to="/services" onClick={() => setIsMobileMenuOpen(false)} className="text-stefto-indigo text-sm sm:text-base font-extrabold no-underline block border-b-2 border-slate-100 pb-1.5 hover:text-[#2b3366]">Services</Link>
+              <Link to="/industry" onClick={() => setIsMobileMenuOpen(false)} className="text-stefto-indigo text-sm sm:text-base font-extrabold no-underline block border-b-2 border-slate-100 pb-1.5 hover:text-[#2b3366]">Industry</Link>
+            </div>
+
+            <div className="mb-4 sm:mb-5">
+              <Link to="/blogs" onClick={() => setIsMobileMenuOpen(false)} className="text-stefto-indigo text-sm sm:text-base font-extrabold no-underline block border-b-2 border-slate-100 pb-1.5 hover:text-[#2b3366]">Blog</Link>
             </div>
 
             {isLoggedIn ? (
@@ -329,7 +397,32 @@ const Footer = () => (
 
         {/* Links Column 2 */}
         <div className="flex flex-col gap-2">
+          <h4 className="footer-heading-spark text-sm sm:text-base font-bold mb-1 sm:mb-2">Solutions</h4>
+          <Link to="/inbound" className="footer-link-spark text-xs sm:text-sm">Inbound</Link>
+          <Link to="/digital-debt-management" className="footer-link-spark text-xs sm:text-sm">Digital Debt Collections</Link>
+          <Link to="/customer-support" className="footer-link-spark text-xs sm:text-sm">Digital Communications</Link>
+          <Link to="/retention-and-persistency" className="footer-link-spark text-xs sm:text-sm">Retention and Persistency</Link>
+          <Link to="/sales-support" className="footer-link-spark text-xs sm:text-sm">Sales Support</Link>
+        </div>
+
+        {/* Links Column 3 */}
+        <div className="flex flex-col gap-2">
+          <h4 className="footer-heading-spark text-sm sm:text-base font-bold mb-1 sm:mb-2">Insights</h4>
+          <Link to="/news" className="footer-link-spark text-xs sm:text-sm">Blog</Link>
+          <Link to="/press-release" className="footer-link-spark text-xs sm:text-sm">Press Release</Link>
+          <Link to="/case-studies" className="footer-link-spark text-xs sm:text-sm">Case Studies</Link>
+          <Link to="/customer-stories" className="footer-link-spark text-xs sm:text-sm">Customer Stories</Link>
+          <Link to="/leadership" className="footer-link-spark text-xs sm:text-sm">Awards</Link>
+        </div>
+
+        {/* Links Column 4 */}
+        <div className="flex flex-col gap-2">
           <h4 className="footer-heading-spark text-sm sm:text-base font-bold mb-1 sm:mb-2">Legal</h4>
+          <Link to="/refunds-cancellations" className="footer-link-spark text-xs sm:text-sm">Refunds & cancellations</Link>
+          <Link to="/legal-statement" className="footer-link-spark text-xs sm:text-sm">Legal Notice</Link>
+          <Link to="/terms-of-use" className="footer-link-spark text-xs sm:text-sm">Terms of Use</Link>
+          <Link to="/privacy-policy" className="footer-link-spark text-xs sm:text-sm">Acceptable Use Policy</Link>
+          <Link to="/cookie-policy" className="footer-link-spark text-xs sm:text-sm">Cookie Policy</Link>
           <Link to="/privacy-policy" className="footer-link-spark text-xs sm:text-sm">Privacy Policy</Link>
         </div>
 
@@ -374,7 +467,7 @@ const Footer = () => (
 
 const AppContent = () => {
   const location = useLocation();
-  const hideShell = location.pathname.startsWith('/admin-dashboard') || location.pathname === '/' || location.pathname === '/landing' || location.pathname.startsWith('/about-us') || location.pathname.startsWith('/careers') || location.pathname.startsWith('/contact-us') || location.pathname.startsWith('/leadership') || location.pathname.startsWith('/inbound') || location.pathname.startsWith('/outbound') || location.pathname.startsWith('/privacy-policy') || location.pathname.startsWith('/why-trust-stefto') || location.pathname.startsWith('/services') || location.pathname.startsWith('/industry');
+  const hideShell = location.pathname.startsWith('/admin-dashboard') || location.pathname === '/' || location.pathname === '/landing' || location.pathname.startsWith('/about-us') || location.pathname.startsWith('/careers') || location.pathname.startsWith('/contact-us') || location.pathname.startsWith('/leadership') || location.pathname.startsWith('/inbound') || location.pathname.startsWith('/outbound') || location.pathname.startsWith('/privacy-policy') || location.pathname.startsWith('/posh-policy') || location.pathname.startsWith('/why-trust-stefto') || location.pathname.startsWith('/services') || location.pathname.startsWith('/industry');
 
   useEffect(() => {
     if (hideShell) {
@@ -401,11 +494,49 @@ const AppContent = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/why-trust-stefto" element={<WhyTrustStefto />} />
+          {/* <Route path="/according-to-the-rbi-report-the-indian-household-debt-is-rising-but-it-is-relatively-low-in-comparison-with-other-emerging-markets" element={<AccordingToTheRbiReportTheIndianHouseholdDebtIsRisingButItIsRelativelyLowInComparisonWithOtherEmergingMarkets />} />
+          <Route path="/automotive" element={<Automotive />} />
+          <Route path="/back-office-support" element={<BackOfficeSupport />} /> */}
           <Route path="/careers" element={<Careers />} />
+          {/* <Route path="/case-studies" element={<CaseStudies />} /> */}
           <Route path="/contact-us" element={<ContactUs />} />
+          {/* <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/credit-refine" element={<CreditRefine />} />
+          <Route path="/customer-stories" element={<CustomerStories />} />
+          <Route path="/customer-support" element={<CustomerSupport />} />
+          <Route path="/debt-collection" element={<DebtCollection />} />
+          <Route path="/digital-debt-management" element={<DigitalDebtManagement />} />
+
+          <Route path="/health-care" element={<HealthCare />} />
+          <Route path="/how-ai-is-making-debt-collection-more-human-a-2025-case-study" element={<HowAiIsMakingDebtCollectionMoreHumanA2025CaseStudy />} />
+          <Route path="/inbound" element={<Inbound />} /> */}
           <Route path="/leadership" element={<Leadership />} />
+          {/* <Route path="/legal-statement" element={<LegalStatement />} />
+          <Route path="/new-update" element={<NewUpdate />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/outbound" element={<Outbound />} />
+          <Route path="/press-release" element={<PressRelease />} /> */}
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/posh-policy" element={<PoshPolicy />} />
+          {/* <Route path="/refunds-cancellations" element={<RefundsCancellations />} />
+          <Route path="/retention-and-persistency" element={<RetentionAndPersistency />} />
+          <Route path="/sales-support" element={<SalesSupport />} /> */}
+
           <Route path="/services" element={<Services />} />
+          <Route path="/industry" element={<Services />} />
+          {/* <Route path="/technology" element={<Technology />} />
+          <Route path="/terms-of-use" element={<TermsOfUse />} />
+          <Route path="/the-significance-of-recovery-management-solutions-in-current-times" element={<TheSignificanceOfRecoveryManagementSolutionsInCurrentTimes />} />
+          <Route path="/travel-hospitality-and-cargo" element={<TravelHospitalityAndCargo />} />
+          <Route path="/insights" element={<Blog />} />
+
+          <Route path="/admin-dashboard" element={<AdminDashboard />} />
+          <Route path="/blog-post/:id" element={<BlogPost />} />
+          <Route path="/blog" element={<BlogList />} />
+          <Route path="/blogs" element={<BlogList />} />
+          <Route path="/blog/:slug" element={<BlogDetail />} />
+          <Route path="/maintenance" element={<Maintenance />} />
+          <Route path="/landing" element={<NewLanding />} /> */}
           <Route path="*" element={<Home />} />
         </Routes>
       </div>

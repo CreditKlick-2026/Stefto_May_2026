@@ -74,7 +74,7 @@ const ContactUs = () => {
                     <h3 className="font-bold text-[#1c469d] mb-2 text-lg">Email & Telephone</h3>
                     <div className="text-black text-base font-medium">
                       <p className="text-slate-500 text-sm leading-relaxed">
-                        info@stefto.com
+                        [EMAIL_ADDRESS]
                       </p>
                       <p className="text-slate-500 text-sm leading-relaxed">
                         +91 8800-101-102

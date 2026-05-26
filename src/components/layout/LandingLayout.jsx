@@ -239,7 +239,7 @@ export function Navbar() {
           }`}
       >
         <div className="w-full max-w-[1440px] mx-auto px-6 md:px-10">
-          <div className="flex items-center h-[64px] gap-4">
+          <div className="flex items-center justify-between w-full h-[64px] gap-4">
             <Link to="/" className="flex items-center shrink-0 cursor-pointer h-full py-1">
               <img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779277115/Stefto_Logo_ng3frh.png" alt="Stefto" className="h-12 md:h-[56px] w-auto object-contain" />
             </Link>
@@ -516,12 +516,13 @@ export function Footer({ curveColor = "fill-white" }) {
           {/* Horizontal Links */}
           <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 w-full">
             <Link to="/about-us" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">About Us</Link>
-            <Link to="/why-trust-stefto" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Why Trust Stefto?</Link>
+            <Link to="/why-trust-stefto" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Why Stefto?</Link>
             <Link to="/careers" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Careers</Link>
 
 
             <Link to="/contact-us" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Contact us</Link>
             <Link to="/privacy-policy" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/posh-policy" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Posh Policy</Link>
           </div>
 
         </div>

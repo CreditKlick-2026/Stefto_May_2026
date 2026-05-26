@@ -13,22 +13,11 @@ const ValueCard = ({ icon: Icon, title, desc }) => (
   </div>
 );
 
-const TimelineItem = ({ year, title, desc }) => (
-  <div className="flex gap-6 relative pb-12 last:pb-0">
-    <div className="absolute left-[11px] top-8 bottom-0 w-[2px] bg-gradient-to-b from-[#3b82f6] to-transparent"></div>
-    <div className="relative z-10 w-6 h-6 rounded-full bg-white border-4 border-[#3b82f6] shadow-[0_0_15px_rgba(59,130,246,0.4)] flex-shrink-0 mt-1"></div>
-    <div>
-      <span className="text-[#3b82f6] font-extrabold text-xl mb-1 block">{year}</span>
-      <h3 className="text-white text-2xl font-bold mb-3">{title}</h3>
-      <p className="text-slate-300 leading-relaxed font-light">{desc}</p>
-    </div>
-  </div>
-);
+
 
 const AboutUs = () => {
   const carouselRef = useRef(null);
   const location = useLocation();
-  const yearsOfExperience = new Date().getFullYear() - 2007;
 
   useEffect(() => {
     if (location.hash === '#why-stefto') {
@@ -140,53 +129,6 @@ const AboutUs = () => {
           </div>
         </section>
 
-
-        {/* The Stefto Story & Timeline */}
-        <section className="w-full pt-10 pb-8 sm:py-24 bg-slate-50 relative z-10">
-          <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
-
-              {/* Left Content */}
-              <div className="flex-1 lg:max-w-xl">
-                <div className="inline-block px-3 py-1 rounded-full bg-[#1a237e]/10 text-[#1a237e] font-semibold text-sm mb-4 tracking-wide">
-                  OUR HISTORY & ESTABLISHMENT
-                </div>
-
-                <p className="text-slate-600 text-base sm:text-lg leading-loose mb-6">
-                  Founded in August 2007, <span className='font-semibold text-[#1a237e]'>Stefto</span> has been delivering knowledge process outsourcing services to banks and financial institutions for over {yearsOfExperience} years. Our team of over <strong className="text-[#041434]">1600 skilled professionals</strong> comes from various backgrounds, allowing us to provide top-notch inbound and outbound & telecalling services.
-                </p>
-
-
-              </div>
-
-              {/* Right Timeline Box */}
-              <div className="flex-1 w-full relative">
-                <div className="sticky top-36">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#041434] to-[#1a237e] rounded-3xl transform rotate-2 hidden lg:block opacity-75"></div>
-                  <div className="bg-[#042044] rounded-3xl p-8 sm:p-12 shadow-2xl relative z-10 w-full h-auto">
-                    <h3 className="text-2xl font-bold text-white mb-10 pb-4 border-b border-white/10 uppercase tracking-widest" style={{ fontFamily: "'Fraunces', serif" }}>
-                      Our Timeline
-                    </h3>
-
-                    <TimelineItem
-                      year="August 2007"
-                      title="Company Established"
-                      desc="Founded as IMS, delivering add debt and customer support outsourcing services for banks and financial institutions."
-                    />
-
-                    <TimelineItem
-                      year="December 2023"
-                      title="Rebranding to Stefto"
-                      desc="We underwent a significant transformation, rebranding IMS to Stefto. Reflects our evolution and commitment to providing innovative solutions."
-                    />
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </section>
 
 
 

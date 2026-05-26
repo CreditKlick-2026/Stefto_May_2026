@@ -118,10 +118,10 @@ const Careers = () => {
                 <div className="grid grid-cols-2 grid-rows-2 h-full gap-1">
                   <div
                     className="overflow-hidden relative border-4 border-white bg-white cursor-pointer"
-                    onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779714240/ChatGPT_Image_May_25_2026_06_33_27_PM_hbfqj0.png")}
+                    onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779797931/WhatsApp_Image_2026-05-26_at_16.12.29_leydtq.jpg")}
                   >
                     <img
-                      src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779714240/ChatGPT_Image_May_25_2026_06_33_27_PM_hbfqj0.png"
+                      src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779797931/WhatsApp_Image_2026-05-26_at_16.12.29_leydtq.jpg"
                       alt="Team Collaboration"
                       className="w-full h-full object-cover object-center"
                     />
@@ -241,7 +241,7 @@ const Careers = () => {
               </h2>
             </div>
             <div className="custom-gallery-wall" style={{ width: '100%', marginLeft: 0 }}>
-              <div className="gallery-frame gw-1" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779780787/1757589901410_vmktdj.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779780787/1757589901410_vmktdj.jpg" alt="Gallery 1" /></div>
+              <div className="gallery-frame gw-1" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779797932/WhatsApp_Image_2026-05-26_at_16.14.35_hbpz27.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779797932/WhatsApp_Image_2026-05-26_at_16.14.35_hbpz27.jpg" alt="Gallery 1" /></div>
               <div className="gallery-frame gw-2" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769928/481898077_612144051684028_5243816669249203052_n_qboqhd.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769928/481898077_612144051684028_5243816669249203052_n_qboqhd.jpg" alt="Gallery 2" /></div>
               <div className="gallery-frame gw-3" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769927/626297202_17995857554860634_5505900734467737926_n_cfjgay.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769927/626297202_17995857554860634_5505900734467737926_n_cfjgay.jpg" alt="Gallery 3" /></div>
               <div className="gallery-frame gw-4" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769926/494944941_655911350640631_3121525825655970170_n_o4ao5v.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779769926/494944941_655911350640631_3121525825655970170_n_o4ao5v.jpg" alt="Gallery 4" /></div>

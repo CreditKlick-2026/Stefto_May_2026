@@ -6,9 +6,10 @@ import { ShieldCheck, TrendingUp, Users, ArrowRight, ChevronRight, BadgeCheck } 
 import heroImg from "../../../assets/HomePageImages.png";
 
 // ── Floating stat card ─────────────────────────────────────────────────────
-function FloatCard({ iconBg, icon: Icon, title, sub, delay = 0, style = {} }) {
+function FloatCard({ iconBg, icon: Icon, title, sub, delay = 0, style = {}, className = "" }) {
     return (
         <motion.div
+            className={className}
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay, duration: 0.6, ease: "easeOut" }}
@@ -51,14 +52,15 @@ const slides = [
         description: "",
         features: [],
         showCTAs: false,
-        image: heroImg,
+        image: "https://res.cloudinary.com/dtz8hacj4/image/upload/v1779790838/Untitled_design_3_wgc83t.png",
         badgeTop: "Established",
         badgeBottom: "2007",
         badgeBg: "linear-gradient(135deg, #0b1530 0%, #152960 100%)",
         badgeShadow: "0 10px 40px rgba(11,21,48,0.65), inset 0 1px 0 rgba(255,255,255,0.2)",
         imageGlow: "rgba(37,99,235,0.35)",
         background: "linear-gradient(135deg, #0a1628 0%, #0f1f4b 35%, #132359 60%, #1a3a8f 85%, #1d4ed8 100%)",
-        floatCard: { icon: ShieldCheck, bg: "linear-gradient(135deg, #2563eb, #3b82f6)", title: "RBI Compliant", sub: "98% Compliance Score" }
+        floatCard: { icon: ShieldCheck, bg: "linear-gradient(135deg, #2563eb, #3b82f6)", title: "RBI Compliant", sub: "98% Compliance Score" },
+        imageScale: 1.7
     },
     {
         id: 2,
@@ -98,9 +100,10 @@ export default function HeroSection() {
 
     return (
         <section
+            className="hero-section"
             style={{
                 position: "relative",
-                minHeight: "100vh",
+                minHeight: "55vh",
                 display: "flex",
                 alignItems: "center",
                 overflow: "hidden",
@@ -148,6 +151,7 @@ export default function HeroSection() {
                     initial={{ opacity: 0, x: 100 }}
                     animate={{ opacity: 1, x: 0, transition: { delay: 0.4, duration: 0.6, ease: "easeOut" } }}
                     exit={{ opacity: 0, x: -100, transition: { duration: 0.4, ease: "easeIn" } }}
+                    className="hero-badge"
                     style={{
                         position: "absolute", top: 70, right: 40, zIndex: 20,
                         display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
@@ -165,7 +169,7 @@ export default function HeroSection() {
 
 
             {/* Content */}
-            <div style={{ maxWidth: 1280, margin: "0 auto", padding: "100px 48px", width: "100%", position: "relative", zIndex: 10, display: "grid", gridTemplateAreas: "'stack'" }}>
+            <div className="hero-container" style={{ maxWidth: 1280, margin: "0 auto", padding: "80px 48px 20px 48px", width: "100%", position: "relative", zIndex: 10, display: "grid", gridTemplateAreas: "'stack'" }}>
                 <AnimatePresence>
                     <motion.div
                         key={slide.id}
@@ -177,10 +181,11 @@ export default function HeroSection() {
                     >
 
                         {/* ── LEFT ─────────────────────────────────────────────── */}
-                        <div>
+                        <div className="hero-text">
                             {/* Eyebrow */}
                             {slide.eyebrow && (
                                 <motion.div
+                                    className="hero-eyebrow"
                                     initial={{ opacity: 0, y: -10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.1, duration: 0.5 }}
@@ -197,8 +202,8 @@ export default function HeroSection() {
                             )}
 
                             {/* Headline */}
-                            <div style={{ marginBottom: 6 }}>
-                                <h1 style={{ fontSize: "clamp(28px, 4vw, 50px)", fontWeight: 900, color: "#ffffff", lineHeight: 1.1, letterSpacing: "-0.02em", margin: 0, whiteSpace: "pre-line" }}>
+                            <div style={{ marginBottom: 6, textAlign: "left" }}>
+                                <h1 style={{ fontSize: "clamp(28px, 4vw, 50px)", fontWeight: 900, color: "#ffffff", lineHeight: 1.1, letterSpacing: "-0.02em", margin: 0, whiteSpace: "pre-line", textAlign: "left" }}>
                                     {slide.headlinePart1}{slide.headlineHighlight && (
                                         <span style={{
                                             whiteSpace: "pre-line"
@@ -215,14 +220,14 @@ export default function HeroSection() {
 
                             {/* Sub-text */}
                             {slide.description && (
-                                <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 15.5, lineHeight: 1.8, maxWidth: 490, marginBottom: 28 }}>
+                                <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 15.5, lineHeight: 1.8, maxWidth: 490, marginBottom: 28, textAlign: "left" }}>
                                     {slide.description}
                                 </p>
                             )}
 
                             {/* Feature chips */}
                             {slide.features && slide.features.length > 0 && (
-                                <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 36 }}>
+                                <div className="hero-features" style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 36 }}>
                                     {slide.features.map(({ icon: Icon, text }, i) => (
                                         <div key={i} style={{ display: "flex", alignItems: "center", gap: 7, background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 999, padding: "7px 14px" }}>
                                             <Icon style={{ width: 14, height: 14, color: "#93c5fd" }} />
@@ -234,7 +239,7 @@ export default function HeroSection() {
 
                             {/* CTAs */}
                             {slide.showCTAs && (
-                                <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
+                                <div className="hero-buttons" style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
                                     <Link
                                         to="/contact-us"
                                         style={{
@@ -284,7 +289,7 @@ export default function HeroSection() {
                             }} />
 
                             {/* Main image frame without background/card */}
-                            <div style={{
+                            <div className="hero-img-wrapper" style={{
                                 position: "relative", zIndex: 10,
                                 width: "100%", maxWidth: 400, height: 500,
                             }}>
@@ -301,6 +306,7 @@ export default function HeroSection() {
                                     sub={slide.floatCard.sub}
                                     delay={0.2}
                                     style={{ position: "absolute", bottom: -20, left: -60, zIndex: 20 }}
+                                    className="hero-float-card"
                                 />
                             </div>
                         </div>
@@ -308,7 +314,7 @@ export default function HeroSection() {
                 </AnimatePresence>
 
                 {/* Slider Dots */}
-                <div style={{ position: "absolute", bottom: 85, left: "50%", transform: "translateX(-50%)", display: "flex", gap: 12, alignItems: "center", zIndex: 20 }}>
+                <div className="hero-dots" style={{ position: "absolute", bottom: 85, left: "50%", transform: "translateX(-50%)", display: "flex", gap: 12, alignItems: "center", zIndex: 20 }}>
                     {slides.map((_, idx) => (
                         <button
                             key={idx}
@@ -347,10 +353,39 @@ export default function HeroSection() {
                 }
                 @media (max-width: 900px) {
                     .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; padding: 60px 24px !important; }
-                    .hero-image-col { display: none !important; }
+                    .hero-image-col { transform: none !important; justify-content: center !important; margin-top: 20px; display: flex !important; width: 100%; }
+                    .hero-image-col img { transform: scale(1.1) !important; max-height: 400px; }
+                    .hero-float-card { left: 50% !important; transform: translateX(-50%) !important; bottom: -30px !important; width: max-content; }
                 }
                 @media (max-width: 600px) {
-                    .hero-grid { padding: 40px 20px !important; }
+                    .hero-section { min-height: 40vh !important; }
+                    .hero-container { padding: 40px 5px !important; }
+                    .hero-grid { 
+                        grid-template-columns: 1.25fr 0.75fr !important; 
+                        padding: 0 !important; 
+                        gap: 10px !important; 
+                    }
+                    .hero-text { text-align: left !important; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; width: 100%; }
+                    .hero-text h1, .hero-text h1 span { text-align: left !important; white-space: normal !important; font-size: 15px !important; line-height: 1.3 !important; }
+                    .hero-text p { text-align: left !important; font-size: 11px !important; margin-bottom: 10px !important; line-height: 1.4 !important; }
+                    .hero-eyebrow { font-size: 8px !important; padding: 4px 8px !important; margin-bottom: 10px !important; }
+                    .hero-buttons { flex-direction: column; gap: 8px !important; align-items: flex-start !important; width: 100%; }
+                    .hero-buttons a { padding: 6px 12px !important; font-size: 11px !important; width: 100%; justify-content: center; }
+                    
+                    .hero-img-wrapper { height: 220px !important; display: flex; align-items: center; justify-content: center; max-width: none !important; }
+                    .hero-image-col { margin-top: 0 !important; justify-content: flex-end !important; align-items: center; transform: none !important; width: 100%; }
+                    .hero-image-col img { max-height: 220px !important; transform: scale(1.3) !important; object-fit: contain; }
+                    
+                    .hero-float-card { 
+                        bottom: -15px !important; 
+                        left: -10px !important; 
+                        right: auto !important; 
+                        transform: scale(0.6) !important; 
+                        transform-origin: bottom left !important; 
+                    }
+                    .hero-badge { top: 15px !important; right: 15px !important; transform: scale(0.6) !important; transform-origin: top right; }
+                    .hero-dots { bottom: 15px !important; transform: translateX(-50%) scale(0.8) !important; }
+                    .hero-features { display: none !important; }
                 }
             `}</style>
         </section>

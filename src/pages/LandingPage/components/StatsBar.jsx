@@ -27,12 +27,12 @@ function useCountUp(target, duration, active) {
   return count;
 }
 
-function StatItem({ stat, active }) {
+function StatItem({ stat, active, index }) {
   const numericValue = parseInt(stat.value, 10);
   const count = useCountUp(numericValue, 1200, active);
 
   return (
-    <div className="flex flex-col items-center text-center px-6 py-8 group">
+    <div className={`flex flex-col items-center text-center px-2 sm:px-6 py-6 lg:py-8 group ${index % 2 !== 0 ? 'border-l border-slate-200' : ''} ${index !== 0 ? 'lg:border-l lg:border-slate-200' : ''} ${index > 1 ? 'border-t border-slate-200 lg:border-t-0' : ''}`}>
       <div className="stat-number text-[#1c469d] font-bold">
         {count}{stat.suffix}
       </div>
@@ -58,9 +58,9 @@ export default function StatsBar() {
   return (
     <section ref={ref} className="bg-white relative overflow-hidden pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-200">
+        <div className="grid grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, i) => (
-            <StatItem key={i} stat={stat} active={active} />
+            <StatItem key={i} index={i} stat={stat} active={active} />
           ))}
         </div>
       </div>
