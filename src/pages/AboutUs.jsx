@@ -9,7 +9,7 @@ const ValueCard = ({ icon: Icon, title, desc }) => (
       <Icon size={24} strokeWidth={1.5} />
     </div>
     <h3 className="text-lg font-bold text-[#041434] mb-2">{title}</h3>
-    <p className="text-slate-500 leading-relaxed font-normal text-xs sm:text-sm flex-1">{desc}</p>
+    <p className="text-slate-500 leading-relaxed font-normal text-xs sm:text-sm flex-1 text-justify">{desc}</p>
   </div>
 );
 
@@ -110,7 +110,7 @@ const AboutUs = () => {
                   <Target size={28} />
                 </div>
                 <h2 className="text-xl font-bold text-[#041434] mb-3" style={{ fontFamily: "'Fraunces', serif" }}>Goals</h2>
-                <p className="text-slate-600 leading-relaxed text-xs sm:text-sm">
+                <p className="text-slate-600 leading-relaxed text-xs sm:text-sm text-justify">
                   We tackle our clients' most difficult challenges by offering exceptional services in strategy, consulting, digital, technology, and operations. Our goal is to drive innovation that enhances both, the way the world operates and the quality of life.
                 </p>
               </div>
@@ -121,7 +121,7 @@ const AboutUs = () => {
                   <Rocket size={28} />
                 </div>
                 <h2 className="text-xl font-bold text-[#041434] mb-3" style={{ fontFamily: "'Fraunces', serif" }}>Mission</h2>
-                <p className="text-slate-600 leading-relaxed text-xs sm:text-sm">
+                <p className="text-slate-600 leading-relaxed text-xs sm:text-sm text-justify">
                   To shape the future of the Business Process Management industry by pioneering transformational technologies and capabilities. We strive to stay ahead of the curve to drive growth for our customers, deliver value to investors, and enrich overall experiences.
                 </p>
               </div>
@@ -132,8 +132,8 @@ const AboutUs = () => {
                   <Eye size={28} />
                 </div>
                 <h2 className="text-xl font-bold text-[#041434] mb-3" style={{ fontFamily: "'Fraunces', serif" }}>Vision</h2>
-                <p className="text-slate-600 leading-relaxed text-xs sm:text-sm">
-                  Our aim is to lead in the markets we target and be recognized as the most trusted partner by our global clients. We achieve this by streamlining complex business processes with advanced technology and top-notch industry practices.
+                <p className="text-slate-600 leading-relaxed text-xs sm:text-sm text-justify">
+                  Our aim is to lead in the markets we target and be recognized as the most trusted partner by our clients. We achieve this by streamlining complex business processes with advanced technology and top-notch industry practices.
                 </p>
               </div>
             </div>
@@ -153,7 +153,7 @@ const AboutUs = () => {
                 </div>
 
                 <p className="text-slate-600 text-base sm:text-lg leading-loose mb-6">
-                  Founded in August 2007, Stefto has been delivering knowledge process outsourcing services to banks and financial institutions for over {yearsOfExperience} years. Our team of over <strong className="text-[#041434]">1600 skilled professionals</strong> comes from various backgrounds, allowing us to provide top-notch inbound and outbound & telecalling services.
+                  Founded in August 2007, <span className='font-semibold text-[#1a237e]'>Stefto</span> has been delivering knowledge process outsourcing services to banks and financial institutions for over {yearsOfExperience} years. Our team of over <strong className="text-[#041434]">1600 skilled professionals</strong> comes from various backgrounds, allowing us to provide top-notch inbound and outbound & telecalling services.
                 </p>
 
 

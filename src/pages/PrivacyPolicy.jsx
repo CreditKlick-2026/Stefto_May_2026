@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import LandingLayout from '../components/layout/LandingLayout';
+import PrivacyIcon from '../assets/PrivacyPolicy.png';
 
 const PrivacyPolicy = () => {
   useEffect(() => {
@@ -14,7 +15,6 @@ const PrivacyPolicy = () => {
     { title: "Stefto  GDPR Policy", id: "gdpr" },
     { title: "Which Information We Collect", id: "collect" },
     { title: "Data Managed by Our Clients", id: "clients" },
-    { title: "Disclosure of Your Information", id: "disclosure" },
     { title: "Your Rights", id: "rights" },
     { title: "Security Procedures", id: "security" }
   ];
@@ -24,29 +24,30 @@ const PrivacyPolicy = () => {
       <main className="w-full bg-slate-50 min-h-screen pb-20">
 
         {/* Hero / Header Section */}
-        <section 
+        <section
           className="w-full relative overflow-hidden text-white border-b border-white/10"
           style={{
             background: "#1e3a8a",
-            padding: "130px 0 70px 0"
+            padding: "130px 0 90px 0"
           }}
         >
           {/* Ambient glow blobs */}
           <div style={{ position: "absolute", top: -100, right: "25%", width: 500, height: 500, borderRadius: "50%", background: "rgba(37,99,235,0.15)", filter: "blur(100px)", pointerEvents: "none" }} />
           <div style={{ position: "absolute", bottom: -80, left: "5%", width: 400, height: 400, borderRadius: "50%", background: "rgba(96,165,250,0.10)", filter: "blur(80px)", pointerEvents: "none" }} />
-          
+
           {/* Dot grid */}
           <div style={{ position: "absolute", inset: 0, pointerEvents: "none", backgroundImage: "radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
 
           <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="max-w-[900px]">
-
-              
-              <h1 style={{ fontSize: "clamp(36px,5vw,56px)", fontWeight: 700, color: "#ffffff", lineHeight: 1.1, letterSpacing: "-0.02em", margin: "0 0 24px" }}>
-                Privacy Policy
-              </h1>
-
-
+            <div className="flex flex-row justify-between items-center relative">
+              <div className="max-w-[900px] py-4">
+                <h1 style={{ fontSize: "clamp(36px,5vw,56px)", fontWeight: 700, color: "#ffffff", lineHeight: 1.1, letterSpacing: "-0.02em", margin: "0" }}>
+                  Privacy Policy
+                </h1>
+              </div>
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 mt-8 md:mt-12 pointer-events-none">
+                <img src={PrivacyIcon} alt="Privacy Policy Icon" className="w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-[350px] lg:h-[350px] object-contain drop-shadow-2xl opacity-100 scale-110 md:scale-125 origin-right" />
+              </div>
             </div>
           </div>
         </section>
@@ -79,11 +80,27 @@ const PrivacyPolicy = () => {
               <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-sm border border-slate-100 text-black leading-relaxed space-y-12">
 
                 <div className="border-b border-slate-50 pb-8">
-                  <p className="text-lg font-medium text-black italic mb-6">
-                    STEFTO treats your privacy seriously."
-                  </p>
+
+
+
+
+
+
+
+                  <h2 className="text-2xl font-bold text-stefto-navy mb-6 flex items-center gap-3">
+                    <span className="w-1.5 h-6 bg-stefto-sky rounded-full"></span>
+                    STEFTO TREATS YOUR PRIVACY SERIOUSLY.
+
+                  </h2>
+
+
+
+
+
+
+
                   <p className="text-black">
-                    This Privacy Policy governs the manner in which Stefto collects, uses, maintains and discloses information collected from users (each, a “User”) of the https://www.stefto.com website (“Site”). This privacy policy applies to the Site and all products and services offered by STEFTO.
+                    This Privacy Policy explains how Stefto collects, uses, protects, and discloses information gathered from users of our website (https://www.stefto.com). It applies to all interactions with our Site, as well as to the full suite of products and services offered by Stefto. Our commitment is to ensure that your data is handled securely, transparently, and in strict compliance with applicable privacy standards.
                   </p>
                 </div>
 
@@ -153,7 +170,7 @@ const PrivacyPolicy = () => {
                   <h2 className="text-3xl font-bold text-white mb-8 relative z-10">STEFTO GDPR policy</h2>
                   <div className="space-y-6 text-white [&_p]:text-white relative z-10">
                     <p>
-                      For the purpose of the General Data Protection Regulation (“GDPR”), the data controller is Stefto. The information and data You provide will be processed in accordance with the provisions of the GDPR.
+                      For the purpose of the General Data Protection Regulation (“GDPR”), the data controller is Stefto. The information and data you provide will be processed in accordance with the provisions of the GDPR.
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       {[
@@ -165,7 +182,7 @@ const PrivacyPolicy = () => {
                         "Kept securely and safely"
                       ].map((step, idx) => (
                         <div key={idx} className="flex gap-4 border-b border-white/10 pb-4">
-                          <span className="text-stefto-sky font-bold">0{idx + 1}</span>
+                          <span className="text-white/80 font-extrabold">0{idx + 1}</span>
                           <p className="text-sm">{step}</p>
                         </div>
                       ))}
@@ -182,7 +199,7 @@ const PrivacyPolicy = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-inner">
                       <h4 className="font-bold text-stefto-indigo mb-3 uppercase text-sm tracking-wide">Information You Give Us</h4>
-                      <p className="text-sm text-black">Contact info (Name, address, email, phone) and payment info for contract performance. (We do NOT store Credit card Details).</p>
+                      <p className="text-sm text-black">Contact info (Name, address, email, phone) and payment info for contract performance. (We do not store account details ).</p>
                     </div>
                     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-inner">
                       <h4 className="font-bold text-stefto-indigo mb-3 uppercase text-sm tracking-wide">Automatic Collection</h4>

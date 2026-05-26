@@ -31,8 +31,7 @@ const ContactUs = () => {
               </h1>
               <p className="text-base sm:text-lg lg:text-xl text-white/90 leading-relaxed font-light">
                 We'd love to learn more about your business and see if Stefto could be the perfect
-                fit for you. Feel free to contact us over the phone or by email. You can also request a
-                free video call to connect with one of our teammates and learn more about our
+                fit for you. Feel free to contact us over the phone or by email. You can also connect with one of our teammates and learn more about our
                 services and how we can help your business.
               </p>
             </div>
@@ -46,27 +45,26 @@ const ContactUs = () => {
         <section className="w-full py-16 sm:py-24 bg-white relative">
           <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
 
+            <div className="text-center mb-12">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#1c469d] uppercase tracking-wide" style={{ fontFamily: "'Fraunces', serif" }}>
+                SAY HELLO!
+              </h2>
+            </div>
+
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
 
-              <div className="flex-1 flex items-center justify-center lg:justify-end mt-11 lg:mt-0 lg:pt-24">
-                <div className="w-full max-w-[600px] rounded overflow-hidden shadow-2xl relative border-[4px] border-slate-50">
+              <div className="flex-1 flex items-stretch justify-center lg:justify-end mt-11 lg:mt-0">
+                <div className="w-full max-w-[600px] rounded overflow-hidden shadow-2xl relative border-[4px] border-slate-50 h-full flex flex-col">
                   <img
-                    src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779431191/Stefto_Office_q3kj5r.png"
+                    src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779776420/Stefto_Building_Image_i2fvjc.png "
                     alt="Stefto Building Office"
-                    className="w-full h-[300px] lg:h-[750px] object-cover"
+                    className="w-full h-[300px] lg:h-full object-cover flex-1"
                   />
                 </div>
               </div>
 
 
               <div className="flex-[1.2] lg:pr-10">
-                <div className="flex items-center justify-center sm:justify-start gap-4 mb-12">
-                  <h2 className="text-2xl sm:text-3xl font-bold text-[#1c469d] uppercase tracking-wide" style={{ fontFamily: "'Fraunces', serif" }}>
-                    SAY HELLO!
-                  </h2>
-
-                </div>
-
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-12 sm:gap-y-8">
                   {/* Email */}
                   <div className="relative flex flex-col items-center text-center sm:items-start sm:text-left border border-slate-200 rounded-xl p-6 sm:p-8 hover:shadow-md transition-shadow">
@@ -74,9 +72,13 @@ const ContactUs = () => {
                       <Mail size={24} strokeWidth={1.5} />
                     </div>
                     <h3 className="font-bold text-[#1c469d] mb-2 text-lg">Email & Telephone</h3>
-                    <div className="text-black text-base font-medium space-y-1">
-                      <p className="hover:text-stefto-blue transition-colors cursor-pointer">info@stefto.com</p>
-                      <p className="hover:text-stefto-blue transition-colors cursor-pointer">+91 8800-101-102</p>
+                    <div className="text-black text-base font-medium">
+                      <p className="text-slate-500 text-sm leading-relaxed">
+                        info@stefto.com
+                      </p>
+                      <p className="text-slate-500 text-sm leading-relaxed">
+                        +91 8800-101-102
+                      </p>
                     </div>
                     {/* Arrow Connector */}
                     <div className="absolute bottom-[-24px] sm:bottom-[-16px] left-1/2 -translate-x-1/2 translate-y-1/2 text-slate-300 z-10 flex">
@@ -111,7 +113,13 @@ const ContactUs = () => {
                     <p className="text-slate-500 text-sm leading-relaxed">
                       1st, 2nd and 3rd Floor B-24, Sector 1 Noida, Uttar Pradesh - 201301
                     </p>
-                    {/* No Arrow here as it is the last item */}
+
+
+                    {/* Arrow Connector */}
+                    <div className="absolute bottom-[-24px] sm:bottom-[-16px] left-1/2 -translate-x-1/2 translate-y-1/2 text-slate-300 z-10 flex">
+                      <ArrowDown size={24} strokeWidth={3} />
+                    </div>
+
                   </div>
 
                   {/* Head Office */}
@@ -141,10 +149,7 @@ const ContactUs = () => {
                     <p className="text-slate-500 text-sm leading-relaxed">
                       501, 5th Floor, Pride Icon, Kharadi, Pune, Maharashtra-411014
                     </p>
-                    {/* Arrow Connector */}
-                    <div className="absolute bottom-[-24px] sm:bottom-[-16px] left-1/2 -translate-x-1/2 translate-y-1/2 text-slate-300 z-10 flex">
-                      <ArrowDown size={24} strokeWidth={3} />
-                    </div>
+
                   </div>
 
                 </div>

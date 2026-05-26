@@ -9,16 +9,16 @@ const leaders = [
     name: 'Rajnish Datta',
     role: 'Director',
     initials: 'RD',
-    color: 'from-[#041434] to-[#1a237e]',
+    color: 'from-black to-slate-900',
     img: '/assets/team/Rajnish.png',
     shortBio: '30+ Years of experience in Banking Operations & HR',
-    bio: `Rajnish Datta is a dynamic and results-oriented leader with a proven track record of driving growth and achieving strategic objectives across diverse sectors, particularly within the financial services industry.\n\nWith over two decades of experience, he brings a wealth of knowledge and expertise to Stefto Management Services as its Director.`
+    bio: `Rajnish Datta is a dynamic and results-oriented leader with a proven track record of driving growth and achieving strategic objectives across diverse sectors, particularly within the financial services industry.\n\nWith over three decades of experience, he brings a wealth of knowledge and expertise to Stefto Management Services as its Director.`
   },
   {
     name: 'Parvesh Paul Sood',
     role: 'Director',
     initials: 'PS',
-    color: 'from-[#1a237e] to-[#0d47a1]',
+    color: 'from-black to-slate-900',
     img: '/assets/team/Parvesh.png',
     shortBio: '30+ Years of experience in Banking & Finance Operations',
     bio: `Parvesh Paul Sood is a distinguished financial services professional and strategic leader with over 30 years of experience across diverse banking domains, including consumer, SME, and commercial banking.\n\nHis expertise extends to strategic investment, risk management, and business incubation, making him a valuable asset to organizations seeking growth and innovation.`
@@ -27,11 +27,11 @@ const leaders = [
     name: 'Dharmendra Kalra',
     role: 'Chief Executive Officer',
     initials: 'DK',
-    color: 'from-[#0f1f4b] to-[#2563eb]',
+    color: 'from-black to-slate-900',
     img: 'https://res.cloudinary.com/dtz8hacj4/image/upload/v1779359778/WhatsApp_Image_2025-12-15_at_3.24.11_PM_ziut21.jpg',
     objectPosition: '50% 20%',
     shortBio: '25+ Years of experience in Banking Operations',
-    bio: `Dharmendra Kalra is a dynamic leader and entrepreneur with over 25+ years of rich experience in the financial services industry, particularly in SME banking, credit analysis, and collections.\n\nAs the CEO of Stefto Management Services, he is dedicated to simplifying and enhancing financial services through digitization.`
+    bio: `Dharmendra Kalra is a dynamic leader and entrepreneur with over 25+ years of rich experience in the financial services industry, particularly in debt management customer service and sale collection.\n\nAs the CEO of Stefto Management Services, he is dedicated to simplifying and enhancing financial services through digitization.`
   }
 ];
 
@@ -90,7 +90,7 @@ const LeaderCard = ({ leader, index }) => {
 
         {/* Bio Text */}
         <div className="flex-1">
-          <p className="text-slate-500 text-xs sm:text-sm leading-relaxed text-justify">
+          <p className="text-slate-700 text-xs sm:text-sm leading-relaxed text-justify font-medium">
             {paragraphs[0]}
           </p>
           {paragraphs.length > 1 && (
@@ -99,7 +99,7 @@ const LeaderCard = ({ leader, index }) => {
                 }`}
             >
               {paragraphs.slice(1).map((p, i) => (
-                <p key={i} className="text-slate-400 text-xs sm:text-sm leading-relaxed mt-3 text-justify">
+                <p key={i} className="text-slate-700 text-xs sm:text-sm leading-relaxed mt-3 text-justify font-medium">
                   {p}
                 </p>
               ))}
@@ -191,7 +191,7 @@ const Leadership = () => {
                   </svg>
                 </div>
                 <h3 className="text-lg sm:text-xl font-medium text-slate-700 leading-relaxed px-6 z-10 relative">
-                  <span className="font-bold text-[#041434]">Bold leadership</span> — Our dedication makes the difference, and we have the passion and persistence to thrive amid complexity and overcome obstacles when others give up.
+                  <span className="font-bold text-[#041434]">Bold leadership</span> — Our dedication makes the difference, and we have the passion and persistence to thrive amid complexity and overcome obstacles in an ever changing regulatory environment.
                 </h3>
               </div>
             </div>

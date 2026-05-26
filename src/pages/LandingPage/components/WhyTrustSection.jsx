@@ -115,7 +115,7 @@ export default function WhyTrustSection() {
                     <span style={{ fontSize: 40, fontWeight: 900, color: 'rgba(255, 255, 255, 0.1)', lineHeight: 1, fontFamily: 'sans-serif' }}>{r.number}</span>
                   </div>
                   <h3 style={{ fontSize: 18, fontWeight: 700, color: '#ffffff', marginBottom: 12 }}>{r.title}</h3>
-                  <p style={{ fontSize: 14, color: '#cbd5e1', lineHeight: 1.6, margin: 0, flexGrow: 1, textAlign: 'justify', hyphens: 'auto', WebkitHyphens: 'auto' }}>{r.description}</p>
+                  <p style={{ fontSize: 14, color: '#cbd5e1', lineHeight: 1.6, margin: 0, flexGrow: 1, textAlign: 'justify' }}>{r.description}</p>
                 </motion.div>
               ))}
             </div>
