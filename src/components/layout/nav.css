@@ -15,7 +15,7 @@
 }
 
 .nav-text-smooth:hover, .nav-text-smooth.active {
-  color: #0050ff; /* PolicyBazaar Blue */
+  color: #1e3a8a;
 }
 
 .nav-text-smooth::after {
@@ -25,7 +25,7 @@
   left: 12px;
   width: 0;
   height: 2px;
-  background-color: #0050ff;
+  background-color: #1e3a8a;
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -39,7 +39,7 @@
 
 .nav-text-smooth.active .nav-caret {
   transform: rotate(180deg);
-  color: #0050ff;
+  color: #1e3a8a;
 }
 
 /* PolicyBazaar Dropdown Style */

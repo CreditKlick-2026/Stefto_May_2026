@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import LandingLayout from '../components/layout/LandingLayout';
 import PrivacyIcon from '../assets/PrivacyPolicy.png';
+import heroImage from '../assets/image.png';
 
 const PrivacyPolicy = () => {
   useEffect(() => {
@@ -27,7 +28,10 @@ const PrivacyPolicy = () => {
         <section
           className="w-full relative overflow-hidden text-white border-b border-white/10"
           style={{
-            background: "#1e3a8a",
+            backgroundImage: `linear-gradient(135deg, rgba(10, 22, 40, 0.9) 0%, rgba(15, 31, 75, 0.85) 50%, rgba(29, 78, 216, 0.8) 100%), url(${heroImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
             padding: "130px 0 90px 0"
           }}
         >

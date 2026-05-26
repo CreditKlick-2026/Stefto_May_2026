@@ -302,7 +302,7 @@ export function Navbar() {
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         placeholder="Search..."
-                        className="w-full h-9 pl-4 pr-3 rounded-full border border-slate-200 bg-white shadow-sm text-[14px] text-slate-800 placeholder:text-slate-400 outline-none focus:border-[#2563eb] focus:ring-2 focus:ring-[#2563eb]/15 transition-all duration-200"
+                        className="w-full h-9 pl-4 pr-3 rounded-full border border-slate-200 bg-white shadow-sm text-[14px] text-slate-800 placeholder:text-slate-400 outline-none focus:border-[#1e3a8a] focus:ring-2 focus:ring-[#1e3a8a]/15 transition-all duration-200"
                         onBlur={() => { if (!searchQuery) { setSearchOpen(false); } }}
                       />
                     </motion.div>
@@ -311,8 +311,8 @@ export function Navbar() {
                 <button
                   onClick={() => { setSearchOpen((v) => !v); setSearchQuery(''); }}
                   className={`w-9 h-9 rounded-full flex items-center justify-center border transition-all duration-200 shrink-0 ${searchOpen
-                    ? 'bg-[#2563eb] border-[#2563eb] text-white shadow-md shadow-blue-500/25'
-                    : 'border-slate-200 text-slate-500 hover:border-[#2563eb] hover:text-[#2563eb] hover:bg-blue-50'
+                    ? 'bg-[#1e3a8a] border-[#1e3a8a] text-white shadow-md shadow-blue-900/25'
+                    : 'border-slate-200 text-slate-500 hover:border-[#1e3a8a] hover:text-[#1e3a8a] hover:bg-[#1e3a8a]/10'
                     }`}
                   aria-label="Search"
                 >
