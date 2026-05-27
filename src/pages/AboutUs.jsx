@@ -103,10 +103,10 @@ const AboutUs = () => {
               </p>
             </div>
 
-            {/* Info card */}
-            <div className="bg-white/85 backdrop-blur-xl border border-white/80 rounded-[28px] p-6 sm:p-8 shadow-[0_4px_30px_rgb(0,0,0,0.05)] max-w-[700px] flex items-center gap-5 sm:gap-7">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 bg-[#f0f5ff] rounded-full flex items-center justify-center">
-                <Landmark className="text-[#1e3a8a] w-7 h-7 sm:w-8 sm:h-8" strokeWidth={1.75} />
+            {/* Info block (no card) */}
+            <div className="max-w-[700px] flex items-start gap-4 sm:gap-6 mt-4">
+              <div className="shrink-0 flex items-center justify-center mt-1 sm:mt-1.5">
+                <Landmark className="text-[#1e3a8a] w-8 h-8 sm:w-9 sm:h-9" strokeWidth={1.75} />
               </div>
               <p className="text-[15px] sm:text-[17px] font-semibold text-slate-800 leading-relaxed">
                 Incorporated in <span className="text-[#1e3a8a] font-bold">August 2007</span>, as a debt management organization, we have diversified into customer service, sales & retention.
