@@ -63,7 +63,7 @@ const Careers = () => {
       <main className="w-full bg-white min-h-screen pt-16">
 
         {/* 1. Join The Family Section */}
-        <section className="w-full pt-16 pb-28 sm:pt-24 sm:pb-40 relative overflow-hidden">
+        <section className="w-full pt-6 pb-8 sm:pt-24 sm:pb-40 relative overflow-hidden">
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img
@@ -76,11 +76,11 @@ const Careers = () => {
 
           <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-[900px]">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6 lg:mb-10 uppercase tracking-[0.2em]" style={{ fontFamily: "'Fraunces', serif" }}>
-                Join the <span className="text-[#1e3a8a]"><span className='bg-white rounded-lg'>Stefto</span></span> Family
+              <h2 className="text-lg sm:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-6 lg:mb-10 uppercase tracking-[0.1em] sm:tracking-[0.2em]" style={{ fontFamily: "'Fraunces', serif" }}>
+                Join the <span className="text-[#1e3a8a]"><span className='bg-white rounded-lg px-1'>Stefto</span></span> Family
               </h2>
 
-              <div className="text-base  sm:text-lg leading-relaxed space-y-6 text-justify border-l-4 border-l-white p-6 sm:p-8">
+              <div className="text-[11.5px] sm:text-lg leading-snug sm:leading-relaxed space-y-2.5 sm:space-y-6 border-l-2 sm:border-l-4 border-l-white p-2.5 sm:p-8">
                 <p className="text-white font-semibold">
                   At Stefto, we are digital innovators. We leverage the power of technology to solve the challenges
                   faced by our clients. We owe our success to our team of innovators and passionate problem
@@ -100,8 +100,8 @@ const Careers = () => {
 
 
         {/* 2. Perks Section */}
-        <section className="w-full pt-10 pb-20 sm:pt-16 sm:pb-32 bg-[#fdfdfd] relative overflow-hidden">
-          <div className="w-[90%] mx-auto">
+        <section className="w-full pt-8 pb-12 sm:pt-16 sm:pb-32 bg-[#fdfdfd] relative overflow-hidden">
+          <div className="w-[95%] sm:w-[90%] mx-auto">
 
             {/* Title Text positioned above the layout */}
             <div className="mb-10 lg:mb-14 px-4 sm:px-0 flex flex-col items-center text-center">
@@ -114,7 +114,7 @@ const Careers = () => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
 
               {/* Left Image Grid Area */}
-              <div className="w-full lg:col-span-6 h-[350px] sm:h-[450px] lg:h-[580px] rounded-none overflow-hidden shadow-2xl relative">
+              <div className="w-full lg:col-span-6 h-[250px] sm:h-[450px] lg:h-[580px] rounded-none overflow-hidden shadow-2xl relative">
                 <div className="grid grid-cols-2 grid-rows-2 h-full gap-1">
                   <div
                     className="overflow-hidden relative border-4 border-white bg-white cursor-pointer"
@@ -233,8 +233,8 @@ const Careers = () => {
         </section>
 
         {/* Gallery Section */}
-        <section className="w-full py-16 sm:py-24 bg-white flex justify-center border-t border-slate-100">
-          <div className="w-[98%] max-w-[1800px] mx-auto">
+        <section className="w-full py-10 sm:py-24 bg-white flex justify-center border-t border-slate-100">
+          <div className="w-[95%] sm:w-[98%] max-w-[1800px] mx-auto">
             <div className="mb-10 lg:mb-14 px-4 sm:px-0 flex flex-col items-center text-center">
               <h2 className="text-[1.125rem] sm:text-xl lg:text-2xl tracking-[0.2em] text-black uppercase font-bold" style={{ fontFamily: "'Fraunces', serif" }}>
                 Gallery
@@ -276,105 +276,105 @@ const Careers = () => {
 
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
 
               {/* Job 1 */}
-              <div className="bg-[#f8f9fa] p-8 flex flex-col justify-between min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
+              <div className="bg-[#f8f9fa] p-4 sm:p-8 flex flex-col justify-between min-h-[180px] sm:min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#2d3a4b] mb-3 font-serif tracking-tight">Debt Counselor</h3>
-                  <p className="text-[#475569] text-sm font-medium">Collection & Recovery</p>
+                  <h3 className="text-base sm:text-2xl font-bold text-[#2d3a4b] mb-2 sm:mb-3 font-serif tracking-tight">Debt Counselor</h3>
+                  <p className="text-[#475569] text-xs sm:text-sm font-medium">Collection & Recovery</p>
 
                 </div>
-                <button onClick={() => { setSelectedJob("Voice (Sales)"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[11px] tracking-[0.15em] font-semibold py-3 px-6 mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
-                  APPLY NOW <span className="ml-3 group-hover:translate-x-1 transition-transform">→</span>
+                <button onClick={() => { setSelectedJob("Voice (Sales)"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[10px] sm:text-[11px] tracking-[0.1em] sm:tracking-[0.15em] font-semibold py-2.5 px-4 sm:py-3 sm:px-6 mt-4 sm:mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
+                  APPLY NOW <span className="ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform">→</span>
                 </button>
               </div>
 
               {/* Job 2 */}
-              <div className="bg-[#f8f9fa] p-8 flex flex-col justify-between min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
+              <div className="bg-[#f8f9fa] p-4 sm:p-8 flex flex-col justify-between min-h-[180px] sm:min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#2d3a4b] mb-3 font-serif tracking-tight">Voice Telecaller</h3>
-                  <p className="text-[#475569] text-sm font-medium">Customer Support</p>
+                  <h3 className="text-base sm:text-2xl font-bold text-[#2d3a4b] mb-2 sm:mb-3 font-serif tracking-tight">Voice Telecaller</h3>
+                  <p className="text-[#475569] text-xs sm:text-sm font-medium">Customer Support</p>
 
                 </div>
-                <button onClick={() => { setSelectedJob("Voice (Customer Support)"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[11px] tracking-[0.15em] font-semibold py-3 px-6 mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
-                  APPLY NOW <span className="ml-3 group-hover:translate-x-1 transition-transform">→</span>
+                <button onClick={() => { setSelectedJob("Voice (Customer Support)"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[10px] sm:text-[11px] tracking-[0.1em] sm:tracking-[0.15em] font-semibold py-2.5 px-4 sm:py-3 sm:px-6 mt-4 sm:mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
+                  APPLY NOW <span className="ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform">→</span>
                 </button>
               </div>
 
 
 
               {/* Job 4 */}
-              <div className="bg-[#f8f9fa] p-8 flex flex-col justify-between min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
+              <div className="bg-[#f8f9fa] p-4 sm:p-8 flex flex-col justify-between min-h-[180px] sm:min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#2d3a4b] mb-3 font-serif tracking-tight">A.M.</h3>
-                  <p className="text-[#475569] text-sm font-medium">Customer Support | Collection & Recovery</p>
+                  <h3 className="text-base sm:text-2xl font-bold text-[#2d3a4b] mb-2 sm:mb-3 font-serif tracking-tight">A.M.</h3>
+                  <p className="text-[#475569] text-xs sm:text-sm font-medium">Customer Support | Collection & Recovery</p>
 
                 </div>
-                <button onClick={() => { setSelectedJob("A.M. (Customer Support)"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[11px] tracking-[0.15em] font-semibold py-3 px-6 mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
-                  APPLY NOW <span className="ml-3 group-hover:translate-x-1 transition-transform">→</span>
+                <button onClick={() => { setSelectedJob("A.M. (Customer Support)"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[10px] sm:text-[11px] tracking-[0.1em] sm:tracking-[0.15em] font-semibold py-2.5 px-4 sm:py-3 sm:px-6 mt-4 sm:mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
+                  APPLY NOW <span className="ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform">→</span>
                 </button>
               </div>
 
               {/* Job 5 */}
-              <div className="bg-[#f8f9fa] p-8 flex flex-col justify-between min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
+              <div className="bg-[#f8f9fa] p-4 sm:p-8 flex flex-col justify-between min-h-[180px] sm:min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#2d3a4b] mb-3 font-serif tracking-tight">Human Resource</h3>
-                  <p className="text-[#475569] text-sm font-medium">Support Team</p>
+                  <h3 className="text-base sm:text-2xl font-bold text-[#2d3a4b] mb-2 sm:mb-3 font-serif tracking-tight">Human Resource</h3>
+                  <p className="text-[#475569] text-xs sm:text-sm font-medium">Support Team</p>
                 </div>
-                <button onClick={() => { setSelectedJob("Human Resource"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[11px] tracking-[0.15em] font-semibold py-3 px-6 mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
-                  APPLY NOW <span className="ml-3 group-hover:translate-x-1 transition-transform">→</span>
+                <button onClick={() => { setSelectedJob("Human Resource"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[10px] sm:text-[11px] tracking-[0.1em] sm:tracking-[0.15em] font-semibold py-2.5 px-4 sm:py-3 sm:px-6 mt-4 sm:mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
+                  APPLY NOW <span className="ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform">→</span>
                 </button>
               </div>
 
 
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 mt-3 sm:mt-6">
 
 
               {/* Job 6 */}
-              <div className="bg-[#f8f9fa] p-8 flex flex-col justify-between min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
+              <div className="bg-[#f8f9fa] p-4 sm:p-8 flex flex-col justify-between min-h-[180px] sm:min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#2d3a4b] mb-3 font-serif tracking-tight">Quality </h3>
-                  <p className="text-[#475569] text-sm font-medium">Customer Support | Collection & Recovery</p>
+                  <h3 className="text-base sm:text-2xl font-bold text-[#2d3a4b] mb-2 sm:mb-3 font-serif tracking-tight">Quality </h3>
+                  <p className="text-[#475569] text-xs sm:text-sm font-medium">Customer Support | Collection & Recovery</p>
                 </div>
-                <button onClick={() => { setSelectedJob("Trainer"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[11px] tracking-[0.15em] font-semibold py-3 px-6 mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
-                  APPLY NOW <span className="ml-3 group-hover:translate-x-1 transition-transform">→</span>
+                <button onClick={() => { setSelectedJob("Trainer"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[10px] sm:text-[11px] tracking-[0.1em] sm:tracking-[0.15em] font-semibold py-2.5 px-4 sm:py-3 sm:px-6 mt-4 sm:mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
+                  APPLY NOW <span className="ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform">→</span>
                 </button>
               </div>
 
 
               {/* Job 7 */}
-              <div className="bg-[#f8f9fa] p-8 flex flex-col justify-between min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
+              <div className="bg-[#f8f9fa] p-4 sm:p-8 flex flex-col justify-between min-h-[180px] sm:min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#2d3a4b] mb-3 font-serif tracking-tight">M.I.S.</h3>
-                  <p className="text-[#475569] text-sm font-medium">Customer Support | Collection & Recovery</p>
+                  <h3 className="text-base sm:text-2xl font-bold text-[#2d3a4b] mb-2 sm:mb-3 font-serif tracking-tight">M.I.S.</h3>
+                  <p className="text-[#475569] text-xs sm:text-sm font-medium">Customer Support | Collection & Recovery</p>
                 </div>
-                <button onClick={() => { setSelectedJob("M.I.S"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[11px] tracking-[0.15em] font-semibold py-3 px-6 mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
-                  APPLY NOW <span className="ml-3 group-hover:translate-x-1 transition-transform">→</span>
+                <button onClick={() => { setSelectedJob("M.I.S"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[10px] sm:text-[11px] tracking-[0.1em] sm:tracking-[0.15em] font-semibold py-2.5 px-4 sm:py-3 sm:px-6 mt-4 sm:mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
+                  APPLY NOW <span className="ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform">→</span>
                 </button>
               </div>
 
               {/* Job 8 */}
-              <div className="bg-[#f8f9fa] p-8 flex flex-col justify-between min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
+              <div className="bg-[#f8f9fa] p-4 sm:p-8 flex flex-col justify-between min-h-[180px] sm:min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#2d3a4b] mb-3 font-serif tracking-tight">Manager</h3>
-                  <p className="text-[#475569] text-sm font-medium">Customer Support | Collection & Recovery</p>
+                  <h3 className="text-base sm:text-2xl font-bold text-[#2d3a4b] mb-2 sm:mb-3 font-serif tracking-tight">Manager</h3>
+                  <p className="text-[#475569] text-xs sm:text-sm font-medium">Customer Support | Collection & Recovery</p>
                 </div>
-                <button onClick={() => { setSelectedJob("Manager (Customer Operations)"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[11px] tracking-[0.15em] font-semibold py-3 px-6 mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
-                  APPLY NOW <span className="ml-3 group-hover:translate-x-1 transition-transform">→</span>
+                <button onClick={() => { setSelectedJob("Manager (Customer Operations)"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[10px] sm:text-[11px] tracking-[0.1em] sm:tracking-[0.15em] font-semibold py-2.5 px-4 sm:py-3 sm:px-6 mt-4 sm:mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
+                  APPLY NOW <span className="ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform">→</span>
                 </button>
               </div>
 
 
-              <div className="bg-[#f8f9fa] p-8 flex flex-col justify-between min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
+              <div className="bg-[#f8f9fa] p-4 sm:p-8 flex flex-col justify-between min-h-[180px] sm:min-h-[240px] border border-transparent hover:border-slate-200 transition-colors">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#2d3a4b] mb-3 font-serif tracking-tight">Trainer</h3>
-                  <p className="text-[#475569] text-sm font-medium">Customer Support | Collection & Recovery</p>
+                  <h3 className="text-base sm:text-2xl font-bold text-[#2d3a4b] mb-2 sm:mb-3 font-serif tracking-tight">Trainer</h3>
+                  <p className="text-[#475569] text-xs sm:text-sm font-medium">Customer Support | Collection & Recovery</p>
                 </div>
-                <button onClick={() => { setSelectedJob("Trainer"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[11px] tracking-[0.15em] font-semibold py-3 px-6 mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
-                  APPLY NOW <span className="ml-3 group-hover:translate-x-1 transition-transform">→</span>
+                <button onClick={() => { setSelectedJob("Trainer"); setIsApplyModalOpen(true); }} className="bg-[#1e3a8a] text-white text-[10px] sm:text-[11px] tracking-[0.1em] sm:tracking-[0.15em] font-semibold py-2.5 px-4 sm:py-3 sm:px-6 mt-4 sm:mt-8 w-fit hover:bg-[#1e40af] transition-colors flex items-center group cursor-pointer">
+                  APPLY NOW <span className="ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform">→</span>
                 </button>
               </div>
 
@@ -563,7 +563,21 @@ const Careers = () => {
         }
 
         @media (max-width: 640px) {
-          .custom-gallery-wall { aspect-ratio: 1; }
+          .custom-gallery-wall {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            gap: 8px;
+            aspect-ratio: auto;
+          }
+          .gw-1, .gw-2, .gw-3, .gw-4, .gw-5, .gw-6, .gw-7, .gw-8 {
+            grid-column: auto !important;
+            grid-row: auto !important;
+          }
+          .gallery-frame {
+            padding: 4px;
+            aspect-ratio: 1;
+          }
         }
       `}</style>
       {/* Zoom Image Modal */}

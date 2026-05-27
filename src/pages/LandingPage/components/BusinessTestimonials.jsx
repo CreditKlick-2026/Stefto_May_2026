@@ -50,7 +50,7 @@ const testimonials = [
         company: "HealthFirst Clinics",
         avatar: "https://randomuser.me/api/portraits/women/28.jpg",
         accent: "#14B8A6",
-    },
+    }
 ];
 
 function TestimonialCard({ t }) {
@@ -85,52 +85,40 @@ function TestimonialCard({ t }) {
                     rotateX,
                     rotateY,
                     transformStyle: "preserve-3d",
-                    width: 210,
+                    width: 320,
                 }}
                 whileHover={{ scale: 1.03, z: 20 }}
                 transition={{ scale: { duration: 0.2 } }}
-                className="bg-white rounded-xl p-4 flex flex-col justify-between cursor-default
+                className="bg-white rounded-xl p-4 flex flex-row items-center gap-4 cursor-default
                            shadow-[0_2px_12px_rgba(0,0,0,0.07),0_1px_3px_rgba(0,0,0,0.05)]
                            hover:shadow-[0_12px_40px_rgba(0,0,0,0.13),0_2px_8px_rgba(0,0,0,0.06)]
                            border border-black/[0.05]"
             >
-                {/* Accent top bar */}
-                <div
-                    className="h-[2px] w-8 rounded-full mb-3"
-                    style={{ background: t.accent, transform: "translateZ(4px)" }}
-                />
-
-                {/* Stars */}
-                <div className="flex gap-0.5 mb-2.5" style={{ transform: "translateZ(6px)" }}>
-                    {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3 h-3 text-[#fbbf24] fill-[#fbbf24]" />
-                    ))}
-                </div>
-
-                <p
-                    className="text-[11.5px] text-[#1d1d1f] leading-[1.55] font-normal mb-3 flex-1"
-                    style={{ transform: "translateZ(8px)" }}
-                >
-                    "{t.quote}"
-                </p>
-
-                <div
-                    className="flex items-center gap-2 pt-3 border-t border-[#f0f0f0]"
-                    style={{ transform: "translateZ(10px)" }}
-                >
+                {/* Left side: Avatar and info */}
+                <div className="flex flex-col items-center flex-shrink-0" style={{ transform: "translateZ(10px)", width: "70px" }}>
                     <img
                         src={t.avatar}
                         alt={t.author}
-                        className="w-7 h-7 rounded-full object-cover ring-2 ring-white"
+                        className="w-12 h-12 rounded-full object-cover ring-2 ring-white mb-2"
                         style={{ boxShadow: `0 0 0 2px ${t.accent}30` }}
                         onError={(e) => { e.target.style.display = "none"; }}
                     />
-                    <div>
-                        <p className="text-[11px] font-semibold text-[#1d1d1f] leading-tight">{t.author}</p>
-                        <p className="text-[10px] text-[#6e6e73] leading-tight mt-0.5">
-                            {t.role} · {t.company}
-                        </p>
+                    <p className="text-[11px] font-semibold text-[#1d1d1f] leading-tight text-center">{t.author}</p>
+                    <p className="text-[9px] text-[#6e6e73] leading-tight mt-0.5 text-center">
+                        {t.role}
+                    </p>
+                </div>
+
+                {/* Right side: Stars and Quote */}
+                <div className="flex flex-col flex-1 border-l border-[#f0f0f0] pl-4" style={{ transform: "translateZ(8px)" }}>
+                    <div className="flex gap-0.5 mb-2">
+                        {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-3 h-3 text-[#fbbf24] fill-[#fbbf24]" />
+                        ))}
                     </div>
+                    <p className="text-[11.5px] text-[#1d1d1f] leading-[1.55] font-normal italic">
+                        "{t.quote}"
+                    </p>
                 </div>
             </motion.div>
         </div>
@@ -140,7 +128,7 @@ function TestimonialCard({ t }) {
 function MarqueeRow({ items, direction = 1, duration = 40 }) {
     // Duplicate multiple times so it fills large screens easily
     const multiplied = [...items, ...items, ...items, ...items, ...items, ...items];
-    const totalW = 228 * items.length; // card width (210) + mx (18)
+    const totalW = 332 * items.length; // card width (320) + mx (12)
 
     return (
         <div className="relative overflow-hidden py-2">
@@ -198,8 +186,8 @@ export default function BusinessTestimonials() {
                     style={{ background: "linear-gradient(to left, #fff, transparent)" }}
                 />
                 <div className="flex flex-col gap-3 md:gap-4">
-                    <MarqueeRow items={row1} direction={1} duration={38} />
-                    <MarqueeRow items={row2} direction={-1} duration={42} />
+                    <MarqueeRow items={row1} direction={1} duration={45} />
+                    <MarqueeRow items={row2} direction={-1} duration={48} />
                 </div>
             </div>
 

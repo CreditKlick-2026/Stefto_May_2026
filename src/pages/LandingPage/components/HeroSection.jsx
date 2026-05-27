@@ -103,7 +103,7 @@ export default function HeroSection() {
             className="hero-section"
             style={{
                 position: "relative",
-                minHeight: "55vh",
+                minHeight: "45vh",
                 display: "flex",
                 alignItems: "center",
                 overflow: "hidden",
@@ -153,7 +153,7 @@ export default function HeroSection() {
                     exit={{ opacity: 0, x: -100, transition: { duration: 0.4, ease: "easeIn" } }}
                     className="hero-badge"
                     style={{
-                        position: "absolute", top: 70, right: 40, zIndex: 20,
+                        position: "absolute", top: 50, right: 40, zIndex: 20,
                         display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
                         padding: "12px 24px",
                         borderRadius: "12px",
@@ -169,7 +169,7 @@ export default function HeroSection() {
 
 
             {/* Content */}
-            <div className="hero-container" style={{ maxWidth: 1280, margin: "0 auto", padding: "80px 48px 20px 48px", width: "100%", position: "relative", zIndex: 10, display: "grid", gridTemplateAreas: "'stack'" }}>
+            <div className="hero-container" style={{ maxWidth: 1280, margin: "0 auto", padding: "40px 48px 20px 48px", width: "100%", position: "relative", zIndex: 10, display: "grid", gridTemplateAreas: "'stack'" }}>
                 <AnimatePresence>
                     <motion.div
                         key={slide.id}
@@ -305,7 +305,7 @@ export default function HeroSection() {
                                     title={slide.floatCard.title}
                                     sub={slide.floatCard.sub}
                                     delay={0.2}
-                                    style={{ position: "absolute", bottom: -20, left: -60, zIndex: 20 }}
+                                    style={{ position: "absolute", bottom: -40, left: -140, zIndex: 20 }}
                                     className="hero-float-card"
                                 />
                             </div>
@@ -314,7 +314,7 @@ export default function HeroSection() {
                 </AnimatePresence>
 
                 {/* Slider Dots */}
-                <div className="hero-dots" style={{ position: "absolute", bottom: 85, left: "50%", transform: "translateX(-50%)", display: "flex", gap: 12, alignItems: "center", zIndex: 20 }}>
+                <div className="hero-dots" style={{ position: "absolute", bottom: 40, left: "50%", transform: "translateX(-50%)", display: "flex", gap: 12, alignItems: "center", zIndex: 20 }}>
                     {slides.map((_, idx) => (
                         <button
                             key={idx}

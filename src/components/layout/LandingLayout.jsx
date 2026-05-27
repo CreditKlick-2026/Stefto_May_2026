@@ -311,12 +311,12 @@ export function Navbar() {
                 <button
                   onClick={() => { setSearchOpen((v) => !v); setSearchQuery(''); }}
                   className={`w-9 h-9 rounded-full flex items-center justify-center transition-all duration-200 shrink-0 ${searchOpen
-                    ? 'bg-stefto-primary text-white shadow-md shadow-blue-900/25'
-                    : 'bg-stefto-primary text-white hover:bg-stefto-primary/90 shadow-sm shadow-blue-900/20'
+                    ? 'bg-white text-stefto-primary shadow-sm shadow-slate-200'
+                    : 'bg-white text-slate-600 border border-slate-100 hover:text-stefto-primary hover:bg-slate-50'
                     }`}
                   aria-label="Search"
                 >
-                  <Search className="w-4 h-4" strokeWidth={2.2} />
+                  <Search className="w-[18px] h-[18px]" strokeWidth={2} />
                 </button>
               </div>
 
@@ -330,13 +330,51 @@ export function Navbar() {
 
             </div>
 
-            {/* Mobile hamburger */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 rounded-xl text-slate-600 hover:bg-slate-50 transition-colors"
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            {/* Mobile Header Icons */}
+            <div className="lg:hidden flex items-center gap-1 sm:gap-2">
+              <div className="relative flex items-center">
+                <AnimatePresence>
+                  {searchOpen && (
+                    <motion.div
+                      key="mobile-search-input"
+                      initial={{ width: 0, opacity: 0 }}
+                      animate={{ width: 140, opacity: 1 }}
+                      exit={{ width: 0, opacity: 0 }}
+                      transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                      className="absolute overflow-hidden"
+                      style={{ right: 'calc(100% + 4px)', top: '50%', transform: 'translateY(-50%)' }}
+                    >
+                      <input
+                        type="text"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        placeholder="Search..."
+                        className="w-full h-9 pl-4 pr-3 rounded-full border border-slate-200 bg-white shadow-sm text-[13px] text-slate-800 placeholder:text-slate-400 outline-none focus:border-stefto-primary focus:ring-2 focus:ring-stefto-primary/15 transition-all duration-200"
+                        onBlur={() => { if (!searchQuery) { setSearchOpen(false); } }}
+                      />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+                <button
+                  onClick={() => { setSearchOpen((v) => !v); setSearchQuery(''); }}
+                  className={`w-9 h-9 rounded-full flex items-center justify-center transition-all duration-200 shrink-0 ${searchOpen
+                    ? 'bg-white text-stefto-primary shadow-sm shadow-slate-200'
+                    : 'bg-white text-slate-600 hover:text-stefto-primary hover:bg-slate-50'
+                    }`}
+                  aria-label="Search"
+                >
+                  <Search className="w-[18px] h-[18px]" strokeWidth={2} />
+                </button>
+              </div>
+
+              {/* Mobile hamburger */}
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="p-2 rounded-xl text-slate-600 hover:bg-slate-50 transition-colors"
+              >
+                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           </div>
         </div>
       </motion.nav>
