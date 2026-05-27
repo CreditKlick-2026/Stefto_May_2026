@@ -30,7 +30,7 @@ const leaders = [
     color: 'from-black to-slate-900',
     img: 'https://res.cloudinary.com/dtz8hacj4/image/upload/v1779884703/ChatGPT_Image_May_27_2026_05_54_47_PM_aqvshw.png',
     objectPosition: '50% 20%',
-    shortBio: '25+ Years of experience in Banking Operations',
+    shortBio: '25+ Years of experience in Banking Operations & Sales',
     bio: `Dharmendra Kalra is a dynamic leader and entrepreneur with over 25+ years of rich experience in the financial services industry, particularly in debt management customer service and sale collection.\n\nAs the CEO of Stefto Management Services, he is dedicated to simplifying and enhancing financial services through digitization.`
   }
 ];
