@@ -37,16 +37,13 @@ export default function ServicesSection() {
   }, []);
 
   return (
-    <section id="services" ref={ref} className="py-24 bg-white relative overflow-hidden">
+    <section id="services" ref={ref} className="bg-white relative overflow-hidden">
       <div className="absolute inset-0 grid-bg-pattern opacity-40 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Header */}
         <div className={`text-center flex flex-col items-center space-y-6 mb-16 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="inline-flex items-center gap-2.5 bg-blue-50/80 border border-blue-100/50 rounded-full px-4 py-1.5 shadow-sm">
-            <div className="w-2 h-2 rounded-full bg-[#1e3a8a] animate-pulse"></div>
-            <span className="text-[#1e3a8a] text-[0.65rem] sm:text-xs font-bold uppercase tracking-widest">Our Expertise</span>
-          </div>
+
 
           <h2 className="text-4xl sm:text-5xl lg:text-6xl text-[#1e3a8a] leading-[1.15]" style={{ fontFamily: "'Fraunces', serif" }}>
             Your Success <span className="italic font-light text-[#1e3a8a]/80">Starts</span><br />

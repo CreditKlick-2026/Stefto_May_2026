@@ -138,7 +138,8 @@ function TestimonialCard({ t }) {
 }
 
 function MarqueeRow({ items, direction = 1, duration = 40 }) {
-    const doubled = [...items, ...items];
+    // Duplicate multiple times so it fills large screens easily
+    const multiplied = [...items, ...items, ...items, ...items, ...items, ...items];
     const totalW = 228 * items.length; // card width (210) + mx (18)
 
     return (
@@ -148,7 +149,7 @@ function MarqueeRow({ items, direction = 1, duration = 40 }) {
                 transition={{ repeat: Infinity, repeatType: "loop", duration, ease: "linear" }}
                 className="flex w-max"
             >
-                {doubled.map((t, i) => (
+                {multiplied.map((t, i) => (
                     <TestimonialCard key={i} t={t} />
                 ))}
             </motion.div>
@@ -164,14 +165,7 @@ export default function BusinessTestimonials() {
         <section className="py-10 md:py-16 bg-white overflow-hidden">
             {/* Header */}
             <div className="max-w-[980px] mx-auto px-4 md:px-6 text-center mb-8 md:mb-12">
-                <motion.p
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
 
-                    className="text-[12px] font-semibold text-[#3b82f6] mb-2.5 tracking-widest uppercase"
-                >
-                    Customer Stories
-                </motion.p>
                 <motion.h2
                     initial={{ opacity: 0, y: 14 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -179,8 +173,8 @@ export default function BusinessTestimonials() {
                     transition={{ delay: 0.06 }}
                     className="text-2xl sm:text-[38px] font-bold text-[#1d1d1f] tracking-[-0.022em] leading-[1.12] mb-2.5"
                 >
-                    People love{" "}
-                    <span className="text-[#6e6e73]">Stefto.</span>
+                    Customer{" "}
+                    <span className="text-[#6e6e73]">Review's.</span>
                 </motion.h2>
                 <motion.p
                     initial={{ opacity: 0, y: 10 }}
@@ -189,18 +183,18 @@ export default function BusinessTestimonials() {
                     transition={{ delay: 0.12 }}
                     className="text-[14px] md:text-[16px] text-[#6e6e73] leading-[1.5]"
                 >
-                    Join thousands of happy businesses growing with Stefto.
+                    Join thousands of happy businesses growing with  <span style={{ color: "#1c469d", fontSize: "20px" }}>Stefto</span> .
                 </motion.p>
             </div>
 
             {/* Edge fades + marquee */}
             <div className="relative">
                 <div
-                    className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 md:w-24 z-10"
+                    className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 md:w-24 z-10 hidden md:block"
                     style={{ background: "linear-gradient(to right, #fff, transparent)" }}
                 />
                 <div
-                    className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 md:w-24 z-10"
+                    className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 md:w-24 z-10 hidden md:block"
                     style={{ background: "linear-gradient(to left, #fff, transparent)" }}
                 />
                 <div className="flex flex-col gap-3 md:gap-4">
@@ -216,20 +210,7 @@ export default function BusinessTestimonials() {
 
                 className="max-w-[460px] mx-auto px-4 md:px-6 mt-10 md:mt-12"
             >
-                <div className="grid grid-cols-3 gap-px bg-[#f5f5f7] rounded-xl overflow-hidden border border-[#f0f0f0]">
-                    {[
-                        { value: "4.9/5", label: "Avg rating" },
-                        { value: "10,000+", label: "Customers" },
-                        { value: "50+", label: "Countries" },
-                    ].map((stat) => (
-                        <div key={stat.label} className="bg-white py-4 text-center">
-                            <p className="text-[18px] md:text-[20px] font-bold text-[#1d1d1f] tracking-[-0.02em] leading-none mb-1">
-                                {stat.value}
-                            </p>
-                            <p className="text-[10px] md:text-[11px] text-[#6e6e73]">{stat.label}</p>
-                        </div>
-                    ))}
-                </div>
+
             </motion.div>
         </section>
     );

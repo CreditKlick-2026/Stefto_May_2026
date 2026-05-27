@@ -257,7 +257,10 @@ const Careers = () => {
 
 
 
-              <div className="gallery-frame gw-8" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779788251/WhatsApp_Image_2026-05-26_at_15.06.50_uy5c0g.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779788251/WhatsApp_Image_2026-05-26_at_15.06.50_uy5c0g.jpg" alt="Gallery 8" /></div>
+
+              <div className="gallery-frame gw-8" onClick={() => setZoomedImage("https://res.cloudinary.com/dtz8hacj4/image/upload/v1779858926/WhatsApp_Image_2026-05-27_at_10.44.50_bvvdnf.jpg")}><img src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779858926/WhatsApp_Image_2026-05-27_at_10.44.50_bvvdnf.jpg" alt="Gallery 8" /></div>
+
+
             </div>
           </div>
         </section>

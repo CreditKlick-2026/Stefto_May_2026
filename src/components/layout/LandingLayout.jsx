@@ -302,7 +302,7 @@ export function Navbar() {
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         placeholder="Search..."
-                        className="w-full h-9 pl-4 pr-3 rounded-full border border-slate-200 bg-white shadow-sm text-[14px] text-slate-800 placeholder:text-slate-400 outline-none focus:border-[#1e3a8a] focus:ring-2 focus:ring-[#1e3a8a]/15 transition-all duration-200"
+                        className="w-full h-9 pl-4 pr-3 rounded-full border border-slate-200 bg-white shadow-sm text-[14px] text-slate-800 placeholder:text-slate-400 outline-none focus:border-stefto-primary focus:ring-2 focus:ring-stefto-primary/15 transition-all duration-200"
                         onBlur={() => { if (!searchQuery) { setSearchOpen(false); } }}
                       />
                     </motion.div>
@@ -310,9 +310,9 @@ export function Navbar() {
                 </AnimatePresence>
                 <button
                   onClick={() => { setSearchOpen((v) => !v); setSearchQuery(''); }}
-                  className={`w-9 h-9 rounded-full flex items-center justify-center border transition-all duration-200 shrink-0 ${searchOpen
-                    ? 'bg-[#1e3a8a] border-[#1e3a8a] text-white shadow-md shadow-blue-900/25'
-                    : 'border-slate-200 text-slate-500 hover:border-[#1e3a8a] hover:text-[#1e3a8a] hover:bg-[#1e3a8a]/10'
+                  className={`w-9 h-9 rounded-full flex items-center justify-center transition-all duration-200 shrink-0 ${searchOpen
+                    ? 'bg-stefto-primary text-white shadow-md shadow-blue-900/25'
+                    : 'bg-stefto-primary text-white hover:bg-stefto-primary/90 shadow-sm shadow-blue-900/20'
                     }`}
                   aria-label="Search"
                 >
@@ -322,7 +322,7 @@ export function Navbar() {
 
               <Link
                 to="/contact-us"
-                className="inline-flex items-center justify-center h-9 px-5 rounded-full bg-[#1e3a8a] text-white text-[13.5px] font-semibold hover:bg-[#1e40af] transition-all duration-200 shadow-sm shadow-blue-900/20 shrink-0"
+                className="inline-flex items-center justify-center h-9 px-5 rounded-full bg-stefto-primary text-white text-[13.5px] font-semibold hover:bg-stefto-primary/90 transition-all duration-200 shadow-sm shadow-blue-900/20 shrink-0"
               >
                 Contact Us
               </Link>
@@ -492,7 +492,7 @@ export function Footer({ curveColor = "fill-white" }) {
     <footer className="bg-[#0f1f4b] text-white pt-20 sm:pt-36 pb-20 sm:pb-24 px-4 sm:px-6 lg:px-8 text-sm relative z-0 overflow-hidden">
 
       {/* Seamless Wave Mask for Curve */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden leading-none z-20 pointer-events-none drop-shadow-[0_8px_12px_rgba(0,0,0,0.04)]">
+      <div className="absolute -top-[2px] left-0 w-full overflow-hidden leading-none z-20 pointer-events-none drop-shadow-[0_8px_12px_rgba(0,0,0,0.04)]">
         <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="relative block w-full h-[80px] md:h-[140px]" preserveAspectRatio="none">
           <path d="M0,120 C360,120 540,30 720,30 C900,30 1080,120 1440,120 L1440,0 L0,0 Z" className={curveColor} />
         </svg>

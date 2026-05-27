@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Target, Eye, Rocket, CheckCircle2, Shield, Zap, TrendingUp, Users, Cpu, FileAudio, ListOrdered, ClipboardCheck } from 'lucide-react';
+import { Target, Eye, Rocket, CheckCircle2, Shield, Zap, TrendingUp, Users, Cpu, FileAudio, ListOrdered, ClipboardCheck, Landmark } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import LandingLayout from '../components/layout/LandingLayout';
 
@@ -61,27 +61,56 @@ const AboutUs = () => {
       <main className="w-full bg-slate-50 min-h-screen overflow-x-hidden pt-16">
 
         {/* Our Story Section */}
-        <section className="w-full pt-16 pb-10 bg-slate-50 relative z-20 overflow-hidden">
-          <div className="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-10">
+        <section className="w-full pt-20 pb-16 relative z-20 overflow-hidden" style={{ minHeight: 340 }}>
+          {/* Background Layer */}
+          <div className="absolute inset-0 z-0">
+            {/* Base gradient */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#f4f7fc] via-[#f0f4fb] to-[#e8eef8]"></div>
+
+            {/* Cityscape image — full background */}
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop')",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center top',
+              }}
+            >
+              {/* Blue overlay tint */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#f0f4fb] via-[#e8eef8]/90 to-[#dde5f4]/60"></div>
+              <div className="absolute inset-0 bg-[#e8eef8]/40 mix-blend-multiply"></div>
+            </div>
+
+            {/* Glowing light orbs */}
+            <div className="absolute top-[20%] right-[25%] w-3 h-3 bg-white rounded-full shadow-[0_0_20px_8px_rgba(255,255,255,0.8)]"></div>
+            <div className="absolute top-[35%] right-[40%] w-2 h-2 bg-white rounded-full shadow-[0_0_15px_6px_rgba(255,255,255,0.7)]"></div>
+            <div className="absolute top-[15%] right-[35%] w-2.5 h-2.5 bg-white rounded-full shadow-[0_0_18px_7px_rgba(255,255,255,0.75)]"></div>
+            <div className="absolute top-[50%] right-[20%] w-2 h-2 bg-white rounded-full shadow-[0_0_12px_5px_rgba(255,255,255,0.6)]"></div>
+            <div className="absolute top-[25%] right-[15%] w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_10px_4px_rgba(255,255,255,0.5)]"></div>
+
+            {/* Sweeping light streak */}
+            <div className="absolute bottom-[30%] left-[10%] w-[60%] h-[2px] bg-gradient-to-r from-transparent via-white/60 to-transparent rotate-[-5deg]"></div>
+          </div>
+
+          <div className="max-w-[1100px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+            {/* Left-aligned heading like Figma */}
+            <div className="max-w-md mb-10">
               <h1 className="text-4xl sm:text-5xl font-extrabold text-[#041434] mb-4" style={{ fontFamily: "'Fraunces', serif" }}>
                 Our Story
               </h1>
-              <p className="text-slate-500 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
-                We provide industry-leading services designed to achieve your Goals .
+              <p className="text-slate-500 text-sm sm:text-base md:text-lg font-medium leading-relaxed">
+                We provide industry-leading services<br className="hidden sm:block" /> designed to achieve your Goals .
               </p>
             </div>
 
-            <div className="bg-white border border-slate-100 rounded-3xl p-6 sm:p-10 md:p-12 shadow-sm">
-              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 leading-snug mb-6">
-                <span className="text-[#1e3a8a] font-semibold">
-                  Incorporated in August 2007
-                </span>, as a debt management organization, we have diversified into customer service, sales  & retention.
-              </h2>
-
-
-
-
+            {/* Info card */}
+            <div className="bg-white/85 backdrop-blur-xl border border-white/80 rounded-[28px] p-6 sm:p-8 shadow-[0_4px_30px_rgb(0,0,0,0.05)] max-w-[700px] flex items-center gap-5 sm:gap-7">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 bg-[#f0f5ff] rounded-full flex items-center justify-center">
+                <Landmark className="text-[#1e3a8a] w-7 h-7 sm:w-8 sm:h-8" strokeWidth={1.75} />
+              </div>
+              <p className="text-[15px] sm:text-[17px] font-semibold text-slate-800 leading-relaxed">
+                Incorporated in <span className="text-[#1e3a8a] font-bold">August 2007</span>, as a debt management organization, we have diversified into customer service, sales & retention.
+              </p>
             </div>
           </div>
         </section>
@@ -94,36 +123,48 @@ const AboutUs = () => {
               className="flex overflow-x-auto gap-4 sm:gap-6 pb-8 sm:pb-0 md:grid md:grid-cols-3 snap-x snap-mandatory scrollbar-hide"
             >
               {/* Goal Card */}
-              <div className="min-w-[280px] md:min-w-0 snap-center p-6 sm:p-10 border border-slate-100 rounded-xl shadow-sm bg-white">
-                <div className="w-14 h-14 bg-blue-50 text-[#3b82f6] rounded-full flex items-center justify-center mb-6">
-                  <Target size={28} />
+              <div className="min-w-[280px] md:min-w-0 snap-center relative overflow-hidden p-6 sm:p-7 border border-slate-100 rounded-2xl shadow-sm bg-white">
+                {/* Decorative blob */}
+                <div className="absolute -top-6 -right-6 w-28 h-28 sm:w-36 sm:h-36 rounded-3xl rotate-12 bg-gradient-to-br from-[#0f57a6] to-[#0a3d7a] opacity-90"></div>
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-blue-50 text-[#3b82f6] rounded-full flex items-center justify-center mb-4">
+                    <Target size={24} />
+                  </div>
+                  <h2 className="text-lg font-bold text-[#041434] mb-2" style={{ fontFamily: "'Fraunces', serif" }}>Goals</h2>
+                  <p className="text-slate-600 leading-relaxed text-xs sm:text-sm text-justify">
+                    We tackle our clients' most difficult challenges by offering exceptional services in strategy, consulting, digital, technology, and operations. Our goal is to drive innovation that enhances both, the way the world operates and the quality of life.
+                  </p>
                 </div>
-                <h2 className="text-xl font-bold text-[#041434] mb-3" style={{ fontFamily: "'Fraunces', serif" }}>Goals</h2>
-                <p className="text-slate-600 leading-relaxed text-xs sm:text-sm text-justify">
-                  We tackle our clients' most difficult challenges by offering exceptional services in strategy, consulting, digital, technology, and operations. Our goal is to drive innovation that enhances both, the way the world operates and the quality of life.
-                </p>
               </div>
 
               {/* Mission Card */}
-              <div className="min-w-[280px] md:min-w-0 snap-center p-6 sm:p-10 border border-slate-100 rounded-xl shadow-sm bg-white">
-                <div className="w-14 h-14 bg-indigo-50 text-[#1a237e] rounded-full flex items-center justify-center mb-6">
-                  <Rocket size={28} />
+              <div className="min-w-[280px] md:min-w-0 snap-center relative overflow-hidden p-6 sm:p-7 border border-slate-100 rounded-2xl shadow-sm bg-white">
+                {/* Decorative blob */}
+                <div className="absolute -top-6 -right-6 w-28 h-28 sm:w-36 sm:h-36 rounded-3xl rotate-12 bg-gradient-to-br from-[#0f57a6] to-[#0a3d7a] opacity-90"></div>
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-indigo-50 text-[#1a237e] rounded-full flex items-center justify-center mb-4">
+                    <Rocket size={24} />
+                  </div>
+                  <h2 className="text-lg font-bold text-[#041434] mb-2" style={{ fontFamily: "'Fraunces', serif" }}>Mission</h2>
+                  <p className="text-slate-600 leading-relaxed text-xs sm:text-sm text-justify">
+                    To shape the future of the Business Process Management industry by pioneering transformational technologies and capabilities. We strive to stay ahead of the curve to drive growth for our customers, deliver value to investors, and enrich overall experiences.
+                  </p>
                 </div>
-                <h2 className="text-xl font-bold text-[#041434] mb-3" style={{ fontFamily: "'Fraunces', serif" }}>Mission</h2>
-                <p className="text-slate-600 leading-relaxed text-xs sm:text-sm text-justify">
-                  To shape the future of the Business Process Management industry by pioneering transformational technologies and capabilities. We strive to stay ahead of the curve to drive growth for our customers, deliver value to investors, and enrich overall experiences.
-                </p>
               </div>
 
-              {/* Vision Card  a*/}
-              <div className="min-w-[280px] md:min-w-0 snap-center p-6 sm:p-10 border border-slate-100 rounded-xl shadow-sm bg-white">
-                <div className="w-14 h-14 bg-purple-50 text-purple-600 rounded-full flex items-center justify-center mb-6">
-                  <Eye size={28} />
+              {/* Vision Card */}
+              <div className="min-w-[280px] md:min-w-0 snap-center relative overflow-hidden p-6 sm:p-7 border border-slate-100 rounded-2xl shadow-sm bg-white">
+                {/* Decorative blob */}
+                <div className="absolute -top-6 -right-6 w-28 h-28 sm:w-36 sm:h-36 rounded-3xl rotate-12 bg-gradient-to-br from-[#0f57a6] to-[#0a3d7a] opacity-90"></div>
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-purple-50 text-purple-600 rounded-full flex items-center justify-center mb-4">
+                    <Eye size={24} />
+                  </div>
+                  <h2 className="text-lg font-bold text-[#041434] mb-2" style={{ fontFamily: "'Fraunces', serif" }}>Vision</h2>
+                  <p className="text-slate-600 leading-relaxed text-xs sm:text-sm text-justify">
+                    Our aim is to lead in the markets we target and be recognized as the most trusted partner by our clients. We achieve this by streamlining complex business processes with advanced technology and top-notch industry practices.
+                  </p>
                 </div>
-                <h2 className="text-xl font-bold text-[#041434] mb-3" style={{ fontFamily: "'Fraunces', serif" }}>Vision</h2>
-                <p className="text-slate-600 leading-relaxed text-xs sm:text-sm text-justify">
-                  Our aim is to lead in the markets we target and be recognized as the most trusted partner by our clients. We achieve this by streamlining complex business processes with advanced technology and top-notch industry practices.
-                </p>
               </div>
             </div>
           </div>

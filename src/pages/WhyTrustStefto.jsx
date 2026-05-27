@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import LandingLayout from '../components/layout/LandingLayout';
 import WhyTrustSection from './LandingPage/components/WhyTrustSection';
+import BusinessTestimonials from './LandingPage/components/BusinessTestimonials';
 
 export default function WhyTrustStefto() {
   useEffect(() => {
@@ -11,6 +12,7 @@ export default function WhyTrustStefto() {
     <LandingLayout>
       <main className="w-full bg-white min-h-screen pt-16">
         <WhyTrustSection />
+        <BusinessTestimonials />
       </main>
     </LandingLayout>
   );

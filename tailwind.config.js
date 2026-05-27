@@ -17,6 +17,7 @@ export default {
         'stefto-indigo': '#193260',
         'stefto-blue': '#1c469d',
         'stefto-sky': '#1e3b6f',
+        'stefto-primary': '#1158a7', // Added for global use
 
         // Whatspify colors mapped to HSL custom properties
         background: 'hsl(var(--background))',
