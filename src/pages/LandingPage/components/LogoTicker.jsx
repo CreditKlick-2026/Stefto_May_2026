@@ -2,9 +2,9 @@ import React, { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 
 /* ── All 26 real partner images from /assets/partners/ ── */
-const partnerImages = Array.from({ length: 26 }, (_, i) => i + 1);
-const row1 = partnerImages.slice(0, 13);  // 1–13
-const row2 = partnerImages.slice(13);     // 14–26
+const partnerImages = Array.from({ length: 24 }, (_, i) => i + 1);
+const row1 = partnerImages.slice(0, 12);  // 1–12
+const row2 = partnerImages.slice(12);     // 13–24
 
 /* ── Star icon ── */
 function Star() {
@@ -101,7 +101,7 @@ function PartnerRow({ images, direction = "left", speed = 28 }) {
                         <img
                             src={`/assets/partners/${n}.png`}
                             alt={`Partner ${n}`}
-                            className="max-h-[38px] max-w-[85px] w-auto h-auto object-contain opacity-75 hover:opacity-100 transition-opacity duration-200"
+                            className="max-h-[38px] max-w-[85px] w-auto h-auto object-contain opacity-100 transition-opacity duration-200"
                             loading="lazy"
                         />
                     </div>

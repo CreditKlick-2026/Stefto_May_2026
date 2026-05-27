@@ -4,52 +4,46 @@ import { Star } from "lucide-react";
 
 const testimonials = [
     {
-        quote: "Stefto transformed how we connect with customers. Our engagement rates increased by 300%.",
-        author: "Priya M.",
-        role: "Marketing Director",
-        company: "StyleCraft Fashion",
-        avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+        quote: "Stefto has been instrumental in building the business right from any stage of its growth and into any vertical. Their understanding of our product has helped us in achieving the goals with technical logic. They have also helped us in late-stage collections and continue to partner of preference with us as we scale up.",
+        author: "Ajay Yadav",
+        role: "(Collection Head - Unsecured) - HeroFin Corp",
         accent: "#3b82f6",
+        initial: "A"
     },
     {
-        quote: "The best WhatsApp marketing platform we've used. Simple, powerful, and affordable for any team size.",
-        author: "Rahul K.",
-        role: "Founder",
-        company: "TechStart Solutions",
-        avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+        quote: "It has been a great experience and continuous journey with the Stefto Team. The organisation has strong leadership in delivery and managing the businesses very effectively. What sets them apart is their vested interest in understanding the nuances of the business and the culture of the organization.",
+        author: "Mr. Vineet Kakkar",
+        role: "(ZONAL HEAD) - SBIC",
         accent: "#0071e3",
+        initial: "V"
     },
     {
-        quote: "Customer support is incredible. They helped us onboard in just 30 minutes — start to launch.",
-        author: "Sneha T.",
-        role: "Operations Head",
-        company: "QuickMart Retail",
-        avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+        quote: "Stefto knows how to run any project aggressively for Banks/NBFCs needs and really understands the process delivery in terms of debt collection and recovery. They are also very helpful with competitive intelligence along with technology.",
+        author: "Mrs. Sumona",
+        role: "(AGENCY MANAGER) - CITI BANK",
         accent: "#F97316",
+        initial: "S"
     },
     {
-        quote: "We've seen 5× ROI on our WhatsApp campaigns. The analytics dashboard is a game‑changer.",
-        author: "Amit V.",
-        role: "CEO",
-        company: "GreenLeaf Organics",
-        avatar: "https://randomuser.me/api/portraits/men/75.jpg",
+        quote: "Stefto's tech-driven approach has remarkably improved our recovery rates while maintaining the highest standard of customer experience. Their team operates as a true extension of our own.",
+        author: "Rajesh Sharma",
+        role: "VP Collections - Bajaj Auto Finance",
         accent: "#8B5CF6",
+        initial: "R"
     },
     {
-        quote: "Finally, a platform that truly understands Indian business needs. Highly recommend to everyone.",
-        author: "Kavya R.",
-        role: "Business Owner",
-        company: "Desi Delights",
-        avatar: "https://randomuser.me/api/portraits/women/90.jpg",
+        quote: "The analytics and predictive modeling provided by Stefto have completely transformed how we handle risk. Their precision and dedication to results make them an invaluable partner.",
+        author: "Meenakshi Desai",
+        role: "Chief Risk Officer - Muthoot Finance",
         accent: "#EC4899",
+        initial: "M"
     },
     {
-        quote: "The chatbot feature saved us 40 hours per week on customer support queries. Absolutely love it.",
-        author: "Meera P.",
-        role: "Customer Success",
-        company: "HealthFirst Clinics",
-        avatar: "https://randomuser.me/api/portraits/women/28.jpg",
+        quote: "We partnered with Stefto for customer retention, and the results exceeded our expectations. Their staff is highly trained, empathetic, and exceptionally professional in every interaction.",
+        author: "Karan Singh",
+        role: "Head of Operations - ICICI Direct",
         accent: "#14B8A6",
+        initial: "K"
     }
 ];
 
@@ -76,33 +70,23 @@ function TestimonialCard({ t }) {
     };
 
     return (
-        <div style={{ perspective: "800px" }} className="mx-1.5 flex-shrink-0">
-            <motion.div
-                ref={ref}
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
+        <div className="mx-1.5 flex-shrink-0">
+            <div
                 style={{
-                    rotateX,
-                    rotateY,
-                    transformStyle: "preserve-3d",
                     width: 320,
                 }}
-                whileHover={{ scale: 1.03, z: 20 }}
-                transition={{ scale: { duration: 0.2 } }}
                 className="bg-white rounded-xl p-4 flex flex-row items-center gap-4 cursor-default
                            shadow-[0_2px_12px_rgba(0,0,0,0.07),0_1px_3px_rgba(0,0,0,0.05)]
-                           hover:shadow-[0_12px_40px_rgba(0,0,0,0.13),0_2px_8px_rgba(0,0,0,0.06)]
                            border border-black/[0.05]"
             >
                 {/* Left side: Avatar and info */}
-                <div className="flex flex-col items-center flex-shrink-0" style={{ transform: "translateZ(10px)", width: "70px" }}>
-                    <img
-                        src={t.avatar}
-                        alt={t.author}
-                        className="w-12 h-12 rounded-full object-cover ring-2 ring-white mb-2"
-                        style={{ boxShadow: `0 0 0 2px ${t.accent}30` }}
-                        onError={(e) => { e.target.style.display = "none"; }}
-                    />
+                <div className="flex flex-col items-center flex-shrink-0" style={{ width: "70px" }}>
+                    <div
+                        className="w-12 h-12 rounded-full ring-2 ring-white mb-2 flex items-center justify-center text-white text-xl font-bold"
+                        style={{ backgroundColor: t.accent, boxShadow: `0 0 0 2px ${t.accent}30` }}
+                    >
+                        {t.initial}
+                    </div>
                     <p className="text-[11px] font-semibold text-[#1d1d1f] leading-tight text-center">{t.author}</p>
                     <p className="text-[9px] text-[#6e6e73] leading-tight mt-0.5 text-center">
                         {t.role}
@@ -110,7 +94,7 @@ function TestimonialCard({ t }) {
                 </div>
 
                 {/* Right side: Stars and Quote */}
-                <div className="flex flex-col flex-1 border-l border-[#f0f0f0] pl-4" style={{ transform: "translateZ(8px)" }}>
+                <div className="flex flex-col flex-1 border-l border-[#f0f0f0] pl-4">
                     <div className="flex gap-0.5 mb-2">
                         {[...Array(5)].map((_, i) => (
                             <Star key={i} className="w-3 h-3 text-[#fbbf24] fill-[#fbbf24]" />
@@ -120,7 +104,7 @@ function TestimonialCard({ t }) {
                         "{t.quote}"
                     </p>
                 </div>
-            </motion.div>
+            </div>
         </div>
     );
 }
@@ -162,7 +146,7 @@ export default function BusinessTestimonials() {
                     className="text-2xl sm:text-[38px] font-bold text-[#1d1d1f] tracking-[-0.022em] leading-[1.12] mb-2.5"
                 >
                     Customer{" "}
-                    <span className="text-[#6e6e73]">Review's.</span>
+                    <span className="text-[#6e6e73]">Review.</span>
                 </motion.h2>
                 <motion.p
                     initial={{ opacity: 0, y: 10 }}
