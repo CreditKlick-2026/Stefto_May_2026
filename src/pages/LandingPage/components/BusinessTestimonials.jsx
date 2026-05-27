@@ -130,11 +130,8 @@ function MarqueeRow({ items, direction = 1, duration = 40 }) {
 }
 
 export default function BusinessTestimonials() {
-    const row1 = testimonials.slice(0, 3);
-    const row2 = testimonials.slice(3);
-
     return (
-        <section className="py-10 md:py-16 bg-white overflow-hidden">
+        <section className="pt-10 pb-10 md:pt-12 md:pb-16 bg-white overflow-hidden">
             {/* Header */}
             <div className="max-w-[980px] mx-auto px-4 md:px-6 text-center mb-8 md:mb-12">
 
@@ -146,7 +143,7 @@ export default function BusinessTestimonials() {
                     className="text-2xl sm:text-[38px] font-bold text-[#1d1d1f] tracking-[-0.022em] leading-[1.12] mb-2.5"
                 >
                     Customer{" "}
-                    <span className="text-[#6e6e73]">Review.</span>
+                    <span className="text-[#6e6e73]">Review's.</span>
                 </motion.h2>
                 <motion.p
                     initial={{ opacity: 0, y: 10 }}
@@ -155,7 +152,7 @@ export default function BusinessTestimonials() {
                     transition={{ delay: 0.12 }}
                     className="text-[14px] md:text-[16px] text-[#6e6e73] leading-[1.5]"
                 >
-                    Join thousands of happy businesses growing with  <span style={{ color: "#1c469d", fontSize: "20px" }}>Stefto</span> .
+
                 </motion.p>
             </div>
 
@@ -170,8 +167,7 @@ export default function BusinessTestimonials() {
                     style={{ background: "linear-gradient(to left, #fff, transparent)" }}
                 />
                 <div className="flex flex-col gap-3 md:gap-4">
-                    <MarqueeRow items={row1} direction={1} duration={45} />
-                    <MarqueeRow items={row2} direction={-1} duration={48} />
+                    <MarqueeRow items={testimonials} direction={1} duration={45} />
                 </div>
             </div>
 

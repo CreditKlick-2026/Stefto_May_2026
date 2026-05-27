@@ -83,16 +83,16 @@ const Services = () => {
             {serviceCards.map((card, idx) => {
               const Icon = card.icon;
               return (
-                <div key={idx} className="bg-[#1e3a8a] border border-transparent rounded-3xl p-8 flex flex-col shadow-lg hover:shadow-xl transition-all duration-300">
-                  <div className="mb-6">
+                <div key={idx} className="bg-[#1e3a8a] border border-transparent rounded-3xl p-6 flex flex-col shadow-lg hover:shadow-xl transition-all duration-300">
+                  <div className="mb-4">
                     <Icon size={36} className="text-red-500" strokeWidth={2.5} />
                   </div>
                   <h3 className="text-[22px] font-bold text-white mb-3">{card.title}</h3>
-                  <p className="text-white/80 text-[14px] leading-[1.6] mb-8 min-h-[66px]">
+                  <p className="text-white/80 text-[14px] leading-[1.6] mb-5 min-h-[44px]">
                     {card.description}
                   </p>
 
-                  <div className="space-y-3.5 mb-12 flex-grow">
+                  <div className="space-y-2.5 mb-6 flex-grow">
                     {card.features.map((feature, fIdx) => (
                       <div key={fIdx} className="flex items-center gap-3">
                         <CheckCircle2 size={16} className="text-red-500 shrink-0" strokeWidth={3} />
@@ -107,7 +107,7 @@ const Services = () => {
         </div>
 
         {/* Industry Verticals Section - Full Width */}
-        <div className="w-full mx-auto px-6 mt-32 pb-20 text-center">
+        <div className="w-full mx-auto px-6 mt-16 pb-20 text-center">
           <h2 className="text-3xl md:text-[42px] font-black text-[#0f2a5e] mb-4 tracking-tight">Our Core Industry Verticals</h2>
 
 

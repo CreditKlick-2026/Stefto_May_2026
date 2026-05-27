@@ -60,7 +60,7 @@ export default function WhyTrustSection() {
       id="why-stefto"
       ref={ref}
       style={{
-        padding: '32px 0 96px 0',
+        padding: '32px 0 0px 0',
         background: '#ffffff',
         position: 'relative',
         overflow: 'hidden',
@@ -83,7 +83,7 @@ export default function WhyTrustSection() {
 
 
             {/* Heading */}
-            <div className="text-center mb-12 flex flex-col items-center">
+            <div className="text-center mb-6 flex flex-col items-center">
               <h2 style={{ fontSize: 'clamp(32px, 4vw, 48px)', fontWeight: 700, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.02em', marginBottom: 16 }}>
                 Why Trust <span style={{ color: '#1e3a8a', fontFamily: 'system-ui, -apple-system, Arial, sans-serif', fontVariantLigatures: 'none' }}>Stefto?</span>
               </h2>
