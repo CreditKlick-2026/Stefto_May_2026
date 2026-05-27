@@ -75,11 +75,11 @@ const slides = [
         image: "https://res.cloudinary.com/dtz8hacj4/image/upload/v1779787911/Why_are_we_the_best_Because_we_listen_to_our_customers_wholeheartedly._1_j39bty.png",
         badgeTop: "Guaranteed",
         badgeBottom: "ROI",
-        badgeBg: "linear-gradient(135deg, #300b0b 0%, #601515 100%)",
-        badgeShadow: "0 10px 40px rgba(48,11,11,0.65), inset 0 1px 0 rgba(255,255,255,0.2)",
-        imageGlow: "rgba(220,38,38,0.35)",
-        background: "linear-gradient(135deg, #1a0808 0%, #3d0c0c 35%, #5c1111 60%, #8f1a1a 85%, #dc2626 100%)",
-        floatCard: { icon: TrendingUp, bg: "linear-gradient(135deg, #dc2626, #991b1b)", title: "Top Performance", sub: "100% SLA Fulfillment" },
+        badgeBg: "linear-gradient(135deg, #0b1530 0%, #152960 100%)",
+        badgeShadow: "0 10px 40px rgba(11,21,48,0.65), inset 0 1px 0 rgba(255,255,255,0.2)",
+        imageGlow: "rgba(37,99,235,0.35)",
+        background: "linear-gradient(135deg, #0a1628 0%, #0f1f4b 35%, #132359 60%, #1a3a8f 85%, #1d4ed8 100%)",
+        floatCard: { icon: TrendingUp, bg: "linear-gradient(135deg, #2563eb, #3b82f6)", title: "Top Performance", sub: "100% SLA Fulfillment" },
         imageScale: 1.1
     }
 ];
@@ -133,9 +133,9 @@ export default function HeroSection() {
                         </>
                     ) : (
                         <>
-                            <div style={{ position: "absolute", top: -100, right: "25%", width: 500, height: 500, borderRadius: "50%", background: "rgba(220,38,38,0.15)", filter: "blur(100px)", pointerEvents: "none" }} />
-                            <div style={{ position: "absolute", bottom: -80, left: "5%", width: 400, height: 400, borderRadius: "50%", background: "rgba(248,113,113,0.10)", filter: "blur(80px)", pointerEvents: "none" }} />
-                            <div style={{ position: "absolute", top: "30%", right: "5%", width: 350, height: 350, borderRadius: "50%", background: "rgba(251,146,60,0.08)", filter: "blur(80px)", pointerEvents: "none" }} />
+                            <div style={{ position: "absolute", top: -100, right: "25%", width: 500, height: 500, borderRadius: "50%", background: "rgba(37,99,235,0.15)", filter: "blur(100px)", pointerEvents: "none" }} />
+                            <div style={{ position: "absolute", bottom: -80, left: "5%", width: 400, height: 400, borderRadius: "50%", background: "rgba(96,165,250,0.10)", filter: "blur(80px)", pointerEvents: "none" }} />
+                            <div style={{ position: "absolute", top: "30%", right: "5%", width: 350, height: 350, borderRadius: "50%", background: "rgba(139,92,246,0.08)", filter: "blur(80px)", pointerEvents: "none" }} />
                         </>
                     )}
                 </motion.div>
