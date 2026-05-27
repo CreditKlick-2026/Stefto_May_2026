@@ -94,12 +94,12 @@ const AboutUs = () => {
 
           <div className="max-w-[1100px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
             {/* Left-aligned heading like Figma */}
-            <div className="max-w-md mb-10">
+            <div className="max-w-2xl mb-10">
               <h1 className="text-4xl sm:text-5xl font-extrabold text-[#041434] mb-4" style={{ fontFamily: "'Fraunces', serif" }}>
                 Our Story
               </h1>
               <p className="text-slate-500 text-sm sm:text-base md:text-lg font-medium leading-relaxed">
-                We provide industry-leading services<br className="hidden sm:block" /> designed to achieve your Goals .
+                We provide industry-leading services designed to achieve your Goals .
               </p>
             </div>
 
