@@ -74,7 +74,7 @@ const Services = () => {
       <main className="w-full bg-white min-h-screen pt-20 pb-24">
         {/* Core Services Section - Constrained Width */}
         <div className="max-w-[1280px] mx-auto px-6 pt-10 text-center">
-          <h1 className="text-3xl md:text-[42px] font-black text-[#0f2a5e] mb-4 tracking-tight">Our Core Services</h1>   <div className="w-16 h-[3px] bg-red-500 mx-auto mb-6"></div>
+          <h1 className="text-3xl md:text-[42px] font-black text-[#0f2a5e] mb-4 tracking-tight">Our Core Services</h1>   <div className="w-16 h-[3px] bg-[#1158a7] mx-auto mb-6"></div>
 
 
 
@@ -83,20 +83,20 @@ const Services = () => {
             {serviceCards.map((card, idx) => {
               const Icon = card.icon;
               return (
-                <div key={idx} className="bg-[#f8f9fa] border border-slate-100 rounded-3xl p-8 flex flex-col hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-300">
+                <div key={idx} className="bg-[#1e3a8a] border border-transparent rounded-3xl p-8 flex flex-col shadow-lg hover:shadow-xl transition-all duration-300">
                   <div className="mb-6">
-                    <Icon size={36} className="text-red-500" strokeWidth={1.5} />
+                    <Icon size={36} className="text-red-500" strokeWidth={2.5} />
                   </div>
-                  <h3 className="text-[22px] font-bold text-slate-800 mb-3">{card.title}</h3>
-                  <p className="text-slate-500 text-[14px] leading-[1.6] mb-8 min-h-[66px]">
+                  <h3 className="text-[22px] font-bold text-white mb-3">{card.title}</h3>
+                  <p className="text-white/80 text-[14px] leading-[1.6] mb-8 min-h-[66px]">
                     {card.description}
                   </p>
 
                   <div className="space-y-3.5 mb-12 flex-grow">
                     {card.features.map((feature, fIdx) => (
                       <div key={fIdx} className="flex items-center gap-3">
-                        <CheckCircle2 size={16} className="text-red-500 shrink-0" strokeWidth={2} />
-                        <span className="text-slate-700 text-[13px] font-semibold">{feature}</span>
+                        <CheckCircle2 size={16} className="text-red-500 shrink-0" strokeWidth={3} />
+                        <span className="text-white/90 text-[13px] font-semibold">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -111,7 +111,7 @@ const Services = () => {
           <h2 className="text-3xl md:text-[42px] font-black text-[#0f2a5e] mb-4 tracking-tight">Our Core Industry Verticals</h2>
 
 
-          <div className="w-16 h-[3px] bg-red-500 mx-auto mb-6"></div>
+          <div className="w-16 h-[3px] bg-[#1158a7] mx-auto mb-6"></div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
             {industryCards.map((card, idx) => (

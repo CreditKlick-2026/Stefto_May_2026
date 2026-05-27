@@ -71,7 +71,7 @@ const AboutUs = () => {
             <div
               className="absolute inset-0"
               style={{
-                backgroundImage: "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop')",
+                backgroundImage: "url('https://res.cloudinary.com/dtz8hacj4/image/upload/v1779881841/ChatGPT_Image_May_27_2026_05_06_50_PM_fsmqoz.png')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center top',
               }}
@@ -105,9 +105,7 @@ const AboutUs = () => {
 
             {/* Info block (no card) */}
             <div className="max-w-[700px] flex items-start gap-4 sm:gap-6 mt-4">
-              <div className="shrink-0 flex items-center justify-center mt-1 sm:mt-1.5">
-                <Landmark className="text-[#1e3a8a] w-8 h-8 sm:w-9 sm:h-9" strokeWidth={1.75} />
-              </div>
+
               <p className="text-[15px] sm:text-[17px] font-semibold text-slate-800 leading-relaxed">
                 Incorporated in <span className="text-[#1e3a8a] font-bold">August 2007</span>, as a debt management organization, we have diversified into customer service, sales & retention.
               </p>
@@ -260,3 +258,8 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
+
+
+
+
+

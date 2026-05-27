@@ -153,7 +153,7 @@ export default function HeroSection() {
                     exit={{ opacity: 0, x: -100, transition: { duration: 0.4, ease: "easeIn" } }}
                     className="hero-badge"
                     style={{
-                        position: "absolute", top: 50, right: 40, zIndex: 20,
+                        position: "absolute", top: 75, right: 40, zIndex: 20,
                         display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
                         padding: "12px 24px",
                         borderRadius: "12px",
@@ -161,7 +161,7 @@ export default function HeroSection() {
                         textAlign: "center",
                     }}
                 >
-                    <span style={{ color: "rgba(255,255,255,0.75)", fontSize: 9, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase" }}>Established</span>
+                    <span style={{ color: "rgba(255,255,255,0.75)", fontSize: 13, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase" }}>Established</span>
                     <span style={{ color: "#ffffff", fontSize: 26, fontWeight: 900, lineHeight: 1.1, marginTop: 2 }}>2007</span>
                 </motion.div>
             </AnimatePresence>
