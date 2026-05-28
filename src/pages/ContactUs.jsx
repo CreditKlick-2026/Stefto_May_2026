@@ -56,7 +56,7 @@ const ContactUs = () => {
               <div className="flex-1 flex items-stretch justify-center lg:justify-end mt-11 lg:mt-0">
                 <div className="w-full max-w-[600px] rounded overflow-hidden shadow-2xl relative border-[4px] border-slate-50 h-full flex flex-col">
                   <img
-                    src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779776420/Stefto_Building_Image_i2fvjc.png "
+                    src="https://res.cloudinary.com/dtz8hacj4/image/upload/v1779945357/ChatGPT_Image_May_28_2026_10_45_38_AM_wspeal.png"
                     alt="Stefto Building Office"
                     className="w-full h-[300px] lg:h-full object-cover flex-1"
                   />
