@@ -124,11 +124,9 @@
                 const outputDiv = document.getElementById("output");
                 outputDiv.style.display = "block";
 
-                // ❌ THE BUG IS HERE: innerHTML executes whatever string you pass into it as raw HTML/JS!
+               
                 outputDiv.innerHTML = "Hello " + userName + ", Welcome back to your profile!";
 
-                // ✅ THE FIX: If the developer used 'textContent' instead, it would be secure.
-                // outputDiv.textContent = "Hello " + userName + ", Welcome back to your profile!";
             }
         }
 

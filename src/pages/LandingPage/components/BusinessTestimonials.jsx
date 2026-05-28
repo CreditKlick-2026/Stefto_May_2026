@@ -143,7 +143,7 @@ export default function BusinessTestimonials() {
                     className="text-2xl sm:text-[38px] font-bold text-[#1d1d1f] tracking-[-0.022em] leading-[1.12] mb-2.5"
                 >
                     Customer{" "}
-                    <span className="text-[#6e6e73]">Review's.</span>
+                    <span className="text-[#6e6e73]">Reviews</span>
                 </motion.h2>
                 <motion.p
                     initial={{ opacity: 0, y: 10 }}

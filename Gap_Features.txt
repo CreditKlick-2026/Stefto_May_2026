@@ -1,0 +1,79 @@
+ Whatspify vs DoubleTick - Gap Analysis & Incomplete Features
+DoubleTick ke level ka platform banane ke liye, Whatspify mein jo features incomplete hain ya abhi tak implement nahi hue hain unki details neeche di gayi hain. Inhe teen categories (High, Medium, and Low Priority) mein divide kiya gaya hai:
+
+🚨 1. High Priority Gaps (Bohot Zaroori)
+🔴 Gap 1: Number Masking for Agents (Data Privacy)
+DoubleTick Features: Agents customer ka actual mobile number nahi dekh sakte (security aur customer poaching se bachne ke liye). Sirf Owner aur Admins poora number dekh sakte hain.
+Whatspify Status: Abhi agents ko poora phone number visible hota hai.
+Kya karna hoga:
+Organization model mein settings.numberMasking boolean add karna hoga.
+message-service ke inbox.routes.js routes mein ek middleware add karna hoga jo incoming/outbound messages aur conversation history fetch karte waqt user role check kare.
+Agar user role 'agent' hai aur masking enabled hai, to number ko format kare: +91 XXXXXX7890.
+🔴 Gap 2: Button Reply Click Analytics
+DoubleTick Features: Templates ke interactive buttons (Reply Buttons, Call-to-Action) par hone wale clicks ko detail me track kiya jata hai.
+Whatspify Status: Interactive template send to ho jata hai par click tracking/webhooks receive hone par store aur compile nahi ho rahe hain.
+Kya karna hoga:
+whatsapp-service/routes/webhooks.js mein jab interactive reply ya button response ka payload receive ho, to use handle karke metric publish karna hoga.
+analytics-service mein use aggregate karke dynamic report show karni hogi ("Button A clicked: 45%, Button B: 55%").
+🔴 Gap 3: Broadcast Channel Privacy
+DoubleTick Features: Specific campaign aur broadcast list ko sirf select agents ya custom role ke logon ke liye restrict kiya ja sakta hai.
+Whatspify Status: Database (Campaign.js) mein allowedUserRoles array to hai, par campaign.routes.js aur frontend query filtering me iski check missing hai.
+Kya karna hoga:
+API request ke query builder me user ka teamRole validation integrate karna hoga.
+🟡 2. Medium Priority Gaps (SaaS Value Addition)
+🟡 Gap 4: Broadcast Catalogues & Product Broadcasting
+DoubleTick Features: Meta Commerce catalog products ko interactive card/list ke roop mein direct WhatsApp chat par bhejna aur bulk campaign chalana.
+Whatspify Status: Abhi sirf Text, Image, Video, Audio aur Documents ka option hai. Meta Catalog flow missing hai.
+Kya karna hoga:
+Meta Commerce Manager API integrations se catalog listings fetch karna.
+catalog.routes.js and helper files banani hogi.
+Frontend Campaign Builder mein catalog picker UI implement karna.
+🟡 Gap 5: Shopify Order Bot (Order Status Lookup)
+DoubleTick Features: Agar koi customer order number (e.g. #1234) ya keyword "order status" bhejta hai, to bot auto-lookup karke update details bhej deta hai.
+Whatspify Status: Shopify order update par incoming webhook exists hai par interactive chat session me lookup features missing hai.
+Kya karna hoga:
+Shopify Admin API se query filter query create karna (message-service/services/automation.engine.js).
+Order Status template structure setup karna.
+🟢 3. Low Priority / Enterprise Gaps (Advanced Features)
+🟢 Gap 6: Visual Journey / Drip Automation Builder
+DoubleTick Features: Drag and drop flow builder (jaise Zapier ya WebEngage) jahan user branches decide kar sakta hai: If replied in 2 hours -> Send template A, Else -> Send template B.
+Whatspify Status: Abhi single-step simple keyword triggers hi active hain.
+Kya karna hoga:
+Journey.js and journey.routes.js schemas design karna details nodes aur actions ke saath.
+Custom execution scheduler run karna jo pending actions check kare.
+🟢 Gap 7: Google Sheets Live Sync
+DoubleTick Features: Automatically synchronize lists and campaign logs with Google Sheets.
+Whatspify Status: UI exist karta hai par live integration engine missing hai.
+
+
+
+
+
+
+
+
+
+
+
+whatspify_gaps_analysis.md
+ file ko update kar diya hai.
+
+➕ Newly Added Gaps & Code TODOs:
+Team Invite Emails & Socket Updates:
+resendInvite (
+
+team.controller.js:L711
+) mein actual email sending functionality abhi missing hai.
+Real-time agent status changes ke notifications (
+
+team.controller.js:L633
+) abhi socket se push nahi hote hain.
+Proration Calculations in Billing:
+Subscriptions upgrades ke samay pre-paid active plan ki amount deduct / prorate karne ki logic (
+
+BillingController.js:L188
+) abhi missing hai.
+Coming Soon Integrations:
+Google Sheets, WooCommerce, HubSpot sync aur Zapier connections frontend integrations page par abhi placeholder toast messages hain aur backend integrations fully ready nahi hain.
+AI Smart Replies:
+Automation tab mein OpenAI/AI response generation settings abhi fully connected nahi hain.
