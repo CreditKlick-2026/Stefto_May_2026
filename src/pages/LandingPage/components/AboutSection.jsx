@@ -2,9 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import { ShieldCheck, ArrowRight } from 'lucide-react';
 
 const orgStats = [
-  { label: 'Employees', value: 1600, suffix: '+' },
+  { label: 'Employees', value: 2200, suffix: '+' },
   { label: 'Premium Clients', value: 25, suffix: '+' },
-  { label: 'Offices', value: 4, suffix: '+' }
+  { label: 'Offices', value: 11, suffix: '+' }
 ];
 
 function useCountUp(target, duration, active) {
