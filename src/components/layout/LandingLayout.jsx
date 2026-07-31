@@ -79,7 +79,7 @@ const menuData = {
   }
 };
 
-const DropdownMenu = ({ menu, isOpen, onClose }) => {
+const DropdownMenu = ({ menu, isOpen, onClose, isFirstItem }) => {
   if (!isOpen || !menu) return null;
   const isSectioned = menu.sections && Array.isArray(menu.sections);
   const items = menu.items || [];
@@ -90,7 +90,7 @@ const DropdownMenu = ({ menu, isOpen, onClose }) => {
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: 2, scale: 0.99 }}
       transition={{ duration: 0.15, ease: [0.16, 1, 0.3, 1] }}
-      className="absolute top-full left-0 pt-4 z-[1000]"
+      className={`absolute top-full pt-2 z-[1000] ${isFirstItem ? '-left-1.5' : 'left-0'}`}
       onMouseLeave={onClose}
     >
       <div
@@ -248,7 +248,7 @@ export function Navbar() {
             {/* Desktop Nav — center (flex-1 pushes right buttons to far right) */}
             <div className="hidden lg:flex items-center h-full flex-1 justify-center">
               <div className="flex items-center bg-[#f3f4f6] rounded-full px-1.5 py-1 shadow-sm border border-slate-200/60">
-                {navItems.map((item) => (
+                {navItems.map((item, index) => (
                   <div
                     key={item.name}
                     className="relative flex items-center"
@@ -278,13 +278,12 @@ export function Navbar() {
 
                     <AnimatePresence>
                       {item.hasDropdown && (
-                        <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3">
-                          <DropdownMenu
-                            menu={menuData[item.key]}
-                            isOpen={activeDropdown === item.key}
-                            onClose={() => setActiveDropdown(null)}
-                          />
-                        </div>
+                        <DropdownMenu
+                          menu={menuData[item.key]}
+                          isOpen={activeDropdown === item.key}
+                          onClose={() => setActiveDropdown(null)}
+                          isFirstItem={index === 0}
+                        />
                       )}
                     </AnimatePresence>
                   </div>

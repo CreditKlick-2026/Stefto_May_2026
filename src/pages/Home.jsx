@@ -88,7 +88,7 @@ export default function Home() {
 
             {/* Customer Support & Services Section */}
             <CustomerSupportSection />
-            <CustomerSupportSolutions />
+            {/* <CustomerSupportSolutions /> */}
             <ServicesSection />
 
             {/* 12. FAQ - Common Questions */}

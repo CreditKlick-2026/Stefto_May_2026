@@ -7,36 +7,54 @@ import {
   ArrowRight,
   Sparkles,
   Globe2,
-  HeartHandshake
+  HeartHandshake,
+  Mic,
+  Network,
+  Database,
+  FileSearch,
+  Users,
+  BarChart4
 } from 'lucide-react';
 import Button from '../../../components/ui/Button';
 
 /* ─── Static data (defined outside so they're never re-created) ─── */
-const supportFeatures = [
+const machineryFeatures = [
   {
-    icon: Headphones,
-    title: 'Omnichannel Assistance',
-    description: 'Seamless customer interaction across Tele-calling, WhatsApp, Voice AI, and Self-Service web portals.',
-    badge: 'Multi-Channel',
+    icon: Mic,
+    title: 'Complete interaction recording',
+    description: 'Every call recorded and retrievable — for quality coaching, dispute resolution and compliance review.',
+    badge: 'Recording'
   },
   {
-    icon: HeartHandshake,
-    title: 'Empathetic & Ethical Care',
-    description: 'Trained resolution specialists ensuring respectful, transparent, and customer-first debt advisory.',
-    badge: 'Customer First',
+    icon: Network,
+    title: 'Skill-based routing & dialers',
+    description: 'Queries reach the advisor best equipped to resolve them, on managed dialer and telephony infrastructure.',
+    badge: 'Routing'
   },
   {
-    icon: Globe2,
-    title: 'Multilingual Support',
-    description: 'Localized support tailored for diverse Indian demographics in Hindi, English, and regional languages.',
-    badge: '10+ Languages',
+    icon: Database,
+    title: 'CRM & ticketing integration',
+    description: 'We work inside your systems or ours — so context follows the customer across every channel.',
+    badge: 'Integration'
   },
   {
-    icon: ShieldCheck,
-    title: 'RBI Compliance & Data Security',
-    description: 'Strict adherence to regulatory norms, complete audit trails, and encrypted end-to-end data handling.',
-    badge: '100% Compliant',
+    icon: FileSearch,
+    title: 'Dedicated quality audit',
+    description: 'Independent QA teams score interactions daily against your parameters, feeding coaching loops each week.',
+    badge: 'QA Audit'
   },
+  {
+    icon: Users,
+    title: 'Workforce management',
+    description: 'Forecasting and rostering matched to your call arrival patterns — so service levels hold at peak.',
+    badge: 'WFM'
+  },
+  {
+    icon: BarChart4,
+    title: 'Client-format reporting',
+    description: 'Daily flash, weekly reviews, monthly MIS — in the format your leadership already reads.',
+    badge: 'Reporting'
+  }
 ];
 
 const supportMetrics = [
@@ -147,16 +165,15 @@ export default function CustomerSupportSection() {
           <div className={`lg:col-span-6 space-y-4 ${fadeUp('delay-150')}`}>
             <div className="space-y-1.5">
               <h3 className="text-sm sm:text-2xl lg:text-3xl font-bold text-slate-900 leading-tight">
-                Empowering Financial Institutions &amp; Borrowers Together
+                The machinery behind a good conversation.
               </h3>
               <p className="text-slate-600 text-[11px] sm:text-base leading-relaxed">
-                Our customer support ecosystem combines cutting-edge technology with human empathy — helping financial institutions manage inquiries, provide payment guidance, and maintain long-term brand trust.
+                Customers only see the advisor. Behind every interaction sits the infrastructure that keeps service fast, consistent and auditable.
               </p>
             </div>
 
-            {/* Feature Cards — 2 columns per row on all screen sizes */}
             <div className="grid grid-cols-2 gap-2 sm:gap-3">
-              {supportFeatures.map((item, idx) => {
+              {machineryFeatures.map((item, idx) => {
                 const Icon = item.icon;
                 return (
                   <div
@@ -179,7 +196,7 @@ export default function CustomerSupportSection() {
             </div>
 
             {/* CTAs — stack on mobile, row on sm+ */}
-            <div className="pt-1 flex flex-col sm:flex-row flex-wrap gap-2.5">
+            <div className="pt-6 flex flex-col sm:flex-row flex-wrap gap-2.5">
               <Button as="a" href="#contact" variant="primary" size="sm" pill className="sm:btn-md">
                 <PhoneCall size={13} aria-hidden="true" />
                 Get Support Assistance
