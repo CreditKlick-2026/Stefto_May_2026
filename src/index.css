@@ -1893,7 +1893,7 @@ p {
 }
 
 .scd-29__step--s2 .scd-29__grad {
-  background: linear-gradient(135deg, #9b141d, #db212c 45%, #ff737b);
+  background: linear-gradient(135deg, #1e1b4b, #4338ca 45%, #7c3aed);
 }
 
 .scd-29__step--s3 {
@@ -1909,7 +1909,7 @@ p {
 }
 
 .scd-29__step--s4 .scd-29__grad {
-  background: linear-gradient(135deg, #9b141d, #db212c 45%, #ff737b);
+  background: linear-gradient(135deg, #1e1b4b, #4338ca 45%, #7c3aed);
 }
 
 @media (prefers-reduced-motion: reduce) {

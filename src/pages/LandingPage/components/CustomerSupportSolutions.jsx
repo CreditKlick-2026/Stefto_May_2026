@@ -123,7 +123,6 @@ export default function CustomerSupportSolutions() {
                 <img
                   src="/assets/Images/backline.png"
                   alt="Data Analytics and Backend Systems"
-                  loading="lazy"
                   decoding="async"
                   className="absolute inset-0 w-full h-full object-contain"
                 />

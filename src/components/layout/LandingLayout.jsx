@@ -522,8 +522,8 @@ export function Navbar() {
         href="https://wa.me/919999999999"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed right-0 top-1/2 -translate-y-1/2 z-[55] flex items-center justify-center bg-white shadow-[0_4px_20px_rgba(0,0,0,0.12)] hover:shadow-[0_6px_28px_rgba(0,0,0,0.18)] hover:-translate-x-1 transition-all duration-200"
-        style={{ width: 48, height: 48, borderRadius: '14px 0 0 14px' }}
+        className="fixed right-2 sm:right-4 top-1/2 -translate-y-1/2 z-[55] flex items-center justify-center bg-white shadow-[0_4px_20px_rgba(0,0,0,0.12)] hover:shadow-[0_6px_28px_rgba(0,0,0,0.18)] hover:-translate-x-1 transition-all duration-200"
+        style={{ width: 48, height: 48, borderRadius: '14px' }}
         aria-label="Chat on WhatsApp"
       >
         <svg viewBox="0 0 24 24" className="w-6 h-6" xmlns="http://www.w3.org/2000/svg">

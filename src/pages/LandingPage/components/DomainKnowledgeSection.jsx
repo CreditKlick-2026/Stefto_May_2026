@@ -125,7 +125,6 @@ const DomainKnowledgeSection = () => {
             <div className="relative z-10">
               <h2 className="scd-29__h2 text-white">{phase.title}</h2>
               <p className="scd-29__p text-white/90">{phase.description}</p>
-              <div className="scd-29__bar"><i></i></div>
             </div>
           </section>
         ))}

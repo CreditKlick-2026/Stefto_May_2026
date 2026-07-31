@@ -131,7 +131,6 @@ export default function CustomerSupportSection() {
                 <img
                   src="/assets/Images/Customer_Support.png"
                   alt="Customer support representative"
-                  loading="lazy"
                   decoding="async"
                   className="absolute inset-0 w-full h-full object-contain"
                 />
