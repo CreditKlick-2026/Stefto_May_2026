@@ -46,7 +46,7 @@ const slides = [
         id: 1,
         eyebrow: "",
         headlinePart1: "Providing Compliant\n",
-        headlineHighlight: "Debt Management\n",
+        headlineHighlight: "",
         headlinePart2: "Services Across Leading\nFinancial Institutions.",
         subHeadline: "",
         description: "",

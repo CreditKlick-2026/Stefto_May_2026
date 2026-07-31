@@ -18,18 +18,6 @@ const serviceCards = [
     link: "/back-office"
   },
   {
-    icon: Database,
-    title: "Debt Collection",
-    description: "End-to-end recovery solutions for soft and hard collections.",
-    features: [
-      "Pre-emptive Engagement",
-      "Outbouding Calling",
-      "Field Collection Support",
-      "Legal Recovery Pathways"
-    ],
-    link: "/inbound"
-  },
-  {
     icon: BarChart3,
     title: "Risk Data Analytics",
     description: "Transforming raw data into actionable insights for better credit decisioning and risk mitigation.",
@@ -228,8 +216,8 @@ const Services = () => {
           <div className="scd-05__fan z-30 mt-10">
             {serviceCards.map((card, idx) => {
               const Icon = card.icon;
-              // Map indices 0-7 to spread from -3.5 to 3.5
-              const n = idx - 3.5;
+              // Map indices dynamically so it always centers based on total length
+              const n = idx - (serviceCards.length - 1) / 2;
 
               return (
                 <div key={idx} className="scd-05__card group cursor-pointer" tabIndex="0" style={{ '--n': n }}>
