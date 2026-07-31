@@ -51,6 +51,7 @@ const DomainKnowledgeSection = () => {
           s.style.filter = `brightness(${1 - prog * 0.35})`;
           const fill = s.querySelector('.scd-29__bar i');
           if (fill) fill.style.width = (prog * 100) + '%';
+
         } else {
           const fill = s.querySelector('.scd-29__bar i');
           if (fill) fill.style.width = '100%';
