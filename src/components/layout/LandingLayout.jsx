@@ -626,7 +626,7 @@ export function Footer({ curveColor = "fill-slate-50" }) {
 
 export default function LandingLayout({ children, footerCurveColor = "fill-white" }) {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-blue-50 selection:text-[#1c469d] relative overflow-hidden">
+    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-blue-50 selection:text-[#1c469d] relative overflow-x-clip">
       {/* Global Background Grid Pattern & Ambient Radial Glows */}
       <div className="fixed inset-0 grid-bg-pattern opacity-40 pointer-events-none z-0" />
       <div

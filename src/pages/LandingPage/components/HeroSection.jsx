@@ -153,12 +153,14 @@ export default function HeroSection() {
                     exit={{ opacity: 0, x: -100, transition: { duration: 0.4, ease: "easeIn" } }}
                     className="hero-badge"
                     style={{
-                        position: "absolute", top: 75, right: 40, zIndex: 20,
+                        position: "absolute", top: "10%", right: "5%", zIndex: 20,
                         display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
                         padding: "12px 24px",
                         borderRadius: "12px",
                         background: "transparent",
                         textAlign: "center",
+                        transform: "scale(0.8)",
+                        transformOrigin: "top right"
                     }}
                 >
                     <span style={{ color: "rgba(255,255,255,0.75)", fontSize: 13, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase" }}>Established</span>
@@ -169,15 +171,15 @@ export default function HeroSection() {
 
 
             {/* Content */}
-            <div className="hero-container" style={{ maxWidth: 1280, margin: "0 auto", padding: "40px 48px 20px 48px", width: "100%", position: "relative", zIndex: 10, display: "grid", gridTemplateAreas: "'stack'" }}>
+            <div className="hero-container w-full relative z-10 mx-auto px-6 py-10 lg:px-12 lg:py-10 grid" style={{ maxWidth: 1280, gridTemplateAreas: "'stack'" }}>
                 <AnimatePresence>
                     <motion.div
                         key={slide.id}
                         initial={{ opacity: 0, x: 100 }}
                         animate={{ opacity: 1, x: 0, transition: { delay: 0.4, duration: 0.6, ease: "easeOut" } }}
                         exit={{ opacity: 0, x: -100, transition: { duration: 0.4, ease: "easeIn" } }}
-                        className="hero-grid"
-                        style={{ display: "grid", gridTemplateColumns: "1.3fr 0.7fr", gap: 40, alignItems: "center", gridArea: "stack" }}
+                        className="hero-grid flex flex-col-reverse lg:grid lg:gap-10 items-center"
+                        style={{ gridTemplateColumns: "1.3fr 0.7fr", gridArea: "stack" }}
                     >
 
                         {/* ── LEFT ─────────────────────────────────────────────── */}
@@ -274,8 +276,7 @@ export default function HeroSection() {
 
                         {/* ── RIGHT: Image + floating elements ──────────────── */}
                         <div
-                            className="hero-image-col"
-                            style={{ position: "relative", display: "flex", justifyContent: "flex-end", paddingRight: 0, transform: "translateX(50px)" }}
+                            className="hero-image-col relative flex justify-center lg:justify-end pr-0 lg:translate-x-[50px] w-full"
                         >
                             {/* Glow ring behind image */}
                             <div style={{

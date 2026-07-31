@@ -12,14 +12,14 @@ export default function CTASection() {
     ];
 
     return (
-        <section className="py-24 bg-gradient-to-br from-[#0a1c3a] via-[#0f2a54] to-[#163b73] relative overflow-hidden">
-            {/* Background Decorations */}
+        <section className="py-24 bg-[#1e3a8a] relative overflow-hidden">
+
             <div className="absolute inset-0 -z-10">
                 <div className="absolute top-0 left-0 w-full h-full opacity-10">
                     <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl" />
                     <div className="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl" />
                 </div>
-                {/* Pattern */}
+
                 <div className="absolute inset-0 opacity-10" style={{
                     backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
                     backgroundSize: '32px 32px'
