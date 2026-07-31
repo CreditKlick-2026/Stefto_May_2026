@@ -1125,34 +1125,36 @@ p {
   }
 }
 
-/* Global Apple-like Thin Scrollbars */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
-}
+/* Global Apple-like Thin Scrollbars (Desktop Only) */
+@media (min-width: 1024px) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
+  }
 
-/* For Chrome, Safari, Edge, Opera */
-*::-webkit-scrollbar {
-  width: 8px;
-  /* Slim width */
-  height: 8px;
-  /* Slim height */
-}
+  /* For Chrome, Safari, Edge, Opera */
+  *::-webkit-scrollbar {
+    width: 8px;
+    /* Slim width */
+    height: 8px;
+    /* Slim height */
+  }
 
-*::-webkit-scrollbar-track {
-  background: transparent;
-  /* Invisible track */
-}
+  *::-webkit-scrollbar-track {
+    background: transparent;
+    /* Invisible track */
+  }
 
-*::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.4);
-  border-radius: 9999px;
-  border: 2px solid transparent;
-  background-clip: padding-box;
-}
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
 
-*::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(255, 255, 255, 0.7);
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
 }
 
 /* ═══════════════════════════════════════════════

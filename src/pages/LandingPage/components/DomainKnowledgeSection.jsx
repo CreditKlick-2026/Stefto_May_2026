@@ -73,14 +73,7 @@ const DomainKnowledgeSection = () => {
 
   return (
     <div className="scd-29 relative w-full bg-white" ref={rootRef}>
-      <div className="scd-29__rail hidden">
-        {phases.map((_, idx) => (
-          <span
-            key={idx}
-            className={`scd-29__pip ${idx === activeIdx ? 'scd-29__pip--on' : ''}`}
-          ></span>
-        ))}
-      </div>
+
 
       <div className="scd-29__scroll-wrap">
         {/* Section Header */}
