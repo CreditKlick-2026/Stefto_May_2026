@@ -178,7 +178,7 @@ export default function HeroSection() {
                         initial={{ opacity: 0, x: 100 }}
                         animate={{ opacity: 1, x: 0, transition: { delay: 0.4, duration: 0.6, ease: "easeOut" } }}
                         exit={{ opacity: 0, x: -100, transition: { duration: 0.4, ease: "easeIn" } }}
-                        className="hero-grid flex flex-col-reverse lg:grid lg:gap-10 items-center"
+                        className="hero-grid flex flex-col lg:grid lg:gap-10 items-center"
                         style={{ gridTemplateColumns: "1.3fr 0.7fr", gridArea: "stack" }}
                     >
 
@@ -336,12 +336,7 @@ export default function HeroSection() {
                 </div>
             </div>
 
-            {/* Bottom wave */}
-            <div style={{ position: "absolute", bottom: "-1px", left: 0, width: "100%", overflow: "hidden", lineHeight: 0, pointerEvents: "none", transform: "translateY(1px)", zIndex: 10 }}>
-                <svg viewBox="0 0 1440 70" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%", display: "block" }} preserveAspectRatio="none">
-                    <path d="M0,70 C240,20 480,60 720,30 C960,0 1200,50 1440,25 L1440,70 L0,70 Z" fill="#f8fafc" />
-                </svg>
-            </div>
+
 
             {/* Responsive CSS */}
             <style>{`
@@ -353,7 +348,7 @@ export default function HeroSection() {
                     animation: scanline 4s linear infinite;
                 }
                 @media (max-width: 900px) {
-                    .hero-grid { grid-template-columns: 1fr !important; gap: 30px !important; padding: 40px 24px 30px 24px !important; }
+                    .hero-grid { display: grid !important; grid-template-columns: 1fr !important; gap: 30px !important; padding: 40px 24px 30px 24px !important; }
                     .hero-image-col { transform: none !important; justify-content: center !important; margin-top: 10px; display: flex !important; width: 100%; }
                     .hero-image-col img { transform: scale(1.1) !important; max-height: 320px; }
                     .hero-float-card { left: 50% !important; transform: translateX(-50%) !important; bottom: -20px !important; width: max-content; }
@@ -362,6 +357,7 @@ export default function HeroSection() {
                     .hero-section { min-height: auto !important; height: auto !important; padding-top: 15px !important; padding-bottom: 30px !important; }
                     .hero-container { padding: 24px 12px 35px 12px !important; }
                     .hero-grid { 
+                        display: grid !important;
                         grid-template-columns: 1.25fr 0.75fr !important; 
                         padding: 0 !important; 
                         gap: 10px !important; 
@@ -374,7 +370,7 @@ export default function HeroSection() {
                     .hero-buttons a { padding: 6px 12px !important; font-size: 10px !important; width: 100%; justify-content: center; }
                     
                     .hero-img-wrapper { height: 180px !important; display: flex; align-items: center; justify-content: center; max-width: none !important; }
-                    .hero-image-col { margin-top: 0 !important; justify-content: flex-end !important; align-items: center; transform: none !important; width: 100%; }
+                    .hero-image-col { display: flex !important; margin-top: 0 !important; justify-content: flex-end !important; align-items: center; transform: none !important; width: 100%; }
                     .hero-image-col img { max-height: 180px !important; transform: scale(1.18) !important; object-fit: contain; }
                     
                     .hero-float-card { 
