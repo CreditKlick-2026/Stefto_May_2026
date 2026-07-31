@@ -94,7 +94,7 @@ const DomainKnowledgeSection = () => {
             {/* Fading Image Overlay */}
             {phase.image && (
               <div
-                className="absolute inset-y-0 right-0 w-full md:w-[55%] z-0 pointer-events-none"
+                className="hidden md:block absolute inset-y-0 right-0 w-full md:w-[55%] z-0 pointer-events-none"
                 style={{
                   WebkitMaskImage: 'linear-gradient(to right, transparent, black 30%)',
                   maskImage: 'linear-gradient(to right, transparent, black 30%)'
