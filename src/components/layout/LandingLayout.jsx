@@ -257,8 +257,8 @@ export function Navbar() {
                   >
                     {item.hasDropdown ? (
                       <button className={`flex items-center px-4 py-1.5 text-[14.5px] font-semibold rounded-full transition-all duration-200 ${activeDropdown === item.key
-                          ? 'text-[#111827] bg-white shadow-sm'
-                          : 'text-[#374151] hover:text-[#111827] hover:bg-slate-200/50'
+                        ? 'text-[#111827] bg-white shadow-sm'
+                        : 'text-[#374151] hover:text-[#111827] hover:bg-slate-200/50'
                         }`}>
                         {item.name}
                         <ChevronDown
@@ -507,6 +507,8 @@ export function Navbar() {
 
               {/* Bottom CTAs */}
               <div className="shrink-0 px-6 py-5 border-t border-slate-100 bg-slate-50/50 space-y-3">
+
+
 
 
               </div>
