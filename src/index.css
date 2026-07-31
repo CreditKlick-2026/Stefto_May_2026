@@ -77,6 +77,15 @@ body.landing-body {
   overflow-x: hidden;
 }
 
+/* Global site background — applies on ALL screen sizes including mobile */
+html, body {
+  background-color: #f8fafc;
+  background-image:
+    linear-gradient(to right, rgba(28, 70, 157, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(28, 70, 157, 0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-attachment: local;
+}
 /* Background blob effects */
 .bg-blobs {
   position: fixed;
@@ -860,7 +869,7 @@ p {
 
 .stat-number {
   font-family: 'Fraunces', serif;
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(1.8rem, 5vw, 4rem);
   font-weight: 400;
   line-height: 1;
   letter-spacing: -0.03em;
@@ -890,12 +899,309 @@ p {
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.4); /* Translucent white thumb */
-  border-radius: 9999px; /* Capsule shape */
-  border: 2px solid transparent; /* Gap from scrollable area edge */
-  background-clip: padding-box; /* Clip background to border box to allow transparent margin */
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(255, 255, 255, 0.7); /* Brighter white on hover */
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* ═══════════════════════════════════════════════
+   GLOBAL STEFTO BUTTON SYSTEM
+   Core CSS — no framework dependency
+═══════════════════════════════════════════════ */
+
+/* ── Keyframes ─────────────────────────────── */
+@keyframes btn-shine {
+  0%   { transform: translateX(-100%) skewX(-15deg); }
+  100% { transform: translateX(250%) skewX(-15deg); }
+}
+
+@keyframes btn-ripple {
+  0%   { transform: scale(0); opacity: 0.5; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+@keyframes btn-pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(30, 58, 138, 0.4); }
+  70%  { box-shadow: 0 0 0 10px rgba(30, 58, 138, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(30, 58, 138, 0); }
+}
+
+/* ── Base .btn ─────────────────────────────── */
+.btn {
+  --btn-bg: #1e3a8a;
+  --btn-bg-hover: #1e40af;
+  --btn-color: #ffffff;
+  --btn-border: transparent;
+  --btn-radius: 12px;
+  --btn-px: 24px;
+  --btn-py: 12px;
+  --btn-font-size: 14px;
+  --btn-font-weight: 700;
+  --btn-shadow: 0 4px 14px rgba(30, 58, 138, 0.35);
+  --btn-shadow-hover: 0 8px 28px rgba(30, 58, 138, 0.45);
+  --btn-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  white-space: nowrap;
+  border: 2px solid var(--btn-border);
+  border-radius: var(--btn-radius);
+  padding: var(--btn-py) var(--btn-px);
+  font-size: var(--btn-font-size);
+  font-weight: var(--btn-font-weight);
+  font-family: 'Inter', 'Plus Jakarta Sans', system-ui, sans-serif;
+  color: var(--btn-color);
+  background: var(--btn-bg);
+  box-shadow: var(--btn-shadow);
+  transition: var(--btn-transition);
+  letter-spacing: 0.01em;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Shine sweep on hover */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.18) 50%,
+    transparent 80%
+  );
+  transform: translateX(-100%) skewX(-15deg);
+  transition: none;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.btn:hover::before {
+  animation: btn-shine 0.55s ease forwards;
+}
+
+/* Ripple element injected by JS or ::after */
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.15);
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.btn:active::after {
+  opacity: 1;
+}
+
+/* Hover lift & glow */
+.btn:hover {
+  background: var(--btn-bg-hover);
+  box-shadow: var(--btn-shadow-hover);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0px) scale(0.98);
+  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.25);
+}
+
+.btn:focus-visible {
+  outline: 3px solid rgba(30, 58, 138, 0.5);
+  outline-offset: 3px;
+}
+
+/* Content always above shine layer */
+.btn > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Variants ──────────────────────────────── */
+
+/* Primary (default — matches above) */
+.btn-primary {
+  --btn-bg: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
+  --btn-bg-hover: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+  --btn-shadow: 0 4px 18px rgba(30, 58, 138, 0.4);
+  --btn-shadow-hover: 0 10px 32px rgba(30, 58, 138, 0.5);
+  background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+}
+
+/* Secondary — outlined blue */
+.btn-secondary {
+  --btn-color: #1e3a8a;
+  --btn-bg: transparent;
+  --btn-bg-hover: rgba(30, 58, 138, 0.06);
+  --btn-border: #1e3a8a;
+  --btn-shadow: 0 2px 8px rgba(30, 58, 138, 0.12);
+  --btn-shadow-hover: 0 6px 20px rgba(30, 58, 138, 0.2);
+  background: transparent;
+  color: #1e3a8a;
+  border-color: #1e3a8a;
+}
+
+.btn-secondary:hover {
+  background: rgba(30, 58, 138, 0.06);
+}
+
+.btn-secondary::before {
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgba(30, 58, 138, 0.12) 50%,
+    transparent 80%
+  );
+}
+
+/* Ghost — minimal */
+.btn-ghost {
+  --btn-bg: transparent;
+  --btn-bg-hover: rgba(30, 58, 138, 0.06);
+  --btn-color: #1e3a8a;
+  --btn-border: transparent;
+  --btn-shadow: none;
+  --btn-shadow-hover: none;
+  background: transparent;
+  color: #1e3a8a;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.btn-ghost:hover {
+  background: rgba(30, 58, 138, 0.07);
+  box-shadow: none;
+}
+
+/* Dark */
+.btn-dark {
+  --btn-bg: #0f172a;
+  --btn-bg-hover: #1e293b;
+  --btn-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  --btn-shadow-hover: 0 8px 28px rgba(0, 0, 0, 0.45);
+  background: #0f172a;
+}
+
+.btn-dark:hover {
+  background: #1e293b;
+}
+
+/* White (for dark backgrounds) */
+.btn-white {
+  --btn-bg: #ffffff;
+  --btn-bg-hover: #f1f5f9;
+  --btn-color: #1e3a8a;
+  --btn-shadow: 0 4px 18px rgba(255, 255, 255, 0.25);
+  --btn-shadow-hover: 0 8px 28px rgba(255, 255, 255, 0.35);
+  background: #ffffff;
+  color: #1e3a8a;
+}
+
+.btn-white:hover {
+  background: #f1f5f9;
+}
+
+.btn-white::before {
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgba(30, 58, 138, 0.08) 50%,
+    transparent 80%
+  );
+}
+
+/* ── Sizes ─────────────────────────────────── */
+.btn-sm {
+  --btn-px: 16px;
+  --btn-py: 8px;
+  --btn-font-size: 12px;
+  --btn-radius: 8px;
+}
+
+.btn-md {
+  --btn-px: 24px;
+  --btn-py: 12px;
+  --btn-font-size: 14px;
+  --btn-radius: 12px;
+}
+
+.btn-lg {
+  --btn-px: 32px;
+  --btn-py: 15px;
+  --btn-font-size: 15px;
+  --btn-radius: 14px;
+}
+
+.btn-xl {
+  --btn-px: 40px;
+  --btn-py: 18px;
+  --btn-font-size: 16px;
+  --btn-radius: 16px;
+  letter-spacing: 0.02em;
+}
+
+/* ── Shape modifiers ───────────────────────── */
+.btn-pill {
+  --btn-radius: 9999px;
+}
+
+.btn-square {
+  --btn-radius: 0;
+}
+
+/* ── Pulse animation (CTA highlight) ───────── */
+.btn-pulse {
+  animation: btn-pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+}
+
+/* ── Loading state ─────────────────────────── */
+.btn-loading {
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+.btn-loading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  opacity: 0;
+}
+
+/* ── Disabled ──────────────────────────────── */
+.btn:disabled,
+.btn[disabled] {
+  opacity: 0.45;
+  pointer-events: none;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* ── Icon-only button ──────────────────────── */
+.btn-icon {
+  --btn-px: 12px;
+  --btn-py: 12px;
+  aspect-ratio: 1;
 }

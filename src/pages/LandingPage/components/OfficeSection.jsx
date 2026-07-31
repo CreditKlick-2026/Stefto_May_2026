@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
+import Button from "../../../components/ui/Button";
 
 const officeImage = "https://images.unsplash.com/photo-1556761175-5973dc0f32e7";
 
@@ -74,9 +75,9 @@ export default function OfficeSection() {
                             ))}
                         </div>
 
-                        <button className="mt-10 inline-flex items-center justify-center h-12 rounded-full px-8 border border-slate-200 hover:border-[#1c469d] text-slate-800 hover:bg-slate-50 font-bold transition-all duration-300 shadow-sm hover:shadow-lg cursor-pointer">
+                        <Button variant="secondary" size="lg" pill className="mt-10">
                             Meet the Team
-                        </button>
+                        </Button>
                     </motion.div>
                 </div>
             </div>

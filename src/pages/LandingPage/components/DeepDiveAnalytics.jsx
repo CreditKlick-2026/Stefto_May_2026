@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import promoAnalyticsImg from "../../../assets/promo_analytics.png";
+import Button from "../../../components/ui/Button";
 
 export default function DeepDiveAnalytics() {
     return (
@@ -31,10 +32,10 @@ export default function DeepDiveAnalytics() {
                                 </li>
                             ))}
                         </ul>
-                        <button className="inline-flex items-center justify-center h-12 rounded-full px-8 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-medium shadow-[0_4px_20px_rgba(59,130,246,0.3)] transition-all duration-300 hover:scale-105 cursor-pointer">
+                        <Button variant="primary" size="lg" pill>
                             Explore Analytics
                             <ArrowRight className="ml-2 w-4 h-4" />
-                        </button>
+                        </Button>
                     </motion.div>
 
                     <motion.div

@@ -33,6 +33,7 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/f
 import { useState, useEffect, useRef } from "react";
 import ChatWidget from "../ChatWidget";
 import { BrandLogo } from "../icons/BrandLogo";
+import Button from "../ui/Button";
 import "./nav.css";
 
 // Dropdown menu data — BPO / Customer Experience
@@ -320,12 +321,9 @@ export function Navbar() {
                 </button>
               </div>
 
-              <Link
-                to="/contact-us"
-                className="inline-flex items-center justify-center h-9 px-5 rounded-full bg-stefto-primary text-white text-[13.5px] font-semibold hover:bg-stefto-primary/90 transition-all duration-200 shadow-sm shadow-blue-900/20 shrink-0"
-              >
+              <Button as={Link} to="/contact-us" variant="primary" size="sm" pill>
                 Contact Us
-              </Link>
+              </Button>
 
 
             </div>
@@ -523,18 +521,19 @@ export function Navbar() {
   );
 }
 
-export function Footer({ curveColor = "fill-white" }) {
+export function Footer({ curveColor = "fill-slate-50" }) {
   const STEFTO_LOGO_URL = 'https://res.cloudinary.com/dtz8hacj4/image/upload/v1779277115/Stefto_Logo_ng3frh.png';
 
   return (
-    <footer className="bg-[#0f1f4b] text-white pt-20 sm:pt-36 pb-20 sm:pb-24 px-4 sm:px-6 lg:px-8 text-sm relative z-0 overflow-hidden">
-
-      {/* Seamless Wave Mask for Curve */}
-      <div className="absolute -top-[2px] left-0 w-full overflow-hidden leading-none z-20 pointer-events-none drop-shadow-[0_8px_12px_rgba(0,0,0,0.04)]">
-        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="relative block w-full h-[80px] md:h-[140px]" preserveAspectRatio="none">
-          <path d="M0,120 C360,120 540,30 720,30 C900,30 1080,120 1440,120 L1440,0 L0,0 Z" className={curveColor} />
+    <div className="relative w-full">
+      {/* Seamless Valley Wave - Gentle dip down into the blue footer */}
+      <div className="w-full overflow-hidden leading-none z-20 pointer-events-none relative -mb-[1px]">
+        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="relative block w-full h-[40px] md:h-[80px]" preserveAspectRatio="none">
+          <path d="M0,0 C360,0 540,50 720,50 C900,50 1080,0 1440,0 L1440,120 L0,120 Z" fill="#1e3a8a" />
         </svg>
       </div>
+
+      <footer className="text-white bg-[#1e3a8a] pt-4 sm:pt-10 pb-20 sm:pb-24 px-4 sm:px-6 lg:px-8 text-sm relative z-0 overflow-hidden">
 
       <div className="max-w-[1280px] mx-auto relative z-30">
 
@@ -589,7 +588,7 @@ export function Footer({ curveColor = "fill-white" }) {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white text-[#0f1f4b] flex items-center justify-center no-underline transition-all hover:-translate-y-1 hover:shadow-lg"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white text-[#1e3a8a] flex items-center justify-center no-underline transition-all hover:-translate-y-1 hover:shadow-lg"
               >
                 <Icon size={14} />
               </a>
@@ -604,18 +603,30 @@ export function Footer({ curveColor = "fill-white" }) {
       </div>
 
       {/* Copyright Strip */}
-      <div className="absolute bottom-0 left-0 w-full bg-white border-t border-[#0f1f4b]/10 py-3 sm:py-4 px-4 sm:px-8 flex justify-center">
+      <div className="absolute bottom-0 left-0 w-full bg-white border-t border-[#1e3a8a]/10 py-3 sm:py-4 px-4 sm:px-8 flex justify-center">
         <p className="text-slate-400 text-[0.65rem] sm:text-xs lg:text-sm m-0 text-center font-sans" style={{ color: '#64748b' }}>
           <strong className="text-slate-500" style={{ color: '#64748b' }}>Copyright &copy; 2007 &ndash; 2026</strong> Stefto (Incredible Management Services Pvt Ltd)
         </p>
       </div>
     </footer>
+    </div>
   );
 }
 
 export default function LandingLayout({ children, footerCurveColor = "fill-white" }) {
   return (
-    <div className="min-h-screen bg-white text-slate-800 font-sans selection:bg-blue-50 selection:text-[#1c469d]">
+    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-blue-50 selection:text-[#1c469d] relative overflow-hidden">
+      {/* Global Background Grid Pattern & Ambient Radial Glows */}
+      <div className="fixed inset-0 grid-bg-pattern opacity-40 pointer-events-none z-0" />
+      <div
+        className="fixed -top-32 right-0 w-[600px] h-[600px] rounded-full pointer-events-none opacity-20 z-0"
+        style={{ background: 'radial-gradient(circle, rgba(30,58,138,0.25) 0%, transparent 70%)', filter: 'blur(80px)' }}
+      />
+      <div
+        className="fixed bottom-0 left-0 w-[500px] h-[500px] rounded-full pointer-events-none opacity-20 z-0"
+        style={{ background: 'radial-gradient(circle, rgba(59,130,246,0.2) 0%, transparent 70%)', filter: 'blur(70px)' }}
+      />
+
       <Navbar />
       <main className="relative z-10 bg-transparent">
         {children}

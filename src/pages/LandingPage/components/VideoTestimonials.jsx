@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Play, Activity, Star, Users, Send } from "lucide-react";
+import Button from "../../../components/ui/Button";
 
 export default function VideoTestimonials() {
     return (
@@ -160,10 +161,10 @@ export default function VideoTestimonials() {
                     className="text-center mt-16"
                 >
                     <p className="text-blue-200/60 mb-6">Ready to share your success story?</p>
-                    <button className="inline-flex items-center justify-center h-12 rounded-full px-8 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-medium shadow-[0_4px_20px_rgba(59,130,246,0.3)] transition-all duration-300 hover:scale-105 cursor-pointer">
-                        <Send className="w-4 h-4 mr-2" />
+                    <Button variant="primary" size="lg" pill>
+                        <Send className="w-4 h-4" />
                         Submit Your Testimonial
-                    </button>
+                    </Button>
                 </motion.div>
             </div>
         </section>

@@ -181,7 +181,7 @@ export default function HeroSection() {
                     >
 
                         {/* ── LEFT ─────────────────────────────────────────────── */}
-                        <div className="hero-text">
+                        <div className="hero-text" style={{ display: "flex", flexDirection: "column", justifyContent: "center", minHeight: "100%" }}>
                             {/* Eyebrow */}
                             {slide.eyebrow && (
                                 <motion.div
@@ -338,7 +338,7 @@ export default function HeroSection() {
             {/* Bottom wave */}
             <div style={{ position: "absolute", bottom: "-1px", left: 0, width: "100%", overflow: "hidden", lineHeight: 0, pointerEvents: "none", transform: "translateY(1px)", zIndex: 10 }}>
                 <svg viewBox="0 0 1440 70" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%", display: "block" }} preserveAspectRatio="none">
-                    <path d="M0,70 C240,20 480,60 720,30 C960,0 1200,50 1440,25 L1440,70 L0,70 Z" fill="white" />
+                    <path d="M0,70 C240,20 480,60 720,30 C960,0 1200,50 1440,25 L1440,70 L0,70 Z" fill="#f8fafc" />
                 </svg>
             </div>
 
@@ -352,39 +352,39 @@ export default function HeroSection() {
                     animation: scanline 4s linear infinite;
                 }
                 @media (max-width: 900px) {
-                    .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; padding: 60px 24px !important; }
-                    .hero-image-col { transform: none !important; justify-content: center !important; margin-top: 20px; display: flex !important; width: 100%; }
-                    .hero-image-col img { transform: scale(1.1) !important; max-height: 400px; }
-                    .hero-float-card { left: 50% !important; transform: translateX(-50%) !important; bottom: -30px !important; width: max-content; }
+                    .hero-grid { grid-template-columns: 1fr !important; gap: 30px !important; padding: 40px 24px 30px 24px !important; }
+                    .hero-image-col { transform: none !important; justify-content: center !important; margin-top: 10px; display: flex !important; width: 100%; }
+                    .hero-image-col img { transform: scale(1.1) !important; max-height: 320px; }
+                    .hero-float-card { left: 50% !important; transform: translateX(-50%) !important; bottom: -20px !important; width: max-content; }
                 }
                 @media (max-width: 600px) {
-                    .hero-section { min-height: 40vh !important; }
-                    .hero-container { padding: 40px 5px !important; }
+                    .hero-section { min-height: auto !important; height: auto !important; padding-top: 15px !important; padding-bottom: 30px !important; }
+                    .hero-container { padding: 24px 12px 35px 12px !important; }
                     .hero-grid { 
                         grid-template-columns: 1.25fr 0.75fr !important; 
                         padding: 0 !important; 
                         gap: 10px !important; 
                     }
-                    .hero-text { text-align: left !important; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; width: 100%; }
-                    .hero-text h1, .hero-text h1 span { text-align: left !important; white-space: normal !important; font-size: 15px !important; line-height: 1.3 !important; }
-                    .hero-text p { text-align: left !important; font-size: 11px !important; margin-bottom: 10px !important; line-height: 1.4 !important; }
-                    .hero-eyebrow { font-size: 8px !important; padding: 4px 8px !important; margin-bottom: 10px !important; }
-                    .hero-buttons { flex-direction: column; gap: 8px !important; align-items: flex-start !important; width: 100%; }
-                    .hero-buttons a { padding: 6px 12px !important; font-size: 11px !important; width: 100%; justify-content: center; }
+                    .hero-text { text-align: left !important; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; width: 100%; min-height: 100%; }
+                    .hero-text h1, .hero-text h1 span { text-align: left !important; white-space: normal !important; font-size: 12.5px !important; line-height: 1.25 !important; font-weight: 800 !important; }
+                    .hero-text p { text-align: left !important; font-size: 10px !important; margin-bottom: 8px !important; line-height: 1.35 !important; }
+                    .hero-eyebrow { font-size: 8px !important; padding: 3px 6px !important; margin-bottom: 8px !important; }
+                    .hero-buttons { flex-direction: column; gap: 6px !important; align-items: flex-start !important; width: 100%; }
+                    .hero-buttons a { padding: 6px 12px !important; font-size: 10px !important; width: 100%; justify-content: center; }
                     
-                    .hero-img-wrapper { height: 220px !important; display: flex; align-items: center; justify-content: center; max-width: none !important; }
+                    .hero-img-wrapper { height: 180px !important; display: flex; align-items: center; justify-content: center; max-width: none !important; }
                     .hero-image-col { margin-top: 0 !important; justify-content: flex-end !important; align-items: center; transform: none !important; width: 100%; }
-                    .hero-image-col img { max-height: 220px !important; transform: scale(1.3) !important; object-fit: contain; }
+                    .hero-image-col img { max-height: 180px !important; transform: scale(1.18) !important; object-fit: contain; }
                     
                     .hero-float-card { 
-                        bottom: -15px !important; 
-                        left: -10px !important; 
+                        bottom: -10px !important; 
+                        left: -12px !important; 
                         right: auto !important; 
-                        transform: scale(0.6) !important; 
+                        transform: scale(0.58) !important; 
                         transform-origin: bottom left !important; 
                     }
-                    .hero-badge { top: 15px !important; right: 15px !important; transform: scale(0.6) !important; transform-origin: top right; }
-                    .hero-dots { bottom: 15px !important; transform: translateX(-50%) scale(0.8) !important; }
+                    .hero-badge { top: 8px !important; right: 8px !important; transform: scale(0.5) !important; transform-origin: top right; }
+                    .hero-dots { bottom: 12px !important; transform: translateX(-50%) scale(0.72) !important; }
                     .hero-features { display: none !important; }
                 }
             `}</style>

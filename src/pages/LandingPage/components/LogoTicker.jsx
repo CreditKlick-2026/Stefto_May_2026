@@ -124,17 +124,17 @@ export default function LogoTicker() {
     ];
 
     return (
-        <section className="relative pt-10 pb-16 md:pt-16 md:pb-24 bg-white overflow-hidden text-slate-800">
+        <section className="relative pt-4 pb-4 sm:pt-8 sm:pb-8 md:pt-10 md:pb-6 bg-transparent overflow-hidden text-slate-800">
 
             {/* ── Header: Trusted by + Review Badges ── */}
             <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="max-w-[900px] mx-auto px-6 mb-10"
+                className="max-w-[900px] mx-auto px-4 sm:px-6 mb-4 sm:mb-10"
             >
                 {/* One row: text | divider | badges */}
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 py-4 px-5 bg-slate-50 border border-slate-100 rounded-2xl">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 py-4 px-5 bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl shadow-sm">
 
                     {/* Review Badges */}
                     <div className="flex items-center gap-2 sm:gap-3 flex-wrap justify-center">
@@ -159,11 +159,11 @@ export default function LogoTicker() {
                 {/* Fade edges */}
                 <div
                     className="pointer-events-none absolute left-0 top-0 bottom-0 w-20 sm:w-40 z-10"
-                    style={{ background: "linear-gradient(to right, #ffffff, transparent)" }}
+                    style={{ background: "linear-gradient(to right, rgba(248,250,252,0.9), transparent)" }}
                 />
                 <div
                     className="pointer-events-none absolute right-0 top-0 bottom-0 w-20 sm:w-40 z-10"
-                    style={{ background: "linear-gradient(to left, #ffffff, transparent)" }}
+                    style={{ background: "linear-gradient(to left, rgba(248,250,252,0.9), transparent)" }}
                 />
 
                 {/* Row 1 → left (images 1–13) */}

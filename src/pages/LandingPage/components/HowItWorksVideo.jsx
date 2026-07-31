@@ -8,6 +8,7 @@ import {
     ArrowRight,
     CheckCircle2,
 } from "lucide-react";
+import Button from "../../../components/ui/Button";
 
 
 const STEP_DURATION = 5000; // 5s per step
@@ -340,13 +341,10 @@ export default function HowItWorksVideo() {
                     viewport={{ once: true }}
                     className="mt-12 md:mt-16 text-center"
                 >
-                    <a
-                        href="/login"
-                        className="inline-flex items-center gap-2 h-[52px] px-8 rounded-full bg-[#1c469d] text-white text-[17px] font-bold tracking-[-0.01em] hover:bg-[#142b54] transition-all duration-200 hover:shadow-[0_4px_20px_rgba(28,70,157,0.2)]"
-                    >
+                    <Button as="a" href="/login" variant="primary" size="xl" pill pulse>
                         Get Started Now
                         <ArrowRight className="w-4 h-4" />
-                    </a>
+                    </Button>
                     <div className="mt-6 flex items-center justify-center gap-5 text-[13px] text-slate-500">
                         {["Trained Agents", "24/7 Availability", "Omnichannel Setup"].map((t, i) => (
                             <React.Fragment key={i}>

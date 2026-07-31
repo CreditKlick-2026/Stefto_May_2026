@@ -32,12 +32,12 @@ function StatItem({ stat, active, index }) {
   const count = useCountUp(numericValue, 1200, active);
 
   return (
-    <div className={`flex flex-col items-center text-center px-2 sm:px-6 py-6 lg:py-8 group ${index % 2 !== 0 ? 'border-l border-slate-200' : ''} ${index !== 0 ? 'lg:border-l lg:border-slate-200' : ''} ${index > 1 ? 'border-t border-slate-200 lg:border-t-0' : ''}`}>
+    <div className={`flex flex-col items-center text-center px-2 sm:px-6 py-3 sm:py-6 lg:py-8 group ${index % 2 !== 0 ? 'border-l border-slate-200' : ''} ${index !== 0 ? 'lg:border-l lg:border-slate-200' : ''}`}>
       <div className="stat-number text-[#1c469d] font-bold">
         {count}{stat.suffix}
       </div>
-      <p className="text-sm font-bold text-slate-800 mt-2 uppercase tracking-widest">{stat.label}</p>
-      <p className="text-xs text-slate-500 mt-1 max-w-[180px]">{stat.description}</p>
+      <p className="text-[11px] sm:text-sm font-bold text-slate-800 mt-1 sm:mt-2 uppercase tracking-wider sm:tracking-widest">{stat.label}</p>
+      {stat.description && <p className="text-xs text-slate-500 mt-1 max-w-[180px]">{stat.description}</p>}
     </div>
   );
 }
@@ -56,7 +56,7 @@ export default function StatsBar() {
   }, []);
 
   return (
-    <section ref={ref} className="bg-white relative overflow-hidden pt-16 pb-8">
+    <section ref={ref} className="bg-transparent relative overflow-hidden pt-4 pb-1 sm:pt-16 sm:pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="grid grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, i) => (

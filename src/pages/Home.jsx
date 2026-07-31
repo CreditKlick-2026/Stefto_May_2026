@@ -13,6 +13,7 @@ import OfficeSection from "./LandingPage/components/OfficeSection";
 import PricingSection from "./LandingPage/components/PricingSection";
 import FAQSection from "./LandingPage/components/FAQSection";
 import ServicesSection from "./LandingPage/components/ServicesSection";
+import CustomerSupportSection from "./LandingPage/components/CustomerSupportSection";
 import ContactSection from "./LandingPage/components/ContactSection";
 
 export default function Home() {
@@ -84,8 +85,8 @@ export default function Home() {
             {/* 11. Pricing - Plans & Pricing */}
             {/* <PricingSection /> */}
 
-            {/* Core Services Section from previous Next.js repo */}
-            <ServicesSection />
+            {/* Customer Support & Services Section */}
+            <CustomerSupportSection />
 
             {/* 12. FAQ - Common Questions */}
             {/* <FAQSection /> */}
