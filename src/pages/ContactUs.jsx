@@ -93,7 +93,7 @@ const ContactUs = () => {
                     </div>
                     <h3 className="font-bold text-[#1c469d] mb-2 text-lg">Delhi Office</h3>
                     <p className="text-slate-500 text-sm leading-relaxed">
-                      WZ-1, Upper Ground Floor, Main Najafgarh Road, Uttam Nagar, Delhi - 110059.
+                      WZ-1 Main Najafgarh Road, Uttam Nagar, Delhi - 110059.
                     </p>
                     {/* Arrow Connector */}
                     <div className="absolute bottom-[-24px] sm:bottom-[-16px] left-1/2 -translate-x-1/2 translate-y-1/2 text-slate-300 z-10 flex">
