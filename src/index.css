@@ -65,7 +65,7 @@ body.stefto-body {
   color: var(--text-primary);
   line-height: 1.6;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body.landing-body {
@@ -74,7 +74,7 @@ body.landing-body {
   font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.5;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Global site background — applies on ALL screen sizes including mobile */
@@ -625,6 +625,120 @@ p {
   box-shadow: 6px 6px 0px 0px #000000;
   transform: translate(-1px, -1px);
   transition: all 100ms ease-out;
+}
+
+/* ==========================================
+   SCROLL-DRIVEN STACKING CARDS EFFECT (USER PROVIDED)
+   ========================================== */
+.scd-01,
+.scd-01 *,
+.scd-01 *::before,
+.scd-01 *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.scd-01 {
+  --accent: oklch(0.62 0.17 264);
+  font-family: 'Segoe UI',system-ui,sans-serif;
+  background: #eef0f4;
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  padding: 0 20px;
+}
+
+.scd-01__scene {
+  width: min(520px,100%);
+  margin: 0 auto;
+  padding: 14vh 0 40vh;
+}
+
+.scd-01__hint {
+  position: sticky;
+  top: 16px;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #8a90a0;
+  margin-bottom: 6vh;
+}
+
+.scd-01__card {
+  position: sticky;
+  top: calc(90px + var(--i) * 16px);
+  height: 260px;
+  margin-bottom: 60px;
+  border-radius: 22px;
+  padding: 34px;
+  color: #fff;
+  background: linear-gradient(135deg,var(--accent),oklch(0.55 0.16 292));
+  box-shadow: 0 30px 60px -34px rgba(20,24,50,.7);
+  animation: scd-01-shrink linear both;
+  animation-timeline: view();
+  animation-range: exit;
+}
+
+.scd-01__card:nth-child(3) {
+  background: linear-gradient(135deg,oklch(0.66 0.15 200),oklch(0.6 0.16 250));
+}
+
+.scd-01__card:nth-child(4) {
+  background: linear-gradient(135deg,oklch(0.7 0.15 150),oklch(0.62 0.15 200));
+}
+
+.scd-01__card:nth-child(5) {
+  background: linear-gradient(135deg,oklch(0.72 0.16 60),oklch(0.64 0.17 30));
+}
+
+.scd-01__num {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  opacity: .7;
+}
+
+.scd-01__card h3 {
+  font-size: 30px;
+  font-weight: 800;
+  margin: 14px 0 10px;
+  letter-spacing: -.02em;
+}
+
+.scd-01__card p {
+  font-size: 16px;
+  line-height: 1.55;
+  max-width: 34ch;
+  opacity: .92;
+}
+
+.scd-01__end {
+  text-align: center;
+  font-size: 14px;
+  color: #a0a6b4;
+  padding-top: 12vh;
+}
+
+@keyframes scd-01-shrink {
+  to {
+    transform: scale(.9);
+    filter: brightness(.72);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scd-01 {
+    width: 100%;
+    min-height: 100vh;
+    scroll-behavior: auto;
+  }
+
+  .scd-01__card {
+    animation: none;
+  }
 }
 
 /* Shopify 3D Button */

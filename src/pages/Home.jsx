@@ -14,6 +14,7 @@ import PricingSection from "./LandingPage/components/PricingSection";
 import FAQSection from "./LandingPage/components/FAQSection";
 import ServicesSection from "./LandingPage/components/ServicesSection";
 import CustomerSupportSection from "./LandingPage/components/CustomerSupportSection";
+import CustomerSupportSolutions from "./LandingPage/components/CustomerSupportSolutions";
 import ContactSection from "./LandingPage/components/ContactSection";
 
 export default function Home() {
@@ -87,6 +88,7 @@ export default function Home() {
 
             {/* Customer Support & Services Section */}
             <CustomerSupportSection />
+            <CustomerSupportSolutions />
 
             {/* 12. FAQ - Common Questions */}
             {/* <FAQSection /> */}
