@@ -97,18 +97,18 @@ export default function CustomerSupportSolutions() {
                 return (
                   <div
                     key={idx}
-                    className="p-2 sm:p-4 rounded-lg sm:rounded-2xl bg-white border border-slate-200 hover:border-[#1e3a8a]/30 hover:shadow-sm transition-colors duration-200"
+                    className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-white border border-slate-200 hover:border-[#1e3a8a]/30 hover:shadow-sm transition-colors duration-200"
                   >
                     <div className="flex flex-wrap items-center justify-between gap-1 mb-1.5">
-                      <div className="w-6 h-6 sm:w-9 sm:h-9 rounded-md sm:rounded-xl bg-[#1e3a8a]/10 text-[#1e3a8a] flex items-center justify-center">
-                        <Icon className="w-3 h-3 sm:w-4 sm:h-4" aria-hidden="true" />
+                      <div className="w-5 h-5 sm:w-7 sm:h-7 rounded-md sm:rounded-lg bg-[#1e3a8a]/10 text-[#1e3a8a] flex items-center justify-center">
+                        <Icon className="w-3 h-3" aria-hidden="true" />
                       </div>
-                      <span className="text-[6.5px] sm:text-[9px] font-bold uppercase tracking-wider px-1 sm:px-2 py-0.5 rounded-full bg-slate-100 text-slate-500">
+                      <span className="text-[6.5px] sm:text-[8px] font-bold uppercase tracking-wider px-1 sm:px-1.5 py-0.5 rounded-full bg-slate-100 text-slate-500">
                         {item.badge}
                       </span>
                     </div>
-                    <h4 className="text-[10px] sm:text-sm font-bold text-slate-900 mb-0.5 leading-snug">{item.title}</h4>
-                    <p className="text-[8.5px] sm:text-xs text-slate-500 leading-tight sm:leading-relaxed">{item.description}</p>
+                    <h4 className="text-[9px] sm:text-[12px] font-bold text-slate-900 mb-0.5 leading-snug">{item.title}</h4>
+                    <p className="text-[8px] sm:text-[11px] text-slate-500 leading-tight sm:leading-relaxed">{item.description}</p>
                   </div>
                 );
               })}
@@ -119,20 +119,14 @@ export default function CustomerSupportSolutions() {
           <div className={`lg:col-span-6 w-full ${fadeUp('delay-150')}`}>
             <div className="relative">
               {/* Optional: Use a different image for the backend side, or mirror the layout */}
-              <div className="relative w-full rounded-[2rem] overflow-hidden shadow-2xl border border-slate-200/50 bg-slate-50" style={{ aspectRatio: '4/3' }}>
+              <div className="relative w-full rounded-[2rem] overflow-hidden shadow-none border-none bg-transparent" style={{ aspectRatio: '4/3' }}>
                 <img
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200"
+                  src="/assets/Images/backline.png"
                   alt="Data Analytics and Backend Systems"
                   loading="lazy"
                   decoding="async"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-contain"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1e3a8a]/80 to-transparent flex items-end p-6">
-                  <div className="text-white">
-                    <p className="font-bold text-lg">Scalable Operations</p>
-                    <p className="text-sm opacity-90 text-blue-100">Robust backend to manage high-volume calls.</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

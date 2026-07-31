@@ -161,18 +161,18 @@ export default function CustomerSupportSection() {
                 return (
                   <div
                     key={idx}
-                    className="p-2 sm:p-4 rounded-lg sm:rounded-2xl bg-white border border-slate-200 hover:border-[#1e3a8a]/30 hover:shadow-sm transition-colors duration-200"
+                    className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-white border border-slate-200 hover:border-[#1e3a8a]/30 hover:shadow-sm transition-colors duration-200"
                   >
                     <div className="flex flex-wrap items-center justify-between gap-1 mb-1.5">
-                      <div className="w-6 h-6 sm:w-9 sm:h-9 rounded-md sm:rounded-xl bg-[#1e3a8a]/10 text-[#1e3a8a] flex items-center justify-center">
-                        <Icon className="w-3 h-3 sm:w-4 sm:h-4" aria-hidden="true" />
+                      <div className="w-5 h-5 sm:w-7 sm:h-7 rounded-md sm:rounded-lg bg-[#1e3a8a]/10 text-[#1e3a8a] flex items-center justify-center">
+                        <Icon className="w-3 h-3" aria-hidden="true" />
                       </div>
-                      <span className="text-[6.5px] sm:text-[9px] font-bold uppercase tracking-wider px-1 sm:px-2 py-0.5 rounded-full bg-slate-100 text-slate-500">
+                      <span className="text-[6.5px] sm:text-[8px] font-bold uppercase tracking-wider px-1 sm:px-1.5 py-0.5 rounded-full bg-slate-100 text-slate-500">
                         {item.badge}
                       </span>
                     </div>
-                    <h4 className="text-[10px] sm:text-sm font-bold text-slate-900 mb-0.5 leading-snug">{item.title}</h4>
-                    <p className="text-[8.5px] sm:text-xs text-slate-500 leading-tight sm:leading-relaxed">{item.description}</p>
+                    <h4 className="text-[9px] sm:text-[12px] font-bold text-slate-900 mb-0.5 leading-snug">{item.title}</h4>
+                    <p className="text-[8px] sm:text-[11px] text-slate-500 leading-tight sm:leading-relaxed">{item.description}</p>
                   </div>
                 );
               })}

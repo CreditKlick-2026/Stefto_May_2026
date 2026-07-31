@@ -1,26 +1,42 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { IndianRupee, BarChart, MessageCircle, ArrowRight } from 'lucide-react';
 
-const services = [
+const servicesList = [
   {
-    title: 'Debt Collection',
-    description: 'Advanced workflows combining field operations, tele-calling, and digital channels to optimize debt collection performance across all asset classes.',
-    icon: IndianRupee,
-    tag: 'Core Service',
-    highlight: true,
+    no: '01',
+    name: 'Inbound customer support',
+    desc: "24×7 helpline management by trained advisors — service queries, order status, complaints and escalations, answered in the customer's preferred language and resolved with clear ownership on the first contact wherever possible.",
+    scope: 'Helpline · Queries · Complaints · Escalations',
   },
   {
-    title: 'Risk Analytics',
-    description: 'Data-driven risk segmentation and predictive models to prioritize recovery efforts and maximize portfolio returns.',
-    icon: BarChart,
-    tag: 'Analytics',
+    no: '02',
+    name: 'Outbound engagement',
+    desc: 'Welcome calls, service reminders, renewal and persistency calling, feedback and win-back campaigns — DND-compliant outreach that strengthens the relationship instead of straining it.',
+    scope: 'Welcome · Reminders · Renewals · Win-back',
   },
   {
-    title: 'Customer Services & Engagement',
-    description: 'Ethical, empathetic multi-channel engagement strategies that protect brand reputation while providing seamless services',
-    icon: MessageCircle,
-    tag: 'Engagement',
+    no: '03',
+    name: 'Email & chat support',
+    desc: "Written service in your brand's voice — live chat and email queues integrated with your CRM, measured on first-response and full-resolution SLAs, not just ticket closure.",
+    scope: 'Live chat · Email · CRM-integrated',
   },
+  {
+    no: '04',
+    name: 'Retention & save-desk',
+    desc: 'Specialist advisors for the moments that decide loyalty — cancellation saves, complaint recovery and persistency follow-up, handled with empathy and tracked to outcome.',
+    scope: 'Save-desk · Complaint recovery · Persistency',
+  },
+  {
+    no: '05',
+    name: 'Video KYC & verification',
+    desc: 'Agent-assisted video KYC and document verification that makes onboarding feel effortless for the customer — with a complete audit trail for every session.',
+    scope: 'VKYC · Onboarding · Re-KYC',
+  },
+  {
+    no: '06',
+    name: 'Collections, back-office & QA',
+    desc: 'The discipline Stefto built its name on — respectful, compliant collections across every bucket, plus the data processing, quality audit and reporting layer beneath every front-line channel.',
+    scope: 'Collections · Back-office · Quality audit',
+  }
 ];
 
 export default function ServicesSection() {
@@ -37,53 +53,44 @@ export default function ServicesSection() {
   }, []);
 
   return (
-    <section id="services" ref={ref} className="bg-white relative overflow-hidden">
-      <div className="absolute inset-0 grid-bg-pattern opacity-40 pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-        {/* Header */}
-        <div className={`text-center flex flex-col items-center space-y-6 mb-16 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-
-
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl text-[#1e3a8a] leading-[1.15]" style={{ fontFamily: "'Fraunces', serif" }}>
-            Your Success <span className="italic font-light text-[#1e3a8a]/80">Starts</span><br />
-            <span className="font-black text-[#1e3a8a]">Here.</span>
+    <section id="services" ref={ref} className="py-8 md:py-[110px] bg-transparent text-[#182234] font-['Inter']">
+      <div className="max-w-[1140px] mx-auto px-[16px] sm:px-[36px]">
+        
+        <div className={`transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[14px]'}`}>
+          <div className="text-[10px] md:text-[12px] font-semibold tracking-[0.14em] uppercase text-[#8b95a5] mb-3 md:mb-5 flex items-center gap-2 md:gap-3">
+            <div className="w-[16px] md:w-[26px] h-px bg-[#db222d]" />
+            360° customer experience
+          </div>
+          <h2 className="text-[20px] sm:text-[24px] md:text-[42px] leading-[1.2] md:leading-[1.15] text-[#122a47] max-w-[640px]" style={{ fontFamily: "'Fraunces', serif" }}>
+            Every channel your customer chooses. One team behind all of them.
           </h2>
-
-          <p className="text-black text-base sm:text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed">
-            End-to-end debt management  and customer services solutions meticulously tailored to the needs of Indian Market.
+          <p className="mt-3 md:mt-5 text-[13px] md:text-[16.5px] text-[#5b6779] max-w-[560px] leading-[1.5] md:leading-[1.7]">
+            Inbound or outbound, spoken or written — every interaction runs under the same quality, compliance and reporting discipline, so your customer never has to repeat themselves.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {services.map((service, i) => {
-            const Icon = service.icon;
-            return (
-              <div
-                key={service.title}
-                className={`bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 group ${service.colSpan ?? ''} ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                style={{ transitionDelay: `${i * 150}ms` }}
-              >
-                <div className="flex items-start justify-between mb-5">
-                  <div className="w-11 h-11 rounded-xl flex items-center justify-center bg-[#1e3a8a] text-white">
-                    <Icon size={22} strokeWidth={2} />
-                  </div>
-                  {service.tag && (
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#1e3a8a] bg-[#1e3a8a]/10 px-2.5 py-1 rounded-full">
-                      {service.tag}
-                    </span>
-                  )}
-                </div>
-
-                <h3 className="text-lg font-bold text-slate-900 mb-2 leading-tight">{service.title}</h3>
-                <p className="text-sm text-slate-600 leading-relaxed">{service.description}</p>
-
-
+        <div className="mt-6 md:mt-16 border-t border-[#e4e9f1]">
+          {servicesList.map((svc, i) => (
+            <div 
+              key={svc.no}
+              className={`grid grid-cols-[24px_1fr] sm:grid-cols-[40px_1fr] md:grid-cols-[90px_300px_1fr] gap-x-3 sm:gap-x-4 md:gap-x-9 gap-y-1.5 md:gap-y-4 py-4 md:py-10 border-b border-[#e4e9f1] items-start transition-colors duration-200 hover:bg-[#f7f9fc] ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[14px]'}`}
+              style={{ transitionDelay: `${i * 100}ms` }}
+            >
+              <div className="text-[11px] md:text-[16px] text-[#8b95a5] pt-0.5 md:pt-1" style={{ fontFamily: "'Fraunces', serif" }}>
+                {svc.no}
               </div>
-            );
-          })}
+              <div className="col-start-2 text-[15px] sm:text-[18px] md:text-[23px] text-[#122a47] leading-[1.2] md:leading-[1.3]" style={{ fontFamily: "'Fraunces', serif" }}>
+                {svc.name}
+              </div>
+              <div className="col-start-2 md:col-start-3 text-[12px] md:text-[15px] text-[#5b6779] leading-[1.5] md:leading-[1.7] max-w-[560px]">
+                {svc.desc}
+                <span className="block mt-1.5 md:mt-3 text-[9px] md:text-[12.5px] tracking-[0.06em] uppercase text-[#1357a8] font-semibold font-['Inter']">
+                  {svc.scope}
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
-
 
       </div>
     </section>

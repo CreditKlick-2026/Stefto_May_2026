@@ -90,7 +90,7 @@ const DropdownMenu = ({ menu, isOpen, onClose }) => {
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: 2, scale: 0.99 }}
       transition={{ duration: 0.15, ease: [0.16, 1, 0.3, 1] }}
-      className="absolute top-full left-0 z-[1000]"
+      className="absolute top-full left-0 pt-4 z-[1000]"
       onMouseLeave={onClose}
     >
       <div
@@ -246,38 +246,50 @@ export function Navbar() {
             </Link>
 
             {/* Desktop Nav — center (flex-1 pushes right buttons to far right) */}
-            <div className="hidden lg:flex items-center gap-1.5 h-full flex-1 justify-center">
-              {navItems.map((item) => (
-                <div
-                  key={item.name}
-                  className="relative flex items-center h-full px-1"
-                  onMouseEnter={() => item.hasDropdown && setActiveDropdown(item.key)}
-                  onMouseLeave={() => setActiveDropdown(null)}
-                >
-                  {item.hasDropdown ? (
-                    <button className={`nav-text-smooth ${activeDropdown === item.key ? 'active' : ''
-                      }`}>
-                      {item.name}
-                      <ChevronDown className={`nav-caret w-4 h-4 ml-1`} strokeWidth={2.5} />
-                    </button>
-                  ) : (
-                    <Link to={item.href} className={`nav-text-smooth ${activeDropdown === item.key ? 'active' : ''
-                      }`}>
-                      {item.name}
-                    </Link>
-                  )}
-
-                  <AnimatePresence>
-                    {item.hasDropdown && (
-                      <DropdownMenu
-                        menu={menuData[item.key]}
-                        isOpen={activeDropdown === item.key}
-                        onClose={() => setActiveDropdown(null)}
-                      />
+            <div className="hidden lg:flex items-center h-full flex-1 justify-center">
+              <div className="flex items-center bg-[#f3f4f6] rounded-full px-1.5 py-1 shadow-sm border border-slate-200/60">
+                {navItems.map((item) => (
+                  <div
+                    key={item.name}
+                    className="relative flex items-center"
+                    onMouseEnter={() => item.hasDropdown && setActiveDropdown(item.key)}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                  >
+                    {item.hasDropdown ? (
+                      <button className={`flex items-center px-4 py-1.5 text-[14.5px] font-semibold rounded-full transition-all duration-200 ${activeDropdown === item.key
+                          ? 'text-[#111827] bg-white shadow-sm'
+                          : 'text-[#374151] hover:text-[#111827] hover:bg-slate-200/50'
+                        }`}>
+                        {item.name}
+                        <ChevronDown
+                          className={`w-[14px] h-[14px] ml-1.5 transition-transform duration-200 ${activeDropdown === item.key ? 'rotate-180 text-[#111827]' : 'text-[#6b7280]'
+                            }`}
+                          strokeWidth={2.5}
+                        />
+                      </button>
+                    ) : (
+                      <Link
+                        to={item.href}
+                        className="px-4 py-1.5 text-[14.5px] font-semibold text-[#374151] hover:text-[#111827] hover:bg-slate-200/50 rounded-full transition-all duration-200"
+                      >
+                        {item.name}
+                      </Link>
                     )}
-                  </AnimatePresence>
-                </div>
-              ))}
+
+                    <AnimatePresence>
+                      {item.hasDropdown && (
+                        <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3">
+                          <DropdownMenu
+                            menu={menuData[item.key]}
+                            isOpen={activeDropdown === item.key}
+                            onClose={() => setActiveDropdown(null)}
+                          />
+                        </div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Right side — Search + CTA buttons — always pinned far right */}
@@ -535,80 +547,80 @@ export function Footer({ curveColor = "fill-slate-50" }) {
 
       <footer className="text-white bg-[#1e3a8a] pt-4 sm:pt-10 pb-20 sm:pb-24 px-4 sm:px-6 lg:px-8 text-sm relative z-0 overflow-hidden">
 
-      <div className="max-w-[1280px] mx-auto relative z-30">
+        <div className="max-w-[1280px] mx-auto relative z-30">
 
-        {/* Link Matrix */}
-        <div className="flex flex-col items-center text-center gap-8 mx-auto border-b border-white/10 pb-8">
+          {/* Link Matrix */}
+          <div className="flex flex-col items-center text-center gap-8 mx-auto border-b border-white/10 pb-8">
 
-          {/* Brand Hub */}
-          <div className="max-w-2xl">
-            <div className="mb-4 sm:mb-5 flex justify-center">
-              <img src={STEFTO_LOGO_URL} alt="Stefto" className="h-10 sm:h-11 object-contain" />
+            {/* Brand Hub */}
+            <div className="max-w-2xl">
+              <div className="mb-4 sm:mb-5 flex justify-center">
+                <img src={STEFTO_LOGO_URL} alt="Stefto" className="h-10 sm:h-11 object-contain" />
+              </div>
+              <p className="footer-heading-spark leading-relaxed text-xs sm:text-sm text-blue-100/80">
+                Stefto is the trade name of Incredible Management Services (India) Private Limited (CIN: U74140DL2007ULT166363).
+              </p>
             </div>
-            <p className="footer-heading-spark leading-relaxed text-xs sm:text-sm text-blue-100/80">
-              Stefto is the trade name of Incredible Management Services (India) Private Limited (CIN: U74140DL2007ULT166363).
-            </p>
+
+            {/* Horizontal Links */}
+            <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 w-full">
+              <Link to="/about-us" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">About Us</Link>
+              <Link to="/why-trust-stefto" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Why Stefto?</Link>
+              <Link to="/careers" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Careers</Link>
+
+
+              <Link to="/contact-us" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Contact us</Link>
+              <Link to="/privacy-policy" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="/posh-policy" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Posh Policy</Link>
+            </div>
+
           </div>
 
-          {/* Horizontal Links */}
-          <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 w-full">
-            <Link to="/about-us" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">About Us</Link>
-            <Link to="/why-trust-stefto" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Why Stefto?</Link>
-            <Link to="/careers" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Careers</Link>
 
+          {/* Contact + Social — ABOVE the line */}
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-6 pt-4 sm:pt-6 mt-4 sm:mt-6">
 
-            <Link to="/contact-us" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Contact us</Link>
-            <Link to="/privacy-policy" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="/posh-policy" className="footer-link-spark text-xs sm:text-sm text-blue-100/70 hover:text-white transition-colors">Posh Policy</Link>
+            {/* Contact Details */}
+            <div>
+              <p className="text-xs sm:text-sm opacity-85 text-white font-sans m-0">
+                Mobile: +91 8800-101-102. Email: info@stefto.com
+              </p>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex gap-2 sm:gap-3">
+              {[
+                { Icon: FaFacebookF, href: "https://www.facebook.com/steftocom/" },
+                { Icon: FaTwitter, href: "https://x.com/steftocom" },
+                { Icon: FaInstagram, href: "https://www.instagram.com/stefto__/" },
+                { Icon: FaLinkedinIn, href: "https://www.linkedin.com/company/stefto/?viewAsMember=true" }
+              ].map(({ Icon, href }, idx) => (
+                <a
+                  key={idx}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white text-[#1e3a8a] flex items-center justify-center no-underline transition-all hover:-translate-y-1 hover:shadow-lg"
+                >
+                  <Icon size={14} />
+                </a>
+              ))}
+            </div>
+
           </div>
+
+          {/* Divider line */}
+          <div className="border-t border-white/10 mt-6 sm:mt-8" />
 
         </div>
 
-
-        {/* Contact + Social — ABOVE the line */}
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-6 pt-4 sm:pt-6 mt-4 sm:mt-6">
-
-          {/* Contact Details */}
-          <div>
-            <p className="text-xs sm:text-sm opacity-85 text-white font-sans m-0">
-              Mobile: +91 8800-101-102. Email: info@stefto.com
-            </p>
-          </div>
-
-          {/* Social Links */}
-          <div className="flex gap-2 sm:gap-3">
-            {[
-              { Icon: FaFacebookF, href: "https://www.facebook.com/steftocom/" },
-              { Icon: FaTwitter, href: "https://x.com/steftocom" },
-              { Icon: FaInstagram, href: "https://www.instagram.com/stefto__/" },
-              { Icon: FaLinkedinIn, href: "https://www.linkedin.com/company/stefto/?viewAsMember=true" }
-            ].map(({ Icon, href }, idx) => (
-              <a
-                key={idx}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white text-[#1e3a8a] flex items-center justify-center no-underline transition-all hover:-translate-y-1 hover:shadow-lg"
-              >
-                <Icon size={14} />
-              </a>
-            ))}
-          </div>
-
+        {/* Copyright Strip */}
+        <div className="absolute bottom-0 left-0 w-full bg-white border-t border-[#1e3a8a]/10 py-3 sm:py-4 px-4 sm:px-8 flex justify-center">
+          <p className="text-slate-400 text-[0.65rem] sm:text-xs lg:text-sm m-0 text-center font-sans" style={{ color: '#64748b' }}>
+            <strong className="text-slate-500" style={{ color: '#64748b' }}>Copyright &copy; 2007 &ndash; 2026</strong> Stefto (Incredible Management Services Pvt Ltd)
+          </p>
         </div>
-
-        {/* Divider line */}
-        <div className="border-t border-white/10 mt-6 sm:mt-8" />
-
-      </div>
-
-      {/* Copyright Strip */}
-      <div className="absolute bottom-0 left-0 w-full bg-white border-t border-[#1e3a8a]/10 py-3 sm:py-4 px-4 sm:px-8 flex justify-center">
-        <p className="text-slate-400 text-[0.65rem] sm:text-xs lg:text-sm m-0 text-center font-sans" style={{ color: '#64748b' }}>
-          <strong className="text-slate-500" style={{ color: '#64748b' }}>Copyright &copy; 2007 &ndash; 2026</strong> Stefto (Incredible Management Services Pvt Ltd)
-        </p>
-      </div>
-    </footer>
+      </footer>
     </div>
   );
 }
