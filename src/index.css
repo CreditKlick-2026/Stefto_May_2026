@@ -1890,6 +1890,12 @@ p {
   background: linear-gradient(135deg, #1e1b4b, #4338ca 45%, #7c3aed);
 }
 
+@media (max-width: 767px) {
+  .scd-29__step .scd-29__grad {
+    background: #152b69 !important;
+  }
+}
+
 .scd-29__step--s2 {
   top: 22vh;
 }
