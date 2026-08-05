@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Trophy, Settings, ThumbsUp, HeartHandshake } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import './WhyTrustStackDeck.css';
 
 const reasons = [
   {
@@ -78,46 +79,64 @@ export default function WhyTrustSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={visible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
-            className="w-full"
+            className="w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-16"
           >
 
-
-            {/* Heading */}
-            <div className="text-center mb-6 flex flex-col items-center">
+            {/* Left Side Text */}
+            <div className="flex-1 text-left w-full lg:max-w-xl">
               <h2 style={{ fontSize: 'clamp(32px, 4vw, 48px)', fontWeight: 700, color: '#0f172a', lineHeight: 1.1, letterSpacing: '-0.02em', marginBottom: 16 }}>
                 Why Trust <span style={{ color: '#1e3a8a', fontFamily: 'system-ui, -apple-system, Arial, sans-serif', fontVariantLigatures: 'none' }}>Stefto?</span>
               </h2>
-              <div style={{ width: 48, height: 3, background: 'linear-gradient(90deg, #1e3a8a, #3b82f6)', borderRadius: 99, marginBottom: 20 }} />
+              <div style={{ width: 48, height: 4, background: 'linear-gradient(90deg, #1e3a8a, #3b82f6)', borderRadius: 99, marginBottom: 24 }} />
+              <p className="text-slate-600 text-lg leading-relaxed font-medium">
+                At Stefto, we combine decades of industry expertise with a relentless focus on customer satisfaction. Our ethical practices, transparent processes, and innovative solutions ensure that we consistently deliver exceptional results and build lasting partnerships across the globe.
+              </p>
             </div>
 
-            {/* Reason cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
-              {reasons.map((r, i) => (
-                <motion.div
-                  key={r.number}
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={visible ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.25 + i * 0.1 }}
-                  style={{
-                    display: 'flex', flexDirection: 'column', alignItems: 'flex-start',
-                    background: '#1e3a8a', border: '1px solid #1e40af',
-                    borderRadius: 16, padding: '24px',
-                    transition: 'all 0.2s',
-                    cursor: 'default',
-                    height: '100%',
-                  }}
-                  whileHover={{ scale: 1.01, boxShadow: '0 8px 24px rgba(30,58,138,0.3)', borderColor: '#2563eb', background: '#1e3a8a', transform: 'translateY(-4px)' }}
-                >
-                  <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 20 }}>
-                    <div style={{ width: 48, height: 48, borderRadius: 14, background: r.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <r.icon style={{ width: 22, height: 22, color: r.color }} />
+            {/* Right Side Stacked Cards Component */}
+            <div className="flex-1 scd-08 w-full lg:max-w-[700px]">
+              <div className="scd-08__deck w-full">
+                {/* Inputs for State */}
+                {reasons.map((r, i) => (
+                  <input 
+                    key={`input-${i}`} 
+                    type="radio" 
+                    name="scd-08" 
+                    id={`scd-08-${i+1}`} 
+                    className="scd-08__r" 
+                    defaultChecked={i === 0} 
+                  />
+                ))}
+
+                {/* Tabs */}
+                {reasons.map((r, i) => (
+                  <label 
+                    key={`tab-${i}`} 
+                    className="scd-08__tab" 
+                    htmlFor={`scd-08-${i+1}`} 
+                    style={{ '--c': '#1c44b4', '--l': i }}
+                  >
+                    {r.title}
+                  </label>
+                ))}
+
+                {/* Cards */}
+                {reasons.map((r, i) => (
+                  <article 
+                    key={`card-${i}`} 
+                    className="scd-08__card" 
+                    style={{ '--c': '#1c44b4' }}
+                  >
+                    <div className="flex items-start shrink-0 pt-1 mr-2">
+                      <r.icon size={48} color="#e11d48" strokeWidth={1.5} />
                     </div>
-                    <span style={{ fontSize: 40, fontWeight: 900, color: 'rgba(255, 255, 255, 0.1)', lineHeight: 1, fontFamily: 'sans-serif' }}>{r.number}</span>
-                  </div>
-                  <h3 style={{ fontSize: 18, fontWeight: 700, color: '#ffffff', marginBottom: 12 }}>{r.title}</h3>
-                  <p style={{ fontSize: 14, color: '#cbd5e1', lineHeight: 1.6, margin: 0, flexGrow: 1, textAlign: 'justify' }}>{r.description}</p>
-                </motion.div>
-              ))}
+                    <div>
+                      <h3 className="font-sans">{r.title}</h3>
+                      <p className="font-sans">{r.description}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
             </div>
 
 

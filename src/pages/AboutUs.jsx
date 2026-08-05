@@ -4,12 +4,15 @@ import { Link, useLocation } from 'react-router-dom';
 import LandingLayout from '../components/layout/LandingLayout';
 
 const ValueCard = ({ icon: Icon, title, desc }) => (
-  <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col group h-full">
-    <div className="w-12 h-12 bg-blue-50 text-[#1a237e] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-      <Icon size={24} strokeWidth={1.5} />
+  <div className="bg-white p-8 rounded-none shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-200 flex flex-col items-center text-center group h-full">
+    <div className="inline-flex mb-6 group-hover:scale-105 transition-transform duration-300">
+      <div className="text-[#e11d48] border-r-2 border-[#e11d48] pr-5 flex items-center justify-center">
+        <Icon size={56} strokeWidth={1.5} />
+      </div>
+      <div className="w-5"></div>
     </div>
-    <h3 className="text-lg font-bold text-[#041434] mb-2">{title}</h3>
-    <p className="text-slate-500 leading-relaxed font-normal text-xs sm:text-sm flex-1 text-justify">{desc}</p>
+    <h3 className="text-[19px] font-black uppercase text-[#0f172a] mb-4 tracking-wider">{title}</h3>
+    <p className="text-slate-500 leading-relaxed font-medium text-[15.5px] flex-1">{desc}</p>
   </div>
 );
 

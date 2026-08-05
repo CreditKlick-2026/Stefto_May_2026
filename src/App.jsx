@@ -434,7 +434,7 @@ const Footer = () => (
 
 const AppContent = () => {
   const location = useLocation();
-  const hideShell = location.pathname.startsWith('/admin-dashboard') || location.pathname === '/' || location.pathname === '/landing' || location.pathname.startsWith('/about-us') || location.pathname.startsWith('/careers') || location.pathname.startsWith('/contact-us') || location.pathname.startsWith('/leadership') || location.pathname.startsWith('/inbound') || location.pathname.startsWith('/outbound') || location.pathname.startsWith('/privacy-policy') || location.pathname.startsWith('/posh-policy') || location.pathname.startsWith('/why-trust-stefto') || location.pathname.startsWith('/services') || location.pathname.startsWith('/industry');
+  const hideShell = location.pathname.startsWith('/admin-dashboard') || location.pathname === '/' || location.pathname === '/landing' || location.pathname.startsWith('/about-us') || location.pathname.startsWith('/careers') || location.pathname.startsWith('/contact-us') || location.pathname.startsWith('/leadership') || location.pathname.startsWith('/inbound') || location.pathname.startsWith('/outbound') || location.pathname.startsWith('/privacy-policy') || location.pathname.startsWith('/posh-policy') || location.pathname.startsWith('/why-trust-stefto') || location.pathname.startsWith('/services') || location.pathname.startsWith('/industry') || location.pathname.startsWith('/security');
 
   useEffect(() => {
     if (hideShell) {
