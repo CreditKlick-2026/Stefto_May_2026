@@ -139,7 +139,7 @@ export default function CustomerSupportSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
         {/* ── Section Header ── */}
-        <div className={`text-center flex flex-col items-center space-y-2 mb-8 lg:mb-16 ${fadeUp()}`}>
+        <div className={`text-center flex flex-col items-center space-y-2 mb-3 lg:mb-4 ${fadeUp()}`}>
           <h2
             className="text-lg sm:text-4xl lg:text-5xl text-[#8b0000] leading-tight"
             style={{ fontFamily: "'Fraunces', serif" }}
@@ -179,11 +179,11 @@ export default function CustomerSupportSection() {
 
           {/* Right / Content column (Sticky Stacking Cards) */}
           <div className={`lg:col-span-6 w-full ${fadeUp('delay-150')}`}>
-            
-            <div className="flex flex-col gap-[30vh] pb-[20vh]">
+
+            <div className="flex flex-col gap-8 sm:gap-12 lg:gap-[30vh] pb-8 lg:pb-[20vh]">
               {groupedFeatures.map((group, groupIdx) => (
-                <div 
-                  key={groupIdx} 
+                <div
+                  key={groupIdx}
                   className="support-step sticky origin-top transition-transform duration-100"
                   style={{ top: `calc(25vh + ${groupIdx * 20}px)`, zIndex: groupIdx }}
                 >

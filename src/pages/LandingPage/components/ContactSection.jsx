@@ -100,10 +100,13 @@ export default function ContactSection() {
                   className="w-full bg-white border border-slate-200 rounded-none px-2.5 py-1.5 sm:px-3 sm:py-2 text-[11px] sm:text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#1c469d] focus:ring-1 focus:ring-[#1c469d] transition-colors resize-none"
                 />
               </div>
-              <Button type="submit" variant="primary" size="sm" className="w-full !py-2 !rounded-none text-xs">
+              <button 
+                type="submit" 
+                className="w-full flex items-center justify-center gap-2 bg-[#1c44b4] hover:bg-[#17378d] text-white font-bold py-3 px-4 rounded-none text-[13px] shadow-3d-red"
+              >
                 Send Message
-                <ArrowRight size={14} />
-              </Button>
+                <ArrowRight size={16} />
+              </button>
             </form>
           </div>
         </div>

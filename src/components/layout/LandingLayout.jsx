@@ -339,9 +339,10 @@ export function Navbar() {
                 </button>
               </div>
 
+
               <Link
                 to="/contact-us"
-                className="hidden lg:inline-flex items-center justify-center bg-[#1c44b4] hover:bg-[#17378d] text-white font-bold py-2 px-4 rounded-none transition-all duration-200 no-underline text-[13px] shadow-[4px_4px_0_#FF0000] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]"
+                className="hidden lg:inline-flex items-center justify-center bg-[#1c44b4] hover:bg-[#17378d] text-white font-bold py-2 px-4 rounded-none no-underline text-[13px] shadow-3d-red"
               >
                 Contact Us
               </Link>

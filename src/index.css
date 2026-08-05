@@ -123,8 +123,12 @@ body {
   width: 500px;
   height: 500px;
   background: var(--primary);
-  animation-delay: 0s;
+  opacity: 0.15;
+  filter: blur(80px);
+  animation: blob-float 10s infinite alternate ease-in-out;
 }
+
+
 
 .blob-2 {
   bottom: -10%;
@@ -1931,4 +1935,14 @@ p {
     animation: none !important;
     transition: none !important;
   }
+}
+
+/* Custom 3D Red Shadow Button */
+.shadow-3d-red {
+  box-shadow: 4px 4px 0px #FF0000 !important;
+  transition: all 0.2s ease-in-out !important;
+}
+.shadow-3d-red:hover {
+  box-shadow: 0px 0px 0px #FF0000 !important;
+  transform: translate(4px, 4px) !important;
 }
