@@ -1946,3 +1946,49 @@ p {
   box-shadow: 0px 0px 0px #FF0000 !important;
   transform: translate(4px, 4px) !important;
 }
+
+/* Chat Box Pulse Ring */
+.cfb-pulse {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1c44b4, #17378d);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(28,68,180,0.4);
+}
+
+.cfb-pulse::before,
+.cfb-pulse::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(28,68,180,0.55);
+  animation: cfb-pulse-ring 1.8s ease-out infinite;
+}
+
+.cfb-pulse::after {
+  animation-delay: 0.9s;
+}
+
+@keyframes cfb-pulse-ring {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+
+.cfb-pulse:hover { filter: brightness(1.08); }
+.cfb-pulse:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+.cfb-pulse svg {
+  width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cfb-pulse, .cfb-pulse * { animation: none !important; }
+}

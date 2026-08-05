@@ -1,16 +1,18 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import Home from './pages/Home';
-import AboutUs from './pages/AboutUs';
-import Careers from './pages/Careers';
-import ContactUs from './pages/ContactUs';
-import Leadership from './pages/Leadership';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import PoshPolicy from './pages/PoshPolicy';
-import Services from './pages/Services';
-import Industry from './pages/Industry';
-import Security from './pages/Security';
-import WhyTrustStefto from './pages/WhyTrustStefto';
+
+const Home = lazy(() => import('./pages/Home'));
+const AboutUs = lazy(() => import('./pages/AboutUs'));
+const Careers = lazy(() => import('./pages/Careers'));
+const ContactUs = lazy(() => import('./pages/ContactUs'));
+const Leadership = lazy(() => import('./pages/Leadership'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const PoshPolicy = lazy(() => import('./pages/PoshPolicy'));
+const Services = lazy(() => import('./pages/Services'));
+const Industry = lazy(() => import('./pages/Industry'));
+const Security = lazy(() => import('./pages/Security'));
+const WhyTrustStefto = lazy(() => import('./pages/WhyTrustStefto'));
+
 
 import { Phone, Mail, MapPin, ChevronDown, Search, Menu, X, LogIn, User, LayoutDashboard, LogOut } from 'lucide-react';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
@@ -23,6 +25,12 @@ import industriesBg from './assets/industries_dropdown_bg.png';
 import careerValuesBg from './assets/career_our_values_bg.png';
 import careerWhyBg from './assets/career_why_stefto_bg.png';
 import careerJobBg from './assets/career_job_opportunity_bg.png';
+
+const GlobalLoader = () => (
+  <div className="fixed inset-0 flex items-center justify-center bg-white/80 backdrop-blur-sm z-[9999]">
+    <div className="w-12 h-12 border-4 border-[#1c44b4]/20 border-t-[#1c44b4] rounded-full animate-spin"></div>
+  </div>
+);
 
 const SteftoLogo = () => (
   <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
@@ -457,21 +465,26 @@ const AppContent = () => {
       </div>
       {!hideShell && <NavBar />}
       <div className={!hideShell ? "flex-grow min-h-[60vh] flex flex-col" : "min-h-screen"}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/why-trust-stefto" element={<WhyTrustStefto />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/leadership" element={<Leadership />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/posh-policy" element={<PoshPolicy />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/industry" element={<Industry />} />
-          <Route path="/security" element={<Security />} />
-          <Route path="*" element={<Home />} />
-        </Routes>
+        <Suspense fallback={<GlobalLoader />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/why-trust-stefto" element={<WhyTrustStefto />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/contact-us" element={<ContactUs />} />
+            <Route path="/leadership" element={<Leadership />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/posh-policy" element={<PoshPolicy />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/industry" element={<Industry />} />
+            <Route path="/security" element={<Security />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </Suspense>
       </div>
+
+
+
       {!hideShell && <Footer />}
     </>
   );

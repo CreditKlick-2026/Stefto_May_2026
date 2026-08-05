@@ -141,7 +141,7 @@ export default function ChatWidget() {
             {/* ═══ IDLE STATE ═══ */}
             <AnimatePresence>
                 {!isOpen && (
-                    <motion.div className="fixed bottom-0 right-4 sm:right-6 z-[110] flex items-end gap-0 flex-row-reverse"
+                    <motion.div className="fixed bottom-6 left-6 sm:left-8 z-[110] flex items-end gap-0 flex-row"
                         initial={{ y: 80 }} animate={{ y: 0 }} exit={{ y: 80, opacity: 0 }}
                         transition={{ type: "spring", stiffness: 200, damping: 20 }}>
                         <div className="relative cursor-pointer select-none" onClick={() => setIsOpen(true)}>
@@ -151,15 +151,22 @@ export default function ChatWidget() {
                                     <span className="text-[8px] font-bold text-white relative z-10">1</span>
                                 </div>
                             </div>
-                            <motion.div animate={{ y: [0, -4, 0] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}>
-                                <img src={AVATAR_URL} alt="Chat" className="w-[70px] h-[70px] sm:w-[80px] sm:h-[80px] object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.15)]" />
-                            </motion.div>
+                            <button 
+                                type="button" 
+                                className="cfb-pulse" 
+                                aria-label="Chat Support"
+                                style={{ pointerEvents: 'none' }}
+                            >
+                                <svg viewBox="0 0 24 24" aria-hidden="true" style={{ width: '22px', height: '22px', fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round' }}>
+                                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                                </svg>
+                            </button>
                         </div>
                         <AnimatePresence>
                             {showBubble && (
-                                <motion.div initial={{ opacity: 0, scale: 0.8, x: 10 }} animate={{ opacity: 1, scale: 1, x: 0 }}
-                                    exit={{ opacity: 0, scale: 0.8, x: 10 }} transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                                    className="relative mb-4 mr-1">
+                                <motion.div initial={{ opacity: 0, scale: 0.8, x: -10 }} animate={{ opacity: 1, scale: 1, x: 0 }}
+                                    exit={{ opacity: 0, scale: 0.8, x: -10 }} transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                                    className="relative mb-4 ml-4">
                                     <div className="bg-white rounded-2xl px-5 py-4 shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-gray-100/80" style={{ maxWidth: '260px', minWidth: '220px' }}>
                                         <p className="text-[14px] text-gray-800 font-medium leading-relaxed">
                                             Hi friend! 👋 Can I tell you how <span className="text-stefto-blue font-semibold">Stefto</span> optimizes and boosts your business operations?
@@ -169,7 +176,7 @@ export default function ChatWidget() {
                                             <button onClick={handleDismiss} className="text-[14px] font-medium text-gray-500 hover:text-gray-700 transition-colors">No thanks</button>
                                         </div>
                                     </div>
-                                    <div className="absolute bottom-5 -right-[8px] w-0 h-0" style={{ borderTop: '6px solid transparent', borderBottom: '6px solid transparent', borderLeft: '10px solid white' }} />
+                                    <div className="absolute bottom-5 -left-[8px] w-0 h-0" style={{ borderTop: '6px solid transparent', borderBottom: '6px solid transparent', borderRight: '10px solid white' }} />
                                 </motion.div>
                             )}
                         </AnimatePresence>
@@ -189,7 +196,7 @@ export default function ChatWidget() {
                         exit={{ opacity: 0, y: 50, scale: 0.88 }} transition={{ type: "spring", stiffness: 280, damping: 26 }}
                         drag="y" dragConstraints={{ top: 0, bottom: 0 }} dragElastic={0.4}
                         onDragEnd={(_, info) => { if (info.offset.y > 120) setIsOpen(false); }}
-                        className="fixed bottom-4 right-4 sm:right-8 z-[120]">
+                        className="fixed bottom-4 left-4 sm:left-8 z-[120]">
 
                         {/* ── Sleeping/Waking Character on phone ── */}
                         <div className="relative flex justify-center mb-[-18px] z-[2]">
