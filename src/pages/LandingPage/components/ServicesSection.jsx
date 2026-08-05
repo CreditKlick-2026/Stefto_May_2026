@@ -84,7 +84,7 @@ export default function ServicesSection() {
               </div>
               <div className="col-start-2 md:col-start-3 text-[12px] md:text-[15px] text-[#5b6779] leading-[1.5] md:leading-[1.7] max-w-[560px]">
                 {svc.desc}
-                <span className="block mt-1.5 md:mt-3 text-[9px] md:text-[12.5px] tracking-[0.06em] uppercase text-[#1357a8] font-semibold font-['Inter']">
+                <span className="block mt-1.5 md:mt-3 text-[9px] md:text-[12.5px] tracking-[0.06em] uppercase text-[#db212c] font-semibold font-['Inter']">
                   {svc.scope}
                 </span>
               </div>

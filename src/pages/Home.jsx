@@ -16,6 +16,7 @@ import ServicesSection from "./LandingPage/components/ServicesSection";
 import CustomerSupportSection from "./LandingPage/components/CustomerSupportSection";
 import CustomerSupportSolutions from "./LandingPage/components/CustomerSupportSolutions";
 import ContactSection from "./LandingPage/components/ContactSection";
+import ClientReviewSection from "./LandingPage/components/ClientReviewSection";
 
 export default function Home() {
     const { scrollYProgress } = useScroll();
@@ -90,6 +91,9 @@ export default function Home() {
             <CustomerSupportSection />
             {/* <CustomerSupportSolutions /> */}
             <ServicesSection />
+
+            {/* Client Reviews - Polaroid Gallery */}
+            <ClientReviewSection />
 
             {/* 12. FAQ - Common Questions */}
             {/* <FAQSection /> */}

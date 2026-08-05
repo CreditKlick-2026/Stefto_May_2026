@@ -94,7 +94,7 @@ const DropdownMenu = ({ menu, isOpen, onClose, isFirstItem }) => {
       onMouseLeave={onClose}
     >
       <div
-        className={`pb-dropdown ${isSectioned ? 'min-w-[560px]' : 'min-w-[300px]'
+        className={`bg-white border border-slate-200 shadow-lg rounded-none ${isSectioned ? 'min-w-[560px]' : 'min-w-[260px]'
           }`}
       >
         {/* Badge header */}
@@ -134,22 +134,21 @@ const DropdownMenu = ({ menu, isOpen, onClose, isFirstItem }) => {
             ))}
           </div>
         ) : (
-          <div className="flex flex-col">
+          <div className="flex flex-col bg-white">
             {items.map((item, i) => (
               <Link
                 key={i}
                 to={item.href}
                 onClick={onClose}
-                className="pb-dropdown-item group"
-                style={{ padding: '12px 20px', gap: '16px' }}
+                className="flex items-center gap-4 px-5 py-3.5 bg-white hover:bg-slate-50 transition-all duration-300 group border-b last:border-b-0 border-slate-100"
               >
-                <div className={`w-[36px] h-[36px] rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-110 ${item.color}`}>
-                  <item.icon className="w-[16px] h-[16px]" strokeWidth={1.8} />
+                <div className={`w-[36px] h-[36px] rounded-none flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 ${item.color}`}>
+                  <item.icon className="w-[16px] h-[16px]" strokeWidth={2} />
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[13px] font-semibold text-slate-800 group-hover:text-[#1c469d] transition-colors duration-150">{item.name}</span>
+                <div className="flex flex-col transition-transform duration-300 group-hover:translate-x-1">
+                  <span className="text-[14px] font-bold text-slate-800 group-hover:text-[#1c44b4] transition-colors duration-300">{item.name}</span>
                   {item.description && (
-                    <span className="text-[10.5px] text-slate-500 mt-0.5 leading-normal">{item.description}</span>
+                    <span className="text-[11px] text-slate-500 mt-0.5 leading-normal font-medium">{item.description}</span>
                   )}
                 </div>
               </Link>
@@ -221,6 +220,8 @@ export function Navbar() {
     { name: "About Us", key: "aboutUs", hasDropdown: true },
     { name: "Why Stefto?", key: "whyStefto", hasDropdown: false, href: "/why-trust-stefto" },
     { name: "Our Services", key: "services", hasDropdown: false, href: "/services" },
+    { name: "Industry", key: "industry", hasDropdown: false, href: "/industry" },
+    { name: "Security", key: "security", hasDropdown: false, href: "/security" },
     { name: "Careers", key: "careers", hasDropdown: false, href: "/careers" },
   ];
 
@@ -247,7 +248,7 @@ export function Navbar() {
 
             {/* Desktop Nav — center (flex-1 pushes right buttons to far right) */}
             <div className="hidden lg:flex items-center h-full flex-1 justify-center">
-              <div className="flex items-center bg-[#f3f4f6] rounded-full px-1.5 py-1 shadow-sm border border-slate-200/60">
+              <div className="flex items-center gap-1">
                 {navItems.map((item, index) => (
                   <div
                     key={item.name}
@@ -256,23 +257,29 @@ export function Navbar() {
                     onMouseLeave={() => setActiveDropdown(null)}
                   >
                     {item.hasDropdown ? (
-                      <button className={`flex items-center px-4 py-1.5 text-[14.5px] font-semibold rounded-full transition-all duration-200 ${activeDropdown === item.key
-                        ? 'text-[#111827] bg-white shadow-sm'
-                        : 'text-[#374151] hover:text-[#111827] hover:bg-slate-200/50'
+                      <button className={`relative overflow-hidden group flex items-center px-4 py-1.5 text-[14.5px] font-bold rounded-none transition-colors duration-300 ${activeDropdown === item.key
+                        ? 'text-white'
+                        : 'text-slate-700 hover:text-white'
                         }`}>
-                        {item.name}
-                        <ChevronDown
-                          className={`w-[14px] h-[14px] ml-1.5 transition-transform duration-200 ${activeDropdown === item.key ? 'rotate-180 text-[#111827]' : 'text-[#6b7280]'
-                            }`}
-                          strokeWidth={2.5}
-                        />
+                        <span className="relative z-10 flex items-center">
+                          {item.name}
+                          <ChevronDown
+                            className={`w-[14px] h-[14px] ml-1.5 transition-transform duration-200 ${activeDropdown === item.key ? 'rotate-180 text-white' : 'text-current'
+                              }`}
+                            strokeWidth={2.5}
+                          />
+                        </span>
+                        <div className={`absolute inset-0 bg-[#1c44b4] translate-y-[100%] transition-transform duration-300 ease-out group-hover:translate-y-0 z-0 ${activeDropdown === item.key ? '!translate-y-0' : ''}`}></div>
                       </button>
                     ) : (
                       <Link
                         to={item.href}
-                        className="px-4 py-1.5 text-[14.5px] font-semibold text-[#374151] hover:text-[#111827] hover:bg-slate-200/50 rounded-full transition-all duration-200"
+                        className="relative overflow-hidden group px-4 py-1.5 text-[14.5px] font-bold text-slate-700 hover:text-white rounded-none transition-colors duration-300 block"
                       >
-                        {item.name}
+                        <span className="relative z-10 flex items-center">
+                          {item.name}
+                        </span>
+                        <div className="absolute inset-0 bg-[#1c44b4] translate-y-[100%] transition-transform duration-300 ease-out group-hover:translate-y-0 z-0"></div>
                       </Link>
                     )}
 
@@ -332,9 +339,12 @@ export function Navbar() {
                 </button>
               </div>
 
-              <Button as={Link} to="/contact-us" variant="primary" size="sm" pill>
+              <Link
+                to="/contact-us"
+                className="hidden lg:inline-flex items-center justify-center bg-[#1c44b4] hover:bg-[#17378d] text-white font-bold py-2 px-4 rounded-none transition-all duration-200 no-underline text-[13px] shadow-[4px_4px_0_#FF0000] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]"
+              >
                 Contact Us
-              </Button>
+              </Link>
 
 
             </div>
@@ -539,14 +549,7 @@ export function Footer({ curveColor = "fill-slate-50" }) {
 
   return (
     <div className="relative w-full">
-      {/* Seamless Valley Wave - Gentle dip down into the blue footer */}
-      <div className="w-full overflow-hidden leading-none z-20 pointer-events-none relative -mb-[1px]">
-        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="relative block w-full h-[40px] md:h-[80px]" preserveAspectRatio="none">
-          <path d="M0,0 C360,0 540,50 720,50 C900,50 1080,0 1440,0 L1440,120 L0,120 Z" fill="#1e3a8a" />
-        </svg>
-      </div>
-
-      <footer className="text-white bg-[#1e3a8a] pt-4 sm:pt-10 pb-20 sm:pb-24 px-4 sm:px-6 lg:px-8 text-sm relative z-0 overflow-hidden">
+      <footer className="text-white bg-[#132761] pt-10 sm:pt-16 pb-20 sm:pb-24 px-4 sm:px-6 lg:px-8 text-sm relative z-0 overflow-hidden">
 
         <div className="max-w-[1280px] mx-auto relative z-30">
 
@@ -601,7 +604,7 @@ export function Footer({ curveColor = "fill-slate-50" }) {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white text-[#1e3a8a] flex items-center justify-center no-underline transition-all hover:-translate-y-1 hover:shadow-lg"
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white text-[#132761] flex items-center justify-center no-underline transition-all hover:-translate-y-1 hover:shadow-lg"
                 >
                   <Icon size={14} />
                 </a>
@@ -616,7 +619,7 @@ export function Footer({ curveColor = "fill-slate-50" }) {
         </div>
 
         {/* Copyright Strip */}
-        <div className="absolute bottom-0 left-0 w-full bg-white border-t border-[#1e3a8a]/10 py-3 sm:py-4 px-4 sm:px-8 flex justify-center">
+        <div className="absolute bottom-0 left-0 w-full bg-white border-t border-[#132761]/10 py-3 sm:py-4 px-4 sm:px-8 flex justify-center">
           <p className="text-slate-400 text-[0.65rem] sm:text-xs lg:text-sm m-0 text-center font-sans" style={{ color: '#64748b' }}>
             <strong className="text-slate-500" style={{ color: '#64748b' }}>Copyright &copy; 2007 &ndash; 2026</strong> Stefto (Incredible Management Services Pvt Ltd)
           </p>

@@ -8,6 +8,8 @@ import Leadership from './pages/Leadership';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import PoshPolicy from './pages/PoshPolicy';
 import Services from './pages/Services';
+import Industry from './pages/Industry';
+import Security from './pages/Security';
 import WhyTrustStefto from './pages/WhyTrustStefto';
 
 import { Phone, Mail, MapPin, ChevronDown, Search, Menu, X, LogIn, User, LayoutDashboard, LogOut } from 'lucide-react';
@@ -243,7 +245,7 @@ const NavBar = () => {
 
             {!isSearchVisible && (
               <>
-                <Link to="/contact-us" className="btn-spark hidden lg:inline-flex items-center justify-center relative overflow-hidden bg-stefto-indigo text-white py-2 px-6 rounded-full font-bold no-underline text-[13px] uppercase tracking-widest hover:bg-stefto-navy transition-all shadow-xl hover:shadow-2xl active:scale-95">
+                <Link to="/contact-us" className="hidden lg:inline-flex items-center justify-center bg-[#003366] hover:bg-[#001F3F] text-white font-bold py-2 px-6 rounded-md transition-all duration-200 no-underline text-[13px] uppercase tracking-widest shadow-[4px_4px_0_#FF0000] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]">
                   Contact us
                 </Link>
                 {isLoggedIn ? (
@@ -324,7 +326,7 @@ const NavBar = () => {
                 <LogIn size={16} /> Login
               </Link>
             )}
-            <Link to="/contact-us" onClick={() => setIsMobileMenuOpen(false)} className="block bg-stefto-indigo text-white text-center py-2.5 sm:py-3 rounded-lg no-underline font-bold mt-2 text-sm">Contact us</Link>
+            <Link to="/contact-us" onClick={() => setIsMobileMenuOpen(false)} className="block bg-[#003366] hover:bg-[#001F3F] text-white text-center py-2.5 sm:py-3 rounded-md no-underline font-bold mt-2 text-sm transition-all duration-200 shadow-[4px_4px_0_#FF0000] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]">Contact us</Link>
           </div>
         )}
       </div>
@@ -465,7 +467,8 @@ const AppContent = () => {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/posh-policy" element={<PoshPolicy />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/industry" element={<Services />} />
+          <Route path="/industry" element={<Industry />} />
+          <Route path="/security" element={<Security />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </div>

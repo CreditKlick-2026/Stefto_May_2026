@@ -1,0 +1,187 @@
+/* src/pages/LandingPage/components/ClientReviewSection.css */
+.gl-21,
+.gl-21 *,
+.gl-21 *::before,
+.gl-21 *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.gl-21 ::selection {
+  background: oklch(0.6 0.12 40);
+  color: #fff;
+}
+
+.gl-21 {
+  --accent: oklch(0.55 0.13 40);
+  width: 100%;
+  padding: 40px 20px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gl-21__pile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  width: min(1000px,100%);
+}
+
+.gl-21__pola {
+  background: #fffdf8;
+  padding: 12px 12px 20px;
+  border-radius: 2px;
+  width: 220px;
+  box-shadow: 0 10px 24px -10px rgba(60,40,20,.5);
+  transition: transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s;
+  outline: none;
+}
+
+.gl-21__pola img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  background: #e7e0d4;
+  filter: sepia(.18) contrast(1.02);
+}
+
+.gl-21__pola figcaption {
+  margin-top: 14px;
+  text-align: center;
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1c44b4;
+  letter-spacing: 0.5px;
+}
+
+.gl-21__pola .review-text {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 11.5px;
+  color: #666;
+  margin-top: 6px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.gl-21__pola:nth-child(1) {
+  transform: rotate(-6deg);
+}
+
+.gl-21__pola:nth-child(2) {
+  transform: rotate(4deg);
+}
+
+.gl-21__pola:nth-child(3) {
+  transform: rotate(-3deg);
+}
+
+.gl-21__pola:nth-child(4) {
+  transform: rotate(5deg);
+}
+
+.gl-21__pola:nth-child(5) {
+  transform: rotate(-5deg);
+}
+
+.gl-21__pola:nth-child(6) {
+  transform: rotate(3deg);
+}
+
+.gl-21__pola:nth-child(7) {
+  transform: rotate(-4deg);
+}
+
+.gl-21__pola:nth-child(8) {
+  transform: rotate(6deg);
+}
+
+.gl-21__pola:hover,
+.gl-21__pola:focus-visible {
+  transform: rotate(0) scale(1.06);
+  z-index: 5;
+  box-shadow: 0 24px 44px -16px rgba(60,40,20,.6);
+}
+
+.gl-21__pola:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gl-21__pola {
+    transition: none;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .gl-21 {
+    width: 100%;
+    padding: 20px 0;
+  }
+  .gl-21__pile {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-auto-flow: column;
+    gap: 16px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 20px 0;
+    width: 100%;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    justify-content: center;
+  }
+  /* Fallback for browsers that don't support safe center */
+  @supports (justify-content: safe center) {
+    .gl-21__pile {
+      justify-content: safe center;
+    }
+  }
+  .gl-21__pile::-webkit-scrollbar {
+    display: none;
+  }
+  .gl-21__pola {
+    width: 150px;
+    padding: 10px 10px 18px;
+    scroll-snap-align: center;
+    transform: rotate(0deg) !important;
+  }
+  .gl-21__pola:nth-child(even) {
+    transform: rotate(2deg) !important;
+  }
+  .gl-21__pola:nth-child(odd) {
+    transform: rotate(-2deg) !important;
+  }
+  .gl-21__pola:hover,
+  .gl-21__pola:focus-visible {
+    transform: rotate(0) scale(1.04) !important;
+    z-index: 5;
+  }
+  .gl-21__pola figcaption {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .gl-21__pola .review-text {
+    font-size: 10px;
+    margin-top: 6px;
+  }
+}
+
+/* Tablet Responsiveness */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .gl-21__pile {
+    gap: 12px;
+  }
+  .gl-21__pola {
+    width: 180px;
+  }
+}

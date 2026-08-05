@@ -58,13 +58,13 @@ const machineryFeatures = [
 ];
 
 const supportMetrics = [
-  { value: '24/7',   label: 'Availability',           subtext: 'Round-the-clock helpdesk' },
-  { value: '98.5%',  label: 'First Call Resolution',   subtext: 'Speedy query solving'     },
-  { value: '10M+',   label: 'Interactions Handled',    subtext: 'Trusted across India'     },
+  { value: '24/7', label: 'Availability', subtext: 'Round-the-clock helpdesk' },
+  { value: '98.5%', label: 'First Call Resolution', subtext: 'Speedy query solving' },
+  { value: '10M+', label: 'Interactions Handled', subtext: 'Trusted across India' },
 ];
 
 export default function CustomerSupportSection() {
-  const ref     = useRef(null);
+  const ref = useRef(null);
   const [visible, setVisible] = useState(false);
 
   /* Intersection — triggers once, then disconnects */
@@ -105,17 +105,20 @@ export default function CustomerSupportSection() {
 
         {/* ── Section Header ── */}
         <div className={`text-center flex flex-col items-center space-y-2 mb-8 lg:mb-16 ${fadeUp()}`}>
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#1e3a8a]/10 border border-[#1e3a8a]/20 text-[#1e3a8a] text-[10px] sm:text-xs font-bold uppercase tracking-wider">
-            <Sparkles size={11} aria-hidden="true" />
-            Customer Support &amp; Engagement
-          </div>
-
           <h2
-            className="text-lg sm:text-4xl lg:text-5xl text-[#1e3a8a] leading-tight"
+            className="text-lg sm:text-4xl lg:text-5xl text-[#8b0000] leading-tight"
             style={{ fontFamily: "'Fraunces', serif" }}
           >
             Customer Support Solutions
           </h2>
+        </div>
+
+        {/* ── Full Width Text Block ── */}
+        <div className={`w-full mb-10 lg:mb-12 space-y-3 ${fadeUp('delay-100')}`}>
+
+          <p className="text-slate-700 font-medium text-[13px] sm:text-lg leading-relaxed text-center max-w-5xl mx-auto">
+            Customers only see the advisor. Behind every interaction sits the infrastructure that keeps service fast, consistent and auditable.
+          </p>
         </div>
 
         {/* ── Main Grid ──
@@ -136,75 +139,63 @@ export default function CustomerSupportSection() {
                 />
               </div>
 
-              {/* Badge 1 — hidden on xs to avoid clutter */}
-              <div className="hidden sm:flex absolute top-4 left-4 bg-white border border-slate-200 px-3 py-2 rounded-2xl shadow-md items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-600 flex items-center justify-center flex-shrink-0">
-                  <CheckCircle2 size={16} aria-hidden="true" />
-                </div>
-                <div>
-                  <p className="text-[10px] text-slate-500 font-medium leading-none mb-0.5">Resolution Rate</p>
-                  <p className="text-xs font-bold text-slate-900 leading-none">98.5% Satisfied</p>
-                </div>
-              </div>
-
-              {/* Badge 2 — hidden on xs */}
-              <div className="hidden sm:flex absolute bottom-4 right-4 bg-[#1e3a8a] text-white px-3 py-2 rounded-2xl shadow-lg items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center flex-shrink-0">
-                  <Headphones size={16} aria-hidden="true" />
-                </div>
-                <div>
-                  <p className="text-[10px] text-blue-200 uppercase font-semibold tracking-wider leading-none mb-0.5">Help Desk</p>
-                  <p className="text-xs font-bold leading-none">24/7 Dedicated</p>
-                </div>
-              </div>
             </div>
           </div>
 
           {/* Right / Content column (appears FIRST on mobile for quick reading) */}
           <div className={`lg:col-span-6 space-y-4 ${fadeUp('delay-150')}`}>
-            <div className="space-y-1.5">
-              <h3 className="text-sm sm:text-2xl lg:text-3xl font-bold text-slate-900 leading-tight">
-                The machinery behind a good conversation.
-              </h3>
-              <p className="text-slate-600 text-[11px] sm:text-base leading-relaxed">
-                Customers only see the advisor. Behind every interaction sits the infrastructure that keeps service fast, consistent and auditable.
-              </p>
-            </div>
-
             <div className="grid grid-cols-2 gap-2 sm:gap-3">
               {machineryFeatures.map((item, idx) => {
                 const Icon = item.icon;
                 return (
                   <div
                     key={idx}
-                    className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-white border border-slate-200 hover:border-[#1e3a8a]/30 hover:shadow-sm transition-colors duration-200"
+                    className="relative group p-4 sm:p-5 rounded-none bg-[#1c44b4] transition-all duration-500 overflow-hidden cursor-pointer"
                   >
-                    <div className="flex flex-wrap items-center justify-between gap-1 mb-1.5">
-                      <div className="w-5 h-5 sm:w-7 sm:h-7 rounded-md sm:rounded-lg bg-[#1e3a8a]/10 text-[#1e3a8a] flex items-center justify-center">
-                        <Icon className="w-3 h-3" aria-hidden="true" />
+                    {/* Sweep background on hover */}
+                    <div className="absolute inset-0 bg-[#8b0000] translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></div>
+
+                    <div className="relative z-10 flex flex-col h-full">
+                      <div className="flex flex-wrap items-center justify-between gap-1 mb-4">
+                        <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-none bg-white text-[#1c44b4] group-hover:text-[#8b0000] transition-colors duration-500 flex items-center justify-center">
+                          <Icon className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-500 group-hover:scale-110" aria-hidden="true" />
+                        </div>
+                        <span className="text-[7.5px] sm:text-[9px] font-bold uppercase tracking-wider px-2 py-1 rounded-none border border-white/30 text-white transition-colors duration-500">
+                          {item.badge}
+                        </span>
                       </div>
-                      <span className="text-[6.5px] sm:text-[8px] font-bold uppercase tracking-wider px-1 sm:px-1.5 py-0.5 rounded-full bg-slate-100 text-slate-500">
-                        {item.badge}
-                      </span>
+                      <h4 className="text-[11px] sm:text-[14px] font-bold text-white mb-1.5 leading-snug transition-colors duration-500">{item.title}</h4>
+                      <p className="text-[9.5px] sm:text-[12px] text-white/80 leading-relaxed transition-colors duration-500">{item.description}</p>
                     </div>
-                    <h4 className="text-[9px] sm:text-[12px] font-bold text-slate-900 mb-0.5 leading-snug">{item.title}</h4>
-                    <p className="text-[8px] sm:text-[11px] text-slate-500 leading-tight sm:leading-relaxed">{item.description}</p>
                   </div>
                 );
               })}
             </div>
 
             {/* CTAs — stack on mobile, row on sm+ */}
-            <div className="pt-6 flex flex-col sm:flex-row flex-wrap gap-2.5">
-              <Button as="a" href="#contact" variant="primary" size="sm" pill className="sm:btn-md">
-                <PhoneCall size={13} aria-hidden="true" />
-                Get Support Assistance
-                <ArrowRight size={13} aria-hidden="true" />
-              </Button>
-              <Button as="a" href="#contact" variant="secondary" size="sm" pill className="sm:btn-md">
-                <ShieldCheck size={13} aria-hidden="true" />
-                RBI Compliant
-              </Button>
+            <div className="pt-6 flex flex-col sm:flex-row flex-wrap gap-4">
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center relative overflow-hidden group border-2 border-[#1c44b4] bg-white text-[#1c44b4] hover:text-white font-bold py-3 px-6 text-[13px] sm:text-[14px] tracking-wider uppercase transition-colors duration-300 no-underline"
+              >
+                <span className="relative z-10 flex items-center gap-2 transition-transform duration-300 group-hover:-translate-x-2">
+                  <PhoneCall className="w-4 h-4" />
+                  Get Support Assistance
+                  <ArrowRight className="w-4 h-4 absolute -right-6 opacity-0 transition-all duration-300 group-hover:right-[-4px] group-hover:opacity-100" />
+                </span>
+                <div className="absolute inset-0 bg-[#1c44b4] translate-y-[100%] transition-transform duration-300 ease-out group-hover:translate-y-0 z-0"></div>
+              </a>
+
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center relative overflow-hidden group border-2 border-[#1c44b4] bg-white text-[#1c44b4] hover:text-white font-bold py-3 px-6 text-[13px] sm:text-[14px] tracking-wider uppercase transition-colors duration-300 no-underline"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4" />
+                  RBI Compliant
+                </span>
+                <div className="absolute inset-0 bg-[#1c44b4] translate-y-[100%] transition-transform duration-300 ease-out group-hover:translate-y-0 z-0"></div>
+              </a>
             </div>
           </div>
         </div>
@@ -214,10 +205,10 @@ export default function CustomerSupportSection() {
           {supportMetrics.map((stat, i) => (
             <div
               key={i}
-              className="bg-white border border-slate-200 rounded-2xl p-4 lg:p-6 text-center"
+              className="bg-white border border-slate-200 rounded-none shadow-sm hover:shadow-md transition-shadow duration-300 p-4 lg:p-6 text-center"
             >
               <div
-                className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1e3a8a] mb-0.5"
+                className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 mb-0.5"
                 style={{ fontFamily: "'Fraunces', serif" }}
               >
                 {stat.value}

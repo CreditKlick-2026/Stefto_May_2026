@@ -81,32 +81,39 @@ function StatItem({ stat, index, isInView }) {
 /* ── Partner Logo Marquee Row ── */
 function PartnerRow({ images, direction = "left", speed = 28 }) {
     const doubled = [...images, ...images];
-    const animX = direction === "left"
-        ? { x: ["0%", "-50%"] }
-        : { x: ["-50%", "0%"] };
 
     return (
-        <div className="overflow-hidden">
-            <motion.div
-                className="flex gap-4 items-center"
-                animate={animX}
-                transition={{ repeat: Infinity, repeatType: "loop", duration: speed, ease: "linear" }}
-                style={{ width: "max-content" }}
+        <div className="overflow-hidden border-y border-[#e5e5ea] -mb-px bg-transparent group/row">
+            <style>{`
+                @keyframes marquee-left {
+                    0% { transform: translateX(0%); }
+                    100% { transform: translateX(-50%); }
+                }
+                @keyframes marquee-right {
+                    0% { transform: translateX(-50%); }
+                    100% { transform: translateX(0%); }
+                }
+                .anim-marquee-left { animation: marquee-left var(--speed) linear infinite; }
+                .anim-marquee-right { animation: marquee-right var(--speed) linear infinite; }
+            `}</style>
+            <div
+                className={`flex items-center w-max hover:[animation-play-state:paused] ${direction === "left" ? "anim-marquee-left" : "anim-marquee-right"}`}
+                style={{ '--speed': `${speed}s` }}
             >
                 {doubled.map((n, idx) => (
                     <div
                         key={idx}
-                        className="w-[110px] h-[56px] shrink-0 bg-white border border-slate-100 rounded-xl shadow-sm flex items-center justify-center px-3 hover:shadow-md hover:border-[#2563eb]/20 transition-all duration-200"
+                        className="flex items-center justify-center shrink-0 w-[160px] md:w-[220px] h-[80px] md:h-[100px] border-r border-[#e5e5ea] bg-transparent group/logo hover:bg-red-50 transition-colors cursor-pointer"
                     >
                         <img
                             src={`/assets/partners/${n}.png`}
                             alt={`Partner ${n}`}
-                            className="max-h-[38px] max-w-[85px] w-auto h-auto object-contain opacity-100 transition-opacity duration-200"
+                            className="w-full h-full p-3 md:p-5 object-contain transition-transform duration-300 group-hover/logo:scale-110"
                             loading="lazy"
                         />
                     </div>
                 ))}
-            </motion.div>
+            </div>
         </div>
     );
 }
@@ -134,14 +141,14 @@ export default function LogoTicker() {
                 className="max-w-[900px] mx-auto px-4 sm:px-6 mb-4 sm:mb-10"
             >
                 {/* One row: text | divider | badges */}
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 py-4 px-5 bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl shadow-sm">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 py-5 px-6 bg-white/90 backdrop-blur-sm border border-slate-200 rounded-none shadow-md border-b-[3px] border-b-[#8b0000]">
 
                     {/* Review Badges */}
-                    <div className="flex items-center gap-2 sm:gap-3 flex-wrap justify-center">
+                    <div className="flex items-center gap-3 sm:gap-4 flex-wrap justify-center">
                         {reviewBadges.map((b) => (
                             <div
                                 key={b.name}
-                                className="inline-flex items-center gap-1.5 px-2.5 py-1.5 bg-white border border-slate-200 rounded-full shadow-sm hover:shadow-md transition-shadow cursor-default"
+                                className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-100 rounded-none shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all cursor-default"
                             >
                                 {b.logo}
                                 <span className="text-[11px] font-bold text-slate-700">{b.name}</span>
@@ -155,22 +162,17 @@ export default function LogoTicker() {
             </motion.div>
 
             {/* ── Partner Logo Ticker (Real Images) ── */}
-            <div className="relative mb-14 space-y-4">
-                {/* Fade edges */}
-                <div
-                    className="pointer-events-none absolute left-0 top-0 bottom-0 w-20 sm:w-40 z-10"
-                    style={{ background: "linear-gradient(to right, rgba(248,250,252,0.9), transparent)" }}
-                />
-                <div
-                    className="pointer-events-none absolute right-0 top-0 bottom-0 w-20 sm:w-40 z-10"
-                    style={{ background: "linear-gradient(to left, rgba(248,250,252,0.9), transparent)" }}
-                />
+            <div className="relative mb-14 bg-transparent py-8 sm:py-12">
+                <div className="relative border-l border-[#e5e5ea] max-w-[1400px] mx-auto overflow-hidden">
+                    {/* Fade edges */}
+                    <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-32 z-10 bg-gradient-to-r from-[#f8fafc] to-transparent" />
+                    <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-32 z-10 bg-gradient-to-l from-[#f8fafc] to-transparent" />
 
-                {/* Row 1 → left (images 1–13) */}
-                <PartnerRow images={row1} direction="left" speed={26} />
-
-                {/* Row 2 → right (images 14–26) */}
-                <PartnerRow images={row2} direction="right" speed={30} />
+                    <div className="flex flex-col">
+                        <PartnerRow images={row1} direction="left" speed={26} />
+                        <PartnerRow images={row2} direction="right" speed={30} />
+                    </div>
+                </div>
             </div>
 
             {/* ── Stats Grid ── */}
