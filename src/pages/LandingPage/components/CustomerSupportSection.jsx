@@ -57,6 +57,11 @@ const machineryFeatures = [
   }
 ];
 
+const groupedFeatures = [];
+for (let i = 0; i < machineryFeatures.length; i += 2) {
+  groupedFeatures.push(machineryFeatures.slice(i, i + 2));
+}
+
 const supportMetrics = [
   { value: '24/7', label: 'Availability', subtext: 'Round-the-clock helpdesk' },
   { value: '98.5%', label: 'First Call Resolution', subtext: 'Speedy query solving' },
@@ -87,6 +92,36 @@ export default function CustomerSupportSection() {
 
     observer.observe(el);
     return () => observer.disconnect();
+  }, []);
+
+  /* Sticky Scroll Effect for Cards */
+  useEffect(() => {
+    const handleScroll = () => {
+      const steps = document.querySelectorAll('.support-step');
+      steps.forEach((step, i) => {
+        const next = steps[i + 1];
+        if (next) {
+          const nextRect = next.getBoundingClientRect();
+          const stepRect = step.getBoundingClientRect();
+          const distance = nextRect.top - stepRect.top;
+          const maxDist = 400; // transition window in px
+          if (distance > 0 && distance < maxDist) {
+            const prog = 1 - (distance / maxDist);
+            step.style.transform = `scale(${1 - prog * 0.05})`;
+            step.style.filter = `brightness(${1 - prog * 0.4})`;
+          } else if (distance <= 0) {
+            step.style.transform = `scale(0.95)`;
+            step.style.filter = `brightness(0.6)`;
+          } else {
+            step.style.transform = `scale(1)`;
+            step.style.filter = `brightness(1)`;
+          }
+        }
+      });
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    setTimeout(handleScroll, 100);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   /* Shared animation classes — disabled on mobile via media-driven inline style trick */
@@ -126,8 +161,8 @@ export default function CustomerSupportSection() {
              Desktop: 12-col split                                             */}
         <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-16 items-center mb-10 lg:mb-16">
 
-          {/* Left / Image column (appears BELOW content on mobile) */}
-          <div className={`lg:col-span-6 w-full ${fadeUp('delay-100')}`}>
+          {/* Left / Image column (Sticky on Desktop) */}
+          <div className={`lg:col-span-6 w-full lg:sticky lg:top-[20vh] self-start ${fadeUp('delay-100')}`}>
             <div className="relative">
               {/* Lazy-loaded image — no layout shift via fixed aspect container */}
               <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
@@ -142,34 +177,45 @@ export default function CustomerSupportSection() {
             </div>
           </div>
 
-          {/* Right / Content column (appears FIRST on mobile for quick reading) */}
-          <div className={`lg:col-span-6 space-y-4 ${fadeUp('delay-150')}`}>
-            <div className="grid grid-cols-2 gap-2 sm:gap-3">
-              {machineryFeatures.map((item, idx) => {
-                const Icon = item.icon;
-                return (
-                  <div
-                    key={idx}
-                    className="relative group p-4 sm:p-5 rounded-none bg-[#1c44b4] transition-all duration-500 overflow-hidden cursor-pointer"
-                  >
-                    {/* Sweep background on hover */}
-                    <div className="absolute inset-0 bg-[#8b0000] translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></div>
+          {/* Right / Content column (Sticky Stacking Cards) */}
+          <div className={`lg:col-span-6 w-full ${fadeUp('delay-150')}`}>
+            
+            <div className="flex flex-col gap-[30vh] pb-[20vh]">
+              {groupedFeatures.map((group, groupIdx) => (
+                <div 
+                  key={groupIdx} 
+                  className="support-step sticky origin-top transition-transform duration-100"
+                  style={{ top: `calc(25vh + ${groupIdx * 20}px)`, zIndex: groupIdx }}
+                >
+                  <div className="grid grid-cols-2 gap-2 sm:gap-3 rounded-2xl overflow-hidden shadow-2xl">
+                    {group.map((item, idx) => {
+                      const Icon = item.icon;
+                      return (
+                        <div
+                          key={idx}
+                          className="relative group p-4 sm:p-5 rounded-none bg-[#1c44b4] transition-all duration-500 overflow-hidden cursor-pointer flex flex-col h-full min-h-[220px]"
+                        >
+                          {/* Sweep background on hover */}
+                          <div className="absolute inset-0 bg-[#8b0000] translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></div>
 
-                    <div className="relative z-10 flex flex-col h-full">
-                      <div className="flex flex-wrap items-center justify-between gap-1 mb-4">
-                        <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-none bg-white text-[#1c44b4] group-hover:text-[#8b0000] transition-colors duration-500 flex items-center justify-center">
-                          <Icon className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-500 group-hover:scale-110" aria-hidden="true" />
+                          <div className="relative z-10 flex flex-col h-full">
+                            <div className="flex flex-wrap items-center justify-between gap-1 mb-4">
+                              <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-none bg-white text-[#1c44b4] group-hover:text-[#8b0000] transition-colors duration-500 flex items-center justify-center">
+                                <Icon className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-500 group-hover:scale-110" aria-hidden="true" />
+                              </div>
+                              <span className="text-[7.5px] sm:text-[9px] font-bold uppercase tracking-wider px-2 py-1 rounded-none border border-white/30 text-white transition-colors duration-500">
+                                {item.badge}
+                              </span>
+                            </div>
+                            <h4 className="text-[11px] sm:text-[14px] font-bold text-white mb-1.5 leading-snug transition-colors duration-500">{item.title}</h4>
+                            <p className="text-[9.5px] sm:text-[12px] text-white/80 leading-relaxed transition-colors duration-500">{item.description}</p>
+                          </div>
                         </div>
-                        <span className="text-[7.5px] sm:text-[9px] font-bold uppercase tracking-wider px-2 py-1 rounded-none border border-white/30 text-white transition-colors duration-500">
-                          {item.badge}
-                        </span>
-                      </div>
-                      <h4 className="text-[11px] sm:text-[14px] font-bold text-white mb-1.5 leading-snug transition-colors duration-500">{item.title}</h4>
-                      <p className="text-[9.5px] sm:text-[12px] text-white/80 leading-relaxed transition-colors duration-500">{item.description}</p>
-                    </div>
+                      );
+                    })}
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
 
             {/* CTAs — stack on mobile, row on sm+ */}
